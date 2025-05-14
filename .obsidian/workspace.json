@@ -8,32 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a7ccacb4e19d95c1",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "前置准备.canvas",
-                "viewState": {
-                  "x": 493.64419166513744,
-                  "y": 38.90204451388159,
-                  "zoom": -0.7638250542321487
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "前置准备"
-            }
-          },
-          {
             "id": "40df73f284287c69",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md"
+                "file": "data/《西游记》关系图谱分类体系.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-05-14 21.57.18.excalidraw"
+              "icon": "lucide-file",
+              "title": "《西游记》关系图谱分类体系"
             }
           }
         ]
@@ -109,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前置准备.canvas",
+                "file": "data/《西游记》关系图谱分类体系.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "前置准备 的反向链接列表"
+              "title": "《西游记》关系图谱分类体系 的反向链接列表"
             }
           },
           {
@@ -128,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前置准备.canvas",
+                "file": "data/《西游记》关系图谱分类体系.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "前置准备 的出链列表"
+              "title": "《西游记》关系图谱分类体系 的出链列表"
             }
           },
           {
@@ -157,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前置准备.canvas",
+                "file": "data/《西游记》关系图谱分类体系.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "前置准备 的大纲"
+              "title": "《西游记》关系图谱分类体系 的大纲"
             }
           },
           {
@@ -215,8 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 424.5,
-    "collapsed": true
+    "width": 278.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -236,15 +220,25 @@
       "smart-connections:Open: Smart Chat Conversation": false
     }
   },
-  "active": "a7ccacb4e19d95c1",
+  "active": "40df73f284287c69",
   "lastOpenFiles": [
+    "data/开始研究.docx",
+    "data/开始研究.md",
+    "data/开始研究.txt",
     "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.pdf",
-    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.docx",
-    "data/关系图谱分类大纲.md",
     "data/《西游记》关系图谱分类体系.md",
-    "data",
-    "README.md",
+    "data/关系图谱分类大纲.md",
     "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md",
+    "example/孙悟空笔记模板 copy 2.md",
+    "example/孙悟空笔记模板 copy 3.md",
+    "example/孙悟空笔记模板 copy.md",
+    "example/孙悟空笔记模板.md",
+    "孙悟空笔记模板.md",
+    "前置准备.canvas",
+    "README.md",
+    "rela-map",
+    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.docx",
+    "data",
     "大闹天宫.md",
     "护法系.md",
     "花果山.md",
@@ -255,9 +249,6 @@
     "五行山.md",
     "天道级.md",
     "唐僧.md",
-    "example/孙悟空笔记模板.md",
-    "前置准备.canvas",
-    "孙悟空笔记模板.md",
     "关系图谱分类大纲.md",
     "二郎神.md",
     "example",
