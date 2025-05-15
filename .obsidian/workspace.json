@@ -8,20 +8,106 @@
         "type": "tabs",
         "children": [
           {
-            "id": "40df73f284287c69",
+            "id": "9e701373d28ebfa8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "data/《西游记》关系图谱分类体系.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md"
               },
-              "icon": "lucide-file",
-              "title": "《西游记》关系图谱分类体系"
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2025-05-14 21.57.18.excalidraw"
             }
           }
         ]
+      },
+      {
+        "id": "ad5640ff4d7389be",
+        "type": "split",
+        "children": [
+          {
+            "id": "64bbb57129bda0d0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "1e5b6ffb2dbdba1b",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md"
+                  },
+                  "icon": "excalidraw-icon",
+                  "title": "Drawing 2025-05-14 21.57.18.excalidraw"
+                }
+              },
+              {
+                "id": "a00e73b4dfbe2a29",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "data/关系图谱分类大纲.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "关系图谱分类大纲"
+                }
+              },
+              {
+                "id": "40df73f284287c69",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "data/《西游记》关系图谱分类体系.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "《西游记》关系图谱分类体系"
+                }
+              }
+            ],
+            "currentTab": 2
+          },
+          {
+            "id": "1e6299b913dcb599",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2c3bdbd972832e3f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "data/关系图谱分类大纲.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "关系图谱分类大纲"
+                }
+              },
+              {
+                "id": "447f16d0f18f0959",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "data/《西游记》关系图谱分类体系.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "《西游记》关系图谱分类体系"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -169,10 +255,10 @@
             "id": "74051e9ceb928b0c",
             "type": "leaf",
             "state": {
-              "type": "graph-analysis",
+              "type": "empty",
               "state": {},
-              "icon": "GA-ICON",
-              "title": "Graph Analysis"
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           },
           {
@@ -191,16 +277,37 @@
             "state": {
               "type": "smart-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Smart Chat"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
+            }
+          },
+          {
+            "id": "9dd2f1375e1fcf0d",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {},
+              "icon": "GA-ICON",
+              "title": "Graph Analysis"
+            }
+          },
+          {
+            "id": "5ac329937da2d087",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {},
+              "icon": "GA-ICON",
+              "title": "Graph Analysis"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 342.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,22 +327,24 @@
       "smart-connections:Open: Smart Chat Conversation": false
     }
   },
-  "active": "40df73f284287c69",
+  "active": "9e701373d28ebfa8",
   "lastOpenFiles": [
-    "data/开始研究.docx",
-    "data/开始研究.md",
-    "data/开始研究.txt",
-    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.pdf",
     "data/《西游记》关系图谱分类体系.md",
-    "data/关系图谱分类大纲.md",
     "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md",
+    "data/关系图谱分类大纲.md",
+    "前置准备.canvas",
+    "example/孙悟空笔记模板.md",
+    "README.md",
+    "data/开始研究.md",
+    "Excalidraw/Drawing 2025-05-15 00.22.34.excalidraw.md",
+    "Excalidraw/Drawing 2025-05-15 00.25.35.excalidraw.md",
+    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.pdf",
+    "data/开始研究.docx",
+    "data/开始研究.txt",
     "example/孙悟空笔记模板 copy 2.md",
     "example/孙悟空笔记模板 copy 3.md",
     "example/孙悟空笔记模板 copy.md",
-    "example/孙悟空笔记模板.md",
     "孙悟空笔记模板.md",
-    "前置准备.canvas",
-    "README.md",
     "rela-map",
     "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.docx",
     "data",
@@ -255,7 +364,6 @@
     "孙悟空笔记模板 1.markdown",
     "孙悟空笔记模板.markdown",
     "2025-05-14.md",
-    "《西游记》关系图谱分类体系.md",
     "Excalidraw"
   ]
 }
