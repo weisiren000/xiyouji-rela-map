@@ -1,0 +1,5 @@
+PyPDF2
+pillow
+pytesseract
+pdf2image
+argparse

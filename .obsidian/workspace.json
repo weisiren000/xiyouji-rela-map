@@ -8,106 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "9e701373d28ebfa8",
+            "id": "40df73f284287c69",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md"
+                "file": "data/开始研究.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2025-05-14 21.57.18.excalidraw"
+              "icon": "lucide-file",
+              "title": "开始研究"
             }
           }
         ]
-      },
-      {
-        "id": "ad5640ff4d7389be",
-        "type": "split",
-        "children": [
-          {
-            "id": "64bbb57129bda0d0",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "1e5b6ffb2dbdba1b",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md"
-                  },
-                  "icon": "excalidraw-icon",
-                  "title": "Drawing 2025-05-14 21.57.18.excalidraw"
-                }
-              },
-              {
-                "id": "a00e73b4dfbe2a29",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "data/关系图谱分类大纲.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "关系图谱分类大纲"
-                }
-              },
-              {
-                "id": "40df73f284287c69",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "data/《西游记》关系图谱分类体系.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "《西游记》关系图谱分类体系"
-                }
-              }
-            ],
-            "currentTab": 2
-          },
-          {
-            "id": "1e6299b913dcb599",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "2c3bdbd972832e3f",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "data/关系图谱分类大纲.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "关系图谱分类大纲"
-                }
-              },
-              {
-                "id": "447f16d0f18f0959",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "data/《西游记》关系图谱分类体系.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "《西游记》关系图谱分类体系"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -164,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 307.5
   },
   "right": {
     "id": "dc6017d99af730f6",
@@ -267,8 +181,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Smart Connections"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -282,17 +196,17 @@
             }
           },
           {
-            "id": "9dd2f1375e1fcf0d",
+            "id": "01c2a77a92fc753a",
             "type": "leaf",
             "state": {
-              "type": "graph-analysis",
+              "type": "empty",
               "state": {},
-              "icon": "GA-ICON",
-              "title": "Graph Analysis"
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           },
           {
-            "id": "5ac329937da2d087",
+            "id": "63ce92173371c9e3",
             "type": "leaf",
             "state": {
               "type": "graph-analysis",
@@ -306,7 +220,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 342.5,
+    "width": 278.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -327,27 +241,36 @@
       "smart-connections:Open: Smart Chat Conversation": false
     }
   },
-  "active": "9e701373d28ebfa8",
+  "active": "40df73f284287c69",
   "lastOpenFiles": [
-    "data/《西游记》关系图谱分类体系.md",
-    "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md",
-    "data/关系图谱分类大纲.md",
-    "前置准备.canvas",
-    "example/孙悟空笔记模板.md",
-    "README.md",
-    "data/开始研究.md",
-    "Excalidraw/Drawing 2025-05-15 00.22.34.excalidraw.md",
-    "Excalidraw/Drawing 2025-05-15 00.25.35.excalidraw.md",
+    "研究报告/Gemini/开始研究.md",
     "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.pdf",
+    "data/开始研究.md",
+    "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md",
+    "任务/角色收集任务.md",
+    "任务",
+    "角色收集",
+    "角色手机",
+    "角色区分/《西游记》关系图谱分类体系.md",
+    "角色区分/元素分类体系.md",
+    "角色区分",
+    "data/《西游记》关系图谱分类体系.md",
+    "data/关系图谱分类大纲.md",
+    "角色",
+    "HERO",
+    "任务角色",
+    "Excalidraw/Drawing 2025-05-15 00.25.35.excalidraw.md",
+    "example/孙悟空笔记模板.md",
+    "Excalidraw/Drawing 2025-05-15 00.22.34.excalidraw.md",
+    "事件节点1.md",
     "data/开始研究.docx",
     "data/开始研究.txt",
     "example/孙悟空笔记模板 copy 2.md",
     "example/孙悟空笔记模板 copy 3.md",
     "example/孙悟空笔记模板 copy.md",
     "孙悟空笔记模板.md",
-    "rela-map",
-    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.docx",
-    "data",
+    "前置准备.canvas",
+    "README.md",
     "大闹天宫.md",
     "护法系.md",
     "花果山.md",
@@ -356,14 +279,6 @@
     "三打白骨精.md",
     "如意金箍棒.md",
     "五行山.md",
-    "天道级.md",
-    "唐僧.md",
-    "关系图谱分类大纲.md",
-    "二郎神.md",
-    "example",
-    "孙悟空笔记模板 1.markdown",
-    "孙悟空笔记模板.markdown",
-    "2025-05-14.md",
-    "Excalidraw"
+    "天道级.md"
   ]
 }
