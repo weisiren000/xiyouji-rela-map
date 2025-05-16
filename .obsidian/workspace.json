@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "data/开始研究.md",
+                "file": "tools/translate/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "开始研究"
+              "title": "README"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 291.5
   },
   "right": {
     "id": "dc6017d99af730f6",
@@ -191,8 +191,8 @@
             "state": {
               "type": "smart-chat-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "插件不再活动"
+              "icon": "message-square",
+              "title": "Smart Chat"
             }
           },
           {
@@ -209,6 +209,16 @@
             "id": "63ce92173371c9e3",
             "type": "leaf",
             "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          },
+          {
+            "id": "2eec837613350879",
+            "type": "leaf",
+            "state": {
               "type": "graph-analysis",
               "state": {},
               "icon": "GA-ICON",
@@ -216,12 +226,11 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 278.5,
-    "collapsed": true
+    "width": 463.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,42 +252,43 @@
   },
   "active": "40df73f284287c69",
   "lastOpenFiles": [
-    "研究报告/Gemini/开始研究.md",
-    "data/《西游记》关系图谱的多维交叉分析与知识管理工具应用研究.pdf",
-    "data/开始研究.md",
+    "任务/角色体系/身份阵营收集任务.md",
+    "任务/角色体系",
+    "任务/身份阵营收集任务.md",
+    "任务/TODO.md",
+    "任务/空间地点收集任务.md",
+    "任务/武器法宝收集任务.md",
     "Excalidraw/Drawing 2025-05-14 21.57.18.excalidraw.md",
-    "任务/角色收集任务.md",
-    "任务",
-    "角色收集",
-    "角色手机",
-    "角色区分/《西游记》关系图谱分类体系.md",
-    "角色区分/元素分类体系.md",
-    "角色区分",
-    "data/《西游记》关系图谱分类体系.md",
-    "data/关系图谱分类大纲.md",
-    "角色",
-    "HERO",
-    "任务角色",
-    "Excalidraw/Drawing 2025-05-15 00.25.35.excalidraw.md",
-    "example/孙悟空笔记模板.md",
-    "Excalidraw/Drawing 2025-05-15 00.22.34.excalidraw.md",
-    "事件节点1.md",
-    "data/开始研究.docx",
-    "data/开始研究.txt",
-    "example/孙悟空笔记模板 copy 2.md",
-    "example/孙悟空笔记模板 copy 3.md",
-    "example/孙悟空笔记模板 copy.md",
-    "孙悟空笔记模板.md",
     "前置准备.canvas",
+    "研究报告/物品法宝研究报告",
+    "研究报告/角色研究报告/perplexity/juese.md",
+    "研究报告/角色研究报告/perplexity",
+    "研究报告/角色研究报告/Grok/yanjiubaogao.pdf",
+    "研究报告/角色研究报告/Grok/grok.txt",
+    "研究报告/角色研究报告/Grok/yanjiubaogao.md",
+    "研究报告/角色研究报告/Grok",
+    "研究报告/角色研究报告/Gemini/开始研究.md",
+    "研究报告/角色研究报告/Gemini/开始研究 (1).txt",
+    "研究报告/角色研究报告/Gemini",
+    "研究报告/角色研究报告/chatGPT/baogao.md",
+    "研究报告/角色研究报告/chatGPT",
+    "研究报告/角色研究报告/心流/西游记特殊角色综合清单.txt",
+    "example/孙悟空笔记模板.md",
+    "天道级.md",
+    "test/README.md",
+    "tools/translate/README.md",
+    "美猴王出世.md",
+    "菩提祖师.md",
     "README.md",
-    "大闹天宫.md",
-    "护法系.md",
-    "花果山.md",
-    "紧箍咒.md",
-    "混元自在.md",
-    "三打白骨精.md",
-    "如意金箍棒.md",
-    "五行山.md",
-    "天道级.md"
+    "猪八戒.md",
+    "杨戬.md",
+    "未命名.canvas",
+    "Excalidraw/Drawing 2025-05-15 00.25.35.excalidraw.md",
+    "Excalidraw/Drawing 2025-05-16 14.04.59.excalidraw.md",
+    "角色区分/元素分类体系.md",
+    "研究报告/chatGPT/baogao.md",
+    "研究报告/Gemini/开始研究.md",
+    "研究报告/Grok/yanjiubaogao.md",
+    "研究报告/perplexity/juese.md"
   ]
 }
