@@ -1,0 +1,11 @@
+# .gitignore file
+
+# 虚拟环境
+venv
+.venv
+**/venv
+**/.venv
+
+# node包
+**/node_module
+node_module
