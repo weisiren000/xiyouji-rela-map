@@ -1,0 +1,188 @@
+{
+    "artifact_dict":
+    {
+        "ru_yi_jin_gu_bang": "如意金箍棒",
+        "jiu_chi_ding_pa": "九齿钉耙", 
+        "xiang_yao_bao_zhang": "降妖宝杖",
+        "zi_jin_ling": "紫金铃",
+        "jin_nao": "金铙",
+        "ren_zhong_dai": "人种袋",
+        "yang_liu_yu_jing_ping": "杨柳玉净瓶",
+        "zi_jin_hong_hu_lu": "紫金红葫芦",
+        "yang_zhi_yu_jing_ping": "羊脂玉净瓶",
+        "huang_jin_sheng": "幌金绳",
+        "jin_gang_zhuo": "金刚琢",
+        "ba_jiao_shan": "芭蕉扇",
+        "yin_yang_er_qi_ping": "阴阳二气瓶",
+        "jin_gu_quan": "紧箍圈",
+        "jin_lan_jia_sha": "锦襕袈裟",
+        "jiu_huan_xi_zhang": "九环锡杖",
+        "ding_feng_dan": "定风丹",
+        "fei_long_bao_zhang": "飞龙宝杖",
+        "bi_huo_zhao": "辟火罩",
+        "dao_yao_chu": "捣药杵",
+        "san_jian_liang_ren_dao": "三尖两刃刀",
+        "jin_dan_gong": "金弹弓",
+        "huo_jian_qiang": "火尖枪",
+        "hun_tie_gun": "混铁棍",
+        "yue_ya_chan": "月牙铲",
+        "san_gu_cha": "三股叉",
+        "dao_ma_du_zhuang": "倒马毒桩",
+        "jin_dan_sha": "金丹砂",
+        "san_leng_jin_jian": "三棱金简",
+        "she_li_zi_ling_long_nei_dan": "舍利子玲珑内丹",
+        "xiu_li_qian_kun": "袖里乾坤",
+        "long_pi_qi_xing_bian": "龙皮七星鞭",
+        "hun_tian_ling": "混天绫",
+        "qian_kun_quan": "乾坤圈",
+        "zhao_yao_jing": "照妖镜",
+        "qi_xing_jian": "七星剑",
+        "ru_yi_gou": "如意钩",
+        "gan_lu_jing_ping": "甘露净瓶",
+        "liu_zhi": "柳枝",
+        "lian_hua_tai": "莲花台",
+        "ba_gua_lu": "八卦炉",
+        "tai_ji_tu": "太极图",
+        "feng_huo_lun": "风火轮",
+        "hun_yuan_zhen_zhu_san": "混元珍珠伞",
+        "bai_gu_bian": "白骨鞭",
+        "qi_xing_bao_jian": "七星宝剑",
+        "zhi_zhu_si": "蜘蛛丝",
+        "du_ci": "毒刺",
+        "tong_guan_wen_die": "通关文牒",
+        "yin_lu_jin_pai": "引路金牌",
+        "bian_hua_fu": "变化符",
+        "ding_shen_fu": "定身符",
+        "yin_shen_yi": "隐身衣",
+        "tian_he_sha": "天河沙",
+        "zi_jin_bo_yu": "紫金钵盂",
+        "hun_yuan_jin_dou": "混元金斗",
+        "fu_yao_suo": "缚妖索",
+        "jin_zhong": "金钟",
+        "ding_feng_zhu": "定风珠",
+        "bao_lian_deng": "宝莲灯",
+        "san_cha_ji": "三叉戟",
+        "jin_zhuan": "金砖",
+        "yue_guang_bao_he": "月光宝盒",
+        "chan_zhang": "禅杖",
+        "ru_yi_jin_gu": "如意金箍",
+        "jin_ling": "金铃",
+        "sao_zhou": "扫帚"
+    },
+
+    "aliases_pinyin_dict": {
+        "ding_hai_shen_zhen": "定海神珍",
+        "ru_yi_bang": "如意棒",
+        "jin_gu_bang": "金箍棒",
+        "shen_zhen_tie": "神珍铁",
+        "ling_yang_bang": "灵阳棒",
+        
+        "shang_bao_qin_jin_pa": "上宝沁金钯",
+        "ding_pa": "钉耙",
+        "jiu_chi_pa": "九齿钯",
+        
+        "bao_zhang": "宝杖",
+        "yue_gong_zhang": "月宫杖",
+        "suo_luo_xian_mu_zhang": "梭罗仙木杖",
+        
+        "zi_jin_ling_er": "紫金铃儿",
+        "guan_yin_zuo_qi_ling": "观音坐骑铃",
+        
+        "hou_tian_dai_zi": "后天袋子",
+        "mi_le_fo_jin_nao": "弥勒佛金铙",
+        
+        "hou_tian_dai_zi": "后天袋子",
+        "mi_le_fo_ren_zhong_dai": "弥勒佛人种袋",
+        "qian_kun_dai": "乾坤袋",
+        
+        "gan_lu_ping": "甘露瓶",
+        "guan_yin_jing_ping": "观音净瓶",
+        "yang_liu_jing_ping": "杨柳净瓶",
+        
+        "zi_jin_hu_lu": "紫金葫芦",
+        "hun_dun_hu_lu": "混沌葫芦",
+        
+        "yu_jing_ping": "玉净瓶",
+        "lao_jun_jing_ping": "老君净瓶",
+        
+        "jin_sheng": "金绳",
+        "lao_jun_yao_dai": "老君腰带",
+        "kun_xian_sheng": "捆仙绳",
+        
+        "jin_gang_quan": "金刚圈",
+        "lao_jun_jin_gang_zhuo": "老君金刚琢",
+        "tao_bao_shen_qi": "套宝神器",
+        
+        "tie_shan": "铁扇",
+        "tai_yin_jing_ye": "太阴精叶",
+        "mie_huo_shan": "灭火扇",
+        "shan_huo_shan": "扇火扇",
+        
+        "er_qi_ping": "二气瓶",
+        "da_peng_ping": "大鹏瓶",
+        
+        "jin_gu": "金箍",
+        "jin_gu_er": "紧箍儿",
+        "tou_gu": "头箍",
+        
+        "jia_sha": "袈裟",
+        "fo_yi": "佛衣",
+        "jin_lan_yi": "锦襕衣",
+        
+        "xi_zhang": "锡杖",
+        "chan_zhang": "禅杖",
+        "jiu_huan_zhang": "九环杖",
+        
+        "ding_feng_zhu": "定风珠",
+        "ling_ji_dan": "灵吉丹",
+        
+        "long_tou_zhang": "龙头杖",
+        "ling_ji_bao_zhang": "灵吉宝杖",
+        
+        "huo_zhao": "火罩",
+        "guang_mu_tian_wang_zhao": "广目天王罩",
+        
+        "yu_chu": "玉杵",
+        "yue_gong_chu": "月宫杵",
+        
+        "san_jian_dao": "三尖刀",
+        "er_lang_shen_dao": "二郎神刀",
+        "san_jian_liang_ren_shen_feng": "三尖两刃神锋",
+        
+        "dan_gong": "弹弓",
+        "er_lang_shen_gong": "二郎神弓",
+        
+        "hong_ying_qiang": "红缨枪",
+        "hong_hai_er_qiang": "红孩儿枪",
+        
+        "tie_gun": "铁棍",
+        "niu_mo_wang_gun": "牛魔王棍",
+        "hun_tie_bang": "浑铁棒",
+        
+        "jiu_tou_niao_chan": "九头鸟铲",
+        "yue_ya_dao": "月牙刀",
+        
+        "xie_zi_cha": "蝎子叉",
+        "san_cha": "三叉",
+        
+        "du_zhuang": "毒桩",
+        "xie_zi_du_zhuang": "蝎子毒桩",
+        
+        "luo_han_sha": "罗汉砂",
+        "jin_sha": "金砂",
+        
+        "jin_jian": "金简",
+        "mo_ang_jian": "摩昂简",
+        
+        "nei_dan": "内丹",
+        "kui_mu_lang_dan": "奎木狼丹",
+        
+        "qian_kun_xiu": "乾坤袖",
+        "zhen_yuan_xiu": "镇元袖",
+        "xiu_zhong_qian_kun": "袖中乾坤",
+        
+        "qi_xing_bian": "七星鞭",
+        "long_bian": "龙鞭",
+        "zhen_yuan_bian": "镇元鞭"
+    }
+} 

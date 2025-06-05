@@ -1,0 +1,44 @@
+{
+  "locations": [
+    {
+      "name": "天庭",
+      "category": "天界地点",
+      "description": "道教神仙居住的最高统治机构",
+      "importance": "极高，是天庭政权的中心",
+      "related_plots": ["孙悟空大闹天宫", "玉帝朝会"],
+      "chapters": ["第三回", "第四回", "第五回"]
+    },
+    {
+      "name": "西方极乐世界",
+      "category": "佛教圣地",
+      "description": "佛教中的理想世界，如来佛祖居住地",
+      "importance": "极高，取经终点",
+      "related_plots": ["取得真经"],
+      "chapters": ["第九十八回"]
+    },
+    {
+      "name": "阎王殿",
+      "category": "阴间地府",
+      "description": "阴曹地府的审判场所",
+      "importance": "高，掌管生死轮回",
+      "related_plots": ["孙悟空勾销生死簿"],
+      "chapters": ["第三回"]
+    },
+    {
+      "name": "花果山",
+      "category": "人间名胜",
+      "description": "东胜神洲傲来国的一座仙山",
+      "importance": "极高，孙悟空出生地和根据地",
+      "related_plots": ["美猴王出世", "孙悟空回山"],
+      "chapters": ["第一回", "第二回"]
+    },
+    {
+      "name": "高老庄",
+      "category": "取经路上的国家区域",
+      "description": "乌斯藏国的一个村庄",
+      "importance": "高，收服猪八戒",
+      "related_plots": ["猪八戒招亲"],
+      "chapters": ["第十八回", "第十九回"]
+    }
+  ]
+}

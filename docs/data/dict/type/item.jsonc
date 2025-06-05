@@ -1,0 +1,284 @@
+{
+    "item_dict":
+    {
+        "jiu_zhuan_jin_dan": "九转金丹",
+        "jiu_zhuan_huan_hun_dan": "九转还魂丹",
+        "jiu_zhuan_tai_yi_huan_dan": "九转太乙还丹",
+        "pan_tao": "蟠桃",
+        "ren_shen_guo": "人参果",
+        "san_hua_jiu_zi_gao": "三花九子膏",
+        "hong_wan_jie_du_dan": "红丸解毒丹",
+        "qi_fan_huo_dan": "七返火丹",
+        "wu_jin_dan": "乌金丹",
+        "ding_feng_dan": "定风丹",
+        "she_li_zi_ling_long_nei_dan": "舍利子玲珑内丹",
+        "jiu_ye_ling_zhi_cao": "九叶灵芝草",
+        "jiao_li": "交梨",
+        "huo_zao": "火枣",
+        "zi_zhi_yao_cao": "紫芝瑶草",
+        "bi_ou_jin_dan": "碧藕金丹",
+        "guan_yin_gan_lu": "观音甘露",
+        "ding_yan_zhu": "定颜珠",
+        "chang_sheng_bu_lao_yao": "长生不老药",
+        "yan_nian_yi_shou_wan": "延年益寿丸",
+        "bi_gu_dan": "辟谷丹",
+        "qing_xin_wan": "清心丸",
+        "gu_yuan_dan": "固元丹",
+        "hui_chun_san": "回春散",
+        "zhi_tong_dan": "止痛丹",
+        "jie_du_wan": "解毒丸",
+        "da_huan_dan": "大还丹",
+        "long_gan_feng_sui": "龙肝凤髓",
+        "qiong_jiang_yu_ye": "琼浆玉液",
+        "xian_guo_mei_jiu": "仙果美酒",
+        "ling_zhi_xian_cao": "灵芝仙草",
+        "he_shou_wu": "何首乌",
+        "zi_zhi_cao": "紫芝草",
+        "qian_nian_ren_shen": "千年人参",
+        "xue_lian_hua": "雪莲花",
+        "xian_tao_jiu": "仙桃酒",
+        "yu_lu": "玉露",
+        "ti_hu": "醍醐",
+        "xian_cha": "仙茶",
+        "tai_yi_jiu_ku_dan": "太乙救苦丹",
+        "bu_tian_shi_sui": "补天石髓",
+        "feng_huang_nie_pan_wan": "凤凰涅槃丸",
+        "long_xue_shen": "龙血参",
+        "tian_shan_xue_shen": "天山雪参",
+        "huan_hun_cao": "还魂草",
+        "ding_hun_dan": "定魂丹",
+        "tian_he_shui": "天河水",
+        "zi_jin_dan": "紫金丹",
+        "ding_xin_wan": "定心丸",
+        "qi_xing_xu_ming_dan": "七星续命丹",
+        "jin_chuang_yao": "金创药",
+        "shui_huo_dan": "水火丹",
+        "huang_jin_dan": "黄金丹",
+        "dan_sha": "丹砂",
+        "huan_yang_dan": "还阳丹",
+        "jiu_zhuan_da_huan_dan": "九转大还丹",
+        "yang_jing_dan": "养精丹",
+        "hong_jiang_xue": "红绛雪",
+        "bai_hua_xian_lu": "百花仙露",
+        "zi_mu_he_shui": "子母河水",
+        "xian_tao": "仙桃",
+        "you_ming_cao": "幽冥草",
+        "luo_tai_quan_shui": "落胎泉水",
+        "qi_xing_xu_ming_huan": "七星续命环"
+    },
+
+    "aliases_pinyin_dict": {
+        "tai_shang_lao_jun_jin_dan": "太上老君金丹",
+        "jiu_zhuan_xian_dan": "九转仙丹",
+        "jin_dan": "金丹",
+
+        "huan_hun_dan": "还魂丹",
+        "jiu_zhuan_da_huan_dan": "九转大还丹",
+        "fu_huo_dan": "复活丹",
+
+        "tai_yi_dan": "太乙丹",
+        "dong_hua_di_jun_dan": "东华帝君丹",
+
+        "xian_tao": "仙桃",
+        "wang_mu_pan_tao": "王母蟠桃",
+        "yao_chi_xian_tao": "瑶池仙桃",
+
+        "cao_huan_dan": "草还丹",
+        "wan_shou_guo": "万寿果",
+        "zhen_yuan_xian_guo": "镇元仙果",
+
+        "jiu_zi_gao": "九子膏",
+        "hu_jiao_gao_yao": "护教膏药",
+        "zhi_yan_shen_yao": "治眼神药",
+
+        "jie_du_dan": "解毒丹",
+        "pi_lan_po_jie_du_wan": "毗蓝婆解毒丸",
+        "hong_wan": "红丸",
+
+        "huo_dan": "火丹",
+        "lao_jun_huo_dan": "老君火丹",
+        "shi_shui_dan": "嗜睡丹",
+
+        "hei_jin_dan": "黑金丹",
+        "ji_sai_guo_yao": "祭赛国药",
+        "guo_hui_dan": "锅灰丹",
+
+        "ding_feng_zhu": "定风珠",
+        "ling_ji_dan": "灵吉丹",
+        "ke_feng_dan": "克风丹",
+
+        "nei_dan": "内丹",
+        "kui_mu_lang_dan": "奎木狼丹",
+        "she_li_dan": "舍利丹",
+
+        "ling_zhi_cao": "灵芝草",
+        "jiu_ye_cao": "九叶草",
+        "wan_sheng_ling_zhi": "万圣灵芝",
+
+        "xian_li": "仙梨",
+        "jiao_li_guo": "交梨果",
+
+        "xian_zao": "仙枣",
+        "huo_zao_guo": "火枣果",
+        "chi_jiao_xian_zao": "赤脚仙枣",
+
+        "zi_zhi": "紫芝",
+        "yao_cao": "瑶草",
+        "shou_xing_cao": "寿星草",
+
+        "bi_ou_dan": "碧藕丹",
+        "jin_dan": "金丹",
+        "shou_xing_dan": "寿星丹",
+
+        "gan_lu_shui": "甘露水",
+        "guan_yin_lu": "观音露",
+        "yang_liu_gan_lu": "杨柳甘露",
+
+        "mei_yan_zhu": "美颜珠",
+        "zhu_yan_zhu": "驻颜珠",
+
+        "bu_lao_yao": "不老药",
+        "chang_sheng_yao": "长生药",
+        "xian_yao": "仙药",
+
+        "yi_shou_wan": "益寿丸",
+        "yan_shou_wan": "延寿丸",
+
+        "jue_gu_dan": "绝谷丹",
+        "bu_shi_dan": "不食丹",
+
+        "an_shen_wan": "安神丸",
+        "jing_xin_wan": "静心丸",
+
+        "gu_ben_dan": "固本丹",
+        "yuan_qi_dan": "元气丹",
+
+        "hui_chun_yao": "回春药",
+        "fan_lao_san": "返老散",
+
+        "zhen_tong_dan": "镇痛丹",
+        "zhi_teng_wan": "止疼丸",
+
+        "jie_du_yao": "解毒药",
+        "pai_du_wan": "排毒丸",
+
+        "huan_dan": "还丹",
+        "da_dan": "大丹",
+
+        "long_sui": "龙髓",
+        "feng_sui": "凤髓",
+        "xian_sui": "仙髓",
+
+        "xian_jiu": "仙酒",
+        "yu_ye": "玉液",
+        "qiong_jiang": "琼浆",
+
+        "xian_guo_jiu": "仙果酒",
+        "mei_jiu": "美酒",
+
+        "xian_cao": "仙草",
+        "ling_cao": "灵草",
+
+        "shou_wu": "首乌",
+        "he_shou_wu_cao": "何首乌草",
+
+        "zi_cao": "紫草",
+        "zhi_cao": "芝草",
+
+        "ren_shen": "人参",
+        "qian_nian_shen": "千年参",
+        "xian_shen": "仙参",
+
+        "xue_lian": "雪莲",
+        "tian_shan_lian": "天山莲",
+
+        "tao_hua_jiu": "桃花酒",
+        "xian_tao_niang": "仙桃酿",
+
+        "xian_lu": "仙露",
+        "tian_lu": "天露",
+
+        "ti_hu_lu": "醍醐露",
+        "gan_lu_ti_hu": "甘露醍醐",
+
+        "shen_cha": "神茶",
+        "xian_cha_ye": "仙茶叶",
+
+        "jiu_ku_dan": "救苦丹",
+        "tai_yi_dan": "太乙丹",
+
+        "shi_sui": "石髓",
+        "bu_tian_sui": "补天髓",
+
+        "nie_pan_wan": "涅槃丸",
+        "feng_huang_dan": "凤凰丹",
+
+        "long_shen": "龙参",
+        "xue_shen": "血参",
+
+        "xue_shen": "雪参",
+        "tian_shan_shen": "天山参",
+
+        "hun_cao": "魂草",
+        "huan_hun_xian_cao": "还魂仙草",
+
+        "an_hun_dan": "安魂丹",
+        "ding_shen_dan": "定神丹",
+
+        "yin_he_shui": "银河水",
+        "tian_he_sheng_shui": "天河圣水",
+
+        "zi_jin_xian_dan": "紫金仙丹",
+        "jin_dan": "金丹",
+
+        "an_xin_wan": "安心丸",
+        "zhen_xin_dan": "镇心丹",
+
+        "xu_ming_dan": "续命丹",
+        "qi_xing_dan": "七星丹",
+
+        "chuang_shang_yao": "创伤药",
+        "jin_shang_yao": "金疮药",
+
+        "yin_yang_dan": "阴阳丹",
+        "shui_huo_tiao_he_dan": "水火调和丹",
+
+        "jin_dan": "金丹",
+        "huang_jin_xian_dan": "黄金仙丹",
+
+        "zhu_sha": "朱砂",
+        "xian_sha": "仙砂",
+
+        "fu_yang_dan": "复阳丹",
+        "hui_yang_yao": "回阳药",
+
+        "jiu_zhuan_dan": "九转丹",
+        "da_huan_xian_dan": "大还仙丹",
+
+        "bu_jing_dan": "补精丹",
+        "yang_shen_dan": "养神丹",
+
+        "hong_xue": "红雪",
+        "jiang_xue": "绛雪",
+
+        "hua_lu": "花露",
+        "bai_hua_lu": "百花露",
+
+        "mu_zi_shui": "母子水",
+        "huai_tai_shui": "怀胎水",
+
+        "pan_tao": "蟠桃",
+        "xian_guo": "仙果",
+
+        "ming_cao": "冥草",
+        "you_ming_xian_cao": "幽冥仙草",
+
+        "jie_tai_shui": "解胎水",
+        "luo_tai_shen_shui": "落胎神水",
+        "po_er_dong_shui": "破儿洞水",
+
+        "xu_ming_huan": "续命环",
+        "qi_xing_huan": "七星环",
+        "yan_shou_huan": "延寿环"
+    }
+} 

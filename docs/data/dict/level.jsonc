@@ -1,0 +1,13 @@
+// 角色等级类别字典
+{
+    "level_dict":
+    {
+        "tian_dao": "天道",
+        "zhun_tian_dao": "准天道",
+        "da_luo_jin_xian": "大罗金仙", 
+        "tai_yi_zhen_xian": "太乙真仙",
+        "di_xian": "地仙",
+        "fan_xian": "凡仙",
+        "fan_ren": "凡人"
+    }
+}
