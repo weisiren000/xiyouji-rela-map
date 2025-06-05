@@ -1,0 +1,334 @@
+{
+    "skill_dict":
+    {
+        "qi_shi_er_bian": "七十二变",
+        "tian_gang_san_shi_liu_bian": "天罡三十六变",
+        "san_tou_liu_bi": "三头六臂",
+        "fa_tian_xiang_di": "法天象地",
+        "xiu_li_qian_kun": "袖里乾坤",
+        "wu_lei_fa": "五雷法",
+        "yin_shen_shu": "隐身术",
+        "ding_shen_shu": "定身术",
+        "san_mei_zhen_huo": "三昧真火",
+        "yuan_shen_chu_qiao": "元神出窍",
+        "jin_dou_yun": "筋斗云",
+        "shen_wai_shen_zhi_shu": "身外身之术",
+        "jin_gang_bu_huai_shen": "金刚不坏身",
+        "san_mei_shen_feng": "三昧神风",
+        "she_fa": "摄法",
+        "da_pin_tian_xian_jue": "大品天仙诀",
+        "fen_shen_shu": "分身术",
+        "bian_hua_po_zheng_shi_bie": "变化破绽识别",
+        "teng_yun_jia_wu": "腾云驾雾",
+        "yu_feng_shu": "御风术",
+        "dun_shu": "遁术",
+        "feng_huo_lun": "风火轮",
+        "zi_qi_dong_lai": "紫气东来",
+        "zhang_zhong_fo_guo": "掌中佛国",
+        "hu_feng_huan_yu": "呼风唤雨",
+        "lei_dian_shu": "雷电术",
+        "qian_li_yan": "千里眼",
+        "shun_feng_er": "顺风耳",
+        "qi_si_hui_sheng_shu": "起死回生术",
+        "yu_zhi_shu": "预知术",
+        "chuan_yin_shu": "传音术",
+        "zhi_liao_shu": "治疗术",
+        "jing_hua_shu": "净化术",
+        "huo_yan_jin_jing": "火眼金睛",
+        "bu_si_bu_mie": "不死不灭",
+        "shui_xing_jing_tong": "水性精通",
+        "tong_xiao_shou_yu": "通晓兽语",
+        "fa_li_wu_bian": "法力无边",
+        "qu_shen_yi_gui": "驱神役鬼",
+        "zhang_yan_fa": "障眼法",
+        "ding_pa_fa": "钉耙法",
+        "xiang_yao_fa": "降妖法",
+        "zhang_xin_lei": "掌心雷",
+        "huo_dun_shu": "火遁术",
+        "tu_dun_shu": "土遁术",
+        "shui_dun_shu": "水遁术",
+        "wu_xing_dun_shu": "五行遁术",
+        "hua_di_wei_lao": "画地为牢",
+        "nan_tian_men_zhou": "南天门咒",
+        "ji_feng_lei_fa": "祭风雷法",
+        "yao_shen_yi_bian": "摇身一变",
+        "suo_di_shu": "缩地术",
+        "jie_feng": "借风",
+        "jie_shui": "借水",
+        "ban_yun": "搬运",
+        "jie_huo": "借火",
+        "kong_xin_shu": "控心术",
+        "zhi_di_cheng_jing": "指地成井",
+        "xian_qi_hua_shen": "仙气化身",
+        "kou_tu_fei_jian": "口吐飞剑",
+        "huan_shu": "幻术",
+        "ru_di_shu": "入地术",
+        "pen_huo": "喷火",
+        "tu_wu": "吐雾",
+        "qu_lei_yi_dian": "驱雷役电"
+    },
+
+    "aliases_pinyin_dict": {
+        "di_sha_qi_shi_er_bian": "地煞七十二变",
+        "qi_shi_er_ban_bian_hua": "七十二般变化",
+        "bian_hua_zhi_shu": "变化之术",
+        "sun_wu_kong_bian_hua": "孙悟空变化",
+
+        "tian_gang_bian": "天罡变",
+        "san_shi_liu_bian_hua": "三十六变化",
+        "zhu_ba_jie_bian_hua": "猪八戒变化",
+        "tian_gang_da_fa": "天罡大法",
+
+        "san_tou_ba_bi": "三头八臂",
+        "ne_zha_fa_shen": "哪吒法身",
+        "duo_tou_duo_bi": "多头多臂",
+
+        "fa_shen_tian_di": "法身天地",
+        "ju_shen_shu": "巨身术",
+        "tian_di_fa_xiang": "天地法相",
+
+        "qian_kun_xiu": "乾坤袖",
+        "zhen_yuan_xiu_fa": "镇元袖法",
+        "xiu_zhong_shi_jie": "袖中世界",
+
+        "wu_lei_zheng_fa": "五雷正法",
+        "lei_fa": "雷法",
+        "zhao_lei_shu": "召雷术",
+
+        "dun_xing_shu": "遁形术",
+        "yin_xing_fa": "隐形法",
+        "wu_xing_shu": "无形术",
+
+        "ding_shen_fa": "定身法",
+        "jin_gu_shu": "禁锢术",
+        "shen_ding_shu": "身定术",
+
+        "zhen_huo": "真火",
+        "hong_hai_er_huo": "红孩儿火",
+        "wu_xing_zhen_huo": "五行真火",
+
+        "chu_shen_shu": "出神术",
+        "hun_po_li_ti": "魂魄离体",
+        "shen_you_shu": "神游术",
+
+        "fan_jin_dou": "翻筋斗",
+        "shi_wan_ba_qian_li": "十万八千里",
+        "jin_dou_shu": "筋斗术",
+
+        "fen_shen_fa": "分身法",
+        "hao_mao_fen_shen": "毫毛分身",
+        "hua_shen_shu": "化身术",
+
+        "tong_pi_tie_gu": "铜皮铁骨",
+        "bu_huai_zhi_shen": "不坏之身",
+        "jin_gang_ti": "金刚体",
+
+        "shen_feng": "神风",
+        "huang_feng": "黄风",
+        "huang_feng_guai_feng": "黄风怪风",
+
+        "she_qu_shu": "摄取术",
+        "xi_she_fa": "吸摄法",
+        "she_ren_shu": "摄人术",
+
+        "tian_xian_jue": "天仙诀",
+        "xian_jia_xin_fa": "仙家心法",
+        "chang_sheng_jue": "长生诀",
+
+        "hua_shen_shu": "化身术",
+        "fen_shen_fa": "分身法",
+        "shen_wai_hua_shen": "身外化身",
+
+        "shi_po_shu": "识破术",
+        "po_wang_fa": "破妄法",
+        "zhen_jia_bian_bie": "真假辨别",
+
+        "jia_yun_shu": "驾云术",
+        "yun_you_shu": "云游术",
+        "cheng_yun_fa": "乘云法",
+
+        "yu_feng_shu": "驭风术",
+        "feng_xing_shu": "风行术",
+        "cheng_feng_fa": "乘风法",
+
+        "wu_xing_dun": "五行遁",
+        "dun_fa": "遁法",
+        "tao_dun_shu": "逃遁术",
+
+        "ne_zha_lun": "哪吒轮",
+        "huo_lun": "火轮",
+        "feng_huo_shen_lun": "风火神轮",
+
+        "zi_qi": "紫气",
+        "dong_lai_zi_qi": "东来紫气",
+        "xian_qi": "仙气",
+
+        "fo_guo": "佛国",
+        "ru_lai_zhang": "如来掌",
+        "zhang_zhong_shi_jie": "掌中世界",
+
+        "feng_yu_shu": "风雨术",
+        "zhao_feng_huan_yu": "召风唤雨",
+        "qi_xiang_fa": "气象法",
+
+        "lei_fa": "雷法",
+        "dian_ji_shu": "电击术",
+        "lei_dian_fa": "雷电法",
+
+        "yuan_shi_shu": "远视术",
+        "qian_li_mu": "千里目",
+        "shen_yan": "神眼",
+
+        "shun_feng_er_duo": "顺风耳朵",
+        "qian_li_er": "千里耳",
+        "shen_ting": "神听",
+
+        "fu_huo_shu": "复活术",
+        "huan_hun_fa": "还魂法",
+        "qi_si_shu": "起死术",
+
+        "xian_zhi_shu": "先知术",
+        "zhan_bu_fa": "占卜法",
+        "yu_yan_shu": "预言术",
+
+        "qian_li_chuan_yin": "千里传音",
+        "chuan_sheng_shu": "传声术",
+        "yin_chuan_fa": "音传法",
+
+        "yi_shu": "医术",
+        "liao_shang_fa": "疗伤法",
+        "yu_he_shu": "愈合术",
+
+        "qing_jie_shu": "清洁术",
+        "chu_hui_fa": "除秽法",
+        "jie_jing_shu": "洁净术",
+
+        "jin_jing": "金睛",
+        "huo_yan": "火眼",
+        "po_wang_yan": "破妄眼",
+
+        "yong_sheng_shu": "永生术",
+        "bu_si_fa": "不死法",
+        "chang_sheng_bu_lao": "长生不老",
+
+        "shui_dun": "水遁",
+        "you_yong_shu": "游泳术",
+        "shui_zhong_shu": "水中术",
+
+        "shou_yu": "兽语",
+        "dong_wu_yu": "动物语",
+        "qin_shou_yan": "禽兽言",
+
+        "wu_bian_fa_li": "无边法力",
+        "shen_tong_guang_da": "神通广大",
+        "fa_li_shen_hou": "法力深厚",
+
+        "yi_shi_gui_shen": "役使鬼神",
+        "qu_gui_shu": "驱鬼术",
+        "shen_gui_fa": "神鬼法",
+
+        "huan_xiang_shu": "幻象术",
+        "mi_yan_fa": "迷眼法",
+        "zhang_mu_shu": "障目术",
+
+        "ding_pa_shu": "钉耙术",
+        "zhu_ba_jie_fa": "猪八戒法",
+        "jiu_chi_pa_fa": "九齿钯法",
+
+        "chu_yao_shu": "除妖术",
+        "xiang_mo_fa": "降魔法",
+        "fu_yao_shu": "伏妖术",
+
+        "lei_zhang": "雷掌",
+        "zhang_lei": "掌雷",
+        "shou_xin_lei": "手心雷",
+
+        "huo_dun_fa": "火遁法",
+        "huo_zhong_dun": "火中遁",
+        "huo_xing_shu": "火行术",
+
+        "tu_dun_fa": "土遁法",
+        "di_zhong_dun": "地中遁",
+        "tu_xing_shu": "土行术",
+
+        "shui_dun_fa": "水遁法",
+        "shui_zhong_dun": "水中遁",
+        "shui_xing_shu": "水行术",
+
+        "wu_xing_shu": "五行术",
+        "wu_dun_fa": "五遁法",
+        "wu_xing_dun_fa": "五行遁法",
+
+        "di_lao_shu": "地牢术",
+        "kun_di_fa": "困敌法",
+        "hua_quan_shu": "画圈术",
+
+        "tian_men_zhou": "天门咒",
+        "nan_tian_zhou": "南天咒",
+        "tian_ting_zhou": "天庭咒",
+
+        "feng_lei_fa": "风雷法",
+        "ji_lei_shu": "祭雷术",
+        "zhao_feng_lei": "召风雷",
+
+        "bian_shen_shu": "变身术",
+        "yao_shen_fa": "摇身法",
+        "shun_bian_shu": "瞬变术",
+
+        "suo_di_fa": "缩地法",
+        "zhi_chi_shu": "咫尺术",
+        "suo_ju_shu": "缩距术",
+
+        "jie_feng_shu": "借风术",
+        "zhao_feng_fa": "召风法",
+        "feng_zhu_shu": "风助术",
+
+        "jie_shui_shu": "借水术",
+        "zhao_shui_fa": "召水法",
+        "shui_zhu_shu": "水助术",
+
+        "ban_yun_shu": "搬运术",
+        "yi_wu_fa": "移物法",
+        "yun_shu_shu": "运输术",
+
+        "jie_huo_shu": "借火术",
+        "zhao_huo_fa": "召火法",
+        "huo_zhu_shu": "火助术",
+
+        "mi_xin_shu": "迷心术",
+        "kong_zhi_shu": "控制术",
+        "she_xin_fa": "摄心法",
+
+        "dian_jing_shu": "点井术",
+        "zao_jing_fa": "造井法",
+        "jue_jing_shu": "掘井术",
+
+        "xian_qi_shu": "仙气术",
+        "hua_qi_fa": "化气法",
+        "qi_hua_shu": "气化术",
+
+        "fei_jian_shu": "飞剑术",
+        "jian_qi_fa": "剑气法",
+        "kou_jian_shu": "口剑术",
+
+        "huan_xiang_fa": "幻象法",
+        "mi_huan_shu": "迷幻术",
+        "xu_huan_fa": "虚幻法",
+
+        "zuan_di_shu": "钻地术",
+        "ru_tu_fa": "入土法",
+        "di_dun_shu": "地遁术",
+
+        "pen_huo_shu": "喷火术",
+        "tu_huo_fa": "吐火法",
+        "kou_huo_shu": "口火术",
+
+        "tu_wu_shu": "吐雾术",
+        "pen_wu_fa": "喷雾法",
+        "wu_hua_shu": "雾化术",
+
+        "lei_dian_fa": "雷电法",
+        "yi_lei_shu": "役雷术",
+        "qu_dian_fa": "驱电法"
+    }
+}

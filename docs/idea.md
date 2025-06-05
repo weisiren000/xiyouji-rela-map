@@ -1,8 +1,8 @@
 # 项目想法
 
-## 技术栈 _主线_
+## 技术栈 _选择项_
     1. Three.js
-    2. React + Vite + Zustand / React + Three.js + (数据处理库)
+    2. React + Vite + Zustand(状态管理) / React + Three.js + (数据处理库)
         - 需要有 src/ 目录用来集中存放源代码
         - 创建 components/3d/ 用来存储 Three.js 组件
     3. Python （待定项）
@@ -17,10 +17,10 @@
         - Html5 + Three.js + WebGL（挑选项）
 ---
 ## 前端核心 _确定版本_
-    1. 框架：React + Vite
-    2. 3D引擎：Three.js + @react-three/fiber
-    3. 状态管理：Zustand
-    4. 包管理：pnpm
+    1. 框架：React（框架） + Vite（构建工具）
+    2. 3D引擎：Three.js + @react-three/fiber（渲染引擎）
+    3. 状态管理：Zustand（状态管理）
+    4. 包管理：pnpm（包管理器）
     5. 类型检查：TypeScript
 
 ## 功能

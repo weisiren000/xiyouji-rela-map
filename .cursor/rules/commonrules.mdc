@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- 工作前总是需要确认工作路径
+    1. 目前使用的是powershell
+
+    2. 可以使用pwd来获取当前工作路径

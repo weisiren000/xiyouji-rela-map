@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- 使用uv作为python的包管理工具
+
+    1. 比如 uv pip install <package>
