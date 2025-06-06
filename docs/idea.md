@@ -89,3 +89,86 @@
     2. 关系类型区分（视图/敌对/友好/...）
     3. 搜索功能
     4. 响应式布局
+
+### 项目架构图
+```
+xyj-visualization/
+├── public/                  # 静态资源
+│   ├── data/                # 示例JSON数据集
+│   │   └── xyj-characters.json
+│   └── shaders/             # 公共着色器文件
+│       ├── galaxy.frag
+│       └── galaxy.vert
+│
+├── src/
+│   ├── backend/             # 后端服务
+│   │   ├── data-processor/  # 数据处理模块
+│   │   │   ├── nlp-tool/    # NLP处理工具
+│   │   │   └── adapters/    # 数据格式适配器
+│   │   └── server/          # 服务端入口
+│   │       └── index.ts     # Express/FastAPI 入口
+│   │
+│   ├── frontend/
+│   │   ├── assets/          # 静态资源
+│   │   │   └── textures/    # 3D纹理素材
+│   │   │
+│   │   ├── components/      # 可复用组件
+│   │   │   ├── ui/          # UI组件
+│   │   │   │   ├── ControlPanel.tsx
+│   │   │   │   ├── InfoCard.tsx
+│   │   │   │   └── SearchBar.tsx
+│   │   │   │
+│   │   │   └── three/       # Three.js组件
+│   │   │       ├── nodes/
+│   │   │       │   ├── CharacterNode.tsx
+│   │   │       │   └── CelestialBody.tsx
+│   │   │       ├── effects/
+│   │   │       │   ├── StarField.tsx
+│   │   │       │   └── GalaxyArms.tsx
+│   │   │       ├── materials/
+│   │   │       │   ├── CustomShaderMaterial.tsx
+│   │   │       │   └── materialPresets.ts
+│   │   │       └── utils/
+│   │   │           ├── ThreeUtils.ts
+│   │   │           └── OrbitControls.tsx
+│   │   │
+│   │   ├── scenes/          # 3D场景组件
+│   │   │   ├── GalaxyScene.tsx      # 银河系主场景
+│   │   │   ├── CelestialScene.tsx   # 九重天场景
+│   │   │   └── CharacterScene.tsx   # 角色关系场景
+│   │   │
+│   │   ├── stores/          # Zustand状态管理
+│   │   │   ├── useVisualizationStore.ts
+│   │   │   ├── useCharacterStore.ts
+│   │   │   └── useShaderStore.ts
+│   │   │
+│   │   ├── types/           # TypeScript类型定义
+│   │   │   ├── character.d.ts
+│   │   │   ├── scene.d.ts
+│   │   │   └── shader.d.ts
+│   │   │
+│   │   ├── utils/           # 工具函数
+│   │   │   ├── dataParser.ts
+│   │   │   ├── colorUtils.ts
+│   │   │   └── layoutCalculators.ts
+│   │   │
+│   │   ├── hooks/           # 自定义Hook
+│   │   │   ├── useThreeSetup.ts
+│   │   │   ├── useDataLoader.ts
+│   │   │   └── useCelestialLayout.ts
+│   │   │
+│   │   ├── App.tsx          # 主应用组件
+│   │   └── main.tsx         # 应用入口
+│   │
+│   └── shared/              # 前后端共享代码
+│       ├── types/           # 共享类型定义
+│       └── constants/       # 共享常量
+│           └── celestialConstants.ts
+│
+├── .eslintrc                # ESLint配置
+├── .prettierrc              # Prettier配置
+├── tsconfig.json            # TypeScript配置
+├── vite.config.ts           # Vite配置
+├── package.json
+└── README.md
+```

@@ -5,7 +5,7 @@
 
 ```jsonc
 {
-    "id": "1", // 角色唯一ID
+    "unid": "A0001", // 角色唯一ID
     "name": "孙悟空", //
     "pinyin": "sun_wu_kong", // 角色拼音
     "aliases": ["美猴王", "齐天大圣", "孙行者", "斗战胜佛", "..."], // 多角色名称
@@ -33,6 +33,30 @@
             "intensity": 0.1,
             "color": "#ff6b6b"
         }
+        }
+    },
+    "links":
+    {
+        "唐僧": 
+        {
+            "type": "master", // 关系类型
+            "strength": 0.8, // 关系强度
+            "color": "#ff6b6b", // 关系颜色
+            "width": 0.1 // 线条宽度
+        },
+        "猪八戒": 
+        {
+            "type": "friend",
+            "strength": 0.6,
+            "color": "#ff6b6b",
+            "width": 0.1
+        },
+        "沙悟净": 
+        {
+            "type": "friend",
+            "strength": 0.5,
+            "color": "#ff6b6b",
+            "width": 0.1
         }
     }
 }

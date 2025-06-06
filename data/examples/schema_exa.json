@@ -1,0 +1,25 @@
+{
+    "unid": "<unid>",
+    "name": "<name>",
+    "pinyin": "<pinyin>",
+    "aliases": ["<aliase01>", "<aliase02>", "<aliase03>", "<aliase04>", "..."],
+    "type": "<type>",
+    "level": "<level>",
+    "rank": "<rank>",
+    "visual":
+    {   
+        "position": [x, y, z],
+        "appearance":
+        {
+        "color": "#ff6b6b",
+        "base_size": 1,
+        "shape": "sphere",
+        "glow": 
+        {
+            "enable": true,
+            "intensity": 0.1,
+            "color": "#ff6b6b"
+        }
+        }
+    }
+}
