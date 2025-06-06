@@ -2,7 +2,7 @@
 
 ```json
 {
-    "charactor_dic": // 角色对应 "pinyin":"name"
+    "character_dic": // 角色对应 "pinyin":"name"
     {
         "sun_wu_kong": "孙悟空",
         "tang_seng": "唐僧",
@@ -12,7 +12,7 @@
     }, // 角色对照表
     "type_dic": // 类型对照表
     {
-        "charactor": "角色",
+        "character": "角色",
         "location": "地点",
         "artifact": "法宝",
         "event": "事件",
@@ -34,7 +34,7 @@
     {
         "combat": "战斗",
         "wisdom": "智慧",
-        "transformation": "变化"
+        "transformation": "变化",
         "healing": "治愈"
     }, // 能力对照表
     "growth_dic": // 成长对照表

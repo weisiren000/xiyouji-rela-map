@@ -3,6 +3,11 @@ description:
 globs: 
 alwaysApply: true
 ---
-- 使用uv作为python的包管理工具
+# package manage preference
+- use uv replace pip
+- install python requirements package use uv
+  1. for example "uv pip install <package>"
 
-    1. 比如 uv pip install <package>
+# python project preference
+
+- when you create a python class or function you should add some notes to explain the function or class

@@ -11,6 +11,7 @@
     "aliases": ["美猴王", "齐天大圣", "孙行者", "斗战胜佛", "..."], // 多角色名称
     "type": "character", // 类型
     "level": "da_luo_jin_xian", // 角色境界
+    "rank": "1",
     "target": 
     {
         "tang_seng": "master",
@@ -23,54 +24,16 @@
         "position": [x, y, z], // 位置
         "appearance":
         {
-        "color": "######", // 角色颜色
+        "color": "#ff6b6b", // 角色颜色
         "base_size": 1, // 角色基础大小
         "shape": "sphere", // 角色形状
         "glow": 
         {
             "enable": true,
             "intensity": 0.1,
-            "color": "######"
+            "color": "#ff6b6b"
         }
         }
     }
-
 }
 ```
-### 地点/空间数据结构
-
-```jsonc
-{
-
-}
-```
-### 法宝数据结构
-
-```jsonc
-{
-
-}
-```
-### 事件数据结构
-
-```jsonc
-{
-
-}
-```
-### 灵丹妙药数据结构
-
-```jsonc
-{
-
-}
-
-### 神通法术数据结构
-
-```jsonc
-{
-
-}
-```
-
-
