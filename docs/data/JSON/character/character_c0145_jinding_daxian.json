@@ -1,0 +1,36 @@
+{
+    "unid": "c0145",
+    "basic": {
+        "name": "金顶大仙",
+        "aliases": ["灵山脚下玉真观主", "灵山接引者", "玉真观主"],
+        "category": "immortal"
+    },
+    "attributes": {
+        "level": {
+            "tier": 5,
+            "category": "大仙级"
+        },
+        "rank": 145,
+        "power": 80,
+        "influence": 75,
+        "morality": "善良"
+    },
+    "relationships": {
+        "colleagues": ["如来佛祖"],
+        "subordinates": ["道童"],
+        "superior": ["如来佛祖"],
+        "family": []
+    },
+    "abilities": {
+        "weapons": ["拂尘", "宝剑"],
+        "skills": ["道法", "接引术", "观察术"],
+        "specialties": ["接引取经人", "灵山守护", "道法高深"]
+    },
+    "metadata": {
+        "description": "灵山脚下玉真观的观主，负责接引取经人到达灵山，是佛道两教的桥梁人物。",
+        "tags": ["仙人", "大仙", "灵山", "接引者"],
+        "culturalBackground": "佛道融合的文化象征，体现了宗教包容",
+        "religiousSignificance": "佛教与道教交融的重要角色",
+        "literaryRole": "取经路上的重要引导者"
+    }
+}

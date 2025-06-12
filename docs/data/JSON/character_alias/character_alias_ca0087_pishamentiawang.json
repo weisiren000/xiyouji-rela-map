@@ -1,0 +1,33 @@
+{
+    "unid": "ca0087",
+    "isAlias": true,
+    "aliasOf": "c0013",
+    "basic": {
+        "name": "毗沙门天王",
+        "pinyin": "pi_sha_men_tian_wang",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 8,
+            "category": "celestial"
+        },
+        "rank": 13,
+        "power": 88,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "李靖的佛教称号，毗沙门是佛教四大天王之一",
+        "tags": ["deity", "commander", "buddhist_title", "four_heavenly_kings"],
+        "aliasType": "buddhist_title",
+        "aliasContext": "李靖的佛教称号，毗沙门是佛教四大天王之一",
+        "sourceChapters": [4, 5, 6, 7, 83],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

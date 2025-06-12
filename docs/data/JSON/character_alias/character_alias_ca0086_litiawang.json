@@ -1,0 +1,33 @@
+{
+    "unid": "ca0086",
+    "isAlias": true,
+    "aliasOf": "c0013",
+    "basic": {
+        "name": "李天王",
+        "pinyin": "li_tian_wang",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 8,
+            "category": "celestial"
+        },
+        "rank": 13,
+        "power": 88,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "李靖的常用称号，结合姓氏和天王职位",
+        "tags": ["deity", "commander", "common_title", "celestial"],
+        "aliasType": "common_title",
+        "aliasContext": "李靖的常用称号，结合姓氏和天王职位",
+        "sourceChapters": [4, 5, 6, 7, 83],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,35 @@
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 5, 30, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 100, 255, 0.3);
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.controls-instruction {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #a0b0ff;
+  line-height: 1.4;
+}
+
+.controls-instruction:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    bottom: 10px;
+    left: 10px;
+    padding: 12px;
+  }
+  
+  .controls-instruction {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+}

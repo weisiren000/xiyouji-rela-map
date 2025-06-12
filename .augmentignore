@@ -1,2 +1,8 @@
 # 虚拟环境
-venv
+**/venv
+**/.venv
+# Python 编译文件
+**/__pycache__
+
+
+**/node_modules

@@ -1,0 +1,33 @@
+{
+    "unid": "ca0006",
+    "isAlias": true,
+    "aliasOf": "c0001",
+    "basic": {
+        "name": "金公",
+        "pinyin": "jin_gong",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_luo_jin_xian",
+            "name": "大罗金仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 1,
+        "power": 95,
+        "influence": 90,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "孙悟空的道教别名，在道教五行学说中代表金性，象征刚强勇猛",
+        "tags": ["protagonist", "immortal", "monkey", "alias", "taoist", "element"],
+        "aliasType": "taoist_name",
+        "aliasContext": "道教修行中的称呼，金代表西方、刚强、肃杀之性",
+        "sourceChapters": [7, 8, 9, 10],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

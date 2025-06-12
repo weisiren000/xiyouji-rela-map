@@ -1,0 +1,33 @@
+{
+    "unid": "ca0070",
+    "isAlias": true,
+    "aliasOf": "c0009",
+    "basic": {
+        "name": "李耳",
+        "pinyin": "li_er",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_zun",
+            "name": "天尊",
+            "tier": 9,
+            "category": "taoist"
+        },
+        "rank": 9,
+        "power": 95,
+        "influence": 90,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "太上老君的本名，老子在人间时的真实姓名",
+        "tags": ["deity", "taoist", "sage", "real_name", "mortal_identity"],
+        "aliasType": "real_name",
+        "aliasContext": "太上老君在人间时的真实姓名，历史记载中的本名",
+        "sourceChapters": [7, 14, 15, 32, 33, 34, 35, 50, 52, 78, 87],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "unid": "c0057",
+    "basic": {
+        "name": "箕水豹",
+        "pinyin": "ji_shui_bao",
+        "aliases": ["箕宿", "东方青龙七宿之七", "箕星官"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 57,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["二十八宿星官"],
+        "group": ["东方青龙七宿"],
+        "superior": ["玉皇大帝"]
+    },
+    "locations": {
+        "residence": ["天庭", "星宫"],
+        "territory": ["东方星域"],
+        "appearances": ["天庭", "人间"]
+    },
+    "abilities": {
+        "weapons": ["星官法器"],
+        "skills": ["星辰神通", "箕宿星力", "水德法术"],
+        "specialties": ["东方青龙箕宿", "箕星之力", "水德神通"]
+    },
+    "metadata": {
+        "description": "二十八宿中东方青龙七宿之七，箕宿星官，掌管东方星域和水德之力",
+        "tags": ["deity", "star_deity", "twenty_eight_mansions", "eastern_azure_dragon", "water_element"],
+        "sourceChapters": [4, 5, 6, 7],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，东方青龙七宿的末尾",
+        "culturalBackground": "箕宿在二十八宿中代表东方青龙的尾端，与水德相关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

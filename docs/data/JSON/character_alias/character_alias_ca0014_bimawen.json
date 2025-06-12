@@ -1,0 +1,33 @@
+{
+    "unid": "ca0014",
+    "isAlias": true,
+    "aliasOf": "c0001",
+    "basic": {
+        "name": "弼马温",
+        "pinyin": "bi_ma_wen",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_luo_jin_xian",
+            "name": "大罗金仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 1,
+        "power": 95,
+        "influence": 90,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "孙悟空在天庭的官职，负责管理天马，后来成为他的耻辱称号",
+        "tags": ["protagonist", "immortal", "monkey", "alias", "official_title", "humiliating"],
+        "aliasType": "official_title",
+        "aliasContext": "天庭册封的官职，管理御马监，后来被孙悟空视为羞辱",
+        "sourceChapters": [4, 5],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "unid": "ca0082",
+    "isAlias": true,
+    "aliasOf": "c0012",
+    "basic": {
+        "name": "威灵显赫大将军",
+        "pinyin": "wei_ling_xian_he_da_jiang_jun",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yuan_shuai",
+            "name": "元帅",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 12,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "哪吒的威武称号，强调其威严灵验和显赫战功",
+        "tags": ["deity", "warrior", "honorific_title", "military"],
+        "aliasType": "honorific_title",
+        "aliasContext": "哪吒的威武称号，强调其威严灵验和显赫战功",
+        "sourceChapters": [4, 5, 6, 7, 83],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

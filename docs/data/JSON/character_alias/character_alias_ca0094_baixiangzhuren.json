@@ -1,0 +1,33 @@
+{
+    "unid": "ca0094",
+    "isAlias": true,
+    "aliasOf": "c0016",
+    "basic": {
+        "name": "白象主人",
+        "pinyin": "bai_xiang_zhu_ren",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 16,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "普贤菩萨的坐骑关系称号，白象精的主人",
+        "tags": ["deity", "buddhist", "mount_relationship", "master"],
+        "aliasType": "mount_relationship",
+        "aliasContext": "普贤菩萨作为白象精主人的关系称号",
+        "sourceChapters": [89, 90, 91],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

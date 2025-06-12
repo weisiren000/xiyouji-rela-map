@@ -1,0 +1,33 @@
+{
+    "unid": "ca0084",
+    "isAlias": true,
+    "aliasOf": "c0013",
+    "basic": {
+        "name": "天庭降魔大元帅",
+        "pinyin": "tian_ting_jiang_mo_da_yuan_shuai",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 8,
+            "category": "celestial"
+        },
+        "rank": 13,
+        "power": 88,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "托塔李天王的军事职务称号，负责天庭的降魔任务",
+        "tags": ["deity", "commander", "military_title", "demon_slayer"],
+        "aliasType": "military_title",
+        "aliasContext": "托塔李天王在天庭的军事职务称号，负责降魔任务",
+        "sourceChapters": [4, 5, 6, 7, 83],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

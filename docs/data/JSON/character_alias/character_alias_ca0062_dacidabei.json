@@ -1,0 +1,33 @@
+{
+    "unid": "ca0062",
+    "isAlias": true,
+    "aliasOf": "c0007",
+    "basic": {
+        "name": "大慈大悲观世音菩萨",
+        "pinyin": "da_ci_da_bei_guan_shi_yin_pu_sa",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的完整尊号，强调其大慈大悲的品德",
+        "tags": ["deity", "buddhist", "alias", "complete_honorific", "compassionate", "merciful"],
+        "aliasType": "complete_honorific",
+        "aliasContext": "强调观音菩萨大慈大悲品德的完整尊号",
+        "sourceChapters": [8, 11, 17, 22, 42, 46, 49, 52, 58, 64, 67, 77, 83, 86, 88, 91, 94],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

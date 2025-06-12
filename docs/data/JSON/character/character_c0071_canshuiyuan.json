@@ -1,0 +1,46 @@
+{
+    "unid": "c0071",
+    "basic": {
+        "name": "参水猿",
+        "pinyin": "can_shui_yuan",
+        "aliases": ["参宿", "西方白虎七宿之七", "参星官"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 71,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["二十八宿星官"],
+        "group": ["西方白虎七宿"],
+        "superior": ["玉皇大帝"]
+    },
+    "locations": {
+        "residence": ["天庭", "星宫"],
+        "territory": ["西方星域"],
+        "appearances": ["天庭", "人间"]
+    },
+    "abilities": {
+        "weapons": ["星官法器"],
+        "skills": ["星辰神通", "参宿星力", "水德法术"],
+        "specialties": ["西方白虎参宿", "参星之力", "水德神通"]
+    },
+    "metadata": {
+        "description": "二十八宿中西方白虎七宿之七，参宿星官，掌管西方星域和水德之力",
+        "tags": ["deity", "star_deity", "twenty_eight_mansions", "western_white_tiger", "water_element"],
+        "sourceChapters": [4, 5, 6, 7],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，西方白虎七宿的末尾",
+        "culturalBackground": "参宿在二十八宿中代表西方白虎的尾端，与水德相关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

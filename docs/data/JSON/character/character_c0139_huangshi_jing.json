@@ -1,0 +1,36 @@
+{
+    "unid": "c0139",
+    "basic": {
+        "name": "黄狮精",
+        "aliases": ["九灵元圣干孙子", "九灵元圣干孙", "豹头山妖王"],
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "tier": 4,
+            "category": "妖王级"
+        },
+        "rank": 139,
+        "power": 72,
+        "influence": 58,
+        "morality": "邪恶"
+    },
+    "relationships": {
+        "colleagues": ["南山大王"],
+        "subordinates": ["小妖兵"],
+        "superior": ["九灵元圣"],
+        "family": ["九灵元圣"]
+    },
+    "abilities": {
+        "weapons": ["狼牙棒"],
+        "skills": ["狮吼功", "变化术", "妖术"],
+        "specialties": ["威猛", "统领", "山寨管理"]
+    },
+    "metadata": {
+        "description": "豹头山虎口涧的黄狮精，是九灵元圣的干孙子，继承了狮族的威猛特质。",
+        "tags": ["妖怪", "狮子精", "豹头山", "九灵元圣后代"],
+        "culturalBackground": "狮族妖怪传说，体现了威猛与传承",
+        "religiousSignificance": "佛教护法坐骑的后代角色",
+        "literaryRole": "展现妖怪家族关系的角色"
+    }
+}

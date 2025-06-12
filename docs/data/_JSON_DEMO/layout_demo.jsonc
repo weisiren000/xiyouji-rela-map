@@ -1,0 +1,293 @@
+{
+    // 西游记关系图谱 - 布局配置Demo
+    // 基于优化后的四层架构设计
+    
+    "metadata": {
+        "version": "3.0",
+        "description": "西游记布局配置Demo - 展示多种布局算法和位置数据",
+        "layouts": 4,
+        "lastUpdated": "2024-01-01T00:00:00Z",
+        "structureVersion": "四层架构优化版"
+    },
+
+    // 布局算法配置
+    "layouts": {
+        "galaxySpiral": {
+            "name": "银河系螺旋",
+            "description": "四条旋臂的银河系布局，重要角色靠近中心",
+            "algorithm": "spiralArms",
+            "parameters": {
+                "center": [0, 0, 0],
+                "arms": 4,
+                "armSeparation": 90,
+                "spiralTightness": 0.3,
+                "radiusRange": [50, 500],
+                "heightVariation": 50,
+                "entityDistribution": {
+                    "centerEntities": ["c0006", "c0008"], // 如来、玉帝在中心
+                    "innerRing": ["c0001", "c0002", "c0007"], // 主角团在内圈
+                    "middleRing": ["c0003", "c0004", "c0005"], // 其他主角
+                    "outerRing": ["c0023", "c0024", "c0025"] // 妖怪在外圈
+                },
+                "armAssignment": {
+                    "arm1": "buddhist", // 佛教体系
+                    "arm2": "taoist",   // 道教体系
+                    "arm3": "journey",  // 取经团队
+                    "arm4": "demons"    // 妖魔体系
+                }
+            },
+            "visual": {
+                "showArms": true,
+                "armColor": "#444444",
+                "armOpacity": 0.3,
+                "centerGlow": true
+            }
+        },
+        "nineHeavens": {
+            "name": "九重天分层",
+            "description": "垂直分层的九重天布局，体现角色等级关系",
+            "algorithm": "layeredSpheres",
+            "parameters": {
+                "layers": 9,
+                "layerHeight": 100,
+                "baseRadius": 200,
+                "radiusDecay": 0.8,
+                "layerAssignment": {
+                    "9": ["c0006"], // 如来佛祖 - 最高层
+                    "8": ["c0008", "c0009"], // 玉帝、太上老君
+                    "7": ["c0007", "c0015", "c0016"], // 观音、文殊、普贤
+                    "6": ["c0011", "c0012", "c0013"], // 二郎神、哪吒、李天王
+                    "5": ["c0001"], // 孙悟空
+                    "4": ["c0002"], // 唐僧
+                    "3": ["c0003", "c0004"], // 八戒、沙僧
+                    "2": ["c0010", "c0021"], // 牛魔王、铁扇公主
+                    "1": ["c0023", "c0024", "c0025"] // 各种妖怪
+                },
+                "layerRotation": {
+                    "enabled": true,
+                    "speed": 0.1,
+                    "direction": "alternating"
+                }
+            },
+            "visual": {
+                "showLayers": true,
+                "layerColor": "#666666",
+                "layerOpacity": 0.2,
+                "heightIndicators": true
+            }
+        },
+        "journeyTimeline": {
+            "name": "取经路线时间轴",
+            "description": "按取经路线的线性布局，体现故事发展脉络",
+            "algorithm": "timelinePath",
+            "parameters": {
+                "pathLength": 1000,
+                "pathCurve": "bezier",
+                "milestoneSpacing": 50,
+                "chapterMapping": {
+                    "1-7": {
+                        "position": 0,
+                        "entities": ["c0001", "c0112"],
+                        "description": "孙悟空出世"
+                    },
+                    "8-12": {
+                        "position": 100,
+                        "entities": ["c0002", "c0001"],
+                        "description": "师徒相遇"
+                    },
+                    "13-22": {
+                        "position": 200,
+                        "entities": ["c0003", "c0004"],
+                        "description": "收八戒沙僧"
+                    },
+                    "23-86": {
+                        "position": 500,
+                        "entities": ["c0023", "c0024"],
+                        "description": "各种妖怪"
+                    },
+                    "87-100": {
+                        "position": 900,
+                        "entities": ["c0006"],
+                        "description": "到达西天"
+                    }
+                },
+                "pathStyle": {
+                    "width": 5,
+                    "color": "#FFD700",
+                    "glow": true
+                }
+            },
+            "visual": {
+                "showPath": true,
+                "showMilestones": true,
+                "milestoneColor": "#87CEEB",
+                "progressIndicator": true
+            }
+        },
+        "factionClusters": {
+            "name": "势力阵营聚类",
+            "description": "按势力分组的聚类布局，展现不同阵营关系",
+            "algorithm": "forceDirectedClusters",
+            "parameters": {
+                "clusters": {
+                    "buddhist": {
+                        "center": [-200, 100, 0],
+                        "entities": ["c0006", "c0007", "c0015", "c0016", "c0017", "c0018"],
+                        "color": "#9370DB",
+                        "radius": 150
+                    },
+                    "taoist": {
+                        "center": [0, 200, 0],
+                        "entities": ["c0008", "c0009", "c0011", "c0012", "c0013"],
+                        "color": "#FFD700",
+                        "radius": 120
+                    },
+                    "journeyTeam": {
+                        "center": [0, 0, 0],
+                        "entities": ["c0001", "c0002", "c0003", "c0004", "c0005"],
+                        "color": "#87CEEB",
+                        "radius": 100
+                    },
+                    "demons": {
+                        "center": [200, -100, 0],
+                        "entities": ["c0010", "c0021", "c0022", "c0023", "c0024"],
+                        "color": "#FF4500",
+                        "radius": 130
+                    }
+                },
+                "interClusterDistance": 300,
+                "intraClusterForce": 0.8,
+                "repulsionForce": 0.3
+            },
+            "visual": {
+                "showClusters": true,
+                "clusterBoundaries": true,
+                "clusterLabels": true
+            }
+        }
+    },
+
+    // 动态位置数据示例
+    "positions": {
+        "currentLayout": "galaxySpiral",
+        "entities": {
+            "c0001": { // 孙悟空
+                "position": [45.2, 12.8, -8.5],
+                "targetPosition": [50.0, 15.0, -10.0],
+                "velocity": [0.1, 0.05, -0.02],
+                "locked": false,
+                "visible": true,
+                "scale": 1.2,
+                "rotation": [0, 0.5, 0]
+            },
+            "c0002": { // 唐僧
+                "position": [-30.5, 8.2, 5.1],
+                "targetPosition": [-35.0, 10.0, 8.0],
+                "velocity": [-0.08, 0.03, 0.05],
+                "locked": false,
+                "visible": true,
+                "scale": 1.0,
+                "rotation": [0, 0, 0]
+            },
+            "c0006": { // 如来佛祖
+                "position": [0, 0, 0],
+                "targetPosition": [0, 0, 0],
+                "velocity": [0, 0, 0],
+                "locked": true,
+                "visible": true,
+                "scale": 2.0,
+                "rotation": [0, 0.2, 0]
+            },
+            "c0023": { // 白骨精
+                "position": [180.3, -45.7, 25.8],
+                "targetPosition": [200.0, -50.0, 30.0],
+                "velocity": [0.15, -0.08, 0.1],
+                "locked": false,
+                "visible": true,
+                "scale": 0.8,
+                "rotation": [0.1, 0.8, 0.2]
+            }
+        },
+        "animation": {
+            "enabled": true,
+            "duration": 2000,
+            "easing": "easeInOutCubic",
+            "stagger": 50,
+            "autoPlay": true
+        }
+    },
+
+    // 布局切换配置
+    "layoutTransitions": {
+        "galaxyToNineHeavens": {
+            "duration": 3000,
+            "easing": "easeInOutQuart",
+            "intermediateSteps": 5,
+            "preserveRelationships": true
+        },
+        "nineHeavensToTimeline": {
+            "duration": 2500,
+            "easing": "easeInOutCubic",
+            "intermediateSteps": 4,
+            "preserveRelationships": false
+        },
+        "timelineToFactions": {
+            "duration": 2000,
+            "easing": "easeInOutSine",
+            "intermediateSteps": 3,
+            "preserveRelationships": true
+        },
+        "factionsToGalaxy": {
+            "duration": 3500,
+            "easing": "easeInOutExpo",
+            "intermediateSteps": 6,
+            "preserveRelationships": true
+        }
+    },
+
+    // 交互配置
+    "interactionConfig": {
+        "camera": {
+            "autoRotate": true,
+            "autoRotateSpeed": 0.5,
+            "enableZoom": true,
+            "enablePan": true,
+            "enableRotate": true,
+            "minDistance": 50,
+            "maxDistance": 1000
+        },
+        "selection": {
+            "multiSelect": true,
+            "highlightConnected": true,
+            "fadeUnrelated": true,
+            "showDetails": true
+        },
+        "navigation": {
+            "smoothTransitions": true,
+            "focusOnSelect": true,
+            "returnToOverview": true,
+            "breadcrumbs": true
+        }
+    },
+
+    // 性能优化配置
+    "performanceConfig": {
+        "culling": {
+            "enabled": true,
+            "frustumCulling": true,
+            "distanceCulling": true,
+            "maxDistance": 800
+        },
+        "levelOfDetail": {
+            "enabled": true,
+            "distances": [100, 300, 500],
+            "entityLOD": ["high", "medium", "low"],
+            "relationshipLOD": ["full", "simplified", "hidden"]
+        },
+        "batching": {
+            "enabled": true,
+            "maxBatchSize": 100,
+            "instancedRendering": true
+        }
+    }
+}

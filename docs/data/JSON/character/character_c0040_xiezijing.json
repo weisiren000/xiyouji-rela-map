@@ -1,0 +1,45 @@
+{
+    "unid": "c0040",
+    "basic": {
+        "name": "蝎子精",
+        "pinyin": "xie_zi_jing",
+        "aliases": ["琵琶精", "如来佛克星", "毒敌山琵琶洞主"],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 40,
+        "power": 72,
+        "influence": 70,
+        "morality": "chaotic_evil"
+    },
+    "relationships": {
+        "enemies": ["c0001", "c0002", "c0003", "c0004", "c0006"],
+        "nemesis": ["昴日星官"]
+    },
+    "locations": {
+        "residence": ["琵琶洞", "毒敌山"],
+        "territory": ["毒敌山"],
+        "appearances": ["毒敌山", "琵琶洞", "西梁女国"]
+    },
+    "abilities": {
+        "weapons": ["三股钢叉", "倒马毒桩"],
+        "skills": ["毒针神通", "变化术", "琵琶法术"],
+        "specialties": ["倒马毒桩", "蝎毒攻击", "连如来都怕的毒针"]
+    },
+    "metadata": {
+        "description": "蝎子精，拥有倒马毒桩，连如来佛祖都曾被其蜇过，最终被昴日星官收服",
+        "tags": ["antagonist", "demon", "scorpion", "poison", "buddha_nemesis"],
+        "sourceChapters": [55],
+        "firstAppearance": 55,
+        "significance": "西梁女国情节的重要反派，展现了毒系攻击的威力",
+        "culturalBackground": "蝎子精体现了中国民间对毒虫的恐惧，倒马毒桩的威力连佛祖都畏惧",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

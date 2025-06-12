@@ -1,0 +1,33 @@
+{
+    "unid": "ca0027",
+    "isAlias": true,
+    "aliasOf": "c0003",
+    "basic": {
+        "name": "天蓬元帅",
+        "pinyin": "tian_peng_yuan_shuai",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_peng_yuan_shuai",
+            "name": "天蓬元帅",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 3,
+        "power": 75,
+        "influence": 60,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "猪八戒的前世身份，天庭水军统帅，掌管天河八万水兵",
+        "tags": ["protagonist", "immortal", "pig", "alias", "previous_life", "military", "commander"],
+        "aliasType": "previous_life",
+        "aliasContext": "在天庭时期的官职身份，统领天河水军的元帅",
+        "sourceChapters": [8, 9, 10, 11, 12],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

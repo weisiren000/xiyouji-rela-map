@@ -1,0 +1,46 @@
+{
+    "unid": "c0043",
+    "basic": {
+        "name": "赛太岁",
+        "pinyin": "sai_tai_sui",
+        "aliases": ["金毛犼", "观音坐骑", "朱紫国妖王"],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 43,
+        "power": 75,
+        "influence": 72,
+        "morality": "chaotic_evil"
+    },
+    "relationships": {
+        "master": ["c0007"],
+        "captive": ["金圣宫娘娘"],
+        "enemies": ["c0001", "c0002", "c0003", "c0004"]
+    },
+    "locations": {
+        "residence": ["麒麟山", "獬豸洞"],
+        "territory": ["麒麟山"],
+        "appearances": ["朱紫国", "麒麟山", "獬豸洞"]
+    },
+    "abilities": {
+        "weapons": ["宣花斧"],
+        "skills": ["金毛犼神通", "变化术", "妖王法术"],
+        "specialties": ["观音坐骑神力", "金毛威势", "紫金铃"]
+    },
+    "metadata": {
+        "description": "观音菩萨的坐骑金毛犼，在朱紫国作怪，掳走金圣宫娘娘",
+        "tags": ["antagonist", "demon", "mount", "kidnapper", "golden_fur"],
+        "sourceChapters": [68, 69, 70, 71],
+        "firstAppearance": 68,
+        "significance": "朱紫国情节的主要反派，体现了观音坐骑下凡为妖的情节",
+        "culturalBackground": "金毛犼是观音菩萨的坐骑，体现了佛教护法文化和坐骑神兽的威力",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

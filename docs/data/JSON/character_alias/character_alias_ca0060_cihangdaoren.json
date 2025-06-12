@@ -1,0 +1,33 @@
+{
+    "unid": "ca0060",
+    "isAlias": true,
+    "aliasOf": "c0007",
+    "basic": {
+        "name": "慈航道人",
+        "pinyin": "ci_hang_dao_ren",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的道教称号，慈航表示慈悲的渡船，救度众生",
+        "tags": ["deity", "buddhist", "alias", "taoist_name", "compassionate", "ferry"],
+        "aliasType": "taoist_name",
+        "aliasContext": "道教中对观音菩萨的称呼，慈航象征慈悲渡众",
+        "sourceChapters": [8, 11, 17],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

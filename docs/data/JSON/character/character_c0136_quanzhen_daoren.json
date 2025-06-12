@@ -1,0 +1,36 @@
+{
+    "unid": "c0136",
+    "basic": {
+        "name": "全真道人",
+        "aliases": ["青毛狮子精化身", "假道人", "乌鸡国假道人"],
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "tier": 4,
+            "category": "妖王级"
+        },
+        "rank": 136,
+        "power": 75,
+        "influence": 60,
+        "morality": "邪恶"
+    },
+    "relationships": {
+        "colleagues": ["文殊菩萨"],
+        "subordinates": ["小妖兵"],
+        "superior": ["文殊菩萨"],
+        "family": []
+    },
+    "abilities": {
+        "weapons": ["七星宝剑"],
+        "skills": ["变化术", "道法", "剑术"],
+        "specialties": ["伪装", "欺骗", "妖术"]
+    },
+    "metadata": {
+        "description": "青毛狮子精变化的假道人，在乌鸡国冒充全真道人，实际是文殊菩萨的坐骑下凡作乱。",
+        "tags": ["妖怪", "变化", "乌鸡国", "文殊坐骑"],
+        "culturalBackground": "道教文化中的假道人形象，体现了对伪善的批判",
+        "religiousSignificance": "佛教护法坐骑的考验角色",
+        "literaryRole": "揭示真假善恶的对比角色"
+    }
+}

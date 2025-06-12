@@ -1,0 +1,51 @@
+{
+    "unid": "c0113",
+    "isAlias": false,
+    "basic": {
+        "name": "嫦娥",
+        "pinyin": "chang_e",
+        "aliases": ["月宫仙子", "太阴星君", "月神", "广寒仙子"],
+        "type": "character",
+        "category": "immortal"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_zi",
+            "name": "仙子",
+            "tier": 6,
+            "category": "celestial"
+        },
+        "rank": 113,
+        "power": 75,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["王母娘娘", "七仙女", "织女"],
+        "subordinates": ["玉兔", "月宫仙女"],
+        "superior": ["玉皇大帝", "王母娘娘"],
+        "allies": ["天庭仙女"],
+        "companions": ["玉兔", "吴刚"]
+    },
+    "abilities": {
+        "weapons": ["月华神光", "广寒仙剑"],
+        "skills": ["月宫神通", "仙女法术", "月华之力", "美貌倾城"],
+        "specialties": ["掌管月宫", "月光普照", "仙女之美", "清冷仙气"]
+    },
+    "locations": {
+        "residence": ["月宫", "广寒宫"],
+        "territory": ["月球", "太阴星"],
+        "frequentPlaces": ["天庭", "月宫", "蟠桃会"]
+    },
+    "metadata": {
+        "description": "月宫仙子，美丽绝伦的仙女，居住在月宫广寒宫，掌管月亮",
+        "tags": ["immortal", "moon", "beauty", "celestial", "goddess"],
+        "sourceChapters": [95],
+        "firstAppearance": 95,
+        "culturalBackground": "中国传统月亮神话的核心人物，嫦娥奔月的主角",
+        "religiousSignificance": "道教和民间信仰中的月神，象征美丽和纯洁",
+        "literaryRole": "西游记中天庭仙女的代表，体现仙界的美好",
+        "mythOrigin": "源自嫦娥奔月的古老神话传说",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

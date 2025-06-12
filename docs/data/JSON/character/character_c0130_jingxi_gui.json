@@ -1,0 +1,50 @@
+{
+    "unid": "c0130",
+    "isAlias": false,
+    "basic": {
+        "name": "精细鬼",
+        "pinyin": "jing_xi_gui",
+        "aliases": ["细鬼", "精明鬼", "机灵鬼"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 3,
+            "category": "ghost"
+        },
+        "rank": 130,
+        "power": 35,
+        "influence": 25,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["伶俐虫", "其他小妖"],
+        "subordinates": [],
+        "superior": ["妖王"],
+        "allies": ["妖族"],
+        "enemies": ["取经团队"]
+    },
+    "abilities": {
+        "weapons": ["小妖法器"],
+        "skills": ["精细计谋", "小妖神通", "机灵应变", "鬼怪法术"],
+        "specialties": ["精明计算", "细致观察", "小聪明", "鬼魅之术"]
+    },
+    "locations": {
+        "residence": ["妖洞"],
+        "territory": ["妖怪领地"],
+        "frequentPlaces": ["妖洞", "巡逻路线"]
+    },
+    "metadata": {
+        "description": "机灵的小妖怪，善于精细计谋，是妖王手下的得力助手",
+        "tags": ["demon", "clever", "small", "ghost", "cunning"],
+        "sourceChapters": [多处出现],
+        "firstAppearance": 14,
+        "culturalBackground": "中国传统鬼怪文化的体现",
+        "religiousSignificance": "体现小妖的机智和狡猾",
+        "literaryRole": "西游记中常见的小妖角色类型",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "unid": "c0127",
+    "isAlias": false,
+    "basic": {
+        "name": "万圣公主",
+        "pinyin": "wan_sheng_gong_zhu",
+        "aliases": ["龙女", "碧波潭公主", "九头虫妻"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "gong_zhu",
+            "name": "公主",
+            "tier": 4,
+            "category": "dragon"
+        },
+        "rank": 127,
+        "power": 65,
+        "influence": 60,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["九头虫"],
+        "subordinates": ["侍女妖怪"],
+        "superior": ["万圣老龙"],
+        "allies": ["妖族"],
+        "family": ["万圣老龙(父)", "九头虫(夫)"],
+        "enemies": ["孙悟空", "取经团队"]
+    },
+    "abilities": {
+        "weapons": ["龙女宝剑", "水系法器"],
+        "skills": ["龙女神通", "水系法术", "变化之术", "美貌魅惑"],
+        "specialties": ["龙女之美", "水族法力", "公主威仪", "夫妻配合"]
+    },
+    "locations": {
+        "residence": ["碧波潭龙宫"],
+        "territory": ["碧波潭"],
+        "frequentPlaces": ["碧波潭", "龙宫内宫"]
+    },
+    "metadata": {
+        "description": "万圣老龙之女，九头虫之妻，美丽的龙族公主，参与盗取佛宝",
+        "tags": ["demon", "dragon", "princess", "beauty", "wife"],
+        "sourceChapters": [63],
+        "firstAppearance": 63,
+        "culturalBackground": "中国传统龙族文化中的公主形象",
+        "religiousSignificance": "体现龙族的家族观念和情感纽带",
+        "literaryRole": "西游记中龙族家庭的重要成员",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

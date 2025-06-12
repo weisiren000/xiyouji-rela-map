@@ -1,0 +1,718 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://xiyouji-rela-map.com/schemas/layout.json",
+  "title": "西游记布局配置Schema",
+  "description": "定义西游记关系图谱中布局配置的结构和验证规则",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    },
+    "layouts": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9]*$": {
+          "$ref": "#/definitions/layout"
+        }
+      },
+      "additionalProperties": false
+    },
+    "positions": {
+      "$ref": "#/definitions/positions"
+    },
+    "layoutTransitions": {
+      "$ref": "#/definitions/layoutTransitions"
+    },
+    "interactionConfig": {
+      "$ref": "#/definitions/interactionConfig"
+    },
+    "performanceConfig": {
+      "$ref": "#/definitions/performanceConfig"
+    }
+  },
+  "required": ["metadata", "layouts"],
+  "additionalProperties": false,
+  "definitions": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "layouts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "structureVersion": {
+          "type": "string"
+        }
+      },
+      "required": ["version", "description", "lastUpdated"],
+      "additionalProperties": false
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "algorithm": {
+          "type": "string",
+          "enum": ["spiralArms", "layeredSpheres", "timelinePath", "forceDirectedClusters"]
+        },
+        "parameters": {
+          "$ref": "#/definitions/layoutParameters"
+        },
+        "visual": {
+          "$ref": "#/definitions/layoutVisual"
+        }
+      },
+      "required": ["name", "description", "algorithm", "parameters"],
+      "additionalProperties": false
+    },
+    "layoutParameters": {
+      "type": "object",
+      "anyOf": [
+        { "$ref": "#/definitions/spiralArmsParameters" },
+        { "$ref": "#/definitions/layeredSpheresParameters" },
+        { "$ref": "#/definitions/timelinePathParameters" },
+        { "$ref": "#/definitions/forceDirectedClustersParameters" }
+      ]
+    },
+    "spiralArmsParameters": {
+      "type": "object",
+      "properties": {
+        "center": {
+          "$ref": "#/definitions/position3D"
+        },
+        "arms": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 8
+        },
+        "armSeparation": {
+          "type": "number",
+          "minimum": 30,
+          "maximum": 180
+        },
+        "spiralTightness": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 2
+        },
+        "radiusRange": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 10
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "heightVariation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "entityDistribution": {
+          "$ref": "#/definitions/entityDistribution"
+        },
+        "armAssignment": {
+          "$ref": "#/definitions/armAssignment"
+        }
+      },
+      "required": ["center", "arms", "radiusRange"],
+      "additionalProperties": false
+    },
+    "layeredSpheresParameters": {
+      "type": "object",
+      "properties": {
+        "layers": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 15
+        },
+        "layerHeight": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 500
+        },
+        "baseRadius": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 1000
+        },
+        "radiusDecay": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 1
+        },
+        "layerAssignment": {
+          "$ref": "#/definitions/layerAssignment"
+        },
+        "layerRotation": {
+          "$ref": "#/definitions/layerRotation"
+        }
+      },
+      "required": ["layers", "layerHeight", "baseRadius"],
+      "additionalProperties": false
+    },
+    "timelinePathParameters": {
+      "type": "object",
+      "properties": {
+        "pathLength": {
+          "type": "number",
+          "minimum": 500,
+          "maximum": 5000
+        },
+        "pathCurve": {
+          "type": "string",
+          "enum": ["linear", "bezier", "spline"]
+        },
+        "milestoneSpacing": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 200
+        },
+        "chapterMapping": {
+          "$ref": "#/definitions/chapterMapping"
+        },
+        "pathStyle": {
+          "$ref": "#/definitions/pathStyle"
+        }
+      },
+      "required": ["pathLength", "pathCurve"],
+      "additionalProperties": false
+    },
+    "forceDirectedClustersParameters": {
+      "type": "object",
+      "properties": {
+        "clusters": {
+          "$ref": "#/definitions/clusters"
+        },
+        "interClusterDistance": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 1000
+        },
+        "intraClusterForce": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 2
+        },
+        "repulsionForce": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 2
+        }
+      },
+      "required": ["clusters"],
+      "additionalProperties": false
+    },
+    "position3D": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "entityDistribution": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9]*$": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]\\d{4}$"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "armAssignment": {
+      "type": "object",
+      "patternProperties": {
+        "^arm\\d+$": {
+          "type": "string",
+          "enum": ["buddhist", "taoist", "journey", "demons"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "layerAssignment": {
+      "type": "object",
+      "patternProperties": {
+        "^\\d+$": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]\\d{4}$"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "layerRotation": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 2
+        },
+        "direction": {
+          "type": "string",
+          "enum": ["clockwise", "counterclockwise", "alternating"]
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": false
+    },
+    "chapterMapping": {
+      "type": "object",
+      "patternProperties": {
+        "^\\d+-\\d+$": {
+          "$ref": "#/definitions/chapterSection"
+        }
+      },
+      "additionalProperties": false
+    },
+    "chapterSection": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "number",
+          "minimum": 0
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]\\d{4}$"
+          }
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 100
+        }
+      },
+      "required": ["position", "entities"],
+      "additionalProperties": false
+    },
+    "pathStyle": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "glow": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "clusters": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9]*$": {
+          "$ref": "#/definitions/cluster"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cluster": {
+      "type": "object",
+      "properties": {
+        "center": {
+          "$ref": "#/definitions/position3D"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]\\d{4}$"
+          }
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "radius": {
+          "type": "number",
+          "minimum": 50,
+          "maximum": 500
+        }
+      },
+      "required": ["center", "entities"],
+      "additionalProperties": false
+    },
+    "layoutVisual": {
+      "type": "object",
+      "properties": {
+        "showArms": {
+          "type": "boolean"
+        },
+        "armColor": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "armOpacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "centerGlow": {
+          "type": "boolean"
+        },
+        "showLayers": {
+          "type": "boolean"
+        },
+        "layerColor": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "layerOpacity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "heightIndicators": {
+          "type": "boolean"
+        },
+        "showPath": {
+          "type": "boolean"
+        },
+        "showMilestones": {
+          "type": "boolean"
+        },
+        "milestoneColor": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "progressIndicator": {
+          "type": "boolean"
+        },
+        "showClusters": {
+          "type": "boolean"
+        },
+        "clusterBoundaries": {
+          "type": "boolean"
+        },
+        "clusterLabels": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "positions": {
+      "type": "object",
+      "properties": {
+        "currentLayout": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+        },
+        "entities": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]\\d{4}$": {
+              "$ref": "#/definitions/entityPosition"
+            }
+          },
+          "additionalProperties": false
+        },
+        "animation": {
+          "$ref": "#/definitions/positionAnimation"
+        }
+      },
+      "required": ["currentLayout"],
+      "additionalProperties": false
+    },
+    "entityPosition": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "$ref": "#/definitions/position3D"
+        },
+        "targetPosition": {
+          "$ref": "#/definitions/position3D"
+        },
+        "velocity": {
+          "$ref": "#/definitions/position3D"
+        },
+        "locked": {
+          "type": "boolean"
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "scale": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10
+        },
+        "rotation": {
+          "$ref": "#/definitions/position3D"
+        }
+      },
+      "required": ["position"],
+      "additionalProperties": false
+    },
+    "positionAnimation": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "duration": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 10000
+        },
+        "easing": {
+          "type": "string",
+          "enum": ["linear", "easeInOutCubic", "easeInOutQuart", "easeInOutSine"]
+        },
+        "stagger": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000
+        },
+        "autoPlay": {
+          "type": "boolean"
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": false
+    },
+    "layoutTransitions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9]*To[a-zA-Z][a-zA-Z0-9]*$": {
+          "$ref": "#/definitions/layoutTransition"
+        }
+      },
+      "additionalProperties": false
+    },
+    "layoutTransition": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 10000
+        },
+        "easing": {
+          "type": "string",
+          "enum": ["easeInOutQuart", "easeInOutCubic", "easeInOutSine", "easeInOutExpo"]
+        },
+        "intermediateSteps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "preserveRelationships": {
+          "type": "boolean"
+        }
+      },
+      "required": ["duration", "easing"],
+      "additionalProperties": false
+    },
+    "interactionConfig": {
+      "type": "object",
+      "properties": {
+        "camera": {
+          "$ref": "#/definitions/cameraConfig"
+        },
+        "selection": {
+          "$ref": "#/definitions/selectionConfig"
+        },
+        "navigation": {
+          "$ref": "#/definitions/navigationConfig"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cameraConfig": {
+      "type": "object",
+      "properties": {
+        "autoRotate": {
+          "type": "boolean"
+        },
+        "autoRotateSpeed": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 5
+        },
+        "enableZoom": {
+          "type": "boolean"
+        },
+        "enablePan": {
+          "type": "boolean"
+        },
+        "enableRotate": {
+          "type": "boolean"
+        },
+        "minDistance": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 200
+        },
+        "maxDistance": {
+          "type": "number",
+          "minimum": 500,
+          "maximum": 5000
+        }
+      },
+      "additionalProperties": false
+    },
+    "selectionConfig": {
+      "type": "object",
+      "properties": {
+        "multiSelect": {
+          "type": "boolean"
+        },
+        "highlightConnected": {
+          "type": "boolean"
+        },
+        "fadeUnrelated": {
+          "type": "boolean"
+        },
+        "showDetails": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "navigationConfig": {
+      "type": "object",
+      "properties": {
+        "smoothTransitions": {
+          "type": "boolean"
+        },
+        "focusOnSelect": {
+          "type": "boolean"
+        },
+        "returnToOverview": {
+          "type": "boolean"
+        },
+        "breadcrumbs": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "performanceConfig": {
+      "type": "object",
+      "properties": {
+        "culling": {
+          "$ref": "#/definitions/cullingConfig"
+        },
+        "levelOfDetail": {
+          "$ref": "#/definitions/lodConfig"
+        },
+        "batching": {
+          "$ref": "#/definitions/batchingConfig"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cullingConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "frustumCulling": {
+          "type": "boolean"
+        },
+        "distanceCulling": {
+          "type": "boolean"
+        },
+        "maxDistance": {
+          "type": "number",
+          "minimum": 200,
+          "maximum": 2000
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": false
+    },
+    "lodConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "distances": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 50
+          },
+          "minItems": 2,
+          "maxItems": 5
+        },
+        "entityLOD": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          }
+        },
+        "relationshipLOD": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["full", "simplified", "hidden"]
+          }
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": false
+    },
+    "batchingConfig": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "maxBatchSize": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 1000
+        },
+        "instancedRendering": {
+          "type": "boolean"
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": false
+    }
+  }
+}

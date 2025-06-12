@@ -1,0 +1,51 @@
+{
+    "unid": "c0117",
+    "isAlias": false,
+    "basic": {
+        "name": "太白金星",
+        "pinyin": "tai_bai_jin_xing",
+        "aliases": ["太白星君", "金星", "启明星", "长庚星"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_jun",
+            "name": "星君",
+            "tier": 6,
+            "category": "celestial"
+        },
+        "rank": 117,
+        "power": 78,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["众星君", "天庭大臣"],
+        "subordinates": ["金星部众"],
+        "superior": ["玉皇大帝"],
+        "allies": ["天庭", "孙悟空"],
+        "special": ["孙悟空(曾招安)"]
+    },
+    "abilities": {
+        "weapons": ["太白神剑", "金星法器"],
+        "skills": ["星君神通", "外交智慧", "和谐调解", "天庭礼仪"],
+        "specialties": ["外交使者", "和平调解", "星辰之力", "智慧谋略"]
+    },
+    "locations": {
+        "residence": ["太白星", "金星宫"],
+        "territory": ["太白星座"],
+        "frequentPlaces": ["天庭", "凌霄宝殿", "各方调解"]
+    },
+    "metadata": {
+        "description": "天庭重要大臣，智慧的外交使者，多次调解天庭与孙悟空的矛盾",
+        "tags": ["deity", "diplomat", "star", "wisdom", "peace"],
+        "sourceChapters": [4, 5, 6, 7],
+        "firstAppearance": 4,
+        "culturalBackground": "中国传统星宿文化中的重要星神",
+        "religiousSignificance": "道教中的重要星君，象征智慧和和谐",
+        "literaryRole": "西游记中重要的调解者，推动剧情发展",
+        "specialNote": "天庭中少数对孙悟空友善的神仙",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

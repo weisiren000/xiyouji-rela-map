@@ -1,0 +1,33 @@
+{
+    "unid": "ca0040",
+    "isAlias": true,
+    "aliasOf": "c0004",
+    "basic": {
+        "name": "沙师弟",
+        "pinyin": "sha_shi_di",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "juan_lian_da_jiang",
+            "name": "卷帘大将",
+            "tier": 5,
+            "category": "immortal"
+        },
+        "rank": 4,
+        "power": 65,
+        "influence": 50,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "孙悟空和猪八戒对沙僧的称呼，体现师兄弟关系",
+        "tags": ["protagonist", "immortal", "alias", "relationship", "brotherhood", "junior"],
+        "aliasType": "relationship_title",
+        "aliasContext": "师兄们对沙僧的亲切称呼，体现师兄弟情谊",
+        "sourceChapters": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 9,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

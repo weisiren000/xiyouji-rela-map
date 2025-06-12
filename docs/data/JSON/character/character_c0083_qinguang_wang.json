@@ -1,0 +1,50 @@
+{
+    "unid": "c0083",
+    "isAlias": false,
+    "basic": {
+        "name": "秦广王",
+        "pinyin": "qin_guang_wang",
+        "aliases": ["第一殿阎王", "秦广大王", "一殿阎君"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yan_wang",
+            "name": "阎王",
+            "tier": 6,
+            "category": "underworld"
+        },
+        "rank": 83,
+        "power": 70,
+        "influence": 75,
+        "morality": "lawful_neutral"
+    },
+    "relationships": {
+        "colleagues": ["楚江王", "宋帝王", "五官王", "阎罗王", "卞城王", "泰山王", "都市王", "平等王", "转轮王"],
+        "subordinates": ["判官", "牛头马面", "鬼差"],
+        "superior": ["地藏王菩萨", "酆都大帝"],
+        "allies": ["十殿阎王"]
+    },
+    "abilities": {
+        "weapons": ["阎王印", "生死簿"],
+        "skills": ["审判亡魂", "查验善恶", "地府神通", "生死判决"],
+        "specialties": ["初审亡魂", "善恶分辨", "地府管理", "因果审判"]
+    },
+    "locations": {
+        "residence": ["第一殿", "秦广王殿"],
+        "territory": ["地府第一殿", "初审大厅"],
+        "frequentPlaces": ["地府", "十殿阎王会议"]
+    },
+    "metadata": {
+        "description": "十殿阎王之首，负责初审所有亡魂，判断善恶，决定后续审判流程",
+        "tags": ["deity", "underworld", "judge", "first_trial", "soul_judgment"],
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "culturalBackground": "中国传统地府文化中的重要神祇，十殿阎王之首",
+        "religiousSignificance": "佛教和道教中的地府审判官，负责亡魂的初步审判",
+        "literaryRole": "西游记中地府体系的重要组成部分，体现因果报应思想",
+        "judgeScope": "负责初审所有亡魂，是地府审判体系的第一关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

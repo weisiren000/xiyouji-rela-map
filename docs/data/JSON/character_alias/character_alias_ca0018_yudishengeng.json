@@ -1,0 +1,33 @@
+{
+    "unid": "ca0018",
+    "isAlias": true,
+    "aliasOf": "c0002",
+    "basic": {
+        "name": "御弟圣僧",
+        "pinyin": "yu_di_sheng_seng",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_chan_zi",
+            "name": "金蝉子转世",
+            "tier": 7,
+            "category": "buddhist"
+        },
+        "rank": 2,
+        "power": 30,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "唐僧的官方称号，唐太宗御封的圣僧，代表朝廷出使西天",
+        "tags": ["protagonist", "monk", "alias", "official_title", "imperial", "envoy"],
+        "aliasType": "official_title",
+        "aliasContext": "唐太宗册封的官方称号，代表大唐朝廷的使者身份",
+        "sourceChapters": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

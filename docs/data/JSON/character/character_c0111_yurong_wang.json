@@ -1,0 +1,51 @@
+{
+    "unid": "c0111",
+    "isAlias": false,
+    "basic": {
+        "name": "禺狨王",
+        "pinyin": "yu_rong_wang",
+        "aliases": ["ventilation大圣", "禺狨大圣", "七大圣之一"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "mo_wang",
+            "name": "魔王",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 111,
+        "power": 67,
+        "influence": 71,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["齐天大圣孙悟空", "混世魔王", "蛟魔王", "鹏魔王", "狮驼王", "猕猴王"],
+        "subordinates": ["禺狨部众", "猿族手下"],
+        "superior": [],
+        "allies": ["七大圣"],
+        "enemies": ["天庭", "佛教"]
+    },
+    "abilities": {
+        "weapons": ["禺狨神棒", "ventilation法器"],
+        "skills": ["禺狨神通", "ventilation法术", "猿族变化", "敏捷身手"],
+        "specialties": ["通风换气", "禺狨之力", "猿族统领", "灵活机动"]
+    },
+    "locations": {
+        "residence": ["禺狨洞", "ventilation山"],
+        "territory": ["山林猿群", "猿族势力范围"],
+        "frequentPlaces": ["花果山", "七大圣聚会", "禺狨领地"]
+    },
+    "metadata": {
+        "description": "七大圣之一，ventilation大圣，禺狨成精的妖王，灵活敏捷，善于通风换气",
+        "tags": ["demon", "ape", "sworn_brother", "agility", "ventilation"],
+        "sourceChapters": [3, 4],
+        "firstAppearance": 3,
+        "culturalBackground": "中国传统猿猴文化和妖怪文化的体现",
+        "religiousSignificance": "代表妖族中的猿族势力，与猴族相近",
+        "literaryRole": "西游记中孙悟空的结拜兄弟，体现猿族的敏捷",
+        "specialNote": "七大圣中的禺狨王，与猴族关系密切",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

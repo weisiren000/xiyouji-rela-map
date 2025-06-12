@@ -1,0 +1,35 @@
+# Preferences
+- User prefers pnpm as package manager for JavaScript/TypeScript projects.
+- User prefers exact 1:1 replication of original designs and functionality, not simplified or modified versions.
+- User prefers to rebuild/modernize existing code in separate folders (like 'rebuild' folder) rather than modifying in place, and wants to see multiple solution options before choosing one.
+- User prefers to use Chinese as the primary language for code comments and documentation and memories.
+- User prefers JSONC demo files in docs/data/_JSON_DEMO folder and Schema files in docs/data/_JSON_Schema folder.
+- User prefers creating individual JSON files for each data entity AND every alias, resulting in a large number of files (e.g., 1593 instead of 471).
+- User prefers creating individual JSON files for each data entity based on demo structure and storing TODO lists in docs/data/JSON directory for project organization.
+- Character and character_alias JSON files must have identical data structures - either modify one to match the other to ensure consistency.
+- User wants to record/document something in the D:\codee\xiyouji-rela-map\_experiments directory, indicating they value the experiment tracking system for project documentation.
+- User wants progress recorded in the D:\codee\xiyouji-rela-map\_experiments directory, reinforcing their preference for using _experiments for project tracking.
+- 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
+- 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
+
+# Interests
+- User is interested in sphere distribution algorithms used in deepseek.html file for scene layout.
+- User is interested in exploring Glumpy (Python OpenGL library) for visualization demos.
+- User prefers organizing different technology experiments in separate folders under the reference directory.# Preferences
+- User prefers pnpm as package manager for JavaScript/TypeScript projects.
+- User prefers exact 1:1 replication of original designs and functionality, not simplified or modified versions.
+- User prefers to rebuild/modernize existing code in separate folders (like 'rebuild' folder) rather than modifying in place, and wants to see multiple solution options before choosing one.
+- User prefers to use Chinese as the primary language for code comments and documentation and memories.
+- User prefers JSONC demo files in docs/data/_JSON_DEMO folder and Schema files in docs/data/_JSON_Schema folder.
+- User prefers creating individual JSON files for each data entity AND every alias, resulting in a large number of files (e.g., 1593 instead of 471).
+- User prefers creating individual JSON files for each data entity based on demo structure and storing TODO lists in docs/data/JSON directory for project organization.
+- Character and character_alias JSON files must have identical data structures - either modify one to match the other to ensure consistency.
+- User wants to record/document something in the D:\codee\xiyouji-rela-map\_experiments directory, indicating they value the experiment tracking system for project documentation.
+- User wants progress recorded in the D:\codee\xiyouji-rela-map\_experiments directory, reinforcing their preference for using _experiments for project tracking.
+- 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
+- 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
+
+# Interests
+- User is interested in sphere distribution algorithms used in deepseek.html file for scene layout.
+- User is interested in exploring Glumpy (Python OpenGL library) for visualization demos.
+- User prefers organizing different technology experiments in separate folders under the reference directory.

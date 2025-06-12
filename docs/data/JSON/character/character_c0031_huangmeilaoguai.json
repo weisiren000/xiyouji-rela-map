@@ -1,0 +1,45 @@
+{
+    "unid": "c0031",
+    "basic": {
+        "name": "黄眉老怪",
+        "pinyin": "huang_mei_lao_guai",
+        "aliases": ["黄眉大王", "弥勒佛童子", "小雷音寺假佛"],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 31,
+        "power": 85,
+        "influence": 80,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "master": ["c0017"],
+        "enemies": ["c0001", "c0002", "c0003", "c0004"]
+    },
+    "locations": {
+        "residence": ["小雷音寺"],
+        "territory": ["小雷音寺"],
+        "appearances": ["小雷音寺"]
+    },
+    "abilities": {
+        "weapons": ["金铙", "人种袋"],
+        "skills": ["假佛法术", "变化术", "袋中乾坤"],
+        "specialties": ["弥勒佛法器", "小雷音寺主持", "假佛迷惑"]
+    },
+    "metadata": {
+        "description": "弥勒佛的童子，私自下界在小雷音寺冒充佛祖，用金铙和人种袋困住取经师徒",
+        "tags": ["antagonist", "demon", "buddhist_origin", "fake_buddha", "treasure_wielder"],
+        "sourceChapters": [65, 66],
+        "firstAppearance": 65,
+        "significance": "小雷音寺情节的主要反派，体现了真假佛法的对比",
+        "culturalBackground": "体现了佛教中童子护法的形象，以及对假冒佛法的批判",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "unid": "c0060",
+    "basic": {
+        "name": "女土蝠",
+        "pinyin": "nv_tu_fu",
+        "aliases": ["女宿", "北方玄武七宿之三", "女星官"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 60,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["二十八宿星官"],
+        "group": ["北方玄武七宿"],
+        "superior": ["玉皇大帝"]
+    },
+    "locations": {
+        "residence": ["天庭", "星宫"],
+        "territory": ["北方星域"],
+        "appearances": ["天庭", "人间"]
+    },
+    "abilities": {
+        "weapons": ["星官法器"],
+        "skills": ["星辰神通", "女宿星力", "土德法术"],
+        "specialties": ["北方玄武女宿", "女星之力", "土德神通"]
+    },
+    "metadata": {
+        "description": "二十八宿中北方玄武七宿之三，女宿星官，掌管北方星域和土德之力",
+        "tags": ["deity", "star_deity", "twenty_eight_mansions", "northern_black_tortoise", "earth_element"],
+        "sourceChapters": [4, 5, 6, 7],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，体现了中国古代天文学文化",
+        "culturalBackground": "女宿在二十八宿中代表北方玄武的一部分，与土德相关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

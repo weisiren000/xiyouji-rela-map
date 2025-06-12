@@ -1,0 +1,33 @@
+{
+    "unid": "ca0009",
+    "isAlias": true,
+    "aliasOf": "c0001",
+    "basic": {
+        "name": "猴哥",
+        "pinyin": "hou_ge",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_luo_jin_xian",
+            "name": "大罗金仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 1,
+        "power": 95,
+        "influence": 90,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "孙悟空的亲切称呼，师弟们和朋友们对他的昵称",
+        "tags": ["protagonist", "immortal", "monkey", "alias", "nickname", "affectionate"],
+        "aliasType": "nickname",
+        "aliasContext": "师弟们和朋友们的亲切称呼，体现了兄弟情谊",
+        "sourceChapters": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

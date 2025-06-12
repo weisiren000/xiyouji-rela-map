@@ -1,0 +1,51 @@
+{
+    "unid": "c0114",
+    "isAlias": false,
+    "basic": {
+        "name": "王母娘娘",
+        "pinyin": "wang_mu_niang_niang",
+        "aliases": ["西王母", "瑶池金母", "金母元君", "西华至妙之气"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "niang_niang",
+            "name": "娘娘",
+            "tier": 7,
+            "category": "supreme"
+        },
+        "rank": 114,
+        "power": 88,
+        "influence": 92,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["玉皇大帝"],
+        "subordinates": ["七仙女", "嫦娥", "织女", "众仙女"],
+        "superior": [],
+        "allies": ["天庭", "三清"],
+        "family": ["七仙女(义女)", "众仙女"]
+    },
+    "abilities": {
+        "weapons": ["王母神印", "瑶池宝镜"],
+        "skills": ["至高神通", "仙女统领", "蟠桃管理", "瑶池法力"],
+        "specialties": ["掌管仙女", "蟠桃园主", "瑶池圣母", "西方至尊"]
+    },
+    "locations": {
+        "residence": ["瑶池", "昆仑山", "西华宫"],
+        "territory": ["西方仙境", "蟠桃园"],
+        "frequentPlaces": ["天庭", "蟠桃会", "瑶池盛会"]
+    },
+    "metadata": {
+        "description": "天庭女仙之首，掌管蟠桃园和众仙女，地位崇高的西方圣母",
+        "tags": ["deity", "queen", "peach", "celestial", "supreme"],
+        "sourceChapters": [5, 7],
+        "firstAppearance": 5,
+        "culturalBackground": "中国传统神话中的西王母，道教重要女神",
+        "religiousSignificance": "道教中的至高女神，掌管长生不老",
+        "literaryRole": "西游记中天庭的重要统治者，蟠桃会的主办者",
+        "specialNote": "天庭中与玉皇大帝地位相当的女性统治者",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

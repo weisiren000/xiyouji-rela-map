@@ -1,0 +1,33 @@
+{
+    "unid": "ca0064",
+    "isAlias": true,
+    "aliasOf": "c0008",
+    "basic": {
+        "name": "昊天金阙无上至尊自然妙有弥罗至真玉皇上帝",
+        "pinyin": "hao_tian_jin_que_wu_shang_zhi_zun_zi_ran_miao_you_mi_luo_zhi_zhen_yu_huang_shang_di",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_di",
+            "name": "天帝",
+            "tier": 10,
+            "category": "celestial"
+        },
+        "rank": 8,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "玉皇大帝的完整正式称号，体现其至高无上的天庭地位",
+        "tags": ["deity", "emperor", "celestial", "formal_title", "complete_name"],
+        "aliasType": "complete_title",
+        "aliasContext": "玉皇大帝的完整正式称号，在正式场合和天庭文书中使用",
+        "sourceChapters": [1, 4, 7, 13, 15, 17, 22, 25, 33, 42, 51, 78, 86, 100],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

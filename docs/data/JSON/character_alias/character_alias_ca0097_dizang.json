@@ -1,0 +1,33 @@
+{
+    "unid": "ca0097",
+    "isAlias": true,
+    "aliasOf": "c0018",
+    "basic": {
+        "name": "地藏",
+        "pinyin": "di_zang",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 18,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "地藏王菩萨的简称，地藏表示大地宝藏",
+        "tags": ["deity", "buddhist", "short_name", "underworld"],
+        "aliasType": "short_name",
+        "aliasContext": "地藏王菩萨的简称，地藏表示大地宝藏",
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

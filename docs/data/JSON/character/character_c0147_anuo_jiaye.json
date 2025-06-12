@@ -1,0 +1,36 @@
+{
+    "unid": "c0147",
+    "basic": {
+        "name": "阿傩伽叶",
+        "aliases": ["大雷音寺尊者", "阿难", "迦叶", "二尊者"],
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "tier": 6,
+            "category": "尊者级"
+        },
+        "rank": 147,
+        "power": 85,
+        "influence": 80,
+        "morality": "至善"
+    },
+    "relationships": {
+        "colleagues": ["如来佛祖", "诸佛菩萨"],
+        "subordinates": ["罗汉"],
+        "superior": ["如来佛祖"],
+        "family": []
+    },
+    "abilities": {
+        "weapons": ["经卷", "法器"],
+        "skills": ["佛法精深", "经典传授", "智慧开示"],
+        "specialties": ["管理经典", "传法授经", "佛法解释"]
+    },
+    "metadata": {
+        "description": "大雷音寺的两位尊者，负责管理佛经和传法，是如来佛祖的重要助手。",
+        "tags": ["尊者", "大雷音寺", "佛经", "传法"],
+        "culturalBackground": "佛教中的重要尊者，体现了佛法传承",
+        "religiousSignificance": "佛教经典传承的核心人物",
+        "literaryRole": "取经成功的见证者和经典传授者"
+    }
+}

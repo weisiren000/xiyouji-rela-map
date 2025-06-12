@@ -1,0 +1,312 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://xiyouji-rela-map.com/schemas/entity.json",
+  "title": "西游记实体数据Schema",
+  "description": "定义西游记关系图谱中实体数据的结构和验证规则",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "demoEntities": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "structureVersion": {
+          "type": "string"
+        }
+      },
+      "required": ["version", "description", "lastUpdated"],
+      "additionalProperties": false
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/entity"
+      },
+      "minItems": 1
+    },
+    "entityTypes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+          "$ref": "#/definitions/entityType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "levelDefinitions": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+              "$ref": "#/definitions/levelDefinition"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "moralityTypes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["metadata", "entities"],
+  "additionalProperties": false,
+  "definitions": {
+    "entity": {
+      "type": "object",
+      "properties": {
+        "unid": {
+          "type": "string",
+          "pattern": "^[a-z]\\d{4}$",
+          "description": "唯一标识符，格式为字母+4位数字"
+        },
+        "basic": {
+          "$ref": "#/definitions/basicInfo"
+        },
+        "attributes": {
+          "$ref": "#/definitions/attributes"
+        },
+        "metadata": {
+          "$ref": "#/definitions/entityMetadata"
+        }
+      },
+      "required": ["unid", "basic"],
+      "additionalProperties": false
+    },
+    "basicInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "pinyin": {
+          "type": "string",
+          "pattern": "^[a-z_]+$",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50
+          },
+          "uniqueItems": true
+        },
+        "type": {
+          "type": "string",
+          "enum": ["character", "location", "artifact", "event", "item", "skill"]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      },
+      "required": ["name", "pinyin", "type", "category"],
+      "additionalProperties": false
+    },
+    "attributes": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "power": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "influence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "morality": {
+          "type": "string",
+          "enum": [
+            "lawful_good", "neutral_good", "chaotic_good",
+            "lawful_neutral", "true_neutral", "chaotic_neutral",
+            "lawful_evil", "neutral_evil", "chaotic_evil"
+          ]
+        },
+        "realm": {
+          "type": "string",
+          "enum": ["mortal_world", "heaven", "underworld", "buddhist_realm", "other"]
+        },
+        "dangerLevel": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "importance": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "powerLevel": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "rarity": {
+          "type": "string",
+          "enum": ["common", "uncommon", "rare", "epic", "legendary", "mythic"]
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[a-z]\\d{4}$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "level": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "category": {
+          "type": "string",
+          "enum": ["immortal", "buddhist", "taoist", "demon", "mortal", "divine"]
+        }
+      },
+      "required": ["id", "name", "tier", "category"],
+      "additionalProperties": false
+    },
+    "entityMetadata": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "uniqueItems": true
+        },
+        "sourceChapters": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "uniqueItems": true
+        },
+        "firstAppearance": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entityType": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z_]+$"
+          },
+          "uniqueItems": true
+        },
+        "requiredFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "optionalFields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": ["name", "description", "categories"],
+      "additionalProperties": false
+    },
+    "levelDefinition": {
+      "type": "object",
+      "properties": {
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        }
+      },
+      "required": ["tier", "name"],
+      "additionalProperties": false
+    }
+  }
+}

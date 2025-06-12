@@ -1,0 +1,36 @@
+{
+    "unid": "c0146",
+    "basic": {
+        "name": "接引佛祖",
+        "aliases": ["无底船夫", "接引如来", "西方接引佛"],
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "tier": 8,
+            "category": "佛祖级"
+        },
+        "rank": 146,
+        "power": 95,
+        "influence": 90,
+        "morality": "至善"
+    },
+    "relationships": {
+        "colleagues": ["如来佛祖", "准提道人"],
+        "subordinates": ["诸佛菩萨"],
+        "superior": [],
+        "family": []
+    },
+    "abilities": {
+        "weapons": ["接引幡", "莲花台"],
+        "skills": ["接引神通", "佛法无边", "度化众生"],
+        "specialties": ["接引众生", "渡化有缘", "佛法教化"]
+    },
+    "metadata": {
+        "description": "西方极乐世界的接引佛祖，负责接引有缘众生往生极乐，在取经路上以无底船夫身份出现。",
+        "tags": ["佛祖", "接引", "极乐世界", "船夫"],
+        "culturalBackground": "佛教净土宗的重要佛祖，体现了慈悲接引",
+        "religiousSignificance": "佛教接引往生的核心角色",
+        "literaryRole": "取经成功的最终见证者"
+    }
+}

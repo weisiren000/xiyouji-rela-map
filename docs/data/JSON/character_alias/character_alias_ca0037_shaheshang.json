@@ -1,0 +1,33 @@
+{
+    "unid": "ca0037",
+    "isAlias": true,
+    "aliasOf": "c0004",
+    "basic": {
+        "name": "沙和尚",
+        "pinyin": "sha_he_shang",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "juan_lian_da_jiang",
+            "name": "卷帘大将",
+            "tier": 5,
+            "category": "immortal"
+        },
+        "rank": 4,
+        "power": 65,
+        "influence": 50,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "沙僧的常用称呼，强调其和尚身份和沙姓",
+        "tags": ["protagonist", "immortal", "alias", "common_name", "monk", "surname"],
+        "aliasType": "common_name",
+        "aliasContext": "取经路上的常用称呼，结合姓氏和僧人身份",
+        "sourceChapters": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 9,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

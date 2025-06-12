@@ -1,0 +1,21 @@
+research_task:
+  description: 根据用户提供的研究主题，从指定的资料来源收集相关信息。
+  expected_output: 一份包含研究发现、关键概念和相关文本片段的总结报告。
+
+reporting_task:
+  description: 分析研究任务的输出，并生成一份结构化的报告，总结主要的研究结果。
+  expected_output: 一份格式清晰、内容完整的报告，可以直接用于后续的数据处理或可视化。
+  output_file: report.md
+
+process_data_task:
+  description: >
+    接收原始西游记文本数据作为输入。
+    执行以下步骤：
+    1. 清洗文本：移除特殊字符、标点符号（根据需要保留部分）、HTML标签等。
+    2. 分词和词性标注：对文本进行分词，并识别词语的词性。
+    3. 命名实体识别 (NER)：识别文本中的人名、地名、组织名等实体。
+    4. 关系抽取：识别实体之间的关系（例如，孙悟空是猪八戒的师兄）。
+    5. 将提取的实体和关系转换为结构化的格式，例如 JSON 或其他适合导入图数据库的格式。
+  expected_output: 一个包含提取出的实体（角色、地点等）及其属性，以及实体之间关系的结构化数据文件（例如 JSON 文件）。
+  agent: data_processor
+  # output_file: processed_data.json

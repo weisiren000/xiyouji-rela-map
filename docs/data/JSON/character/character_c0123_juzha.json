@@ -1,0 +1,50 @@
+{
+    "unid": "c0123",
+    "isAlias": false,
+    "basic": {
+        "name": "金吒",
+        "pinyin": "jin_zha",
+        "aliases": ["金吒太子", "大太子", "惠岸行者"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tai_zi",
+            "name": "太子",
+            "tier": 5,
+            "category": "warrior"
+        },
+        "rank": 123,
+        "power": 70,
+        "influence": 72,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["木吒", "哪吒"],
+        "subordinates": ["部下神将"],
+        "superior": ["托塔天王李靖", "观音菩萨"],
+        "allies": ["天庭", "佛教"],
+        "family": ["托塔天王李靖(父)", "木吒(弟)", "哪吒(弟)"]
+    },
+    "abilities": {
+        "weapons": ["金吒宝剑", "降魔杵"],
+        "skills": ["金系神通", "护法神力", "降魔法术", "佛门武艺"],
+        "specialties": ["观音护法", "降魔除妖", "金刚之力", "佛法护持"]
+    },
+    "locations": {
+        "residence": ["南海", "观音道场"],
+        "territory": ["南海普陀"],
+        "frequentPlaces": ["南海", "天庭", "观音身边"]
+    },
+    "metadata": {
+        "description": "托塔天王长子，观音菩萨的护法，金系神通强大",
+        "tags": ["deity", "protector", "buddhist", "eldest_son", "guardian"],
+        "sourceChapters": [6, 8],
+        "firstAppearance": 6,
+        "culturalBackground": "中国传统神话中的护法神",
+        "religiousSignificance": "佛教中观音菩萨的重要护法",
+        "literaryRole": "西游记中观音菩萨的得力助手",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

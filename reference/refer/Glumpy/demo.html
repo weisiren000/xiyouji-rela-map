@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glumpy风格 - 粒子星云演示</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1a1a2e, #16213e, #0f0f23);
+            font-family: 'Courier New', monospace;
+        }
+        
+        canvas {
+            display: block;
+            cursor: crosshair;
+        }
+        
+        .info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00ff88;
+            font-size: 14px;
+            text-shadow: 0 0 10px #00ff88;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #88aaff;
+            font-size: 12px;
+            text-shadow: 0 0 8px #88aaff;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        .title {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff6b6b;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ff6b6b;
+            pointer-events: none;
+            z-index: 100;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        GLUMPY PARTICLE SYSTEM<br>
+        粒子数量: <span id="particleCount">0</span><br>
+        FPS: <span id="fps">60</span><br>
+        鼠标位置: <span id="mousePos">0, 0</span>
+    </div>
+    
+    <div class="controls">
+        点击: 创建引力源<br>
+        移动: 粒子跟随<br>
+        空格: 重置场景
+    </div>
+    
+    <div class="title">GLUMPY DEMO</div>
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+    
+    <script type="module">
+        import * as THREE from 'three';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+        // === 场景初始化 ===
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+        
+        camera.position.z = 50;
+
+        // === 后处理效果 ===
+        const composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
+        composer.addPass(renderPass);
+        
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(window.innerWidth, window.innerHeight),
+            2.0,  // 强度
+            0.8,  // 半径
+            0.1   // 阈值
+        );
+        composer.addPass(bloomPass);
+
+        // === 粒子系统 ===
+        class GlumpyParticleSystem {
+            constructor() {
+                this.particles = [];
+                this.attractors = [];
+                this.maxParticles = 2000;
+                this.mouse = new THREE.Vector2();
+                this.mouseWorld = new THREE.Vector3();
+                
+                this.initParticles();
+                this.setupEventListeners();
+            }
+            
+            initParticles() {
+                // 创建粒子几何体
+                this.geometry = new THREE.BufferGeometry();
+                this.positions = new Float32Array(this.maxParticles * 3);
+                this.colors = new Float32Array(this.maxParticles * 3);
+                this.sizes = new Float32Array(this.maxParticles);
+                
+                // 初始化粒子数据
+                for (let i = 0; i < this.maxParticles; i++) {
+                    const particle = {
+                        position: new THREE.Vector3(
+                            (Math.random() - 0.5) * 100,
+                            (Math.random() - 0.5) * 100,
+                            (Math.random() - 0.5) * 20
+                        ),
+                        velocity: new THREE.Vector3(
+                            (Math.random() - 0.5) * 0.5,
+                            (Math.random() - 0.5) * 0.5,
+                            (Math.random() - 0.5) * 0.1
+                        ),
+                        life: Math.random(),
+                        maxLife: 1.0 + Math.random() * 2.0,
+                        size: Math.random() * 3 + 1
+                    };
+                    
+                    this.particles.push(particle);
+                    
+                    // 设置初始位置
+                    this.positions[i * 3] = particle.position.x;
+                    this.positions[i * 3 + 1] = particle.position.y;
+                    this.positions[i * 3 + 2] = particle.position.z;
+                    
+                    // 设置颜色（Glumpy风格的霓虹色）
+                    const hue = Math.random();
+                    const color = new THREE.Color().setHSL(hue, 0.8, 0.6);
+                    this.colors[i * 3] = color.r;
+                    this.colors[i * 3 + 1] = color.g;
+                    this.colors[i * 3 + 2] = color.b;
+                    
+                    this.sizes[i] = particle.size;
+                }
+                
+                // 设置几何体属性
+                this.geometry.setAttribute('position', new THREE.BufferAttribute(this.positions, 3));
+                this.geometry.setAttribute('color', new THREE.BufferAttribute(this.colors, 3));
+                this.geometry.setAttribute('size', new THREE.BufferAttribute(this.sizes, 1));
+                
+                // 创建着色器材质
+                this.material = new THREE.ShaderMaterial({
+                    uniforms: {
+                        time: { value: 0 },
+                        pointTexture: { value: this.createParticleTexture() }
+                    },
+                    vertexShader: `
+                        attribute float size;
+                        varying vec3 vColor;
+                        uniform float time;
+                        
+                        void main() {
+                            vColor = color;
+                            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+                            
+                            // 动态大小变化
+                            float dynamicSize = size * (1.0 + 0.3 * sin(time * 2.0 + position.x * 0.1));
+                            gl_PointSize = dynamicSize * (300.0 / -mvPosition.z);
+                            gl_Position = projectionMatrix * mvPosition;
+                        }
+                    `,
+                    fragmentShader: `
+                        uniform sampler2D pointTexture;
+                        varying vec3 vColor;
+                        
+                        void main() {
+                            vec2 coords = gl_PointCoord;
+                            float alpha = texture2D(pointTexture, coords).a;
+                            
+                            // 添加发光效果
+                            float dist = distance(coords, vec2(0.5));
+                            alpha *= 1.0 - smoothstep(0.0, 0.5, dist);
+                            
+                            gl_FragColor = vec4(vColor, alpha);
+                        }
+                    `,
+                    vertexColors: true,
+                    transparent: true,
+                    blending: THREE.AdditiveBlending,
+                    depthWrite: false
+                });
+                
+                this.points = new THREE.Points(this.geometry, this.material);
+                scene.add(this.points);
+            }
+            
+            createParticleTexture() {
+                const canvas = document.createElement('canvas');
+                canvas.width = 64;
+                canvas.height = 64;
+                const context = canvas.getContext('2d');
+                
+                const gradient = context.createRadialGradient(32, 32, 0, 32, 32, 32);
+                gradient.addColorStop(0, 'rgba(255,255,255,1)');
+                gradient.addColorStop(0.5, 'rgba(255,255,255,0.5)');
+                gradient.addColorStop(1, 'rgba(255,255,255,0)');
+                
+                context.fillStyle = gradient;
+                context.fillRect(0, 0, 64, 64);
+                
+                const texture = new THREE.CanvasTexture(canvas);
+                return texture;
+            }
+            
+            setupEventListeners() {
+                // 鼠标移动
+                window.addEventListener('mousemove', (event) => {
+                    this.mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                    this.mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    
+                    // 更新世界坐标
+                    this.mouseWorld.set(
+                        this.mouse.x * 50,
+                        this.mouse.y * 50,
+                        0
+                    );
+                    
+                    document.getElementById('mousePos').textContent = 
+                        `${Math.round(this.mouseWorld.x)}, ${Math.round(this.mouseWorld.y)}`;
+                });
+                
+                // 鼠标点击创建引力源
+                window.addEventListener('click', (event) => {
+                    this.attractors.push({
+                        position: this.mouseWorld.clone(),
+                        strength: 5.0,
+                        life: 3.0
+                    });
+                });
+                
+                // 空格键重置
+                window.addEventListener('keydown', (event) => {
+                    if (event.code === 'Space') {
+                        this.reset();
+                    }
+                });
+            }
+            
+            update(deltaTime) {
+                const time = performance.now() * 0.001;
+                this.material.uniforms.time.value = time;
+                
+                // 更新引力源
+                this.attractors = this.attractors.filter(attractor => {
+                    attractor.life -= deltaTime;
+                    return attractor.life > 0;
+                });
+                
+                // 更新粒子
+                for (let i = 0; i < this.particles.length; i++) {
+                    const particle = this.particles[i];
+                    
+                    // 重力和引力计算
+                    const force = new THREE.Vector3();
+                    
+                    // 鼠标引力
+                    const mouseForce = this.mouseWorld.clone().sub(particle.position);
+                    const mouseDist = mouseForce.length();
+                    if (mouseDist > 0) {
+                        mouseForce.normalize().multiplyScalar(2.0 / (mouseDist * 0.1 + 1));
+                        force.add(mouseForce);
+                    }
+                    
+                    // 引力源
+                    this.attractors.forEach(attractor => {
+                        const attractorForce = attractor.position.clone().sub(particle.position);
+                        const dist = attractorForce.length();
+                        if (dist > 0) {
+                            attractorForce.normalize().multiplyScalar(
+                                attractor.strength / (dist * 0.1 + 1)
+                            );
+                            force.add(attractorForce);
+                        }
+                    });
+                    
+                    // 应用力
+                    particle.velocity.add(force.multiplyScalar(deltaTime));
+                    particle.velocity.multiplyScalar(0.98); // 阻尼
+                    particle.position.add(particle.velocity.clone().multiplyScalar(deltaTime));
+                    
+                    // 边界检查
+                    if (Math.abs(particle.position.x) > 60) {
+                        particle.velocity.x *= -0.5;
+                        particle.position.x = Math.sign(particle.position.x) * 60;
+                    }
+                    if (Math.abs(particle.position.y) > 60) {
+                        particle.velocity.y *= -0.5;
+                        particle.position.y = Math.sign(particle.position.y) * 60;
+                    }
+                    
+                    // 更新颜色（基于速度）
+                    const speed = particle.velocity.length();
+                    const hue = (time * 0.1 + speed * 0.5) % 1.0;
+                    const color = new THREE.Color().setHSL(hue, 0.8, 0.5 + speed * 0.3);
+                    
+                    // 更新缓冲区
+                    this.positions[i * 3] = particle.position.x;
+                    this.positions[i * 3 + 1] = particle.position.y;
+                    this.positions[i * 3 + 2] = particle.position.z;
+                    
+                    this.colors[i * 3] = color.r;
+                    this.colors[i * 3 + 1] = color.g;
+                    this.colors[i * 3 + 2] = color.b;
+                }
+                
+                // 标记需要更新
+                this.geometry.attributes.position.needsUpdate = true;
+                this.geometry.attributes.color.needsUpdate = true;
+                
+                // 更新UI
+                document.getElementById('particleCount').textContent = this.particles.length;
+            }
+            
+            reset() {
+                this.attractors = [];
+                for (let i = 0; i < this.particles.length; i++) {
+                    const particle = this.particles[i];
+                    particle.position.set(
+                        (Math.random() - 0.5) * 100,
+                        (Math.random() - 0.5) * 100,
+                        (Math.random() - 0.5) * 20
+                    );
+                    particle.velocity.set(
+                        (Math.random() - 0.5) * 0.5,
+                        (Math.random() - 0.5) * 0.5,
+                        (Math.random() - 0.5) * 0.1
+                    );
+                }
+            }
+        }
+
+        // === 初始化系统 ===
+        const particleSystem = new GlumpyParticleSystem();
+        
+        // === FPS计算 ===
+        let lastTime = performance.now();
+        let frameCount = 0;
+        let fpsTime = 0;
+        
+        // === 动画循环 ===
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const currentTime = performance.now();
+            const deltaTime = (currentTime - lastTime) * 0.001;
+            lastTime = currentTime;
+            
+            // FPS计算
+            frameCount++;
+            fpsTime += deltaTime;
+            if (fpsTime >= 1.0) {
+                document.getElementById('fps').textContent = Math.round(frameCount / fpsTime);
+                frameCount = 0;
+                fpsTime = 0;
+            }
+            
+            // 更新粒子系统
+            particleSystem.update(deltaTime);
+            
+            // 渲染
+            composer.render();
+        }
+        
+        // === 窗口大小调整 ===
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // 启动动画
+        animate();
+    </script>
+</body>
+</html>

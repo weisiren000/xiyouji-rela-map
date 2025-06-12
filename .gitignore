@@ -7,5 +7,5 @@ venv
 **/.venv
 
 # node包
-**/node_module
-node_module
+**/node_modules
+node_modules

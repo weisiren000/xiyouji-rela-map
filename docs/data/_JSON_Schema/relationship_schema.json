@@ -1,0 +1,420 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://xiyouji-rela-map.com/schemas/relationship.json",
+  "title": "西游记关系数据Schema",
+  "description": "定义西游记关系图谱中关系数据的结构和验证规则",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "demoRelationships": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "structureVersion": {
+          "type": "string"
+        }
+      },
+      "required": ["version", "description", "lastUpdated"],
+      "additionalProperties": false
+    },
+    "relationshipTypes": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9]*$": {
+          "$ref": "#/definitions/relationshipType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/relationship"
+      },
+      "minItems": 0
+    },
+    "relationshipStatistics": {
+      "$ref": "#/definitions/statistics"
+    },
+    "queryIndexes": {
+      "$ref": "#/definitions/queryIndexes"
+    }
+  },
+  "required": ["metadata", "relationshipTypes", "relationships"],
+  "additionalProperties": false,
+  "definitions": {
+    "relationshipType": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "category": {
+          "type": "string",
+          "enum": ["hierarchy", "peer", "blood", "conflict", "cooperation"]
+        },
+        "defaultStrength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "bidirectional": {
+          "type": "boolean"
+        },
+        "visual": {
+          "$ref": "#/definitions/visualConfig"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        }
+      },
+      "required": ["name", "category", "defaultStrength", "bidirectional"],
+      "additionalProperties": false
+    },
+    "relationship": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^r\\d{4}$",
+          "description": "关系唯一标识符，格式为r+4位数字"
+        },
+        "from": {
+          "type": "string",
+          "pattern": "^[a-z]\\d{4}$",
+          "description": "源实体ID"
+        },
+        "to": {
+          "type": "string",
+          "pattern": "^[a-z]\\d{4}$",
+          "description": "目标实体ID"
+        },
+        "type": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9]*$",
+          "description": "关系类型"
+        },
+        "strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "关系强度"
+        },
+        "bidirectional": {
+          "type": "boolean",
+          "description": "是否为双向关系"
+        },
+        "attributes": {
+          "$ref": "#/definitions/relationshipAttributes"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^e\\d{4}$"
+          },
+          "uniqueItems": true,
+          "description": "相关事件ID列表"
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^l\\d{4}$"
+          },
+          "uniqueItems": true,
+          "description": "相关地点ID列表"
+        },
+        "metadata": {
+          "$ref": "#/definitions/relationshipMetadata"
+        }
+      },
+      "required": ["id", "from", "to", "type", "strength", "bidirectional"],
+      "additionalProperties": false
+    },
+    "relationshipAttributes": {
+      "type": "object",
+      "properties": {
+        "establishedChapter": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "conflictChapter": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "resolved", "complicated", "broken", "temporary"]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "relationshipType": {
+          "type": "string",
+          "enum": ["spouse", "parentChild", "sibling", "master", "servant"]
+        },
+        "relationshipDynamics": {
+          "type": "string",
+          "enum": ["competitiveButLoyal", "harmonious", "tense", "supportive"]
+        },
+        "emotionalBond": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "trustLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "conflictFrequency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cooperationLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "hostilityLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "threatLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "resolution": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "protectiveInstinct": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "hierarchyLevel": {
+          "type": "string",
+          "enum": ["emperorToGeneral", "emperorToMarshal", "masterToDisciple"]
+        },
+        "loyaltyLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "obedienceLevel": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "mutualRespect": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "keyEvents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "relationshipMetadata": {
+      "type": "object",
+      "properties": {
+        "importance": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-zA-Z_][a-zA-Z0-9_]*$"
+          },
+          "uniqueItems": true
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
+    "visualConfig": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        },
+        "style": {
+          "type": "string",
+          "enum": ["solid", "dashed", "dotted"]
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10
+        },
+        "animation": {
+          "type": "string",
+          "enum": ["pulse", "flow", "steady", "spark", "fade"]
+        }
+      },
+      "required": ["color", "style", "width"],
+      "additionalProperties": false
+    },
+    "statistics": {
+      "type": "object",
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "byType": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9]*$": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "byStrength": {
+          "type": "object",
+          "properties": {
+            "high": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "low": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "byStatus": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z_]+$": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "byImportance": {
+          "type": "object",
+          "properties": {
+            "critical": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "high": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "low": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "queryIndexes": {
+      "type": "object",
+      "properties": {
+        "byEntity": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z]\\d{4}$": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^r\\d{4}$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "byChapter": {
+          "type": "object",
+          "patternProperties": {
+            "^\\d+$": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^r\\d{4}$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "byType": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z][a-zA-Z0-9]*$": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^r\\d{4}$"
+              },
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+    "unid": "ca0092",
+    "isAlias": true,
+    "aliasOf": "c0015",
+    "basic": {
+        "name": "智慧菩萨",
+        "pinyin": "zhi_hui_pu_sa",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 15,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "文殊菩萨的功能称号，强调其智慧第一的特点",
+        "tags": ["deity", "buddhist", "functional_title", "wisdom"],
+        "aliasType": "functional_title",
+        "aliasContext": "文殊菩萨的功能称号，强调其智慧第一的特点",
+        "sourceChapters": [89, 90, 91],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

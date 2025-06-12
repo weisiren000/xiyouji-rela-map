@@ -1,25 +1,14 @@
 {
-    // 西游记关系图谱 - 关系数据示例
-    // 这是一个示例文件，展示如何构建完整的关系数据
-    
+    // 西游记关系图谱 - 核心关系数据示例 (优化版)
+    // 基于第一性原理重新设计的关系数据结构
+
     "metadata": {
-        "version": "2.0",
-        "description": "西游记关系图谱关系数据示例",
-        "total_relationships": 50,
-        "relationship_types": [
-            "master_disciple",    // 师徒关系
-            "fellow_disciple",    // 同门关系
-            "family",            // 家族关系
-            "friend",            // 朋友关系
-            "enemy",             // 敌对关系
-            "ally",              // 同盟关系
-            "rival",             // 竞争关系
-            "subordinate",       // 上下级关系
-            "owns",              // 拥有关系
-            "lives_in",          // 居住关系
-            "born_in",           // 出生地关系
-            "participates_in"    // 参与事件关系
-        ]
+        "version": "3.0",
+        "description": "西游记核心人物关系数据 - 优化版",
+        "total_relationships": 25,
+        "last_updated": "2024-01-01T00:00:00Z",
+        "data_source": "《西游记》原著分析",
+        "optimization_notes": "基于关注点分离原则重构，提高数据一致性和可维护性"
     },
     
     "relationships": [

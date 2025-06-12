@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑客帝国 - 数字雨</title>
+    <style>
+        /* CSS样式确保<canvas>元素铺满整个屏幕 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* 隐藏滚动条 */
+            background-color: #000; /* 背景设为黑色 */
+        }
+        canvas {
+            display: block; /* 将canvas设置为块级元素 */
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML5 <canvas> 元素，我们将在这里绘制数字雨 -->
+    <canvas id="MatrixCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('MatrixCanvas');
+        const context = canvas.getContext('2d');
+
+        // 设置canvas的宽度和高度为窗口的尺寸
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // 要使用的字符，这里是二进制
+        const binary = "01";
+        
+        // 字体大小和列数
+        const fontSize = 16;
+        const columns = Math.floor(canvas.width / fontSize);
+
+        // drops数组用于追踪每一列的y坐标
+        // 每个元素代表一列，其值是该列下一个字符的y坐标
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+
+        // 绘制函数，会周期性地被调用以生成动画
+        function draw() {
+            // 绘制一个半透明的黑色矩形，覆盖整个画布
+            // 这就是实现"残影"效果的关键
+            // alpha值(0.05)越小，残影越长
+            context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 设置字体颜色和样式
+            context.fillStyle = '#0F0'; // 经典的绿色
+            context.font = fontSize + 'px monospace';
+
+            // 遍历每一列
+            for (let i = 0; i < drops.length; i++) {
+                // 从二进制字符集中随机选择一个字符
+                const text = binary.charAt(Math.floor(Math.random() * binary.length));
+                
+                // 在(x, y)坐标处绘制字符
+                // x坐标是列索引 * 字体大小
+                // y坐标是该列的当前y值 * 字体大小
+                context.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // 如果字符已经移动到屏幕底部
+                // 用一个随机数判断是否重置该列，这会让雨滴看起来更错落有致
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0; // 将y坐标重置到顶部
+                }
+
+                // y坐标下移，为下一帧做准备
+                drops[i]++;
+            }
+        }
+
+        // 设置定时器，每50毫秒调用一次draw函数来更新画布
+        // 这个值可以调整雨的下落速度，值越大，下落越慢
+        setInterval(draw, 50);
+
+    </script>
+</body>
+</html>

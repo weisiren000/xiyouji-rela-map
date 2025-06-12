@@ -1,0 +1,33 @@
+{
+    "unid": "ca0058",
+    "isAlias": true,
+    "aliasOf": "c0007",
+    "basic": {
+        "name": "南海观音",
+        "pinyin": "nan_hai_guan_yin",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的地域称号，强调其居住在南海普陀山",
+        "tags": ["deity", "buddhist", "alias", "location_title", "residence", "mountain"],
+        "aliasType": "location_title",
+        "aliasContext": "根据居住地南海普陀山而得的地域性称号",
+        "sourceChapters": [8, 11, 17, 22, 42, 46, 49, 52, 58, 64, 67, 77, 83, 86, 88, 91, 94],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

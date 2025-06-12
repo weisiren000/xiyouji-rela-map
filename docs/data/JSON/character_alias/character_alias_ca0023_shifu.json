@@ -1,0 +1,33 @@
+{
+    "unid": "ca0023",
+    "isAlias": true,
+    "aliasOf": "c0002",
+    "basic": {
+        "name": "师父",
+        "pinyin": "shi_fu",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_chan_zi",
+            "name": "金蝉子转世",
+            "tier": 7,
+            "category": "buddhist"
+        },
+        "rank": 2,
+        "power": 30,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "三个徒弟对唐僧的日常称呼，体现师徒关系",
+        "tags": ["protagonist", "monk", "alias", "master", "teacher", "relationship"],
+        "aliasType": "relationship_title",
+        "aliasContext": "孙悟空、猪八戒、沙僧对唐僧的师父称呼",
+        "sourceChapters": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

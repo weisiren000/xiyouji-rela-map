@@ -1,0 +1,33 @@
+{
+    "unid": "ca0052",
+    "isAlias": true,
+    "aliasOf": "c0006",
+    "basic": {
+        "name": "佛祖",
+        "pinyin": "fo_zu",
+        "aliases": [],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "如来佛祖的通俗称呼，佛祖表示佛教的祖师",
+        "tags": ["deity", "buddhist", "alias", "common_title", "ancestor", "leader"],
+        "aliasType": "common_title",
+        "aliasContext": "民间和弟子们对如来佛祖的常用称呼",
+        "sourceChapters": [7, 10, 98, 99, 100],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

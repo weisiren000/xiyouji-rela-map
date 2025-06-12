@@ -1,0 +1,33 @@
+{
+    "unid": "ca0019",
+    "isAlias": true,
+    "aliasOf": "c0002",
+    "basic": {
+        "name": "江流儿",
+        "pinyin": "jiang_liu_er",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_chan_zi",
+            "name": "金蝉子转世",
+            "tier": 7,
+            "category": "buddhist"
+        },
+        "rank": 2,
+        "power": 30,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "唐僧的幼名，因被放在江中漂流而得名，后被金山寺法明长老收养",
+        "tags": ["protagonist", "monk", "alias", "childhood_name", "orphan", "rescued"],
+        "aliasType": "childhood_name",
+        "aliasContext": "幼年时期的名字，因在江中漂流被救而得名",
+        "sourceChapters": [7, 8, 9, 10, 11],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

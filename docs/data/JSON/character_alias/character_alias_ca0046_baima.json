@@ -1,0 +1,33 @@
+{
+    "unid": "ca0046",
+    "isAlias": true,
+    "aliasOf": "c0005",
+    "basic": {
+        "name": "白马",
+        "pinyin": "bai_ma",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "xi_hai_san_tai_zi",
+            "name": "西海三太子",
+            "tier": 6,
+            "category": "divine"
+        },
+        "rank": 5,
+        "power": 70,
+        "influence": 40,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "白龙马的简单称呼，强调其马的外形和白色特征",
+        "tags": ["protagonist", "horse", "alias", "simple", "color", "mount"],
+        "aliasType": "simple_name",
+        "aliasContext": "日常生活中的简单称呼，强调其作为坐骑的马形态",
+        "sourceChapters": [15, 16, 17, 18, 19, 20],
+        "firstAppearance": 15,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "unid": "c0006",
+    "isAlias": false,
+    "basic": {
+        "name": "如来佛祖",
+        "pinyin": "ru_lai_fo_zu",
+        "aliases": [
+            "释迦牟尼佛",
+            "世尊",
+            "佛祖",
+            "如来",
+            "大日如来",
+            "佛陀",
+            "世尊如来"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "佛教最高领袖，西方极乐世界的教主，拥有无边法力。曾将孙悟空压在五行山下，最终主持西天取经大业的完成。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "supreme_leader",
+            "omnipotent",
+            "wise",
+            "compassionate",
+            "judge",
+            "teacher",
+            "enlightened",
+            "divine"
+        ],
+        "sourceChapters": [
+            7, 10, 98, 99, 100
+        ],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

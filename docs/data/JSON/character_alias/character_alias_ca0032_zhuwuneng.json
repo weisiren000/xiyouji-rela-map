@@ -1,0 +1,33 @@
+{
+    "unid": "ca0032",
+    "isAlias": true,
+    "aliasOf": "c0003",
+    "basic": {
+        "name": "猪悟能",
+        "pinyin": "zhu_wu_neng",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_peng_yuan_shuai",
+            "name": "天蓬元帅",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 3,
+        "power": 75,
+        "influence": 60,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "猪八戒的法名，悟能表示觉悟能力，体现佛教修行的含义",
+        "tags": ["protagonist", "immortal", "pig", "alias", "dharma_name", "buddhist"],
+        "aliasType": "dharma_name",
+        "aliasContext": "观音菩萨赐予的法名，悟能代表觉悟的能力",
+        "sourceChapters": [8, 9, 10, 11, 12],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

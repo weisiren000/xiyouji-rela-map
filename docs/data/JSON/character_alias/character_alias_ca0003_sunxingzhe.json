@@ -1,0 +1,33 @@
+{
+    "unid": "ca0003",
+    "isAlias": true,
+    "aliasOf": "c0001",
+    "basic": {
+        "name": "孙行者",
+        "pinyin": "sun_xing_zhe",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_luo_jin_xian",
+            "name": "大罗金仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 1,
+        "power": 95,
+        "influence": 90,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "孙悟空的别名，取经路上的正式称呼，体现了修行者的身份",
+        "tags": ["protagonist", "immortal", "monkey", "alias", "formal_name", "pilgrim"],
+        "aliasType": "formal_name",
+        "aliasContext": "西天取经时期的正式称呼，体现了修行求道的身份转变",
+        "sourceChapters": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

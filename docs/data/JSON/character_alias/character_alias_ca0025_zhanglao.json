@@ -1,0 +1,33 @@
+{
+    "unid": "ca0025",
+    "isAlias": true,
+    "aliasOf": "c0002",
+    "basic": {
+        "name": "长老",
+        "pinyin": "zhang_lao",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_chan_zi",
+            "name": "金蝉子转世",
+            "tier": 7,
+            "category": "buddhist"
+        },
+        "rank": 2,
+        "power": 30,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "佛教中对德高望重僧人的尊称，体现唐僧的地位",
+        "tags": ["protagonist", "monk", "alias", "elder", "respected", "buddhist"],
+        "aliasType": "religious_honorific",
+        "aliasContext": "佛教中对高僧的通用尊称",
+        "sourceChapters": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "unid": "c0118",
+    "isAlias": false,
+    "basic": {
+        "name": "二郎神",
+        "pinyin": "er_lang_shen",
+        "aliases": ["杨戬", "二郎真君", "显圣真君", "清源妙道真君"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "zhen_jun",
+            "name": "真君",
+            "tier": 7,
+            "category": "supreme"
+        },
+        "rank": 118,
+        "power": 85,
+        "influence": 88,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["哪吒", "四大天王"],
+        "subordinates": ["梅山六兄弟", "哮天犬"],
+        "superior": ["玉皇大帝"],
+        "allies": ["天庭", "灌江口"],
+        "family": ["玉皇大帝(舅舅)", "瑶姬(母亲)"]
+    },
+    "abilities": {
+        "weapons": ["三尖两刃刀", "弹弓"],
+        "skills": ["八九玄功", "七十二变", "三眼神通", "法天象地"],
+        "specialties": ["第三只眼", "变化无穷", "武艺高强", "神通广大"]
+    },
+    "locations": {
+        "residence": ["灌江口", "二郎庙"],
+        "territory": ["灌江口地区"],
+        "frequentPlaces": ["天庭", "人间", "战场"]
+    },
+    "metadata": {
+        "description": "玉皇大帝的外甥，拥有第三只眼的强大战神，与孙悟空实力相当",
+        "tags": ["deity", "warrior", "third_eye", "transformation", "powerful"],
+        "sourceChapters": [6, 63],
+        "firstAppearance": 6,
+        "culturalBackground": "中国传统神话中的重要战神",
+        "religiousSignificance": "道教和民间信仰中的重要神祇",
+        "literaryRole": "西游记中与孙悟空势均力敌的强大对手",
+        "specialNote": "天庭中少数能与孙悟空匹敌的战神",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "unid": "ca0031",
+    "isAlias": true,
+    "aliasOf": "c0003",
+    "basic": {
+        "name": "呆子",
+        "pinyin": "dai_zi",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_peng_yuan_shuai",
+            "name": "天蓬元帅",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 3,
+        "power": 75,
+        "influence": 60,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "孙悟空对猪八戒的戏称，形容其憨厚愚钝的性格",
+        "tags": ["protagonist", "immortal", "pig", "alias", "nickname", "teasing"],
+        "aliasType": "teasing_nickname",
+        "aliasContext": "孙悟空对猪八戒的调侃称呼，体现其憨厚性格",
+        "sourceChapters": [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

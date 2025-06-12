@@ -1,0 +1,33 @@
+{
+    "unid": "ca0048",
+    "isAlias": true,
+    "aliasOf": "c0005",
+    "basic": {
+        "name": "敖烈",
+        "pinyin": "ao_lie",
+        "aliases": [],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "xi_hai_san_tai_zi",
+            "name": "西海三太子",
+            "tier": 6,
+            "category": "divine"
+        },
+        "rank": 5,
+        "power": 70,
+        "influence": 40,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "白龙马的本名，敖是龙族的姓氏，烈表示刚烈的性格",
+        "tags": ["protagonist", "dragon", "alias", "given_name", "royal", "fierce"],
+        "aliasType": "given_name",
+        "aliasContext": "龙族的本名，敖为龙族姓氏，烈表示性格特征",
+        "sourceChapters": [15, 16, 17],
+        "firstAppearance": 15,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}
