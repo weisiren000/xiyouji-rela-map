@@ -1,0 +1,48 @@
+{
+    "unid": "ca0135",
+    "isAlias": true,
+    "basic": {
+        "name": "黄眉大王",
+        "pinyin": "huang_mei_da_wang",
+        "aliases": [
+            "黄眉老怪",
+            "弥勒佛童子",
+            "小雷音寺假佛"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 31,
+        "power": 85,
+        "influence": 80,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "黄眉老怪在小雷音寺自立为王时的称号，强调其妖王地位和统治威严。'黄眉'指其标志性的黄色眉毛特征，'大王'则体现了其在小雷音寺的统治地位。这个称号去掉了'老怪'的贬义色彩，突出了其作为妖王的威严和权势。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "buddhist_origin",
+            "fake_buddha",
+            "treasure_wielder",
+            "royal_title",
+            "self_proclaimed",
+            "妖王称号",
+            "统治威严",
+            "黄眉特征"
+        ],
+        "sourceChapters": [
+            65, 66
+        ],
+        "firstAppearance": 65,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0031"
+    }
+}

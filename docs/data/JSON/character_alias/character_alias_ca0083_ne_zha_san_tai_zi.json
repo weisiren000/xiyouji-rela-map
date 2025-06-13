@@ -1,0 +1,42 @@
+{
+    "unid": "ca0083",
+    "isAlias": true,
+    "basic": {
+        "name": "哪吒三太子",
+        "pinyin": "ne_zha_san_tai_zi",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yuan_shuai",
+            "name": "元帅",
+            "tier": 6,
+            "category": "divine"
+        },
+        "rank": 12,
+        "power": 85,
+        "influence": 70,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "哪吒的完整称呼，结合了其名字和身份。在西游记中是最常用的称呼方式，既体现了其个人身份，又强调了其作为李天王三太子的家族地位。",
+        "tags": [
+            "deity",
+            "young_warrior",
+            "full_title",
+            "three_heads_six_arms",
+            "fire_wheels",
+            "hot_tempered",
+            "righteous",
+            "powerful",
+            "prince",
+            "complete_name"
+        ],
+        "sourceChapters": [4, 6, 83, 87],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0012"
+    }
+}

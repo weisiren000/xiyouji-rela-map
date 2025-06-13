@@ -1,0 +1,42 @@
+{
+    "unid": "ca0037",
+    "isAlias": true,
+    "basic": {
+        "name": "木母",
+        "pinyin": "mu_mu",
+        "aliases": [
+            "木母道人",
+            "木性"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_xian",
+            "name": "金仙",
+            "tier": 7,
+            "category": "immortal"
+        },
+        "rank": 3,
+        "power": 80,
+        "influence": 75,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "猪八戒的道教称谓，在丹道修炼中，木母代表阴性的木属性，与金公（孙悟空）相对应。",
+        "tags": [
+            "alias",
+            "taoist_concept",
+            "alchemy",
+            "yin_principle",
+            "wood_element"
+        ],
+        "sourceChapters": [
+            18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+        ],
+        "firstAppearance": 18,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0003"
+    }
+}

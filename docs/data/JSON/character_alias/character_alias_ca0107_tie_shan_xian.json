@@ -1,0 +1,48 @@
+{
+    "unid": "ca0107",
+    "isAlias": true,
+    "basic": {
+        "name": "铁扇仙",
+        "pinyin": "tie_shan_xian",
+        "aliases": [
+            "铁扇公主",
+            "罗刹女",
+            "芭蕉洞主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 21,
+        "power": 80,
+        "influence": 75,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "铁扇公主的仙人称号，体现了其修炼有成、法力高深的地位。虽然本质是妖魔，但因其强大的法力和芭蕉扇的神通，在妖界中享有仙人般的尊崇。这个称号反映了妖、仙界限的模糊性，以及修炼者不分出身都可达到的超凡境界。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "female",
+            "immortal_title",
+            "cultivated",
+            "powerful",
+            "fan_wielder",
+            "respected",
+            "magical",
+            "transcendent"
+        ],
+        "sourceChapters": [
+            59, 60, 61
+        ],
+        "firstAppearance": 59,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0021"
+    }
+}

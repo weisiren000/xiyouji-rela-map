@@ -1,0 +1,42 @@
+{
+    "unid": "ca0060",
+    "isAlias": true,
+    "basic": {
+        "name": "观世音",
+        "pinyin": "guan_shi_yin",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的正式全称，意为'观察世间音声'，能听到众生的呼救声并及时救助。在西游记中是观音菩萨最常用的称呼之一。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "formal_title",
+            "compassionate",
+            "protector",
+            "healer",
+            "wise",
+            "merciful",
+            "guardian",
+            "divine_intervention"
+        ],
+        "sourceChapters": [8, 11, 17, 22, 42, 46, 49, 52, 58, 64, 67, 77, 83, 86, 88, 91, 94],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0007"
+    }
+}

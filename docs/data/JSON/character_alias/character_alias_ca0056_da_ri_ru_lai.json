@@ -1,0 +1,42 @@
+{
+    "unid": "ca0056",
+    "isAlias": true,
+    "basic": {
+        "name": "大日如来",
+        "pinyin": "da_ri_ru_lai",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "如来佛祖的密宗称号，大日如来是密宗的最高佛，象征着智慧和光明如太阳般普照众生。在西游记中体现了如来佛祖的无边光明法力。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "esoteric_title",
+            "supreme_leader",
+            "omnipotent",
+            "wise",
+            "compassionate",
+            "enlightened",
+            "divine",
+            "luminous"
+        ],
+        "sourceChapters": [7, 10, 98, 99, 100],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0006"
+    }
+}

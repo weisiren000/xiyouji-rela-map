@@ -1,0 +1,49 @@
+{
+    "unid": "ca0144",
+    "isAlias": true,
+    "basic": {
+        "name": "乌鸡国假国王",
+        "pinyin": "wu_ji_guo_jia_guo_wang",
+        "aliases": [
+            "青狮精",
+            "青狮王",
+            "文殊菩萨坐骑(青狮)",
+            "青毛狮子怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 33,
+        "power": 82,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "青狮精在乌鸡国冒充国王时的欺骗性身份，体现了其变化术的高超和政治野心。通过杀死真国王并变化成其模样，青狮精成功统治了乌鸡国三年。这个称号揭示了其政治欺骗的本质，体现了妖怪对人间政权的觊觎和变化术的强大威力。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "lion",
+            "mount",
+            "three_demons",
+            "false_identity",
+            "political_deception",
+            "假冒国王",
+            "政治欺骗",
+            "变化神通"
+        ],
+        "sourceChapters": [
+            37, 38, 39
+        ],
+        "firstAppearance": 37,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0033"
+    }
+}

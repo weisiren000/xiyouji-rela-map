@@ -1,8 +1,10 @@
 # Preferences
 - User prefers pnpm as package manager for JavaScript/TypeScript projects.
+- User requires exact 1:1 replication of every detail when recreating/refactoring projects, not simplified or modified versions.
 - User prefers exact 1:1 replication of original designs and functionality, not simplified or modified versions.
+- User prefers exact 1:1 replication of original projects over adding extra features, and wants to remove unnecessary/redundant components to focus on core functionality first.
 - User prefers to rebuild/modernize existing code in separate folders (like 'rebuild' folder) rather than modifying in place, and wants to see multiple solution options before choosing one.
-- User prefers to use Chinese as the primary language for code comments and documentation and memories.
+- User prefers Chinese as the primary language for code comments and documentation and memories.
 - User prefers JSONC demo files in docs/data/_JSON_DEMO folder and Schema files in docs/data/_JSON_Schema folder.
 - User prefers creating individual JSON files for each data entity AND every alias, resulting in a large number of files (e.g., 1593 instead of 471).
 - User prefers creating individual JSON files for each data entity based on demo structure and storing TODO lists in docs/data/JSON directory for project organization.
@@ -10,26 +12,28 @@
 - User wants to record/document something in the D:\codee\xiyouji-rela-map\_experiments directory, indicating they value the experiment tracking system for project documentation.
 - User wants progress recorded in the D:\codee\xiyouji-rela-map\_experiments directory, reinforcing their preference for using _experiments for project tracking.
 - 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
+- 用户习惯通过查看_experiments目录了解项目进度并基于现有进度接力继续工作，强化了实验记录系统对工作接力的重要性。
 - 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
-
-# Interests
-- User is interested in sphere distribution algorithms used in deepseek.html file for scene layout.
-- User is interested in exploring Glumpy (Python OpenGL library) for visualization demos.
-- User prefers organizing different technology experiments in separate folders under the reference directory.# Preferences
-- User prefers pnpm as package manager for JavaScript/TypeScript projects.
-- User prefers exact 1:1 replication of original designs and functionality, not simplified or modified versions.
-- User prefers to rebuild/modernize existing code in separate folders (like 'rebuild' folder) rather than modifying in place, and wants to see multiple solution options before choosing one.
-- User prefers to use Chinese as the primary language for code comments and documentation and memories.
-- User prefers JSONC demo files in docs/data/_JSON_DEMO folder and Schema files in docs/data/_JSON_Schema folder.
-- User prefers creating individual JSON files for each data entity AND every alias, resulting in a large number of files (e.g., 1593 instead of 471).
-- User prefers creating individual JSON files for each data entity based on demo structure and storing TODO lists in docs/data/JSON directory for project organization.
-- Character and character_alias JSON files must have identical data structures - either modify one to match the other to ensure consistency.
-- User wants to record/document something in the D:\codee\xiyouji-rela-map\_experiments directory, indicating they value the experiment tracking system for project documentation.
-- User wants progress recorded in the D:\codee\xiyouji-rela-map\_experiments directory, reinforcing their preference for using _experiments for project tracking.
-- 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
-- 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
+- User prefers GUI interfaces with comprehensive control parameters for fine-tuning effects and configurations.
+- User prefers intuitive and visually appealing data management interfaces with automatic JSON dataset loading functionality.
+- User prefers GUI control panels to be collapsed to the absolute minimum state, more than just standard folder collapse.
+- 用户偏好GUI界面中的Controls控制面板默认状态应该是收拢/折叠的。
+- User prioritizes performance optimizations for low-end computers when running 3D visualizations in web browsers, prioritizing smooth performance over visual quality when necessary.
+- User prefers to disable automatic performance level adjustment in the galaxy visualization project and only keep manual configuration selection, as the automatic switching between high/medium configs affects viewing experience.
+- 用户偏好星球发光强度默认设置为0.2，这是银河系3D可视化项目中材质emissiveIntensity的推荐默认值。
+- User wants to create a dashboard interface to control, load, and modify JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON directory for loading real data as spheres in the visualization.
+- User wants to load actual JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON directory, and the JSON files in this folder have consistent format structure.
+- User prefers using backend programs to read/parse JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON folder, then communicate with frontend for data loading and display rather than direct frontend file access.
+- Always check existing experiment file numbers in _experiments directory before creating new files to avoid numbering conflicts.
+- User prefers manual file creation over automated scripts when generated data is incorrect or doesn't meet quality standards.
+- User likes to start with TODO lists for task organization.
+- User prefers strict quality standards and wants immediate correction/modification when any errors or issues are found.
+- User prefers snake_case (multiple underscore) naming convention as the correct format.
 
 # Interests
 - User is interested in sphere distribution algorithms used in deepseek.html file for scene layout.
 - User is interested in exploring Glumpy (Python OpenGL library) for visualization demos.
 - User prefers organizing different technology experiments in separate folders under the reference directory.
+
+# Technical Details
+- The 'maxEmissiveIntensity' parameter name is misleading - it doesn't actually control the maximum emissive intensity as the name suggests.

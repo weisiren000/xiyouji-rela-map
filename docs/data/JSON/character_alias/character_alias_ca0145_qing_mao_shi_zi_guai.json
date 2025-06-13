@@ -1,0 +1,49 @@
+{
+    "unid": "ca0145",
+    "isAlias": true,
+    "basic": {
+        "name": "青毛狮子怪",
+        "pinyin": "qing_mao_shi_zi_guai",
+        "aliases": [
+            "青狮精",
+            "青狮王",
+            "文殊菩萨坐骑(青狮)",
+            "乌鸡国假国王"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 33,
+        "power": 82,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "青狮精的直观描述性称号，强调其青色毛发的狮子本体和妖怪身份。'青毛'具体描述了其毛发颜色特征，'狮子'指明其动物本体，'怪'则表明其妖怪属性。这是对其最直接、最形象的描述，突出了其作为青色狮子妖怪的基本特征。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "lion",
+            "mount",
+            "three_demons",
+            "descriptive_title",
+            "physical_feature",
+            "青毛特征",
+            "狮子本体",
+            "直观描述"
+        ],
+        "sourceChapters": [
+            74, 75, 76, 77
+        ],
+        "firstAppearance": 74,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0033"
+    }
+}

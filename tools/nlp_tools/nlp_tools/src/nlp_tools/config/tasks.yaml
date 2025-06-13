@@ -16,6 +16,64 @@ process_data_task:
     3. 命名实体识别 (NER)：识别文本中的人名、地名、组织名等实体。
     4. 关系抽取：识别实体之间的关系（例如，孙悟空是猪八戒的师兄）。
     5. 将提取的实体和关系转换为结构化的格式，例如 JSON 或其他适合导入图数据库的格式。
-  expected_output: 一个包含提取出的实体（角色、地点等）及其属性，以及实体之间关系的结构化数据文件（例如 JSON 文件）。
+    **重要：最终输出的结构化数据中，每个文档应包含一个按处理顺序生成的唯一数字ID。**
+  expected_output: >
+    一个包含提取出的实体（角色、地点等）及其属性，以及实体之间关系的结构化数据文件（例如 JSON 文件）。
+    例如：
+    {
+        "document_id": 1, # 按处理顺序生成的唯一数字ID
+        "extracted_entities": {
+            "persons": ["孙悟空"],
+            "locations": ["花果山"]
+        },
+        "sentiment": "neutral",
+        "summary": "孙悟空在花果山的故事摘要。",
+        "keywords": ["孙悟空", "花果山"]
+    }
   agent: data_processor
   # output_file: processed_data.json
+
+orchestrate_nlp_tasks:
+  description: >
+    持续监控新的文本数据或未处理的数据流，并协调 data_processor Agent 进行处理。
+    这个任务的目标是确保所有传入的非结构化数据都经过 NLP 处理并转换为结构化格式。
+    **它会根据校对任务 (proofreading_task) 的输出决定后续操作：如果数据合规，则调用文件系统工具 (RenameMoveFileTool) 将处理后的文件按顺序命名并移动到指定目录；如果数据不合规，则触发 data_processor 重新处理相应的数据。**
+    它可能涉及迭代地调用 data_processor 任务，直到所有数据都被处理完毕，
+    并处理任何中间结果或错误。
+  expected_output: >
+    一个综合报告，确认所有传入文本数据已成功处理、校对并通过，并详细列出已按顺序命名并归档的文件。
+    如果存在不合规数据，报告将包含重新处理的状态和任何未解决的问题。
+    例如：
+    "所有50个文本文件都已成功处理并校对。其中，48个文件已按顺序命名并归档至 'approved_data/'，2个文件因实体识别错误已被标记为重新处理。"
+  agent: orchestrator_agent
+  # context: [process_data_task] # 在 crew.py 中已经设置了 context，这里可以不用重复
+  # output_file: nlp_orchestration_report.md # 可以选择将协调报告保存到文件
+
+proofreading_task:
+  description: >
+    审查 data_processor Agent 处理后的结构化文本数据，确保其合规性和质量。
+    任务包括但不限于：
+    1. 检查数据格式是否符合预期的 JSON/CSV schema。
+    2. 验证提取的实体（如人名、地名）是否准确无误。
+    3. 评估情感分析或摘要结果的合理性。
+    如果数据不合规，则通过任务回调机制（Task Callbacks）将问题数据和详细反馈打回给 orchestrator_agent，由其协调 data_processor 重新处理。
+  expected_output: >
+    如果数据合规，则输出：
+    {
+        "status": "approved",
+        "message": "数据合规，已通过校对。",
+        "suggested_filename": "processed_data_<顺序编号>.json" # 示例：processed_data_1.json
+    }
+    如果数据不合规，则输出详细的错误报告，例如：
+    {
+        "status": "rejected",
+        "message": "数据不合规：实体识别错误 - 在文档ID 'doc_005' 中，'齐天大圣' 未被识别为人名。",
+        "details": {
+            "document_id": "doc_005",
+            "reason": "实体识别错误",
+            "suggestion": "调整NER模型参数或提供更多训练样本。"
+        }
+    }
+  agent: proofreader_agent
+  # context: [process_data_task] # 在 crew.py 中已经设置了 context，这里可以不用重复
+  # output_file: proofreading_report.md # 可以选择将校对报告保存到文件

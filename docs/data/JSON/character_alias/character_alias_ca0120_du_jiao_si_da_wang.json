@@ -1,0 +1,47 @@
+{
+    "unid": "ca0120",
+    "isAlias": true,
+    "basic": {
+        "name": "独角兕大王",
+        "pinyin": "du_jiao_si_da_wang",
+        "aliases": [
+            "青牛精",
+            "太上老君坐骑"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 26,
+        "power": 82,
+        "influence": 75,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "青牛精在金兜山自立为王时的称号，强调其独角的特征和兕（雌犀牛）的本体。这个称号体现了其作为妖王的威严和独特的生理特征，'独角'突出了其与众不同的外貌，'兕'则体现了其强大的力量和野性，'大王'则显示了其在金兜山的统治地位。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "self_proclaimed_title",
+            "physical_feature",
+            "mountain_ruler",
+            "beast_king",
+            "独角特征",
+            "兕牛本体",
+            "金兜山霸主",
+            "妖王称号"
+        ],
+        "sourceChapters": [
+            50, 51, 52
+        ],
+        "firstAppearance": 50,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0026"
+    }
+}

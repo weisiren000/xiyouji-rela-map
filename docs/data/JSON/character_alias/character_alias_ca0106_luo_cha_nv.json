@@ -1,0 +1,48 @@
+{
+    "unid": "ca0106",
+    "isAlias": true,
+    "basic": {
+        "name": "罗刹女",
+        "pinyin": "luo_cha_nv",
+        "aliases": [
+            "铁扇公主",
+            "铁扇仙",
+            "芭蕉洞主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 21,
+        "power": 80,
+        "influence": 75,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "铁扇公主的种族称号，罗刹是佛教和印度神话中的恶鬼种族。在西游记中，罗刹女体现了其非人类的妖魔身份和强大的法力。这个称号强调了其来自异域的神秘背景和与佛教文化的深层联系，同时也体现了其美丽外表下隐藏的危险本质。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "female",
+            "racial_title",
+            "buddhist_origin",
+            "exotic",
+            "dangerous",
+            "beautiful",
+            "powerful",
+            "mysterious"
+        ],
+        "sourceChapters": [
+            59, 60, 61
+        ],
+        "firstAppearance": 59,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0021"
+    }
+}

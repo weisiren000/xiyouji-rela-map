@@ -1,0 +1,48 @@
+{
+    "unid": "ca0123",
+    "isAlias": true,
+    "basic": {
+        "name": "二十八宿西方白虎七宿之首",
+        "pinyin": "er_shi_ba_xiu_xi_fang_bai_hu_qi_xiu_zhi_shou",
+        "aliases": [
+            "黄袍怪",
+            "二十八宿奎木狼"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 27,
+        "power": 80,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "黄袍怪在二十八宿体系中的详细地位描述，强调其作为西方白虎七宿之首的重要地位。在中国古代天文学中，二十八宿分为四象：东方青龙、南方朱雀、西方白虎、北方玄武，每象各有七宿。奎木狼作为西方白虎七宿之首，地位尊崇，掌管西方星象，具有重要的天文和神话意义。",
+        "tags": [
+            "antagonist",
+            "celestial",
+            "star_deity",
+            "leadership_position",
+            "astronomical_hierarchy",
+            "western_constellation",
+            "white_tiger_leader",
+            "首席星官",
+            "西方白虎",
+            "星宿之首",
+            "天文地位"
+        ],
+        "sourceChapters": [
+            28, 29, 30, 31
+        ],
+        "firstAppearance": 28,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0027"
+    }
+}

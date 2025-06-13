@@ -1,0 +1,49 @@
+{
+    "unid": "ca0139",
+    "isAlias": true,
+    "basic": {
+        "name": "万圣龙王女婿",
+        "pinyin": "wan_sheng_long_wang_nv_xu",
+        "aliases": [
+            "九头虫",
+            "九头驸马",
+            "碧波潭驸马",
+            "盗取祭赛国佛宝"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 32,
+        "power": 78,
+        "influence": 75,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "九头虫的完整家族关系称号，明确指出其与万圣龙王的姻亲关系。这个称号强调了其通过与万圣公主的婚姻获得的龙族身份和地位，体现了妖怪与龙族之间的联姻关系。'女婿'身份使其在龙宫中拥有特殊地位，也是其能够参与重大行动的重要原因。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "nine_heads",
+            "dragon_son_in_law",
+            "thief",
+            "family_relationship",
+            "dragon_alliance",
+            "姻亲关系",
+            "龙族联姻",
+            "家族地位"
+        ],
+        "sourceChapters": [
+            62, 63
+        ],
+        "firstAppearance": 62,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0032"
+    }
+}

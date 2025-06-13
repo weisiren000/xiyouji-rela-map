@@ -1,0 +1,47 @@
+{
+    "unid": "ca0122",
+    "isAlias": true,
+    "basic": {
+        "name": "二十八宿奎木狼",
+        "pinyin": "er_shi_ba_xiu_kui_mu_lang",
+        "aliases": [
+            "黄袍怪",
+            "二十八宿西方白虎七宿之首"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 27,
+        "power": 80,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "黄袍怪的真实身份，指其作为二十八宿中奎木狼星官的天界职位。奎木狼是二十八宿西方白虎七宿之首，掌管天文星象，具有重要的天界地位。这个称号体现了其星官身份的权威性和在天界星宿体系中的重要地位，同时也解释了其强大法力的来源和天界背景。",
+        "tags": [
+            "antagonist",
+            "celestial",
+            "star_deity",
+            "official_title",
+            "astronomical_position",
+            "heavenly_rank",
+            "二十八宿",
+            "星官身份",
+            "天界职位",
+            "奎木狼星"
+        ],
+        "sourceChapters": [
+            28, 29, 30, 31
+        ],
+        "firstAppearance": 28,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0027"
+    }
+}

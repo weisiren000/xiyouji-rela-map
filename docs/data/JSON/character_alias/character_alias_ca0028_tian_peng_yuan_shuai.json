@@ -1,0 +1,43 @@
+{
+    "unid": "ca0028",
+    "isAlias": true,
+    "basic": {
+        "name": "天蓬元帅",
+        "pinyin": "tian_peng_yuan_shuai",
+        "aliases": [
+            "天蓬",
+            "元帅",
+            "天河水军元帅"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_xian",
+            "name": "金仙",
+            "tier": 7,
+            "category": "immortal"
+        },
+        "rank": 3,
+        "power": 80,
+        "influence": 75,
+        "morality": "chaotic_good"
+    },
+    "metadata": {
+        "description": "猪八戒的前世身份，天庭水军统帅，因调戏嫦娥被贬下凡间投胎为猪。",
+        "tags": [
+            "alias",
+            "previous_life",
+            "heavenly_marshal",
+            "water_army",
+            "fallen_immortal"
+        ],
+        "sourceChapters": [
+            18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+        ],
+        "firstAppearance": 18,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0003"
+    }
+}

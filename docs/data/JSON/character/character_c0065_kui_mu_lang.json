@@ -1,0 +1,96 @@
+{
+    "unid": "c0065",
+    "basic": {
+        "name": "奎木狼",
+        "pinyin": "kui_mu_lang",
+        "aliases": [
+            "奎宿",
+            "西方白虎七宿之首",
+            "奎星官",
+            "黄袍怪"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 65,
+        "power": 80,
+        "influence": 78,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": [
+            "二十八宿星官"
+        ],
+        "group": [
+            "西方白虎七宿"
+        ],
+        "superior": [
+            "玉皇大帝"
+        ],
+        "mortal_identity": [
+            "c0027"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "天庭",
+            "星宫"
+        ],
+        "territory": [
+            "西方星域"
+        ],
+        "appearances": [
+            "天庭",
+            "人间",
+            "宝象国"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "星官法器"
+        ],
+        "skills": [
+            "星辰神通",
+            "奎宿星力",
+            "木德法术",
+            "变化术"
+        ],
+        "specialties": [
+            "西方白虎奎宿",
+            "奎星之力",
+            "木德神通"
+        ]
+    },
+    "metadata": {
+        "description": "二十八宿中西方白虎七宿之首，奎宿星官，曾下凡化身黄袍怪与宝象国公主结缘",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "western_white_tiger",
+            "wood_element"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7,
+            28,
+            29,
+            30,
+            31
+        ],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，西方白虎七宿的首领，有下凡经历",
+        "culturalBackground": "奎宿是西方白虎七宿之首，在西游记中有下凡为黄袍怪的情节",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

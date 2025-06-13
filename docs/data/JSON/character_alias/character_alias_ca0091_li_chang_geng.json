@@ -1,0 +1,47 @@
+{
+    "unid": "ca0091",
+    "isAlias": true,
+    "basic": {
+        "name": "李长庚",
+        "pinyin": "li_chang_geng",
+        "aliases": [
+            "太白金星",
+            "天庭使者"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_xian",
+            "name": "金仙",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 14,
+        "power": 60,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "太白金星的本名，历史上确有其人，为唐代著名道士。在西游记中，李长庚是太白金星在人间的名字，体现了神仙与历史人物的融合。作为天庭重要使者，以其本名行走人间时，展现了其深厚的道教文化背景和历史渊源。",
+        "tags": [
+            "deity",
+            "real_name",
+            "historical_figure",
+            "diplomat",
+            "messenger",
+            "taoist",
+            "gentle",
+            "wise",
+            "courteous",
+            "trusted_advisor"
+        ],
+        "sourceChapters": [
+            4, 5, 7, 18, 87
+        ],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0014"
+    }
+}

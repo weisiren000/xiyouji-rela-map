@@ -1,0 +1,45 @@
+{
+    "unid": "c0141",
+    "basic": {
+        "name": "辟暑大王",
+        "aliases": [
+            "玄英洞犀牛精(辟暑)",
+            "犀牛精(辟暑)",
+            "青龙山妖王"
+        ],
+        "category": "demon",
+        "pinyin": "pi_shu_da_wang",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 4,
+            "category": "demon",
+            "id": "xiao_yao",
+            "name": "小妖"
+        },
+        "rank": 141,
+        "power": 74,
+        "influence": 62,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "玄英洞的犀牛精，三个犀牛精兄弟之一。",
+        "tags": [
+            "demon",
+            "犀牛精",
+            "青龙山",
+            "三兄弟"
+        ],
+        "culturalBackground": "犀牛妖怪传说，体现了自然力量的具象化",
+        "religiousSignificance": "佛教降妖伏魔的对象",
+        "literaryRole": "展现妖怪团体合作的角色",
+        "sourceChapters": [
+            77,
+            78
+        ],
+        "firstAppearance": 77,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

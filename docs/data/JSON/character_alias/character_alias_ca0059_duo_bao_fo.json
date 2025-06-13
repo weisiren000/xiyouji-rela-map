@@ -1,0 +1,42 @@
+{
+    "unid": "ca0059",
+    "isAlias": true,
+    "basic": {
+        "name": "多宝佛",
+        "pinyin": "duo_bao_fo",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "如来佛祖的简化称号，多宝佛是多宝如来的简称，在法华经中是重要的过去佛。在西游记中象征着如来佛祖拥有无量的法宝和神通。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "past_buddha",
+            "supreme_leader",
+            "omnipotent",
+            "wise",
+            "compassionate",
+            "enlightened",
+            "divine",
+            "treasure_buddha"
+        ],
+        "sourceChapters": [7, 10, 98, 99, 100],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0006"
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "unid": "ca0055",
+    "isAlias": true,
+    "basic": {
+        "name": "西天佛老菩萨",
+        "pinyin": "xi_tian_fo_lao_pu_sa",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "如来佛祖在西游记中的特有称呼，强调其作为西天极乐世界教主的地位。'佛老'是对佛祖的亲切尊称，体现了其慈悲长者的形象。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "regional_title",
+            "supreme_leader",
+            "omnipotent",
+            "wise",
+            "compassionate",
+            "enlightened",
+            "divine",
+            "western_paradise"
+        ],
+        "sourceChapters": [7, 10, 98, 99, 100],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0006"
+    }
+}

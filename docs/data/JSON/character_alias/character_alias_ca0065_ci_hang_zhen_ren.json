@@ -1,0 +1,42 @@
+{
+    "unid": "ca0065",
+    "isAlias": true,
+    "basic": {
+        "name": "慈航真人",
+        "pinyin": "ci_hang_zhen_ren",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的道教称号，'慈航'指慈悲的船只，能渡众生脱离苦海。'真人'是道教对得道高人的称呼，体现了佛道融合的特色。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "taoist_title",
+            "compassionate",
+            "protector",
+            "healer",
+            "wise",
+            "merciful",
+            "guardian",
+            "ferryman"
+        ],
+        "sourceChapters": [8, 11, 17, 22, 42, 46, 49, 52, 58, 64, 67, 77, 83, 86, 88, 91, 94],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0007"
+    }
+}

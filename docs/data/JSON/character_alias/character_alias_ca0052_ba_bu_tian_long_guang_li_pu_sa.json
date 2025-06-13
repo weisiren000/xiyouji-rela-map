@@ -1,0 +1,43 @@
+{
+    "unid": "ca0052",
+    "isAlias": true,
+    "basic": {
+        "name": "八部天龙广力菩萨",
+        "pinyin": "ba_bu_tian_long_guang_li_pu_sa",
+        "aliases": [
+            "广力菩萨",
+            "八部天龙菩萨",
+            "天龙广力"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "bodhisattva"
+        },
+        "rank": 5,
+        "power": 80,
+        "influence": 75,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "白龙马取经成功后被如来佛祖册封的完整佛号，广力指广大的力量，体现了其成佛的成就。",
+        "tags": [
+            "alias",
+            "buddha_title",
+            "final_achievement",
+            "bodhisattva_rank",
+            "great_power"
+        ],
+        "sourceChapters": [
+            100
+        ],
+        "firstAppearance": 100,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0005"
+    }
+}

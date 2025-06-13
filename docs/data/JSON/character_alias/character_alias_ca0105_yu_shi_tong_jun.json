@@ -1,0 +1,47 @@
+{
+    "unid": "ca0105",
+    "isAlias": true,
+    "basic": {
+        "name": "与世同君",
+        "pinyin": "yu_shi_tong_jun",
+        "aliases": [
+            "镇元子",
+            "地仙之祖"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_xian",
+            "name": "大仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 20,
+        "power": 90,
+        "influence": 85,
+        "morality": "true_neutral"
+    },
+    "metadata": {
+        "description": "镇元子的地位称号，意为与天地同寿、与世界共存的君主。这个称号体现了镇元子超越时间限制的永恒存在和至高无上的地位。在西游记中，连孙悟空都要对其敬让三分，体现了其在三界中独特的超然地位和不朽的生命力。",
+        "tags": [
+            "immortal",
+            "eternal_title",
+            "supreme_ruler",
+            "timeless",
+            "world_companion",
+            "ancient",
+            "powerful",
+            "respected",
+            "neutral",
+            "transcendent"
+        ],
+        "sourceChapters": [
+            24, 25, 26
+        ],
+        "firstAppearance": 24,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0020"
+    }
+}

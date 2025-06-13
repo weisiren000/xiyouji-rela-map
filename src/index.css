@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  background-color: #000;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* GUI样式覆盖 */
+.lil-gui {
+  --background-color: rgba(0, 0, 0, 0.8);
+  --text-color: #ffffff;
+  --title-background-color: rgba(255, 255, 255, 0.1);
+  --title-text-color: #ffffff;
+  --widget-color: rgba(255, 255, 255, 0.2);
+  --hover-color: rgba(255, 255, 255, 0.3);
+  --focus-color: rgba(255, 255, 255, 0.4);
+  --number-color: #00ff88;
+  --string-color: #88ff00;
+}
+
+.lil-gui.root {
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+/* 应用状态指示器样式 */
+.app-loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  z-index: 3000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.loading-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-top: 2px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.app-status-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 2500;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.app-status-indicator.online {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4CAF50;
+  border: 1px solid #4CAF50;
+}
+
+.app-status-indicator.offline {
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+  border: 1px solid #f44336;
+}
+
+.app-status-indicator:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
