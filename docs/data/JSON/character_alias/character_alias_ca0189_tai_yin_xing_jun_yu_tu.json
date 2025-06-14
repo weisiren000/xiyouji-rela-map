@@ -1,0 +1,50 @@
+{
+    "unid": "ca0189",
+    "isAlias": true,
+    "basic": {
+        "name": "太阴星君玉兔",
+        "pinyin": "tai_yin_xing_jun_yu_tu",
+        "aliases": [
+            "太阴玉兔",
+            "星君玉兔",
+            "太阴座下玉兔"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 47,
+        "power": 62,
+        "influence": 65,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "玉兔精的神圣出身称谓，强调其作为太阴星君坐骑的神圣身份。这个称谓体现了玉兔精的天界背景和神仙体系中的地位，突出了其从神圣到堕落的身份转变。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "rabbit",
+            "impersonator",
+            "moon_origin",
+            "divine_mount",
+            "celestial_origin",
+            "sacred_beast"
+        ],
+        "sourceChapters": [
+            93,
+            94,
+            95
+        ],
+        "firstAppearance": 93,
+        "significance": "体现了玉兔精的神圣出身和在天界体系中的地位",
+        "culturalBackground": "中国古代天文学和神话体系中太阴星君的文化内涵，体现了月亮崇拜的传统",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0047"
+    }
+}

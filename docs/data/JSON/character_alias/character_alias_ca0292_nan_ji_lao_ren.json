@@ -1,0 +1,49 @@
+{
+    "unid": "ca0292",
+    "isAlias": true,
+    "basic": {
+        "name": "南极老人",
+        "pinyin": "nan_ji_lao_ren",
+        "aliases": [
+            "南极仙翁",
+            "南极老翁",
+            "南极长老"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_jun",
+            "name": "星君",
+            "tier": 6,
+            "category": "celestial"
+        },
+        "rank": 120,
+        "power": 74,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "福禄寿三星的天文学称谓，强调其与南极老人星的天文对应关系。这个称谓体现了福禄寿三星在中国古代天文学中的星宿身份，南极老人星是寿星的天文原型，代表着长寿和吉祥。",
+        "tags": [
+            "astronomical_deity",
+            "southern_star",
+            "longevity_star",
+            "celestial_elder",
+            "star_constellation",
+            "ancient_astronomy",
+            "stellar_deity",
+            "cosmic_sage"
+        ],
+        "sourceChapters": [
+            21,
+            22
+        ],
+        "firstAppearance": 21,
+        "significance": "体现了福禄寿三星与南极老人星的天文对应关系和星宿身份",
+        "culturalBackground": "南极老人是中国古代天文学中的重要星宿，对应南极老人星，在古代被视为长寿和吉祥的象征，是寿星的天文原型",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0120"
+    }
+}

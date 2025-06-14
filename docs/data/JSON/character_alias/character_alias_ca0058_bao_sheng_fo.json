@@ -34,7 +34,13 @@
             "divine",
             "wealth_bestower"
         ],
-        "sourceChapters": [7, 10, 98, 99, 100],
+        "sourceChapters": [
+            7,
+            10,
+            98,
+            99,
+            100
+        ],
         "firstAppearance": 7,
         "lastUpdated": "2025-01-08T00:00:00Z",
         "originalCharacter": "c0006"

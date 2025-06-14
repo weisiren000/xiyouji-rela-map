@@ -34,7 +34,12 @@
             "authoritative",
             "weapon_bearer"
         ],
-        "sourceChapters": [4, 6, 83, 87],
+        "sourceChapters": [
+            4,
+            6,
+            83,
+            87
+        ],
         "firstAppearance": 4,
         "lastUpdated": "2025-01-08T00:00:00Z",
         "originalCharacter": "c0013"

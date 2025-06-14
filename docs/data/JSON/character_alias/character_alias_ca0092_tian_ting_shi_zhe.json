@@ -38,7 +38,11 @@
             "trusted_representative"
         ],
         "sourceChapters": [
-            4, 5, 7, 18, 87
+            4,
+            5,
+            7,
+            18,
+            87
         ],
         "firstAppearance": 4,
         "lastUpdated": "2025-01-08T00:00:00Z",

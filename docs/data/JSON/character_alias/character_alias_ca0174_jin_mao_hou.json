@@ -1,0 +1,50 @@
+{
+    "unid": "ca0174",
+    "isAlias": true,
+    "basic": {
+        "name": "金毛犼",
+        "pinyin": "jin_mao_hou",
+        "aliases": [
+            "金毛神兽",
+            "犼兽",
+            "金毛瑞兽"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 43,
+        "power": 75,
+        "influence": 72,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "赛太岁的真实形态称谓，强调其作为金毛犼神兽的本体身份。这个称谓体现了神兽的威严和神圣性，突出了赛太岁的神兽血统和超凡能力。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "mount",
+            "divine_beast",
+            "golden_fur",
+            "mythical_creature",
+            "sacred_animal"
+        ],
+        "sourceChapters": [
+            68,
+            69,
+            70,
+            71
+        ],
+        "firstAppearance": 68,
+        "significance": "体现了赛太岁的神兽本体和超凡的神圣血统",
+        "culturalBackground": "犼是中国古代传说中的神兽，金毛犼更是观音菩萨的坐骑，体现了佛教护法文化",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0043"
+    }
+}

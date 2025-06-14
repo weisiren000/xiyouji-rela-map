@@ -34,7 +34,12 @@
             "monk"
         ],
         "sourceChapters": [
-            8, 9, 10, 11, 12, 100
+            8,
+            9,
+            10,
+            11,
+            12,
+            100
         ],
         "firstAppearance": 8,
         "lastUpdated": "2025-01-08T00:00:00Z",

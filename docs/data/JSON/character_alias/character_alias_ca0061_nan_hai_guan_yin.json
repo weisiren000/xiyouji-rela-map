@@ -34,7 +34,25 @@
             "guardian",
             "south_sea"
         ],
-        "sourceChapters": [8, 11, 17, 22, 42, 46, 49, 52, 58, 64, 67, 77, 83, 86, 88, 91, 94],
+        "sourceChapters": [
+            8,
+            11,
+            17,
+            22,
+            42,
+            46,
+            49,
+            52,
+            58,
+            64,
+            67,
+            77,
+            83,
+            86,
+            88,
+            91,
+            94
+        ],
         "firstAppearance": 8,
         "lastUpdated": "2025-01-08T00:00:00Z",
         "originalCharacter": "c0007"

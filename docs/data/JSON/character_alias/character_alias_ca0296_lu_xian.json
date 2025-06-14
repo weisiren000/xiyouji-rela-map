@@ -1,0 +1,50 @@
+{
+    "unid": "ca0296",
+    "isAlias": true,
+    "basic": {
+        "name": "鹿仙",
+        "pinyin": "lu_xian",
+        "aliases": [
+            "鹿精",
+            "鹿妖",
+            "鹿神"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_xian",
+            "name": "大仙",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 122,
+        "power": 67,
+        "influence": 74,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "鹿力大仙的动物本性称谓，强调其作为鹿类成精的妖仙身份。这个称谓体现了鹿力大仙的动物出身和鹿类特征，鹿仙代表着灵敏、优雅和长寿的动物神性。",
+        "tags": [
+            "deer_spirit",
+            "animal_immortal",
+            "cervine_demon",
+            "beast_sage",
+            "graceful_spirit",
+            "wild_immortal",
+            "transformed_deer",
+            "animal_deity"
+        ],
+        "sourceChapters": [
+            44,
+            45,
+            46
+        ],
+        "firstAppearance": 44,
+        "significance": "体现了鹿力大仙作为鹿类成精的动物本性和妖仙身份",
+        "culturalBackground": "鹿仙是中国民间信仰中的重要动物神，鹿被视为长寿和灵性的象征，鹿仙往往具有灵敏、优雅的特点，在道教文化中有重要地位",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0122"
+    }
+}

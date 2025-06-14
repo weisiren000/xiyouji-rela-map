@@ -1,0 +1,52 @@
+{
+    "unid": "ca0204",
+    "isAlias": true,
+    "basic": {
+        "name": "斗宿",
+        "pinyin": "dou_su",
+        "aliases": [
+            "斗星",
+            "斗宿星官",
+            "北方斗宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 58,
+        "power": 74,
+        "influence": 77,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "斗木獬的星宿称谓，强调其作为北方玄武七宿之首的重要地位。这个称谓体现了斗木獬在二十八宿体系中的木德属性，突出了其作为玄武头部星宿的天文学意义和北斗七星的神圣地位。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "northern_black_tortoise",
+            "wood_element",
+            "constellation_name",
+            "astronomical_system",
+            "tortoise_head",
+            "big_dipper_connection"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了斗木獬作为北方玄武七宿之首的重要地位和木德属性",
+        "culturalBackground": "斗宿在二十八宿中代表北方玄武的头部，与北斗七星相关联，象征着方向指引和智慧，体现了木德的生长特性",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0058"
+    }
+}

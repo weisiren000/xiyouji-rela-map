@@ -39,7 +39,9 @@
             "domain_based"
         ],
         "sourceChapters": [
-            40, 41, 42
+            40,
+            41,
+            42
         ],
         "firstAppearance": 40,
         "lastUpdated": "2025-01-08T00:00:00Z",

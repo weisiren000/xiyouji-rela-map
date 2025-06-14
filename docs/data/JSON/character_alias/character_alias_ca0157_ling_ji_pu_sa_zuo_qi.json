@@ -1,0 +1,48 @@
+{
+    "unid": "ca0157",
+    "isAlias": true,
+    "basic": {
+        "name": "灵吉菩萨坐骑",
+        "pinyin": "ling_ji_pu_sa_zuo_qi",
+        "aliases": [
+            "黄风大王",
+            "黄毛貂鼠",
+            "灵吉菩萨坐骑"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 37,
+        "power": 70,
+        "influence": 65,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "黄风怪的原身份，是灵吉菩萨的坐骑。作为佛教菩萨的坐骑，黄毛貂鼠本应护法修行，但却偷跑下凡为妖作恶，体现了佛教坐骑堕落的主题和对欲望的警示。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "rat",
+            "wind_control",
+            "mount",
+            "buddhist_mount",
+            "fallen_guardian"
+        ],
+        "sourceChapters": [
+            20,
+            21
+        ],
+        "firstAppearance": 20,
+        "significance": "体现了佛教坐骑下凡为妖的堕落主题和对修行者的警示",
+        "culturalBackground": "佛教坐骑在西游记中常有下凡为妖的情节，体现了修行路上的考验",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0037"
+    }
+}

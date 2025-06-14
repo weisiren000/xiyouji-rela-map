@@ -1,0 +1,49 @@
+{
+    "unid": "ca0253",
+    "isAlias": true,
+    "basic": {
+        "name": "西岳大帝",
+        "pinyin": "xi_yue_da_di",
+        "aliases": [
+            "西岳帝君",
+            "西岳金天大帝",
+            "西岳圣帝"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yue_shen",
+            "name": "岳神",
+            "tier": 6,
+            "category": "celestial"
+        },
+        "rank": 97,
+        "power": 83,
+        "influence": 86,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "西岳华山金天愿圣大帝的帝君称谓，强调其作为西方岳神的重要地位。这个称谓体现了华山神在五岳体系中的职责，掌管西方、金德之气和愿望实现的神圣权威。",
+        "tags": [
+            "mountain_deity",
+            "five_sacred_mountains",
+            "western_mountain",
+            "metal_element_deity",
+            "western_direction",
+            "celestial_emperor",
+            "wish_fulfillment",
+            "golden_virtue"
+        ],
+        "sourceChapters": [
+            7,
+            8
+        ],
+        "firstAppearance": 7,
+        "significance": "体现了西岳华山金天愿圣大帝作为西方岳神的重要地位和金德权威",
+        "culturalBackground": "西岳大帝是五岳大帝之一，华山位于西方，以险峻著称，金天愿圣体现了其掌管西方、金德之气、实现众生愿望的职责，在道教文化中象征着坚韧、勇气和愿力成就",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0097"
+    }
+}

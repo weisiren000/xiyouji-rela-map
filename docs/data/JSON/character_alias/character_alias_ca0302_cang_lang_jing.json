@@ -1,0 +1,48 @@
+{
+    "unid": "ca0302",
+    "isAlias": true,
+    "basic": {
+        "name": "苍狼精",
+        "pinyin": "cang_lang_jing",
+        "aliases": [
+            "狼精",
+            "苍狼妖",
+            "山林狼精"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 8,
+            "category": "demon"
+        },
+        "rank": 130,
+        "power": 50,
+        "influence": 35,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "凌虚子的别名，揭示了其狼妖的真实身份和本性。苍狼代表着野性、狡猾和群体性，体现了凌虚子作为妖精的动物本质。这个别名强调了其与黑熊精、白花蛇精结为好友的妖怪社交圈，展现了妖界中不同种族之间的友谊和联盟关系。苍狼的形象也象征着山林中的野性力量。",
+        "tags": [
+            "demon",
+            "wolf_spirit",
+            "beast_demon",
+            "wild_nature",
+            "pack_animal",
+            "mountain_forest",
+            "cunning",
+            "friendship"
+        ],
+        "sourceChapters": [
+            17
+        ],
+        "firstAppearance": 17,
+        "significance": "展现了妖怪之间的友谊和山林妖怪的生态",
+        "culturalBackground": "体现了中国古代对狼的文化认知和妖怪世界的社交关系",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0130"
+    }
+}

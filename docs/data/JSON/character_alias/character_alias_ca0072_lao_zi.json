@@ -34,7 +34,16 @@
             "founder",
             "legendary"
         ],
-        "sourceChapters": [7, 35, 50, 52, 53, 77, 78, 87],
+        "sourceChapters": [
+            7,
+            35,
+            50,
+            52,
+            53,
+            77,
+            78,
+            87
+        ],
         "firstAppearance": 7,
         "lastUpdated": "2025-01-08T00:00:00Z",
         "originalCharacter": "c0009"

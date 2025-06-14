@@ -1,0 +1,49 @@
+{
+    "unid": "ca0160",
+    "isAlias": true,
+    "basic": {
+        "name": "金鱼精",
+        "pinyin": "jin_yu_jing",
+        "aliases": [
+            "金鱼精",
+            "观音莲花池金鱼",
+            "通天河鱼怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 38,
+        "power": 68,
+        "influence": 62,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "灵感大王的本体形态称号，强调其金鱼的动物本性。金鱼在中国文化中象征富贵吉祥，但成精后却要求童男童女祭祀，形成了美好象征与邪恶行为的强烈对比，体现了外表与本质的反差。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "fish",
+            "water_control",
+            "child_sacrifice",
+            "animal_form",
+            "deceptive_beauty"
+        ],
+        "sourceChapters": [
+            47,
+            48,
+            49
+        ],
+        "firstAppearance": 47,
+        "significance": "体现了灵感大王的动物本性和美好外表下的邪恶本质",
+        "culturalBackground": "金鱼在中国文化中是吉祥象征，但成精作恶体现了美好事物的堕落",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0038"
+    }
+}

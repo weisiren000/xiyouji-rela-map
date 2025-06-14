@@ -40,7 +40,9 @@
             "cultural_bridge"
         ],
         "sourceChapters": [
-            3, 10, 11
+            3,
+            10,
+            11
         ],
         "firstAppearance": 3,
         "lastUpdated": "2025-01-08T00:00:00Z",
