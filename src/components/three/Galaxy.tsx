@@ -6,17 +6,50 @@ import { generateGalaxyPlanets } from '@utils/galaxyGenerator'
 import { PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
 import { PlanetCluster } from './PlanetCluster'
 import { FogParticles } from './FogParticles'
+import { CharacterSpheres } from './CharacterSpheres'
 
 /**
  * 银河系组件
  * 1:1复刻原始HTML文件的银河系效果
  */
 
+interface GalaxyProps {
+  characterDataVisible?: boolean
+  characterDataOpacity?: number
+  characterGlobalSize?: number
+  characterEmissiveIntensity?: number
+  characterMetalness?: number
+  characterRoughness?: number
+  characterAnimationSpeed?: number
+  characterFloatAmplitude?: number
+  characterRadiusMultiplier?: number
+  characterHeightMultiplier?: number
+  characterRandomSpread?: number
+  characterColorIntensity?: number
+  characterUseOriginalColors?: boolean
+  characterRegeneratePositions?: boolean
+}
+
 /**
  * 银河系主组件
- * 包含星球集群、雾气效果等
+ * 包含星球集群、雾气效果、角色数据等
  */
-export const Galaxy: React.FC = () => {
+export const Galaxy: React.FC<GalaxyProps> = ({
+  characterDataVisible = true,
+  characterDataOpacity = 0.8,
+  characterGlobalSize = 1.0,
+  characterEmissiveIntensity = 0.3,
+  characterMetalness = 0.1,
+  characterRoughness = 0.3,
+  characterAnimationSpeed = 1.0,
+  characterFloatAmplitude = 0.1,
+  characterRadiusMultiplier = 1.0,
+  characterHeightMultiplier = 1.0,
+  characterRandomSpread = 2.0,
+  characterColorIntensity = 1.0,
+  characterUseOriginalColors = true,
+  characterRegeneratePositions = false
+}) => {
   const groupRef = useRef<Group>(null)
   
   const {
@@ -76,9 +109,27 @@ export const Galaxy: React.FC = () => {
     <group ref={groupRef}>
       {/* 星球集群 */}
       <PlanetCluster planets={planets} />
-      
+
       {/* 雾气粒子 */}
       <FogParticles planets={planets} />
+
+      {/* 西游记角色数据点 */}
+      <CharacterSpheres
+        visible={characterDataVisible}
+        opacity={characterDataOpacity}
+        globalSize={characterGlobalSize}
+        emissiveIntensity={characterEmissiveIntensity}
+        metalness={characterMetalness}
+        roughness={characterRoughness}
+        animationSpeed={characterAnimationSpeed}
+        floatAmplitude={characterFloatAmplitude}
+        radiusMultiplier={characterRadiusMultiplier}
+        heightMultiplier={characterHeightMultiplier}
+        randomSpread={characterRandomSpread}
+        colorIntensity={characterColorIntensity}
+        useOriginalColors={characterUseOriginalColors}
+        regeneratePositions={characterRegeneratePositions}
+      />
     </group>
   )
 }

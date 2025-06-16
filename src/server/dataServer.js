@@ -9,7 +9,7 @@ const path = require('path')
 const cors = require('cors')
 
 const app = express()
-const PORT = 3001
+const PORT = 3002
 
 // 数据路径配置
 const DATA_PATH = 'D:\\codee\\xiyouji-rela-map\\docs\\data\\JSON'

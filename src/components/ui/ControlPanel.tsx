@@ -19,6 +19,18 @@ export const ControlPanel: React.FC = () => {
     sunRotationSpeed,
     cameraAutoRotate,
     cameraRotateSpeed,
+    cameraPositionX,
+    cameraPositionY,
+    cameraPositionZ,
+    cameraRotationX,
+    cameraRotationY,
+    cameraRotationZ,
+    cameraFov,
+    cameraNear,
+    cameraFar,
+    cameraTargetX,
+    cameraTargetY,
+    cameraTargetZ,
     starFieldVisible,
     starFieldOpacity,
     starFieldSize,
@@ -33,6 +45,21 @@ export const ControlPanel: React.FC = () => {
     setSunRotationSpeed,
     setCameraAutoRotate,
     setCameraRotateSpeed,
+    setCameraPositionX,
+    setCameraPositionY,
+    setCameraPositionZ,
+    setCameraRotationX,
+    setCameraRotationY,
+    setCameraRotationZ,
+    setCameraFov,
+    setCameraNear,
+    setCameraFar,
+    setCameraTargetX,
+    setCameraTargetY,
+    setCameraTargetZ,
+    applyCameraPreset,
+    saveCameraPreset,
+    resetCameraToDefault,
     setStarFieldVisible,
     setStarFieldOpacity,
     setStarFieldSize,
@@ -144,14 +171,100 @@ export const ControlPanel: React.FC = () => {
       .onChange((value: number) => setSunRotationSpeed(value))
 
     // 相机控制
-    const cameraFolder = gui.addFolder('相机控制')
-    cameraFolder.add({ cameraAutoRotate }, 'cameraAutoRotate')
-      .name('自动旋转')
+    const cameraFolder = gui.addFolder('📷 相机控制')
+
+    // 自动旋转控制
+    const autoRotateFolder = cameraFolder.addFolder('自动旋转')
+    autoRotateFolder.add({ cameraAutoRotate }, 'cameraAutoRotate')
+      .name('启用自动旋转')
       .onChange((value: boolean) => setCameraAutoRotate(value))
 
-    cameraFolder.add({ cameraRotateSpeed }, 'cameraRotateSpeed', 0, 2, 0.1)
+    autoRotateFolder.add({ cameraRotateSpeed }, 'cameraRotateSpeed', 0, 2, 0.1)
       .name('旋转速度')
       .onChange((value: number) => setCameraRotateSpeed(value))
+
+    // 相机位置控制
+    const positionFolder = cameraFolder.addFolder('位置控制')
+    positionFolder.add({ cameraPositionX }, 'cameraPositionX', -200, 200, 1)
+      .name('X轴位置')
+      .onChange((value: number) => setCameraPositionX(value))
+
+    positionFolder.add({ cameraPositionY }, 'cameraPositionY', -200, 200, 1)
+      .name('Y轴位置')
+      .onChange((value: number) => setCameraPositionY(value))
+
+    positionFolder.add({ cameraPositionZ }, 'cameraPositionZ', -200, 200, 1)
+      .name('Z轴位置')
+      .onChange((value: number) => setCameraPositionZ(value))
+
+    // 相机旋转控制
+    const rotationFolder = cameraFolder.addFolder('旋转控制')
+    rotationFolder.add({ cameraRotationX }, 'cameraRotationX', -Math.PI, Math.PI, 0.01)
+      .name('X轴旋转 (弧度)')
+      .onChange((value: number) => setCameraRotationX(value))
+
+    rotationFolder.add({ cameraRotationY }, 'cameraRotationY', -Math.PI, Math.PI, 0.01)
+      .name('Y轴旋转 (弧度)')
+      .onChange((value: number) => setCameraRotationY(value))
+
+    rotationFolder.add({ cameraRotationZ }, 'cameraRotationZ', -Math.PI, Math.PI, 0.01)
+      .name('Z轴旋转 (弧度)')
+      .onChange((value: number) => setCameraRotationZ(value))
+
+    // 相机视野控制
+    const fovFolder = cameraFolder.addFolder('视野控制')
+    fovFolder.add({ cameraFov }, 'cameraFov', 10, 120, 1)
+      .name('视野角度 (FOV)')
+      .onChange((value: number) => setCameraFov(value))
+
+    fovFolder.add({ cameraNear }, 'cameraNear', 0.01, 10, 0.01)
+      .name('近裁剪面')
+      .onChange((value: number) => setCameraNear(value))
+
+    fovFolder.add({ cameraFar }, 'cameraFar', 100, 5000, 10)
+      .name('远裁剪面')
+      .onChange((value: number) => setCameraFar(value))
+
+    // 相机目标点控制
+    const targetFolder = cameraFolder.addFolder('目标点控制')
+    targetFolder.add({ cameraTargetX }, 'cameraTargetX', -100, 100, 1)
+      .name('目标X轴')
+      .onChange((value: number) => setCameraTargetX(value))
+
+    targetFolder.add({ cameraTargetY }, 'cameraTargetY', -100, 100, 1)
+      .name('目标Y轴')
+      .onChange((value: number) => setCameraTargetY(value))
+
+    targetFolder.add({ cameraTargetZ }, 'cameraTargetZ', -100, 100, 1)
+      .name('目标Z轴')
+      .onChange((value: number) => setCameraTargetZ(value))
+
+    // 相机预设控制
+    const presetFolder = cameraFolder.addFolder('预设控制')
+    const presetActions = {
+      '默认视角': () => applyCameraPreset('default'),
+      '俯视视角': () => applyCameraPreset('top-view'),
+      '侧视视角': () => applyCameraPreset('side-view'),
+      '近距离视角': () => applyCameraPreset('close-up'),
+      '广角视角': () => applyCameraPreset('wide-angle'),
+      '保存当前视角': () => {
+        const name = prompt('请输入预设名称:')
+        if (name) saveCameraPreset(name)
+      },
+      '重置为默认': () => resetCameraToDefault()
+    }
+
+    Object.entries(presetActions).forEach(([name, action]) => {
+      presetFolder.add(presetActions, name as keyof typeof presetActions)
+    })
+
+    // 默认收拢相机子文件夹
+    autoRotateFolder.close()
+    positionFolder.close()
+    rotationFolder.close()
+    fovFolder.close()
+    targetFolder.close()
+    presetFolder.close()
 
     // 背景星空控制
     const starFieldFolder = gui.addFolder('背景星空')

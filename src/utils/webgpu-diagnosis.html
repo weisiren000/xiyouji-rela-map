@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGPU 诊断工具</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+        }
+        .test-section.error {
+            border-left-color: #f44336;
+        }
+        .test-section.warning {
+            border-left-color: #ff9800;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.success { background: #4CAF50; color: white; }
+        .status.error { background: #f44336; color: white; }
+        .status.warning { background: #ff9800; color: white; }
+        .details {
+            margin-top: 10px;
+            padding: 10px;
+            background: #1e1e1e;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+        .solution {
+            background: #0d47a1;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .solution h4 {
+            margin-top: 0;
+            color: #90caf9;
+        }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #1976D2;
+        }
+        .progress {
+            width: 100%;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #4CAF50;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 WebGPU 诊断工具</h1>
+        <p>检测你的浏览器和系统对WebGPU的支持情况</p>
+        <button onclick="runDiagnosis()">开始诊断</button>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        let currentStep = 0;
+        const totalSteps = 8;
+
+        function updateProgress() {
+            currentStep++;
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function addResult(title, status, details, solution = null) {
+            const resultsDiv = document.getElementById('results');
+            const section = document.createElement('div');
+            section.className = `test-section ${status}`;
+            
+            let html = `
+                <h3>${title} <span class="status ${status}">${getStatusText(status)}</span></h3>
+            `;
+            
+            if (details) {
+                html += `<div class="details">${details}</div>`;
+            }
+            
+            if (solution) {
+                html += `<div class="solution"><h4>💡 解决方案</h4>${solution}</div>`;
+            }
+            
+            section.innerHTML = html;
+            resultsDiv.appendChild(section);
+            updateProgress();
+        }
+
+        function getStatusText(status) {
+            switch(status) {
+                case 'success': return '✅ 通过';
+                case 'error': return '❌ 失败';
+                case 'warning': return '⚠️ 警告';
+                default: return '❓ 未知';
+            }
+        }
+
+        async function runDiagnosis() {
+            document.getElementById('results').innerHTML = '';
+            currentStep = 0;
+            updateProgress();
+
+            // 1. 检查浏览器信息
+            const userAgent = navigator.userAgent;
+            const browserInfo = getBrowserInfo(userAgent);
+            addResult(
+                '1. 浏览器信息',
+                'success',
+                `浏览器: ${browserInfo.name} ${browserInfo.version}\n用户代理: ${userAgent}`
+            );
+
+            // 2. 检查WebGPU API是否存在
+            if (!navigator.gpu) {
+                addResult(
+                    '2. WebGPU API 检测',
+                    'error',
+                    'navigator.gpu 不存在',
+                    `你的浏览器不支持WebGPU API。请尝试：
+                    <br>• 使用 Chrome 113+ 或 Edge 113+
+                    <br>• 启用实验性功能：chrome://flags/#enable-unsafe-webgpu
+                    <br>• 更新到最新版本浏览器`
+                );
+                return;
+            } else {
+                addResult('2. WebGPU API 检测', 'success', 'navigator.gpu 存在');
+            }
+
+            // 3. 检查adapter
+            let adapter;
+            try {
+                adapter = await navigator.gpu.requestAdapter();
+                if (!adapter) {
+                    addResult(
+                        '3. WebGPU Adapter 检测',
+                        'error',
+                        'requestAdapter() 返回 null',
+                        `无法获取WebGPU适配器。可能原因：
+                        <br>• GPU驱动过旧，请更新显卡驱动
+                        <br>• 硬件不支持WebGPU
+                        <br>• 浏览器安全策略限制`
+                    );
+                    return;
+                } else {
+                    const info = await adapter.requestAdapterInfo?.() || {};
+                    addResult(
+                        '3. WebGPU Adapter 检测',
+                        'success',
+                        `Adapter获取成功\n设备: ${info.device || '未知'}\n厂商: ${info.vendor || '未知'}\n架构: ${info.architecture || '未知'}`
+                    );
+                }
+            } catch (error) {
+                addResult(
+                    '3. WebGPU Adapter 检测',
+                    'error',
+                    `requestAdapter() 抛出异常: ${error.message}`,
+                    `请检查：
+                    <br>• 是否在HTTPS环境下运行
+                    <br>• 浏览器是否启用了WebGPU功能
+                    <br>• 系统是否支持硬件加速`
+                );
+                return;
+            }
+
+            // 4. 检查device
+            let device;
+            try {
+                device = await adapter.requestDevice();
+                addResult('4. WebGPU Device 检测', 'success', 'Device创建成功');
+            } catch (error) {
+                addResult(
+                    '4. WebGPU Device 检测',
+                    'error',
+                    `requestDevice() 失败: ${error.message}`,
+                    `设备创建失败，可能是：
+                    <br>• 权限不足
+                    <br>• 资源限制
+                    <br>• 驱动兼容性问题`
+                );
+                return;
+            }
+
+            // 5. 检查功能支持
+            const features = Array.from(adapter.features);
+            addResult(
+                '5. WebGPU 功能支持',
+                features.length > 0 ? 'success' : 'warning',
+                `支持的功能 (${features.length}个):\n${features.join('\n') || '无额外功能'}`
+            );
+
+            // 6. 检查限制
+            const limits = adapter.limits;
+            const importantLimits = {
+                'maxBindGroups': limits.maxBindGroups,
+                'maxBufferSize': limits.maxBufferSize,
+                'maxTextureSize': limits.maxTextureDimension2D,
+                'maxComputeWorkgroupSize': limits.maxComputeWorkgroupSizeX
+            };
+            addResult(
+                '6. WebGPU 限制检查',
+                'success',
+                Object.entries(importantLimits)
+                    .map(([key, value]) => `${key}: ${value}`)
+                    .join('\n')
+            );
+
+            // 7. 简单渲染测试
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 256;
+                canvas.height = 256;
+                const context = canvas.getContext('webgpu');
+                
+                if (!context) {
+                    throw new Error('无法获取WebGPU canvas context');
+                }
+
+                const format = navigator.gpu.getPreferredCanvasFormat();
+                context.configure({
+                    device: device,
+                    format: format,
+                });
+
+                addResult(
+                    '7. Canvas 渲染测试',
+                    'success',
+                    `Canvas context创建成功\n首选格式: ${format}`
+                );
+            } catch (error) {
+                addResult(
+                    '7. Canvas 渲染测试',
+                    'error',
+                    `Canvas测试失败: ${error.message}`,
+                    '渲染上下文创建失败，可能影响实际使用'
+                );
+            }
+
+            // 8. 总结和建议
+            addResult(
+                '8. 诊断总结',
+                'success',
+                '🎉 WebGPU 基础功能检测完成！',
+                `你的系统支持WebGPU！如果项目中仍有问题，可能是：
+                <br>• 代码实现问题
+                <br>• 特定功能不支持
+                <br>• 性能配置需要调整
+                <br><br>建议：检查浏览器控制台的具体错误信息`
+            );
+
+            // 清理资源
+            if (device) {
+                device.destroy();
+            }
+        }
+
+        function getBrowserInfo(userAgent) {
+            if (userAgent.includes('Chrome')) {
+                const match = userAgent.match(/Chrome\/(\d+)/);
+                return { name: 'Chrome', version: match ? match[1] : '未知' };
+            } else if (userAgent.includes('Firefox')) {
+                const match = userAgent.match(/Firefox\/(\d+)/);
+                return { name: 'Firefox', version: match ? match[1] : '未知' };
+            } else if (userAgent.includes('Safari')) {
+                const match = userAgent.match(/Version\/(\d+)/);
+                return { name: 'Safari', version: match ? match[1] : '未知' };
+            } else if (userAgent.includes('Edge')) {
+                const match = userAgent.match(/Edg\/(\d+)/);
+                return { name: 'Edge', version: match ? match[1] : '未知' };
+            }
+            return { name: '未知浏览器', version: '未知' };
+        }
+    </script>
+</body>
+</html>

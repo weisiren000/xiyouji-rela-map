@@ -4,6 +4,7 @@ import { InstancedMesh, Object3D, Color, Vector3 } from 'three'
 import { PlanetData } from '@/types/galaxy'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
+import { unifiedRenderingAPI } from '@/utils/webgpu'
 
 interface PlanetClusterProps {
   planets: PlanetData[]
@@ -23,6 +24,15 @@ export const PlanetCluster: React.FC<PlanetClusterProps> = ({ planets }) => {
 
   // 根据性能等级获取配置
   const config = PERFORMANCE_CONFIGS[performanceLevel]
+
+  // 检查是否支持WebGPU
+  const isWebGPUSupported = useMemo(() => {
+    try {
+      return unifiedRenderingAPI.isWebGPUSupported()
+    } catch {
+      return false
+    }
+  }, [])
 
   // 更新动画星球数据
   useEffect(() => {
@@ -77,31 +87,51 @@ export const PlanetCluster: React.FC<PlanetClusterProps> = ({ planets }) => {
     return currentPlanets.slice(0, maxCount)
   }, [planets, config.planetCount, config.lodEnabled])
 
-  // 更新InstancedMesh的函数
+  // 优化的更新InstancedMesh函数（支持WebGPU）
   const updateInstancedMesh = () => {
     if (!meshRef.current || visiblePlanets.length === 0) return
 
-    visiblePlanets.forEach((planet, i) => {
-      // 设置位置和缩放
-      tempObject.position.copy(planet.position)
-      tempObject.scale.setScalar(planet.radius)
-      tempObject.updateMatrix()
-
-      // 应用变换矩阵
-      meshRef.current!.setMatrixAt(i, tempObject.matrix)
-
-      // 设置颜色 - 现在发光强度通过材质的emissiveIntensity控制
-      tempColor.set(planet.color)
-      // 可以根据距离调整基础颜色亮度，但发光效果由材质emissiveIntensity控制
+    // 准备批量更新数据
+    const updates = visiblePlanets.map((planet, i) => {
+      // 计算距离因子用于亮度调整
       const distanceFactor = Math.pow(1.0 - (planet.distanceFromCenter / galaxyConfig.galaxyRadius), 2)
-      const brightnessBoost = 1 + distanceFactor * 0.5  // 距离中心近的星球稍微亮一些
-      tempColor.multiplyScalar(brightnessBoost)
-      meshRef.current!.setColorAt(i, tempColor)
+      const brightnessBoost = 1 + distanceFactor * 0.5
+
+      const color = new Color(planet.color)
+      color.multiplyScalar(brightnessBoost)
+
+      return {
+        index: i,
+        position: planet.position,
+        scale: new Vector3(planet.radius, planet.radius, planet.radius),
+        color: color
+      }
     })
 
-    meshRef.current.instanceMatrix.needsUpdate = true
-    if (meshRef.current.instanceColor) {
-      meshRef.current.instanceColor.needsUpdate = true
+    // 使用统一渲染API进行批量更新（自动选择WebGPU或WebGL优化路径）
+    try {
+      unifiedRenderingAPI.batchUpdateInstancedMesh(meshRef.current, updates)
+
+      if (isWebGPUSupported && updates.length > 1000) {
+        console.log('🚀 使用WebGPU优化路径更新', updates.length, '个星球')
+      }
+    } catch (error) {
+      // 降级到传统更新方式
+      console.warn('统一渲染API更新失败，降级到传统方式:', error)
+
+      updates.forEach(({ index, position, scale, color }) => {
+        tempObject.position.copy(position)
+        tempObject.scale.copy(scale)
+        tempObject.updateMatrix()
+
+        meshRef.current!.setMatrixAt(index, tempObject.matrix)
+        meshRef.current!.setColorAt(index, color)
+      })
+
+      meshRef.current.instanceMatrix.needsUpdate = true
+      if (meshRef.current.instanceColor) {
+        meshRef.current.instanceColor.needsUpdate = true
+      }
     }
   }
 

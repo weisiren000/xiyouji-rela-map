@@ -25,6 +25,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    target: 'esnext', // 支持最新的ES特性，包括top-level await
     rollupOptions: {
       output: {
         manualChunks: {
@@ -35,7 +36,13 @@ export default defineConfig({
       },
     },
   },
+  esbuild: {
+    target: 'esnext', // 确保esbuild也使用最新目标
+  },
   optimizeDeps: {
     include: ['three', '@react-three/fiber', '@react-three/drei'],
+    esbuildOptions: {
+      target: 'esnext', // 确保依赖优化也使用最新目标
+    },
   },
 })

@@ -24,6 +24,26 @@ interface GalaxyState {
   cameraAutoRotate: boolean
   cameraRotateSpeed: number
 
+  // 相机位置控制
+  cameraPositionX: number
+  cameraPositionY: number
+  cameraPositionZ: number
+
+  // 相机旋转控制
+  cameraRotationX: number
+  cameraRotationY: number
+  cameraRotationZ: number
+
+  // 相机视野控制
+  cameraFov: number
+  cameraNear: number
+  cameraFar: number
+
+  // 相机目标点控制
+  cameraTargetX: number
+  cameraTargetY: number
+  cameraTargetZ: number
+
   // 背景星空控制
   starFieldVisible: boolean
   starFieldOpacity: number
@@ -47,6 +67,34 @@ interface GalaxyState {
   setSunRotationSpeed: (speed: number) => void
   setCameraAutoRotate: (autoRotate: boolean) => void
   setCameraRotateSpeed: (speed: number) => void
+
+  // 相机位置控制方法
+  setCameraPosition: (x: number, y: number, z: number) => void
+  setCameraPositionX: (x: number) => void
+  setCameraPositionY: (y: number) => void
+  setCameraPositionZ: (z: number) => void
+
+  // 相机旋转控制方法
+  setCameraRotation: (x: number, y: number, z: number) => void
+  setCameraRotationX: (x: number) => void
+  setCameraRotationY: (y: number) => void
+  setCameraRotationZ: (z: number) => void
+
+  // 相机视野控制方法
+  setCameraFov: (fov: number) => void
+  setCameraNear: (near: number) => void
+  setCameraFar: (far: number) => void
+
+  // 相机目标点控制方法
+  setCameraTarget: (x: number, y: number, z: number) => void
+  setCameraTargetX: (x: number) => void
+  setCameraTargetY: (y: number) => void
+  setCameraTargetZ: (z: number) => void
+
+  // 相机预设方法
+  applyCameraPreset: (preset: string) => void
+  saveCameraPreset: (name: string) => void
+  resetCameraToDefault: () => void
   setStarFieldVisible: (visible: boolean) => void
   setStarFieldOpacity: (opacity: number) => void
   setStarFieldSize: (size: number) => void
@@ -91,6 +139,26 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   cameraAutoRotate: false,
   cameraRotateSpeed: 0.5,
 
+  // 相机位置控制 (默认入场视角)
+  cameraPositionX: 0,
+  cameraPositionY: 45,
+  cameraPositionZ: 65,
+
+  // 相机旋转控制 (弧度制)
+  cameraRotationX: 0,
+  cameraRotationY: 0,
+  cameraRotationZ: 0,
+
+  // 相机视野控制
+  cameraFov: 75,
+  cameraNear: 0.1,
+  cameraFar: 1000,
+
+  // 相机目标点控制 (OrbitControls target)
+  cameraTargetX: 0,
+  cameraTargetY: 0,
+  cameraTargetZ: 0,
+
   // 背景星空控制
   starFieldVisible: true,
   starFieldOpacity: 0.8,
@@ -126,6 +194,121 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   setSunRotationSpeed: (speed) => set({ sunRotationSpeed: speed }),
   setCameraAutoRotate: (autoRotate) => set({ cameraAutoRotate: autoRotate }),
   setCameraRotateSpeed: (speed) => set({ cameraRotateSpeed: speed }),
+
+  // 相机位置控制方法实现
+  setCameraPosition: (x, y, z) => set({
+    cameraPositionX: x,
+    cameraPositionY: y,
+    cameraPositionZ: z
+  }),
+  setCameraPositionX: (x) => set({ cameraPositionX: x }),
+  setCameraPositionY: (y) => set({ cameraPositionY: y }),
+  setCameraPositionZ: (z) => set({ cameraPositionZ: z }),
+
+  // 相机旋转控制方法实现
+  setCameraRotation: (x, y, z) => set({
+    cameraRotationX: x,
+    cameraRotationY: y,
+    cameraRotationZ: z
+  }),
+  setCameraRotationX: (x) => set({ cameraRotationX: x }),
+  setCameraRotationY: (y) => set({ cameraRotationY: y }),
+  setCameraRotationZ: (z) => set({ cameraRotationZ: z }),
+
+  // 相机视野控制方法实现
+  setCameraFov: (fov) => set({ cameraFov: fov }),
+  setCameraNear: (near) => set({ cameraNear: near }),
+  setCameraFar: (far) => set({ cameraFar: far }),
+
+  // 相机目标点控制方法实现
+  setCameraTarget: (x, y, z) => set({
+    cameraTargetX: x,
+    cameraTargetY: y,
+    cameraTargetZ: z
+  }),
+  setCameraTargetX: (x) => set({ cameraTargetX: x }),
+  setCameraTargetY: (y) => set({ cameraTargetY: y }),
+  setCameraTargetZ: (z) => set({ cameraTargetZ: z }),
+
+  // 相机预设方法实现
+  applyCameraPreset: (preset: string) => {
+    const presets = {
+      'default': {
+        position: [0, 45, 65],
+        rotation: [0, 0, 0],
+        target: [0, 0, 0],
+        fov: 75
+      },
+      'top-view': {
+        position: [0, 100, 0],
+        rotation: [-Math.PI/2, 0, 0],
+        target: [0, 0, 0],
+        fov: 60
+      },
+      'side-view': {
+        position: [100, 0, 0],
+        rotation: [0, Math.PI/2, 0],
+        target: [0, 0, 0],
+        fov: 75
+      },
+      'close-up': {
+        position: [0, 20, 30],
+        rotation: [0, 0, 0],
+        target: [0, 0, 0],
+        fov: 90
+      },
+      'wide-angle': {
+        position: [0, 80, 120],
+        rotation: [0, 0, 0],
+        target: [0, 0, 0],
+        fov: 45
+      }
+    }
+
+    const config = presets[preset as keyof typeof presets]
+    if (config) {
+      set({
+        cameraPositionX: config.position[0],
+        cameraPositionY: config.position[1],
+        cameraPositionZ: config.position[2],
+        cameraRotationX: config.rotation[0],
+        cameraRotationY: config.rotation[1],
+        cameraRotationZ: config.rotation[2],
+        cameraTargetX: config.target[0],
+        cameraTargetY: config.target[1],
+        cameraTargetZ: config.target[2],
+        cameraFov: config.fov
+      })
+    }
+  },
+
+  saveCameraPreset: (name: string) => {
+    // 这里可以实现保存到localStorage的逻辑
+    const state = useGalaxyStore.getState()
+    const preset = {
+      position: [state.cameraPositionX, state.cameraPositionY, state.cameraPositionZ],
+      rotation: [state.cameraRotationX, state.cameraRotationY, state.cameraRotationZ],
+      target: [state.cameraTargetX, state.cameraTargetY, state.cameraTargetZ],
+      fov: state.cameraFov
+    }
+    localStorage.setItem(`camera-preset-${name}`, JSON.stringify(preset))
+    console.log(`📷 相机预设 "${name}" 已保存`)
+  },
+
+  resetCameraToDefault: () => set({
+    cameraPositionX: 0,
+    cameraPositionY: 45,
+    cameraPositionZ: 65,
+    cameraRotationX: 0,
+    cameraRotationY: 0,
+    cameraRotationZ: 0,
+    cameraTargetX: 0,
+    cameraTargetY: 0,
+    cameraTargetZ: 0,
+    cameraFov: 75,
+    cameraNear: 0.1,
+    cameraFar: 1000
+  }),
   setStarFieldVisible: (visible) => set({ starFieldVisible: visible }),
   setStarFieldOpacity: (opacity) => set({ starFieldOpacity: opacity }),
   setStarFieldSize: (size) => set({ starFieldSize: size }),

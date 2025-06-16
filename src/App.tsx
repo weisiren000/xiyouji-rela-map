@@ -1,9 +1,11 @@
 
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { GalaxyScene } from '@scenes/GalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/ui/ControlPanel'
 import { PerformanceDisplay } from '@components/ui/PerformanceDisplay'
+import { WebGPUStatus } from '@components/ui/WebGPUStatus'
 import { DataDashboard } from '@components/dashboard/DataDashboard'
+
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
 /**
@@ -42,6 +44,9 @@ function App() {
 
       {/* 性能显示 */}
       <PerformanceDisplay />
+
+      {/* WebGPU状态显示 */}
+      <WebGPUStatus />
 
       {/* 控制面板 */}
       <ControlPanel />
