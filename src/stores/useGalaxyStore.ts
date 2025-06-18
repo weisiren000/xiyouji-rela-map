@@ -1,5 +1,8 @@
 import { create } from 'zustand'
 import { GalaxyConfig, FogConfig, BloomConfig, PlanetData } from '../types/galaxy'
+import { CharacterData } from '../types/character'
+import { Vector3 } from 'three'
+import { CharacterData } from '../types/character'
 
 /**
  * 银河系状态管理
@@ -14,6 +17,11 @@ interface GalaxyState {
 
   // 数据
   planets: PlanetData[]
+
+  // 视图状态管理
+  viewMode: 'galaxy' | 'detail'
+  selectedCharacter: CharacterData | null
+  detailViewCameraPosition: Vector3
 
   // 控制状态
   isAnimating: boolean
@@ -67,6 +75,13 @@ interface GalaxyState {
   setSunRotationSpeed: (speed: number) => void
   setCameraAutoRotate: (autoRotate: boolean) => void
   setCameraRotateSpeed: (speed: number) => void
+
+  // 视图状态管理方法
+  setViewMode: (mode: 'galaxy' | 'detail') => void
+  setSelectedCharacter: (character: CharacterData | null) => void
+  setDetailViewCameraPosition: (position: Vector3) => void
+  enterDetailView: (character: CharacterData) => void
+  exitDetailView: () => void
 
   // 相机位置控制方法
   setCameraPosition: (x: number, y: number, z: number) => void
@@ -131,6 +146,12 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   
   // 初始数据
   planets: [],
+
+  // 视图状态初始值
+  viewMode: 'galaxy',
+  selectedCharacter: null,
+  detailViewCameraPosition: new Vector3(0, 10, 20), // 详情视图的固定相机位置
+
   isAnimating: true,
   rotationSpeed: 1.0,
   sunRotationSpeed: 1.0,
@@ -316,4 +337,19 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   setPerformanceLevel: (level) => set({ performanceLevel: level }),
   setAutoPerformance: (auto) => set({ autoPerformance: auto }),
   setMaxFPS: (fps) => set({ maxFPS: fps }),
+
+  // 视图状态管理方法实现
+  setViewMode: (mode) => set({ viewMode: mode }),
+  setSelectedCharacter: (character) => set({ selectedCharacter: character }),
+  setDetailViewCameraPosition: (position) => set({ detailViewCameraPosition: position }),
+
+  enterDetailView: (character) => set({
+    viewMode: 'detail',
+    selectedCharacter: character
+  }),
+
+  exitDetailView: () => set({
+    viewMode: 'galaxy',
+    selectedCharacter: null
+  }),
 }))

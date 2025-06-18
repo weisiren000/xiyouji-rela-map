@@ -7,7 +7,9 @@ import { PortStatusIndicator } from '@components/ui/PortStatusIndicator'
 
 import { DataDashboard } from '@components/dashboard/DataDashboard'
 import { CharacterInfoOverlay } from '@components/ui/CharacterInfoOverlay'
+import { CharacterDetailView } from '@components/ui/CharacterDetailView'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
+import { useGalaxyStore } from '@/stores/useGalaxyStore'
 
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
@@ -24,6 +26,9 @@ function App() {
 
   // 🌐 全局角色信息状态
   const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
+
+  // 🎯 视图状态管理
+  const { viewMode, selectedCharacter } = useGalaxyStore()
 
   // 应用启动日志
   useEffect(() => {
@@ -51,22 +56,33 @@ function App() {
 
   return (
     <div className="app">
-      {/* 信息显示 */}
-      <InfoDisplay />
+      {/* 条件渲染：全局视图 vs 详情视图 */}
+      {viewMode === 'galaxy' ? (
+        <>
+          {/* 全局银河系视图 */}
+          {/* 信息显示 */}
+          <InfoDisplay />
 
-      {/* 3D场景 */}
-      <GalaxyScene />
+          {/* 3D场景 */}
+          <GalaxyScene />
 
-      {/* 性能显示 */}
-      <PerformanceDisplay />
+          {/* 性能显示 */}
+          <PerformanceDisplay />
 
+          {/* 控制面板 */}
+          <ControlPanel />
 
+          {/* 数据管理Dashboard */}
+          <DataDashboard />
+        </>
+      ) : (
+        <>
+          {/* 角色详情视图 */}
+          <CharacterDetailView />
+        </>
+      )}
 
-      {/* 控制面板 */}
-      <ControlPanel />
-
-      {/* 数据管理Dashboard */}
-      <DataDashboard />
+      {/* 全局UI元素 - 在所有视图中都显示 */}
 
       {/* 加载状态指示器 */}
       {isLoading && (
@@ -104,12 +120,14 @@ function App() {
         </div>
       )}
 
-      {/* 🎯 全局角色信息卡片 */}
-      <CharacterInfoOverlay
-        character={hoveredCharacter}
-        mousePosition={mousePosition}
-        visible={showInfoCard}
-      />
+      {/* 🎯 全局角色信息卡片 - 只在银河系视图中显示 */}
+      {viewMode === 'galaxy' && (
+        <CharacterInfoOverlay
+          character={hoveredCharacter}
+          mousePosition={mousePosition}
+          visible={showInfoCard}
+        />
+      )}
     </div>
   )
 }

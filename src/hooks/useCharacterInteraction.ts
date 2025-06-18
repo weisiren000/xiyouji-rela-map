@@ -1,22 +1,11 @@
 import { useState, useRef, useCallback } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Vector2, Vector3, Raycaster, InstancedMesh } from 'three'
+import { useGalaxyStore } from '@/stores/useGalaxyStore'
+import { CharacterData } from '@/types/character'
 
-interface CharacterData {
-  id: string
-  name: string
-  pinyin: string
-  type: string
-  category: string
-  faction: string
-  rank: number
-  power: number
-  influence: number
-  visual: {
-    color: string
-    size: number
-    emissiveIntensity: number
-  }
+// 扩展CharacterData以包含位置信息
+interface CharacterDataWithPosition extends CharacterData {
   position?: Vector3
   isAlias?: boolean
   originalCharacter?: string
@@ -24,7 +13,7 @@ interface CharacterData {
 
 interface InteractionState {
   hoveredIndex: number | null
-  hoveredCharacter: CharacterData | null
+  hoveredCharacter: CharacterDataWithPosition | null
   mousePosition: Vector2
   worldPosition: Vector3 | null
 }
@@ -33,10 +22,11 @@ interface InteractionState {
  * 角色交互Hook - 处理鼠标悬浮检测和交互状态
  */
 export const useCharacterInteraction = (
-  characters: CharacterData[],
+  characters: CharacterDataWithPosition[],
   meshRef: React.RefObject<InstancedMesh>
 ) => {
   const { camera, gl } = useThree()
+  const { enterDetailView } = useGalaxyStore()
   const raycaster = useRef(new Raycaster())
   const mouse = useRef(new Vector2())
   
@@ -63,6 +53,40 @@ export const useCharacterInteraction = (
       mousePosition: new Vector2(event.clientX, event.clientY)
     }))
   }, [gl.domElement])
+
+  /**
+   * 处理点击事件 - 进入角色详情视图
+   */
+  const handleClick = useCallback((event: MouseEvent) => {
+    if (!meshRef.current || !camera || characters.length === 0) {
+      return
+    }
+
+    // 更新鼠标位置
+    const rect = gl.domElement.getBoundingClientRect()
+    mouse.current.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
+    mouse.current.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+
+    // 执行射线检测
+    raycaster.current.setFromCamera(mouse.current, camera)
+    raycaster.current.params.Mesh = { threshold: 0.1 }
+    raycaster.current.params.Points = { threshold: 0.1 }
+
+    const intersects = raycaster.current.intersectObject(meshRef.current)
+
+    if (intersects.length > 0) {
+      const intersect = intersects[0]
+      const instanceId = intersect.instanceId
+
+      if (instanceId !== undefined && instanceId < characters.length) {
+        const character = characters[instanceId]
+        console.log('🎯 点击角色:', character.name, '进入详情视图')
+
+        // 进入详情视图
+        enterDetailView(character)
+      }
+    }
+  }, [camera, gl.domElement, meshRef, characters, enterDetailView])
 
   /**
    * 执行射线检测
@@ -162,12 +186,14 @@ export const useCharacterInteraction = (
 
     console.log('🖱️ 绑定鼠标事件到canvas')
     gl.domElement.addEventListener('mousemove', updateMousePosition)
+    gl.domElement.addEventListener('click', handleClick)
 
     return () => {
       console.log('🖱️ 清理鼠标事件')
       gl.domElement.removeEventListener('mousemove', updateMousePosition)
+      gl.domElement.removeEventListener('click', handleClick)
     }
-  }, [gl.domElement, updateMousePosition])
+  }, [gl.domElement, updateMousePosition, handleClick])
 
   return {
     interactionState,
