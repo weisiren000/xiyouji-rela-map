@@ -41,6 +41,44 @@ export const CharacterDetailPanel: React.FC<CharacterDetailPanelProps> = ({ char
     return '很弱'
   }
 
+  // 格式化数据源路径显示
+  const formatSourcePath = (source: string): string => {
+    if (!source) return '未知'
+
+    // 提取文件名
+    const fileName = source.split(/[/\\]/).pop() || source
+
+    // 如果路径太长，显示省略号
+    if (source.length > 50) {
+      const parts = source.split(/[/\\]/)
+      if (parts.length > 3) {
+        return `.../${parts.slice(-2).join('/')}`
+      }
+    }
+
+    return fileName
+  }
+
+  // 格式化时间显示
+  const formatDateTime = (dateString: string): string => {
+    if (!dateString) return '未知'
+
+    try {
+      const date = new Date(dateString)
+      if (isNaN(date.getTime())) return '格式错误'
+
+      return date.toLocaleString('zh-CN', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    } catch (error) {
+      return '格式错误'
+    }
+  }
+
   return (
     <div className="character-detail-panel">
       {/* 角色头部信息 */}
@@ -174,11 +212,15 @@ export const CharacterDetailPanel: React.FC<CharacterDetailPanelProps> = ({ char
         <div className="metadata-grid">
           <div className="metadata-item">
             <span className="metadata-label">数据来源</span>
-            <span className="metadata-value">{character.metadata.source}</span>
+            <span className="metadata-value" title={character.metadata.source}>
+              {formatSourcePath(character.metadata.source)}
+            </span>
           </div>
           <div className="metadata-item">
             <span className="metadata-label">最后修改</span>
-            <span className="metadata-value">{character.metadata.lastModified}</span>
+            <span className="metadata-value" title={character.metadata.lastModified}>
+              {formatDateTime(character.metadata.lastModified)}
+            </span>
           </div>
           <div className="metadata-item">
             <span className="metadata-label">验证状态</span>

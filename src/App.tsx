@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { GalaxyScene } from '@scenes/GalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/ui/ControlPanel'
 import { PerformanceDisplay } from '@components/ui/PerformanceDisplay'
-import { PortStatusIndicator } from '@components/ui/PortStatusIndicator'
+
 
 import { DataDashboard } from '@components/dashboard/DataDashboard'
 import { CharacterInfoOverlay } from '@components/ui/CharacterInfoOverlay'
@@ -91,32 +91,6 @@ function App() {
             <div className="loading-spinner"></div>
             <span>正在自动加载数据...</span>
           </div>
-        </div>
-      )}
-
-      {/* 端口状态指示器 */}
-      <div
-        style={{
-          position: 'fixed',
-          top: '10px',
-          right: '10px',
-          zIndex: 1000
-        }}
-      >
-        <PortStatusIndicator />
-      </div>
-
-      {/* 服务器状态指示器 */}
-      {isOnline === false && (
-        <div className="app-status-indicator offline">
-          <span>🔴 数据服务器离线</span>
-        </div>
-      )}
-
-      {/* 数据状态指示器 */}
-      {isInitialized && hasData && (
-        <div className="app-status-indicator online">
-          <span>🟢 已加载 {dataCount} 个角色</span>
         </div>
       )}
 

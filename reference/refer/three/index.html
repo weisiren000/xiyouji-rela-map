@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLB Model Viewer with Shader Effects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            background-color: #000;
+        }
+
+        canvas { 
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .ui-panel {
+            position: absolute;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, .7);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 120, 50, .3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+            z-index: 10;
+            padding: 15px;
+            color: #eee;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #controls-container {
+            top: 20px;
+            left: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+
+        #title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        #theme-selector {
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 150px;
+        }
+
+        #theme-selector-title {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .theme-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, .3);
+            cursor: pointer;
+            transition: transform .2s, border-color .2s;
+            outline: none;
+            overflow: hidden;
+        }
+
+        .theme-button:hover, .theme-button:focus {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, .7);
+        }
+
+        .theme-button.active {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, .9);
+            box-shadow: 0 0 10px rgba(255, 200, 150, .6);
+        }
+
+        #theme-1 { background: linear-gradient(45deg, #4F46E5, #7C3AED, #C026D3, #DB2777); }
+        #theme-2 { background: linear-gradient(45deg, #F59E0B, #F97316, #DC2626, #7F1D1D); }
+        #theme-3 { background: linear-gradient(45deg, #EC4899, #8B5CF6, #6366F1, #3B82F6); }
+        #theme-4 { background: linear-gradient(45deg, #10B981, #A3E635, #FACC15, #FB923C); }
+
+        #control-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+            background: rgba(0, 0, 0, .6);
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 120, 50, .2);
+        }
+
+        .control-button {
+            background: rgba(255, 120, 50, .2);
+            color: #eee;
+            border: 1px solid rgba(255, 150, 50, .3);
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+            min-width: 80px;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .control-button:hover, .control-button:focus {
+            background: rgba(255, 120, 50, .4);
+            outline: none;
+        }
+
+        .control-button:active {
+            background: rgba(255, 120, 50, .6);
+            transform: scale(0.95);
+        }
+        
+        #help-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        
+        #help-button {
+            background: rgba(255, 120, 50, .2);
+            color: #eee;
+            border: 1px solid rgba(255, 150, 50, .3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        #help-panel {
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            width: 280px;
+            background: rgba(0, 0, 0, .8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 120, 50, .3);
+            padding: 15px;
+            color: #eee;
+            font-size: 13px;
+            display: none;
+        }
+        
+        #help-panel.show {
+            display: block;
+        }
+        
+        #help-panel h3 {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        #help-panel p {
+            margin-bottom: 8px;
+        }
+        
+        #help-panel kbd {
+            background: rgba(255, 255, 255, .2);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 0 2px;
+        }
+        
+        .control-row {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        
+        .control-label {
+            flex: 1;
+        }
+        
+        .control-key {
+            font-family: monospace;
+            color: #aaa;
+        }
+        
+        /* 参数控制面板 */
+        #params-button {
+            background: rgba(255, 120, 50, .2);
+            color: #eee;
+            border: 1px solid rgba(255, 150, 50, .3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 180px;
+            z-index: 10;
+        }
+        
+        #params-panel {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, .8);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 120, 50, .3);
+            padding: 15px;
+            color: #eee;
+            font-size: 13px;
+            z-index: 10;
+            display: none;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        #params-panel.show {
+            display: block;
+        }
+        
+        #params-panel h3 {
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        .param-group {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .param-group h4 {
+            margin-bottom: 10px;
+            color: rgba(255, 150, 50, 1);
+            font-size: 14px;
+        }
+        
+        .param-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .param-label {
+            flex: 1;
+            font-size: 13px;
+        }
+        
+        .param-value {
+            width: 40px;
+            text-align: right;
+            font-family: monospace;
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .param-slider {
+            flex: 2;
+            margin: 0 10px;
+            -webkit-appearance: none;
+            height: 5px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+        
+        .param-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 150, 50, 1);
+            cursor: pointer;
+        }
+        
+        .param-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 150, 50, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        @media (max-width: 640px) {
+            #controls-container {
+                max-width: calc(100% - 40px);
+                font-size: 13px;
+                padding: 10px 15px;
+                top: 10px;
+                left: 10px;
+            }
+            #title {
+                font-size: 14px;
+            }
+
+            #theme-selector {
+                top: auto;
+                bottom: 20px;
+                right: 10px;
+                left: auto;
+                transform: none;
+                max-width: 120px;
+                padding: 10px;
+            }
+            #theme-selector-title {
+                font-size: 14px;
+            }
+            .theme-button {
+                width: 30px;
+                height: 30px;
+            }
+
+            #control-buttons {
+                bottom: 10px;
+                gap: 10px;
+                padding: 8px 10px;
+            }
+            .control-button {
+                padding: 6px 10px;
+                font-size: 12px;
+                min-width: 65px;
+            }
+            
+            #help-container {
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            #params-button {
+                top: 10px;
+                right: 140px;
+            }
+            
+            #params-panel {
+                top: 60px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="controls-container" class="ui-panel">
+        <div id="title">GLB Model Shader Viewer</div>
+        <div>点击屏幕创建能量脉冲。拖动鼠标旋转模型，滚轮可以缩放。</div>
+    </div>
+
+    <div id="theme-selector" class="ui-panel">
+        <div id="theme-selector-title">Visual Theme</div>
+        <div class="theme-grid">
+            <button class="theme-button" id="theme-1" data-theme="0" aria-label="Theme 1"></button>
+            <button class="theme-button" id="theme-2" data-theme="1" aria-label="Theme 2"></button>
+            <button class="theme-button" id="theme-3" data-theme="2" aria-label="Theme 3"></button>
+            <button class="theme-button" id="theme-4" data-theme="3" aria-label="Theme 4"></button>
+        </div>
+    </div>
+    
+    <div id="params-button">⚙️</div>
+    <div id="params-panel">
+        <h3>效果参数调节</h3>
+        
+        <div class="param-group">
+            <h4>全局设置</h4>
+            <div class="param-row">
+                <span class="param-label">发光强度</span>
+                <input type="range" id="bloom-strength" class="param-slider" min="0" max="2" step="0.05" value="0.5">
+                <span class="param-value" id="bloom-strength-value">0.5</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">发光半径</span>
+                <input type="range" id="bloom-radius" class="param-slider" min="0" max="1" step="0.01" value="0.4">
+                <span class="param-value" id="bloom-radius-value">0.4</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">胶片颗粒</span>
+                <input type="range" id="film-intensity" class="param-slider" min="0" max="1" step="0.05" value="0.35">
+                <span class="param-value" id="film-intensity-value">0.35</span>
+            </div>
+        </div>
+        
+        <div class="param-group">
+            <h4>粒子设置</h4>
+            <div class="param-row">
+                <span class="param-label">点大小</span>
+                <input type="range" id="point-size" class="param-slider" min="0.2" max="2" step="0.05" value="1">
+                <span class="param-value" id="point-size-value">1</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">点亮度</span>
+                <input type="range" id="point-brightness" class="param-slider" min="0.2" max="2" step="0.05" value="0.7">
+                <span class="param-value" id="point-brightness-value">0.7</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">点透明度</span>
+                <input type="range" id="point-opacity" class="param-slider" min="0.1" max="1" step="0.05" value="0.8">
+                <span class="param-value" id="point-opacity-value">0.8</span>
+            </div>
+        </div>
+        
+        <div class="param-group">
+            <h4>线框设置</h4>
+            <div class="param-row">
+                <span class="param-label">线亮度</span>
+                <input type="range" id="line-brightness" class="param-slider" min="0.2" max="2" step="0.05" value="0.7">
+                <span class="param-value" id="line-brightness-value">0.7</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">线透明度</span>
+                <input type="range" id="line-opacity" class="param-slider" min="0.1" max="1" step="0.05" value="0.8">
+                <span class="param-value" id="line-opacity-value">0.8</span>
+            </div>
+        </div>
+        
+        <div class="param-group">
+            <h4>脉冲效果</h4>
+            <div class="param-row">
+                <span class="param-label">脉冲速度</span>
+                <input type="range" id="pulse-speed" class="param-slider" min="1" max="8" step="0.5" value="3">
+                <span class="param-value" id="pulse-speed-value">3</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">脉冲强度</span>
+                <input type="range" id="pulse-intensity" class="param-slider" min="0.1" max="1.5" step="0.05" value="0.8">
+                <span class="param-value" id="pulse-intensity-value">0.8</span>
+            </div>
+        </div>
+        
+        <div class="param-group">
+            <h4>背景与其它</h4>
+            <div class="param-row">
+                <span class="param-label">星空亮度</span>
+                <input type="range" id="stars-brightness" class="param-slider" min="0.2" max="1.5" step="0.05" value="0.7">
+                <span class="param-value" id="stars-brightness-value">0.7</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">旋转速度</span>
+                <input type="range" id="rotation-speed" class="param-slider" min="0" max="0.002" step="0.0001" value="0.0005">
+                <span class="param-value" id="rotation-speed-value">0.0005</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="help-container">
+        <div id="help-button">?</div>
+        <div id="help-panel">
+            <h3>控制说明</h3>
+            <div class="control-row">
+                <span class="control-label">旋转模型</span>
+                <span class="control-key">鼠标左键拖动</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">缩放模型</span>
+                <span class="control-key">鼠标滚轮</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">平移视图</span>
+                <span class="control-key">鼠标右键拖动</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">自动旋转</span>
+                <span class="control-key">R 键</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">放大</span>
+                <span class="control-key">+ 键</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">缩小</span>
+                <span class="control-key">- 键</span>
+            </div>
+            <div class="control-row">
+                <span class="control-label">创建脉冲</span>
+                <span class="control-key">点击屏幕</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="control-buttons">
+        <button id="toggle-wireframe-btn" class="control-button">Wireframe</button>
+        <button id="toggle-points-btn" class="control-button">Points</button>
+        <button id="pause-play-btn" class="control-button">Auto Rotate</button>
+        <button id="reset-camera-btn" class="control-button">Reset Cam</button>
+    </div>
+
+    <!-- Import maps to help with module resolution -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.162.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+        }
+    }
+    </script>
+    
+    <!-- Main application -->
+    <script type="module" src="js/app.js"></script>
+    
+    <script>
+        // 帮助按钮控制
+        document.getElementById('help-button').addEventListener('click', function() {
+            document.getElementById('help-panel').classList.toggle('show');
+        });
+        
+        // 参数按钮控制
+        document.getElementById('params-button').addEventListener('click', function() {
+            document.getElementById('params-panel').classList.toggle('show');
+        });
+        
+        // 点击外部关闭面板
+        document.addEventListener('click', function(e) {
+            const helpPanel = document.getElementById('help-panel');
+            const helpButton = document.getElementById('help-button');
+            const paramsPanel = document.getElementById('params-panel');
+            const paramsButton = document.getElementById('params-button');
+            
+            if (helpPanel.classList.contains('show') && 
+                e.target !== helpPanel && 
+                !helpPanel.contains(e.target) && 
+                e.target !== helpButton) {
+                helpPanel.classList.remove('show');
+            }
+            
+            if (paramsPanel.classList.contains('show') && 
+                e.target !== paramsPanel && 
+                !paramsPanel.contains(e.target) && 
+                e.target !== paramsButton) {
+                paramsPanel.classList.remove('show');
+            }
+        });
+        
+        // 参数滑块更新显示值
+        document.querySelectorAll('.param-slider').forEach(slider => {
+            const valueDisplay = document.getElementById(slider.id + '-value');
+            slider.addEventListener('input', function() {
+                valueDisplay.textContent = this.value;
+                
+                // 发布自定义事件，供app.js监听
+                const event = new CustomEvent('param-change', { 
+                    detail: {
+                        param: slider.id,
+                        value: parseFloat(slider.value)
+                    }
+                });
+                document.dispatchEvent(event);
+            });
+        });
+    </script>
+</body>
+</html> 
