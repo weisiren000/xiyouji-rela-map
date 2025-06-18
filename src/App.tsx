@@ -3,8 +3,11 @@ import { useEffect } from 'react'
 import { GalaxyScene } from '@scenes/GalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/ui/ControlPanel'
 import { PerformanceDisplay } from '@components/ui/PerformanceDisplay'
-import { WebGPUStatus } from '@components/ui/WebGPUStatus'
+import { PortStatusIndicator } from '@components/ui/PortStatusIndicator'
+
 import { DataDashboard } from '@components/dashboard/DataDashboard'
+import { CharacterInfoOverlay } from '@components/ui/CharacterInfoOverlay'
+import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
@@ -18,6 +21,9 @@ function App() {
   const { isInitialized, autoLoadEnabled } = useAutoLoader()
   const { isLoading, hasData, dataCount } = useLoadingStatus()
   const { isOnline } = useServerConnection()
+
+  // 🌐 全局角色信息状态
+  const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
 
   // 应用启动日志
   useEffect(() => {
@@ -34,6 +40,15 @@ function App() {
     }
   }, [isInitialized, hasData, dataCount])
 
+  // 🌐 全局状态变化日志
+  useEffect(() => {
+    if (hoveredCharacter) {
+      console.log('📱 App层接收到角色信息:', hoveredCharacter.name)
+      console.log('📍 鼠标位置:', mousePosition.x, mousePosition.y)
+      console.log('💳 显示信息卡片:', showInfoCard)
+    }
+  }, [hoveredCharacter, mousePosition, showInfoCard])
+
   return (
     <div className="app">
       {/* 信息显示 */}
@@ -45,8 +60,7 @@ function App() {
       {/* 性能显示 */}
       <PerformanceDisplay />
 
-      {/* WebGPU状态显示 */}
-      <WebGPUStatus />
+
 
       {/* 控制面板 */}
       <ControlPanel />
@@ -64,6 +78,18 @@ function App() {
         </div>
       )}
 
+      {/* 端口状态指示器 */}
+      <div
+        style={{
+          position: 'fixed',
+          top: '10px',
+          right: '10px',
+          zIndex: 1000
+        }}
+      >
+        <PortStatusIndicator />
+      </div>
+
       {/* 服务器状态指示器 */}
       {isOnline === false && (
         <div className="app-status-indicator offline">
@@ -77,6 +103,13 @@ function App() {
           <span>🟢 已加载 {dataCount} 个角色</span>
         </div>
       )}
+
+      {/* 🎯 全局角色信息卡片 */}
+      <CharacterInfoOverlay
+        character={hoveredCharacter}
+        mousePosition={mousePosition}
+        visible={showInfoCard}
+      />
     </div>
   )
 }

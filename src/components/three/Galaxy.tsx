@@ -6,7 +6,7 @@ import { generateGalaxyPlanets } from '@utils/galaxyGenerator'
 import { PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
 import { PlanetCluster } from './PlanetCluster'
 import { FogParticles } from './FogParticles'
-import { CharacterSpheres } from './CharacterSpheres'
+import { CharacterSpheresSimple as CharacterSpheres } from './CharacterSpheresSimple'
 
 /**
  * 银河系组件
@@ -22,6 +22,9 @@ interface GalaxyProps {
   characterRoughness?: number
   characterAnimationSpeed?: number
   characterFloatAmplitude?: number
+  showAliases?: boolean
+  aliasOpacity?: number
+  aliasSize?: number
   characterRadiusMultiplier?: number
   characterHeightMultiplier?: number
   characterRandomSpread?: number
@@ -43,6 +46,9 @@ export const Galaxy: React.FC<GalaxyProps> = ({
   characterRoughness = 0.3,
   characterAnimationSpeed = 1.0,
   characterFloatAmplitude = 0.1,
+  showAliases = true,
+  aliasOpacity = 0.7,
+  aliasSize = 0.8,
   characterRadiusMultiplier = 1.0,
   characterHeightMultiplier = 1.0,
   characterRandomSpread = 2.0,
@@ -123,6 +129,9 @@ export const Galaxy: React.FC<GalaxyProps> = ({
         roughness={characterRoughness}
         animationSpeed={characterAnimationSpeed}
         floatAmplitude={characterFloatAmplitude}
+        showAliases={showAliases}
+        aliasOpacity={aliasOpacity}
+        aliasSize={aliasSize}
         radiusMultiplier={characterRadiusMultiplier}
         heightMultiplier={characterHeightMultiplier}
         randomSpread={characterRandomSpread}

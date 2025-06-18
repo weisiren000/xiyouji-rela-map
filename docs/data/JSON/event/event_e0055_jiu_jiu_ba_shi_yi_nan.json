@@ -1,0 +1,86 @@
+{
+    "unid": "e0055",
+    "isAlias": false,
+    "basic": {
+        "name": "九九八十一难",
+        "pinyin": "jiu_jiu_ba_shi_yi_nan",
+        "aliases": [
+            "八十一难",
+            "劫难考验",
+            "功德圆满"
+        ],
+        "type": "event",
+        "category": "milestone"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 9,
+            "category": "critical"
+        },
+        "significance": 100,
+        "impact": 100
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0005",
+            "name": "白龙马",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0011",
+            "name": "如来佛祖",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0109",
+            "name": "取经路上",
+            "role": "primary"
+        }
+    ],
+    "items_involved": [],
+    "metadata": {
+        "description": "唐僧师徒西天取经的过程中，共经历了九九八十一难。这些劫难是如来佛祖和观音菩萨故意安排的考验，目的是磨练唐僧师徒的意志，使他们能够成佛得道。这些劫难包括各种妖魔鬼怪的阻挠、自然灾害的考验、人心的诱惑等。唐僧师徒通过互相扶持，坚定信念，最终克服了所有劫难，完成了取经使命。",
+        "tags": [
+            "milestone",
+            "trials",
+            "perseverance",
+            "buddhism",
+            "journey"
+        ],
+        "sourceChapters": [1, 100],
+        "chronology": {
+            "order": 55,
+            "era": "entire_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

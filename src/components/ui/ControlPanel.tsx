@@ -171,7 +171,7 @@ export const ControlPanel: React.FC = () => {
       .onChange((value: number) => setSunRotationSpeed(value))
 
     // 相机控制
-    const cameraFolder = gui.addFolder('📷 相机控制')
+    const cameraFolder = gui.addFolder('相机控制')
 
     // 自动旋转控制
     const autoRotateFolder = cameraFolder.addFolder('自动旋转')

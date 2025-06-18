@@ -20,7 +20,10 @@ export default defineConfig({
   },
   server: {
     port: 3000,
+    host: '0.0.0.0', // 允许外部访问
     open: true,
+    // Vite 5的正确语法 - 使用true允许所有主机
+    allowedHosts: true,
   },
   build: {
     outDir: 'dist',

@@ -124,9 +124,9 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   },
   
   bloomConfig: {
-    threshold: 0.0,  // bloomThreshold: 0.0
-    strength: 0.4,   // bloomStrength: 0.4
-    radius: 0.2,     // bloomRadius: 0.2
+    threshold: 0.0,  // bloomThreshold: 0.0 - 让所有发光都产生辉光
+    strength: 1.2,   // bloomStrength: 1.2 - 增强辉光强度
+    radius: 0.4,     // bloomRadius: 0.4 - 增大辉光半径
   },
   
   // 初始数据
@@ -240,7 +240,7 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
         fov: 75
       },
       'top-view': {
-        position: [0, 100, 0],
+        position: [0, 70, 0],
         rotation: [-Math.PI/2, 0, 0],
         target: [0, 0, 0],
         fov: 60

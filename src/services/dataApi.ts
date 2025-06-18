@@ -1,12 +1,20 @@
 /**
  * 数据API客户端
  * 负责与后端数据服务器通信
+ * 支持自动端口检测和适应
  */
 
 import { CharacterData, DataStats } from '@/types/character'
 
-// API配置
-const API_BASE_URL = 'http://localhost:3002/api'
+// 可能的后端端口列表（按优先级排序）
+const POSSIBLE_PORTS = [3003, 3002, 3001, 3000, 8080, 8000]
+
+// 外部API URL（用于生产环境或外部访问）
+const EXTERNAL_API_URL = import.meta.env.VITE_API_URL || null
+
+// 动态API配置
+let API_BASE_URL = EXTERNAL_API_URL || 'http://localhost:3003/api' // 优先使用外部URL
+let detectedPort: number | null = null
 
 // API响应类型
 interface ApiResponse<T> {
@@ -24,10 +32,65 @@ interface CompleteDataResponse {
 }
 
 /**
- * 通用API请求函数
+ * 检测可用的后端端口或外部URL
+ */
+async function detectBackendPort(): Promise<number | null> {
+  // 如果有外部API URL，优先测试
+  if (EXTERNAL_API_URL) {
+    try {
+      console.log('🌐 测试外部API URL:', EXTERNAL_API_URL)
+      const response = await fetch(`${EXTERNAL_API_URL}/stats`, {
+        method: 'HEAD',
+        signal: AbortSignal.timeout(5000) // 外部URL给更长超时
+      })
+
+      if (response.ok) {
+        console.log('✅ 外部API URL可用')
+        API_BASE_URL = EXTERNAL_API_URL
+        return -1 // 特殊值表示使用外部URL
+      }
+    } catch (error) {
+      console.log('❌ 外部API URL不可用:', error instanceof Error ? error.message : '未知错误')
+    }
+  }
+
+  console.log('🔍 开始检测本地后端端口...')
+
+  for (const port of POSSIBLE_PORTS) {
+    try {
+      const testUrl = `http://localhost:${port}/api/stats`
+      console.log(`🔍 测试端口 ${port}...`)
+
+      const response = await fetch(testUrl, {
+        method: 'HEAD',
+        signal: AbortSignal.timeout(2000) // 2秒超时
+      })
+
+      if (response.ok) {
+        console.log(`✅ 发现后端服务在端口 ${port}`)
+        detectedPort = port
+        API_BASE_URL = `http://localhost:${port}/api`
+        return port
+      }
+    } catch (error) {
+      console.log(`❌ 端口 ${port} 不可用:`, error instanceof Error ? error.message : '未知错误')
+    }
+  }
+
+  console.warn('⚠️ 未找到可用的后端端口，使用默认配置')
+  return null
+}
+
+/**
+ * 通用API请求函数（带自动端口检测）
  */
 async function apiRequest<T>(endpoint: string, options?: RequestInit): Promise<T> {
   try {
+    // 如果还没有检测过端口，先进行检测
+    if (detectedPort === null) {
+      await detectBackendPort()
+    }
+
     const response = await fetch(`${API_BASE_URL}${endpoint}`, {
       headers: {
         'Content-Type': 'application/json',
@@ -37,6 +100,30 @@ async function apiRequest<T>(endpoint: string, options?: RequestInit): Promise<T
     })
 
     if (!response.ok) {
+      // 如果请求失败，可能是端口变了，重新检测
+      if (response.status === 0 || response.status >= 500) {
+        console.log('🔄 API请求失败，尝试重新检测端口...')
+        const newPort = await detectBackendPort()
+        if (newPort && newPort !== detectedPort) {
+          // 用新端口重试一次
+          const retryResponse = await fetch(`${API_BASE_URL}${endpoint}`, {
+            headers: {
+              'Content-Type': 'application/json',
+              ...options?.headers
+            },
+            ...options
+          })
+
+          if (retryResponse.ok) {
+            const result: ApiResponse<T> = await retryResponse.json()
+            if (!result.success) {
+              throw new Error(result.error || '请求失败')
+            }
+            return result.data as T
+          }
+        }
+      }
+
       throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
 
@@ -138,19 +225,69 @@ export class DataApi {
   }
 
   /**
-   * 检查服务器连接
+   * 检查服务器连接（带端口检测）
    */
   static async checkConnection(): Promise<boolean> {
     try {
+      // 先尝试当前配置的端口
       const response = await fetch(`${API_BASE_URL}/stats`, {
         method: 'HEAD',
-        timeout: 5000
-      } as any)
-      return response.ok
+        signal: AbortSignal.timeout(3000)
+      })
+
+      if (response.ok) {
+        return true
+      }
+
+      // 如果失败，尝试重新检测端口
+      console.log('🔄 当前端口不可用，重新检测...')
+      const newPort = await detectBackendPort()
+      return newPort !== null
+
     } catch (error) {
       console.warn('⚠️ 服务器连接检查失败:', error)
-      return false
+
+      // 最后尝试重新检测端口
+      try {
+        const newPort = await detectBackendPort()
+        return newPort !== null
+      } catch (detectError) {
+        console.error('❌ 端口检测也失败了:', detectError)
+        return false
+      }
     }
+  }
+
+  /**
+   * 获取当前使用的API基础URL
+   */
+  static getCurrentApiUrl(): string {
+    return API_BASE_URL
+  }
+
+  /**
+   * 获取检测到的端口号
+   */
+  static getDetectedPort(): number | null {
+    return detectedPort
+  }
+
+  /**
+   * 手动设置API端口（用于测试或特殊情况）
+   */
+  static setApiPort(port: number): void {
+    detectedPort = port
+    API_BASE_URL = `http://localhost:${port}/api`
+    console.log(`🔧 手动设置API端口为: ${port}`)
+  }
+
+  /**
+   * 手动设置外部API URL（用于外部访问）
+   */
+  static setExternalApiUrl(url: string): void {
+    API_BASE_URL = url.endsWith('/api') ? url : `${url}/api`
+    detectedPort = -1 // 特殊值表示使用外部URL
+    console.log(`🌐 手动设置外部API URL为: ${API_BASE_URL}`)
   }
 
   /**

@@ -1,39 +1,60 @@
-# Preferences
-- User prefers pnpm as package manager for JavaScript/TypeScript projects.
-- User requires exact 1:1 replication of every detail when recreating/refactoring projects, not simplified or modified versions.
-- User prefers exact 1:1 replication of original designs and functionality, not simplified or modified versions.
-- User prefers exact 1:1 replication of original projects over adding extra features, and wants to remove unnecessary/redundant components to focus on core functionality first.
-- User prefers to rebuild/modernize existing code in separate folders (like 'rebuild' folder) rather than modifying in place, and wants to see multiple solution options before choosing one.
-- User prefers Chinese as the primary language for code comments and documentation and memories.
-- User prefers JSONC demo files in docs/data/_JSON_DEMO folder and Schema files in docs/data/_JSON_Schema folder.
-- User prefers creating individual JSON files for each data entity AND every alias, resulting in a large number of files (e.g., 1593 instead of 471).
-- User prefers creating individual JSON files for each data entity based on demo structure and storing TODO lists in docs/data/JSON directory for project organization.
-- Character and character_alias JSON files must have identical data structures - either modify one to match the other to ensure consistency.
-- User wants to record/document something in the D:\codee\xiyouji-rela-map\_experiments directory, indicating they value the experiment tracking system for project documentation.
-- User wants progress recorded in the D:\codee\xiyouji-rela-map\_experiments directory, reinforcing their preference for using _experiments for project tracking.
-- 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
-- 用户习惯通过查看_experiments目录了解项目进度并基于现有进度接力继续工作，强化了实验记录系统对工作接力的重要性。
-- 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
-- User prefers GUI interfaces with comprehensive control parameters for fine-tuning effects and configurations.
-- User prefers intuitive and visually appealing data management interfaces with automatic JSON dataset loading functionality.
-- User prefers GUI control panels to be collapsed to the absolute minimum state, more than just standard folder collapse.
+# 偏好设置
+- 用户偏好在JavaScript/TypeScript项目中使用pnpm作为包管理器。
+- 用户要求在重新创建/重构项目时精确1:1复制每个细节，而不是简化或修改版本。
+- 用户偏好精确1:1复制原始设计和功能，而不是简化或修改版本。
+- 用户偏好精确1:1复制原始项目而不是添加额外功能，并希望移除不必要/冗余组件以首先专注于核心功能。
+- 用户偏好在单独的文件夹（如'rebuild'文件夹）中重建/现代化现有代码，而不是就地修改，并希望在选择之前看到多个解决方案选项。
+- 用户偏好使用中文作为代码注释、文档和记忆的主要语言。
+- 用户偏好在docs/data/_JSON_DEMO文件夹中使用JSONC演示文件，在docs/data/_JSON_Schema文件夹中使用Schema文件。
+- 用户偏好为每个数据实体和每个别名创建单独的JSON文件，导致大量文件（例如1593个而不是471个）。
+- 用户偏好基于演示结构为每个数据实体创建单独的JSON文件，并在docs/data/JSON目录中存储TODO列表以进行项目组织。
+- 用户偏好具有全面控制参数的GUI界面，用于微调效果和配置。
+- 用户偏好直观且视觉上吸引人的数据管理界面，具有自动JSON数据集加载功能。
+- 用户偏好GUI控制面板折叠到绝对最小状态，超过标准文件夹折叠。
 - 用户偏好GUI界面中的Controls控制面板默认状态应该是收拢/折叠的。
-- User prioritizes performance optimizations for low-end computers when running 3D visualizations in web browsers, prioritizing smooth performance over visual quality when necessary.
-- User prefers to disable automatic performance level adjustment in the galaxy visualization project and only keep manual configuration selection, as the automatic switching between high/medium configs affects viewing experience.
+- 用户在网页浏览器中运行3D可视化时优先考虑低端计算机的性能优化，必要时优先考虑流畅性能而不是视觉质量。
+- 用户偏好在银河系可视化项目中禁用自动性能级别调整，只保留手动配置选择，因为高/中等配置之间的自动切换会影响观看体验。
 - 用户偏好星球发光强度默认设置为0.2，这是银河系3D可视化项目中材质emissiveIntensity的推荐默认值。
-- User wants to create a dashboard interface to control, load, and modify JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON directory for loading real data as spheres in the visualization.
-- User wants to load actual JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON directory, and the JSON files in this folder have consistent format structure.
-- User prefers using backend programs to read/parse JSON data from D:\codee\xiyouji-rela-map\docs\data\JSON folder, then communicate with frontend for data loading and display rather than direct frontend file access.
-- Always check existing experiment file numbers in _experiments directory before creating new files to avoid numbering conflicts.
-- User prefers manual file creation over automated scripts when generated data is incorrect or doesn't meet quality standards.
-- User likes to start with TODO lists for task organization.
-- User prefers strict quality standards and wants immediate correction/modification when any errors or issues are found.
-- User prefers snake_case (multiple underscore) naming convention as the correct format.
+- 用户希望创建一个仪表板界面来控制、加载和修改来自D:\codee\xiyouji-rela-map\docs\data\JSON目录的JSON数据，以便在可视化中将真实数据加载为球体。
+- 用户希望从D:\codee\xiyouji-rela-map\docs\data\JSON目录加载实际的JSON数据，该文件夹中的JSON文件具有一致的格式结构。
+- 用户偏好使用后端程序读取/解析来自D:\codee\xiyouji-rela-map\docs\data\JSON文件夹的JSON数据，然后与前端通信进行数据加载和显示，而不是直接前端文件访问。
+- 用户偏好在不破坏现有功能的情况下向3D可视化添加真实角色数据，表明为未来功能准备采用非破坏性开发方法。
+- 在创建新文件之前总是检查_experiments目录中现有的实验文件编号，以避免编号冲突。
+- 用户偏好在生成的数据不正确或不符合质量标准时手动创建文件而不是自动化脚本。
+- 用户喜欢从TODO列表开始进行任务组织。
+- 用户偏好严格的质量标准，并希望在发现任何错误或问题时立即纠正/修改。
+- 用户偏好删除和重写有重大格式问题的文件，而不是尝试复杂的编辑来修复它们。
+- 用户偏好snake_case（多下划线）命名约定作为正确格式。
+- 用户重视使用_experiments目录进行项目进度跟踪和工作接力，表明实验记录系统对项目管理很重要
+- 用户习惯通过查看_experiments目录了解项目进度并基于现有进度接力继续工作，强化了实验记录系统对项目管理很重要。
+- 用户偏好在开始工作前先全面了解项目现状，然后基于现有进度接力继续开发工作
+- 用户偏好创建验证脚本来检查所有项目文件的文件格式一致性和质量。
+- 用户偏好直接从根目录运行'pnpm dev'来启动项目，而不是使用批处理脚本。
+- 用户偏好在进行角色相关界面更改时修改现有的Character Control组件，而不是创建新的单独面板。
+- 用户偏好角色球体不要过大，并希望3D可视化元素有合理的尺寸。
+- 用户偏好增强程序适应性和健壮性，特别要求在实现中不使用虚假/模拟数据。
+- 用户偏好使用ngrok将本地Web应用程序暴露到公共互联网，用于跨设备测试和访问。
+- 用户偏好移除WebGPU功能，因为它无法正常工作，并希望恢复到原始的仅WebGL实现。
+- 用户偏好在需要在下次对话中继续工作时使用_experiments目录进行任务交接和文档记录。
+- 用户习惯使用_experiments目录记录交接工作和项目进度，这是其项目管理流程的重要组成部分。
+- 用户偏好在3D可视化应用程序中拥有精确的手动相机视角控制，用于调整初始用户进入视角。
+- 用户不需要框选中的按钮，偏好简洁的界面设计
+- 用户希望在_experiments目录中记录/文档化当前工作进度，作为其项目管理工作流程的一部分。
+- 用户偏好将压缩后的文件放回原始文件夹并保持原来的命名方式，而不是保存在单独的compressed目录中。
+- 用户偏好Character Controls默认参数：透明度1.0，全局大小0.6，发光强度0.7，发光颜色与原始颜色匹配。
+- 用户偏好Character Controls和Controls面板定位在同一列作为并行/兄弟元素，而不是嵌套或单独布局。
+- 用户偏好arc.md和文档文件被清理，内容简洁，每个文件不超过500行。
 
-# Interests
-- User is interested in sphere distribution algorithms used in deepseek.html file for scene layout.
-- User is interested in exploring Glumpy (Python OpenGL library) for visualization demos.
-- User prefers organizing different technology experiments in separate folders under the reference directory.
+# 数据结构
+- 用户希望所有JSON文件都按照character_c0002_tang_seng.json结构进行格式化。
+- 用户要求所有角色别名文件都遵循character_alias_ca0001_mei_hou_wang.json的确切格式作为标准模板。
+- Character和character_alias JSON文件必须具有相同的数据结构 - 要么修改其中一个以匹配另一个以确保一致性。
 
-# Technical Details
-- The 'maxEmissiveIntensity' parameter name is misleading - it doesn't actually control the maximum emissive intensity as the name suggests.
+# 兴趣爱好
+- 用户对deepseek.html文件中用于场景布局的球体分布算法感兴趣。
+- 用户对探索Glumpy（Python OpenGL库）进行可视化演示感兴趣。
+- 用户偏好在reference目录下的单独文件夹中组织不同的技术实验。
+
+# 技术细节
+- 'maxEmissiveIntensity'参数名称具有误导性 - 它实际上并不像名称所暗示的那样控制最大发光强度。
+- 用户提供了官方R3F WebGPU文档链接：https://r3f.docs.pmnd.rs/api/canvas#webgpu 和 https://r3f.docs.pmnd.rs/tutorials/v9-migration-guide#webgpu 用于WebGPU实现参考。

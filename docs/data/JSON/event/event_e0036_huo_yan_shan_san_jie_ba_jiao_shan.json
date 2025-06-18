@@ -1,0 +1,102 @@
+{
+    "unid": "e0036",
+    "isAlias": false,
+    "basic": {
+        "name": "火焰山三借芭蕉扇",
+        "pinyin": "huo_yan_shan_san_jie_ba_jiao_shan",
+        "aliases": [
+            "芭蕉扇",
+            "火焰山",
+            "三借芭蕉扇"
+        ],
+        "type": "event",
+        "category": "quest"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "important"
+        },
+        "significance": 88,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0021",
+            "name": "铁扇公主",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0010",
+            "name": "牛魔王",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0022",
+            "name": "红孩儿",
+            "role": "related"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0004",
+            "name": "火焰山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0068",
+            "name": "翠云山芭蕉洞",
+            "role": "secondary"
+        },
+        {
+            "unid": "l0048",
+            "name": "积雷山摩云洞",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0012",
+            "name": "芭蕉扇",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到火焰山，无法通过。孙悟空前往翠云山芭蕉洞向铁扇公主借芭蕉扇，但铁扇公主因红孩儿之事怀恨在心，不肯相借。孙悟空三次借扇，先后被铁扇公主和牛魔王戏弄，最终用计从牛魔王处夺得真扇，扑灭了火焰山的大火。",
+        "tags": [
+            "quest",
+            "fire",
+            "deception",
+            "family_conflict",
+            "trickery"
+        ],
+        "sourceChapters": [59, 60, 61],
+        "chronology": {
+            "order": 36,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

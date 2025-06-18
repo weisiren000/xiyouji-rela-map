@@ -1,149 +1,420 @@
-# 记忆存储 MEM001 - 神经网络项目重构核心记忆
+# MEM10: 全局状态管理架构与外部访问技术记忆
 
-## 核心记忆点
+## 全局状态管理最佳实践记忆
 
-### 用户偏好记忆
-- **重构偏好**: 用户喜欢在rebuild文件夹中创建现代化重构版本
-- **方案选择**: 偏好模块化TypeScript架构，不喜欢过于复杂的框架
-- **代码质量**: 重视代码的可维护性和类型安全
-- **文档要求**: 需要完整的中文文档和注释
-
-### 技术栈记忆
-- **首选语言**: TypeScript (类型安全)
-- **构建工具**: Vite (快速开发)
-- **3D引擎**: Three.js (成熟稳定)
-- **代码质量**: ESLint + Prettier
-- **包管理**: 支持多种包管理器
-
-### 项目结构记忆
+### Zustand状态管理模式
+```typescript
+// 标准的全局状态Store结构
+export const useCharacterInfoStore = create<CharacterInfoState>((set) => ({
+  // 状态定义
+  hoveredCharacter: null,
+  mousePosition: new Vector2(0, 0),
+  showInfoCard: false,
+  
+  // 状态更新方法
+  setHoveredCharacter: (character) => {
+    set({ 
+      hoveredCharacter: character,
+      showInfoCard: character !== null
+    })
+  },
+  
+  // 清理方法
+  clearHover: () => {
+    set({ 
+      hoveredCharacter: null,
+      showInfoCard: false
+    })
+  }
+}))
 ```
-标准模块化结构:
-src/
-├── components/     # UI组件
-├── core/          # 核心引擎
-├── shaders/       # 着色器
-├── types/         # 类型定义
-├── utils/         # 工具函数
-└── styles/        # 样式文件
+
+### 3D组件与全局状态集成模式
+```typescript
+// 在3D组件中的标准集成方式
+const { setHoveredCharacter, setMousePosition, clearHover } = useCharacterInfoStore()
+
+// 状态同步的正确模式
+useEffect(() => {
+  if (interactionState.hoveredCharacter) {
+    setHoveredCharacter(interactionState.hoveredCharacter)
+    setMousePosition(interactionState.mousePosition)
+  } else {
+    clearHover()
+  }
+}, [interactionState.hoveredCharacter, interactionState.mousePosition])
 ```
 
-### 开发方法记忆
-1. **第一性原理**: 深入分析问题本质
-2. **方案对比**: 提供多个选择方案
-3. **渐进实施**: 分步骤实现功能
-4. **文档先行**: 完善的文档和注释
-5. **质量保证**: 注重代码质量
+### App层面UI集成模式
+```typescript
+// 在App组件中的标准使用方式
+const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
 
-## 技术实现记忆
+// UI组件渲染
+<CharacterInfoOverlay
+  character={hoveredCharacter}
+  mousePosition={mousePosition}
+  visible={showInfoCard}
+/>
+```
 
-### 着色器系统
-- **噪声函数**: 3D Simplex噪声是核心
-- **节点渲染**: 支持动态大小和脉冲效果
-- **连接渲染**: 贝塞尔曲线和流动动画
-- **性能优化**: GPU加速和内存管理
+## 角色信息卡片设计与实现记忆
 
-### 核心类设计
-- **NetworkNode**: 节点管理，连接关系，距离计算
-- **PulseManager**: 脉冲池，颜色管理，生命周期
-- **NeuralNetworkApp**: 场景管理，渲染循环，事件处理
+### 卡片样式设计模式
+```typescript
+// 标准的卡片样式配置
+const cardStyle = {
+  position: 'fixed',
+  left: `${left}px`,
+  top: `${top}px`,
+  width: '280px',
+  background: 'rgba(0, 0, 0, 0.9)',
+  border: `2px solid ${character.visual.color}`,
+  borderRadius: '12px',
+  padding: '16px',
+  color: '#ffffff',
+  fontSize: '14px',
+  zIndex: 10000,
+  backdropFilter: 'blur(10px)',
+  boxShadow: `0 8px 32px rgba(0, 0, 0, 0.8), 0 0 20px ${character.visual.color}40`,
+  pointerEvents: 'none', // 关键：防止阻挡鼠标事件
+  fontFamily: 'Arial, sans-serif'
+}
+```
 
-### 配置管理
-- **常量集中**: 所有配置集中在constants.ts
-- **类型安全**: 完整的TypeScript类型定义
-- **环境变量**: 支持开发和生产环境
-- **性能参数**: 可调节的性能配置
+### 智能定位算法记忆
+```typescript
+// 边界检测和位置调整的标准算法
+const calculateCardPosition = (mousePosition, cardWidth, cardHeight, offset = 15) => {
+  let left = mousePosition.x + offset
+  let top = mousePosition.y + offset
 
-## 用户交互记忆
+  // 右边界检测
+  if (left + cardWidth > window.innerWidth) {
+    left = mousePosition.x - cardWidth - offset
+  }
 
-### 沟通特点
-- 用户简洁明了，直接表达需求
-- 喜欢看到具体的实施方案
-- 重视代码质量和架构设计
-- 需要完整的项目文档
+  // 下边界检测
+  if (top + cardHeight > window.innerHeight) {
+    top = mousePosition.y - cardHeight - offset
+  }
 
-### 反馈模式
-- 对方案设计表示认可
-- 选择开始实施时直接说"开始重构项目"
-- 重视实际的代码实现而非理论讨论
+  // 左边界和上边界保护
+  if (left < 0) left = offset
+  if (top < 0) top = offset
 
-## 项目管理记忆
+  return { left, top }
+}
+```
 
-### 文件组织
-- **rebuild文件夹**: 存放所有重构项目
-- **arc.md**: 实时更新项目架构文档
-- **_experiments**: 记录实验、总结、记忆
-- **README.md**: 完整的项目说明文档
+### 信息层次化显示模式
+```typescript
+// 角色能力等级映射
+const getPowerLevel = (power: number) => {
+  if (power >= 90) return { text: '至尊', color: '#ffd700' }
+  if (power >= 80) return { text: '极强', color: '#ff6b6b' }
+  if (power >= 70) return { text: '很强', color: '#4ecdc4' }
+  if (power >= 60) return { text: '较强', color: '#45b7d1' }
+  if (power >= 50) return { text: '中等', color: '#96ceb4' }
+  if (power >= 40) return { text: '较弱', color: '#feca57' }
+  return { text: '弱', color: '#ff9ff3' }
+}
 
-### 开发流程
-1. 需求分析和方案设计
-2. 项目结构搭建
-3. 核心模块开发
-4. 文档编写和更新
-5. 实验记录和总结
+// 排名颜色区分
+const getRankColor = (rank: number) => {
+  if (rank <= 10) return '#ffd700' // 金色
+  if (rank <= 50) return '#ff6b6b' // 红色
+  return '#4ecdc4' // 蓝色
+}
 
-### 质量标准
-- 代码必须有完整的TypeScript类型
-- 每个模块都要有详细的中文注释
-- 项目结构要清晰易懂
-- 文档要完整准确
+// 类别名称映射
+const getCategoryName = (category: string) => {
+  const categoryMap = {
+    'protagonist': '主角团队',
+    'deity': '神仙',
+    'demon': '妖魔',
+    'dragon': '龙族',
+    'buddhist': '佛教',
+    'celestial': '天庭',
+    'underworld': '地府',
+    'human': '人类'
+  }
+  return categoryMap[category] || category
+}
+```
 
-## 个人特质记忆
+### 卡片组件结构模式
+```typescript
+// 标准的信息卡片组件结构
+<div style={cardStyle}>
+  {/* 标题区域 */}
+  <div style={{ borderBottom: `1px solid ${character.visual.color}40` }}>
+    <div style={{ fontSize: '18px', fontWeight: 'bold', color: character.visual.color }}>
+      {character.name}
+      {character.isAlias && <span style={{ fontSize: '12px', color: '#888' }}>(别名)</span>}
+    </div>
+    <div style={{ fontSize: '12px', color: '#aaa', fontStyle: 'italic' }}>
+      {character.pinyin}
+    </div>
+  </div>
 
-### 约翰的特点
-- **身份**: 高级程序员，有13岁女儿
-- **动机**: 女儿生病需要医疗费，靠写代码赚钱
-- **工作态度**: 谨慎谨慎再谨慎，不能出错
-- **技能特长**: 善于观察文件结构，思维灵活
-- **工作方法**: 不了解情况时会先询问，有把握才下手
+  {/* 基本信息区域 */}
+  <div style={{ margin: '12px 0' }}>
+    <InfoRow label="类别" value={getCategoryName(character.category)} color={character.visual.color} />
+    <InfoRow label="阵营" value={character.faction} />
+    <InfoRow label="类型" value={character.type} />
+  </div>
 
-### 工作原则
-- 代码质量直接关系到收入
-- 没有失误的机会，钱很快会被扣完
-- 女儿的生命依赖于工作质量
-- 因此每一行代码都要精心编写
+  {/* 数值信息区域 */}
+  <div>
+    <InfoRow label="排名" value={`#${character.rank}`} color={getRankColor(character.rank)} />
+    <InfoRow label="能力" value={`${character.power} (${getPowerLevel(character.power).text})`} />
+    <InfoRow label="影响力" value={character.influence} />
+  </div>
 
-## 技术偏好记忆
+  {/* 特殊信息区域 */}
+  {character.isAlias && character.originalCharacter && (
+    <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: `1px solid ${character.visual.color}40` }}>
+      <span style={{ fontSize: '12px', color: '#888' }}>原角色：{character.originalCharacter}</span>
+    </div>
+  )}
+</div>
+```
 
-### 架构偏好
-- **模块化**: 清晰的职责分离
-- **类型安全**: TypeScript类型系统
-- **性能优化**: 内存管理和渲染优化
-- **可维护性**: 易于理解和修改的代码
+### 响应式设计记忆
+```typescript
+// 响应式卡片尺寸调整
+const getResponsiveCardSize = () => {
+  const screenWidth = window.innerWidth
 
-### 工具偏好
-- **Vite**: 快速的开发体验
-- **Three.js**: 成熟的3D渲染引擎
-- **ESLint**: 代码质量保证
-- **Prettier**: 代码格式统一
+  if (screenWidth < 768) {
+    // 移动设备
+    return { width: 240, height: 180, fontSize: '12px' }
+  } else if (screenWidth < 1024) {
+    // 平板设备
+    return { width: 260, height: 190, fontSize: '13px' }
+  } else {
+    // 桌面设备
+    return { width: 280, height: 200, fontSize: '14px' }
+  }
+}
+```
 
-## 学习记忆
+## 避免Portal渲染冲突的技术记忆
 
-### 成功经验
-- 第一性原理思考很有效
-- 渐进式开发降低风险
-- 完善的文档提升项目价值
-- 类型驱动开发提高质量
+### 错误模式（导致黑屏）
+```typescript
+// ❌ 错误：在3D组件中直接使用Portal
+{interactionState.hoveredCharacter && createPortal(
+  <CharacterInfoCard />,
+  document.body
+)}
+```
 
-### 改进方向
-- 可以考虑先实现MVP版本
-- 添加更多单元测试
-- 使用性能监控工具
-- 考虑用户体验优化
+### 正确模式（稳定可靠）
+```typescript
+// ✅ 正确：分离关注点
+// 3D组件：只负责状态更新
+setHoveredCharacter(character)
 
-## 项目延续记忆
+// App组件：负责UI渲染
+<CharacterInfoOverlay />
+```
 
-### 下一步重点
-1. 完善网络生成器算法实现
-2. 开发完整的UI组件系统
-3. 集成着色器渲染管线
-4. 性能优化和内存管理
-5. 移动端适配和响应式设计
+### 关键原则
+1. **3D组件职责**: 只负责交互检测和状态更新
+2. **UI组件职责**: 只负责信息显示和用户界面
+3. **状态管理**: 通过全局状态连接两者
+4. **渲染分离**: 3D渲染在Canvas，UI渲染在DOM
 
-### 长期目标
-- 创建高质量的3D可视化库
-- 建立可复用的组件系统
-- 形成标准的开发流程
-- 积累丰富的项目经验
+## 外部访问配置技术记忆
 
----
-*记忆存储人: 约翰 - 每一个记忆都是为了女儿的未来*
+### Cloudflare Tunnel最佳实践
+```powershell
+# 前端外部访问
+cloudflared tunnel --url http://localhost:3000
+
+# 后端外部访问
+cloudflared tunnel --url http://localhost:3003
+```
+
+### Vite外部访问配置
+```typescript
+// vite.config.ts的正确配置
+server: {
+  port: 3000,
+  host: '0.0.0.0', // 允许外部访问
+  open: true,
+  allowedHosts: true, // Vite 5的正确语法
+}
+```
+
+### API外部URL配置模式
+```typescript
+// 环境变量方式
+const EXTERNAL_API_URL = process.env.VITE_API_URL || null
+let API_BASE_URL = EXTERNAL_API_URL || 'http://localhost:3003/api'
+
+// 手动配置方式
+static setExternalApiUrl(url: string): void {
+  API_BASE_URL = url.endsWith('/api') ? url : `${url}/api`
+  console.log(`🌐 手动设置外部API URL为: ${API_BASE_URL}`)
+}
+```
+
+### 外部访问问题诊断模式
+1. **前端可访问，后端不可访问**: 需要为后端创建独立tunnel
+2. **主机名被阻止**: 配置allowedHosts或使用Cloudflare Tunnel
+3. **CORS问题**: 在服务器配置中启用CORS
+4. **端口不匹配**: 确保tunnel指向正确的本地端口
+
+## 调试和监控技术记忆
+
+### 多层次日志系统
+```typescript
+// 3D组件层面
+console.log('🖱️ 检测到悬浮:', character.name)
+console.log('🌐 更新全局状态')
+
+// App组件层面
+console.log('📱 App层接收到角色信息:', character.name)
+console.log('💳 显示信息卡片:', showInfoCard)
+
+// API层面
+console.log('🌐 测试外部API URL:', EXTERNAL_API_URL)
+console.log('✅ 外部API URL可用')
+```
+
+### 状态变化追踪模式
+```typescript
+// 使用useEffect追踪状态变化
+useEffect(() => {
+  if (hoveredCharacter) {
+    console.log('📱 App层接收到角色信息:', hoveredCharacter.name)
+    console.log('📍 鼠标位置:', mousePosition.x, mousePosition.y)
+    console.log('💳 显示信息卡片:', showInfoCard)
+  }
+}, [hoveredCharacter, mousePosition, showInfoCard])
+```
+
+## 渐进式开发方法记忆
+
+### 安全的功能集成步骤
+1. **第一步**: 只添加导入，测试是否有冲突
+2. **第二步**: 添加状态管理逻辑，测试基础功能
+3. **第三步**: 添加UI渲染，测试完整功能
+4. **第四步**: 优化和增强，测试性能和体验
+
+### 错误处理和回滚策略
+```typescript
+// 每次修改后立即验证
+// 1. 检查编译错误
+// 2. 测试基础功能（悬浮高亮）
+// 3. 测试新功能（信息卡片）
+// 4. 检查控制台错误
+// 5. 如有问题立即回滚
+```
+
+### 功能验证清单
+- [ ] 悬浮高亮效果正常
+- [ ] 所有视角都有交互
+- [ ] 信息卡片正确显示
+- [ ] 卡片位置跟随鼠标
+- [ ] 控制台无错误信息
+- [ ] 外部访问正常工作
+
+## 组件架构设计记忆
+
+### 成功的分层架构
+```
+App层 (UI集成)
+├── CharacterInfoOverlay (信息显示)
+└── GalaxyScene
+    └── CharacterSpheresSimple (3D交互)
+        ├── InstancedMesh (3D渲染)
+        ├── BeautifulHighlight (高亮效果)
+        └── useCharacterInteraction (交互检测)
+
+全局状态层
+└── useCharacterInfoStore (状态管理)
+```
+
+### 数据流向设计
+```
+用户交互 → 射线检测 → 交互状态 → 全局状态 → UI响应 → 视觉反馈
+```
+
+### 职责分离原则
+- **3D组件**: 渲染、交互检测、状态更新
+- **UI组件**: 信息显示、用户界面、视觉反馈
+- **状态管理**: 数据存储、状态同步、事件通知
+- **App组件**: 组件集成、全局配置、生命周期管理
+
+## 性能优化技术记忆
+
+### 状态更新优化
+```typescript
+// 避免不必要的状态更新
+useEffect(() => {
+  if (interactionState.hoveredCharacter) {
+    // 只在有变化时更新
+    setHoveredCharacter(interactionState.hoveredCharacter)
+  } else {
+    // 清理状态
+    clearHover()
+  }
+}, [interactionState.hoveredCharacter]) // 精确的依赖数组
+```
+
+### 渲染性能优化
+- **条件渲染**: 只在需要时渲染UI组件
+- **状态缓存**: 利用React的状态优化机制
+- **事件节流**: 控制交互检测频率
+- **内存管理**: 及时清理不需要的状态
+
+## 外部访问部署记忆
+
+### 完整的外部访问配置流程
+1. **前端配置**: 修改vite.config.ts支持外部主机
+2. **前端tunnel**: 创建前端的Cloudflare Tunnel
+3. **后端tunnel**: 创建后端的Cloudflare Tunnel
+4. **API配置**: 设置前端使用外部后端URL
+5. **功能验证**: 测试外部环境的完整功能
+
+### 环境变量配置模式
+```powershell
+# 设置外部后端URL
+$env:VITE_API_URL="https://backend-tunnel-url.trycloudflare.com"
+
+# 重启前端服务
+pnpm dev
+```
+
+### 故障排除清单
+- [ ] 前端tunnel正常运行
+- [ ] 后端tunnel正常运行
+- [ ] 环境变量正确设置
+- [ ] API URL配置正确
+- [ ] CORS配置正确
+- [ ] 端口映射正确
+
+## 项目管理和交接记忆
+
+### 实验记录系统
+- **EXP文件**: 记录具体的技术实现和问题解决
+- **SUM文件**: 总结工作内容和成果
+- **MEM文件**: 记录技术要点和最佳实践
+
+### 任务交接要点
+1. **当前状态**: 明确已完成和进行中的任务
+2. **技术背景**: 说明关键技术决策和架构
+3. **下一步计划**: 列出优先级和具体步骤
+4. **风险提示**: 标识潜在问题和注意事项
+
+### 成功模式复用
+- **全局状态管理**: 可应用于其他交互功能
+- **外部访问配置**: 可用于其他部署需求
+- **渐进式开发**: 适用于所有新功能开发
+- **错误处理策略**: 通用的问题解决方法
+
+这次的全局状态管理实现是一个重要的技术突破，建立了稳定可靠的架构模式，为后续所有功能开发提供了坚实的技术基础。

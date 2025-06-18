@@ -111,9 +111,16 @@ export interface DataLoadResult {
 
 export interface DataStats {
   totalCharacters: number
-  charactersByType: Record<CharacterType, number>
+  totalAliases: number
+  charactersByType: Record<string, number>
   charactersByFaction: Record<string, number>
-  relationshipCount: number
+  charactersByCategory: Record<string, number>
+  powerDistribution: {
+    high: number
+    medium: number
+    low: number
+  }
+  relationshipCount?: number
   lastUpdated: string
 }
 

@@ -3,59 +3,12 @@ import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Galaxy, StarField, CentralSun } from '@components/three/Galaxy'
-import { CharacterDataPanel } from '@components/ui/CharacterDataPanel'
 import { CharacterControlPanel } from '@components/ui/CharacterControlPanel'
 
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { usePerformanceMonitor, getDevicePerformanceLevel, PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
-import { initializeWebGPUSystem, getRecommendedSettings } from '@/utils/webgpu'
-import '@/types/webgpu' // 导入WebGPU类型定义
 
-// 导入WebGPU渲染器 - 使用examples/jsm路径（Three.js 0.160.1）
-import WebGPURenderer from 'three/examples/jsm/renderers/webgpu/WebGPURenderer.js'
-import WebGPU from 'three/examples/jsm/capabilities/WebGPU.js'
 
-// 扩展React Three Fiber以支持WebGPU
-extend({ WebGPURenderer })
-
-/**
- * 详细的WebGPU支持检测
- */
-const checkWebGPUSupport = async () => {
-  console.log('🔍 开始WebGPU支持检测...')
-
-  // 检查navigator.gpu
-  if (!navigator.gpu) {
-    console.error('❌ navigator.gpu不存在 - 浏览器不支持WebGPU')
-    return false
-  }
-
-  console.log('✅ navigator.gpu存在')
-
-  try {
-    // 尝试获取适配器
-    const adapter = await navigator.gpu.requestAdapter()
-    if (!adapter) {
-      console.error('❌ WebGPU适配器获取失败')
-      return false
-    }
-
-    console.log('✅ WebGPU适配器获取成功:', adapter)
-
-    // 尝试获取设备
-    const device = await adapter.requestDevice()
-    if (!device) {
-      console.error('❌ WebGPU设备获取失败')
-      return false
-    }
-
-    console.log('✅ WebGPU设备获取成功:', device)
-    return true
-  } catch (error) {
-    console.error('❌ WebGPU支持检测失败:', error)
-    return false
-  }
-}
 
 
 
@@ -173,35 +126,43 @@ export const GalaxyScene: React.FC = () => {
   const [characterDataOpacity, setCharacterDataOpacity] = useState(0.8)
 
   // 角色渲染控制参数
-  const [characterGlobalSize, setCharacterGlobalSize] = useState(1.0)
-  const [characterEmissiveIntensity, setCharacterEmissiveIntensity] = useState(0.3)
+  const [characterGlobalSize, setCharacterGlobalSize] = useState(0.6)
+  const [characterEmissiveIntensity, setCharacterEmissiveIntensity] = useState(0.7)
   const [characterMetalness, setCharacterMetalness] = useState(0.1)
   const [characterRoughness, setCharacterRoughness] = useState(0.3)
   const [characterAnimationSpeed, setCharacterAnimationSpeed] = useState(1.0)
   const [characterFloatAmplitude, setCharacterFloatAmplitude] = useState(0.1)
-  const [characterRadiusMultiplier, setCharacterRadiusMultiplier] = useState(1.0)
-  const [characterHeightMultiplier, setCharacterHeightMultiplier] = useState(1.0)
-  const [characterRandomSpread, setCharacterRandomSpread] = useState(2.0)
+  const [characterRadiusMultiplier, setCharacterRadiusMultiplier] = useState(1.5)
+  const [characterHeightMultiplier, setCharacterHeightMultiplier] = useState(1.2)
+  const [characterRandomSpread, setCharacterRandomSpread] = useState(5.0)
   const [characterColorIntensity, setCharacterColorIntensity] = useState(1.0)
   const [characterUseOriginalColors, setCharacterUseOriginalColors] = useState(true)
   const [characterRegeneratePositions, setCharacterRegeneratePositions] = useState(false)
+
+  // 别名控制参数
+  const [showAliases, setShowAliases] = useState(true)
+  const [aliasOpacity, setAliasOpacity] = useState(0.7)
+  const [aliasSize, setAliasSize] = useState(0.8)
 
   const { performanceLevel: detectedLevel } = usePerformanceMonitor()
   const config = PERFORMANCE_CONFIGS[performanceLevel]
 
   // 重置角色控制参数为默认值
   const resetCharacterControlsToDefaults = () => {
-    setCharacterGlobalSize(1.0)
-    setCharacterEmissiveIntensity(0.3)
+    setCharacterGlobalSize(0.6)
+    setCharacterEmissiveIntensity(0.7)
     setCharacterMetalness(0.1)
     setCharacterRoughness(0.3)
     setCharacterAnimationSpeed(1.0)
     setCharacterFloatAmplitude(0.1)
-    setCharacterRadiusMultiplier(1.0)
-    setCharacterHeightMultiplier(1.0)
-    setCharacterRandomSpread(2.0)
+    setCharacterRadiusMultiplier(1.5)
+    setCharacterHeightMultiplier(1.2)
+    setCharacterRandomSpread(5.0)
     setCharacterColorIntensity(1.0)
     setCharacterUseOriginalColors(true)
+    setShowAliases(true)
+    setAliasOpacity(0.7)
+    setAliasSize(0.8)
   }
 
   // 重新生成角色位置
@@ -216,58 +177,10 @@ export const GalaxyScene: React.FC = () => {
     }
   }, [autoPerformance, detectedLevel, performanceLevel, setPerformanceLevel])
 
-  // 初始化WebGPU系统和性能检测
+  // 初始化渲染器信息
   useEffect(() => {
-    const initializeSystem = async () => {
-      try {
-        // 初始化WebGPU系统
-        const result = await initializeWebGPUSystem({
-          enableAutoDetection: true,
-          fallbackToWebGL: true,
-          preferWebGPU: true,
-          minPerformanceScore: 60,
-          enableComputeShaders: true,
-          enableAdvancedFeatures: true,
-          logPerformanceStats: true
-        })
-
-        console.log('🚀 WebGPU系统初始化结果:', result)
-
-        // 获取推荐设置
-        const recommendedSettings = getRecommendedSettings()
-        console.log('⚙️ 推荐设置:', recommendedSettings)
-
-        // 根据推荐设置调整性能等级
-        if (autoPerformance) {
-          let newLevel: 'low' | 'medium' | 'high' | 'ultra' = 'medium'
-
-          if (recommendedSettings.quality === 'ultra') {
-            newLevel = 'ultra'
-          } else if (recommendedSettings.quality === 'high') {
-            newLevel = 'high'
-          } else if (recommendedSettings.quality === 'medium') {
-            newLevel = 'medium'
-          } else {
-            newLevel = 'low'
-          }
-
-          setPerformanceLevel(newLevel)
-          console.log(`🎯 自动设置性能等级: ${newLevel} (基于${result.rendererType.toUpperCase()})`)
-        }
-
-      } catch (error) {
-        console.error('❌ WebGPU系统初始化失败:', error)
-
-        // 降级到基础性能检测
-        const deviceLevel = getDevicePerformanceLevel()
-        if (autoPerformance) {
-          setPerformanceLevel(deviceLevel)
-        }
-        console.log('🔧 降级到基础渲染模式，性能等级:', deviceLevel)
-      }
-    }
-
-    initializeSystem()
+    setRendererInfo('WebGL')
+    console.log('🔧 使用WebGL渲染器')
   }, [])
 
   return (
@@ -305,6 +218,9 @@ export const GalaxyScene: React.FC = () => {
             characterRoughness={characterRoughness}
             characterAnimationSpeed={characterAnimationSpeed}
             characterFloatAmplitude={characterFloatAmplitude}
+            showAliases={showAliases}
+            aliasOpacity={aliasOpacity}
+            aliasSize={aliasSize}
             characterRadiusMultiplier={characterRadiusMultiplier}
             characterHeightMultiplier={characterHeightMultiplier}
             characterRandomSpread={characterRandomSpread}
@@ -332,44 +248,9 @@ export const GalaxyScene: React.FC = () => {
         )}
       </Canvas>
 
-      {/* WebGPU详细状态显示 */}
-      <div style={{
-        position: 'fixed',
-        top: '10px',
-        right: '10px',
-        background: 'rgba(0, 0, 0, 0.9)',
-        color: 'white',
-        padding: '12px',
-        borderRadius: '8px',
-        fontFamily: 'monospace',
-        fontSize: '11px',
-        zIndex: 1000,
-        maxWidth: '300px',
-        lineHeight: '1.4'
-      }}>
-        <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>
-          🖥️ 渲染器状态
-        </div>
-        <div>类型: {rendererInfo}</div>
-        <div>浏览器WebGPU: {typeof navigator !== 'undefined' && navigator.gpu ? '✅ 支持' : '❌ 不支持'}</div>
-        <div style={{
-          marginTop: '8px',
-          fontSize: '10px',
-          color: '#888',
-          borderTop: '1px solid #333',
-          paddingTop: '6px'
-        }}>
-          💡 如果显示WebGL，请检查浏览器WebGPU支持
-        </div>
-      </div>
 
-      {/* 角色数据控制面板 */}
-      <CharacterDataPanel
-        visible={characterDataVisible}
-        opacity={characterDataOpacity}
-        onVisibilityChange={setCharacterDataVisible}
-        onOpacityChange={setCharacterDataOpacity}
-      />
+
+
 
       {/* 角色渲染控制面板 */}
       <CharacterControlPanel
@@ -381,6 +262,9 @@ export const GalaxyScene: React.FC = () => {
         roughness={characterRoughness}
         animationSpeed={characterAnimationSpeed}
         floatAmplitude={characterFloatAmplitude}
+        showAliases={showAliases}
+        aliasOpacity={aliasOpacity}
+        aliasSize={aliasSize}
         radiusMultiplier={characterRadiusMultiplier}
         heightMultiplier={characterHeightMultiplier}
         randomSpread={characterRandomSpread}
@@ -394,6 +278,9 @@ export const GalaxyScene: React.FC = () => {
         onRoughnessChange={setCharacterRoughness}
         onAnimationSpeedChange={setCharacterAnimationSpeed}
         onFloatAmplitudeChange={setCharacterFloatAmplitude}
+        onShowAliasesChange={setShowAliases}
+        onAliasOpacityChange={setAliasOpacity}
+        onAliasSizeChange={setAliasSize}
         onRadiusMultiplierChange={setCharacterRadiusMultiplier}
         onHeightMultiplierChange={setCharacterHeightMultiplier}
         onRandomSpreadChange={setCharacterRandomSpread}

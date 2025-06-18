@@ -4,7 +4,7 @@
 
 .character-data-panel {
   position: fixed;
-  top: 280px; /* 进一步增加top值，确保不与ControlPanel重叠 */
+  top: 520px; /* 放在Character Controls下方，避免重叠 */
   right: 20px;
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -275,7 +275,7 @@
 @media (max-width: 768px) {
   .character-data-panel {
     right: 10px;
-    top: 260px; /* 移动端也要避免重叠，与桌面端保持一致 */
+    top: 500px; /* 移动端也要避免重叠，与桌面端保持一致 */
     max-width: 250px;
   }
 

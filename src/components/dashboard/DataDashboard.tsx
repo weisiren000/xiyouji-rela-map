@@ -96,6 +96,13 @@ export const DataDashboard: React.FC = () => {
           {/* 标签页导航 */}
           <div className="dashboard-tabs">
             <button
+              className={`tab-btn ${activeTab === DashboardTab.DATA_PREVIEW ? 'active' : ''}`}
+              onClick={() => setActiveTab(DashboardTab.DATA_PREVIEW)}
+            >
+              👁️ 数据预览
+            </button>
+            
+            <button
               className={`tab-btn ${activeTab === DashboardTab.DATA_LOADER ? 'active' : ''}`}
               onClick={() => setActiveTab(DashboardTab.DATA_LOADER)}
             >
@@ -114,13 +121,6 @@ export const DataDashboard: React.FC = () => {
               onClick={() => setActiveTab(DashboardTab.CHARACTER_MAPPER)}
             >
               🎯 角色映射
-            </button>
-            
-            <button
-              className={`tab-btn ${activeTab === DashboardTab.DATA_PREVIEW ? 'active' : ''}`}
-              onClick={() => setActiveTab(DashboardTab.DATA_PREVIEW)}
-            >
-              👁️ 数据预览
             </button>
             
             <button

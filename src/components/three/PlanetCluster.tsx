@@ -4,7 +4,7 @@ import { InstancedMesh, Object3D, Color, Vector3 } from 'three'
 import { PlanetData } from '@/types/galaxy'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
-import { unifiedRenderingAPI } from '@/utils/webgpu'
+
 
 interface PlanetClusterProps {
   planets: PlanetData[]
@@ -25,14 +25,7 @@ export const PlanetCluster: React.FC<PlanetClusterProps> = ({ planets }) => {
   // 根据性能等级获取配置
   const config = PERFORMANCE_CONFIGS[performanceLevel]
 
-  // 检查是否支持WebGPU
-  const isWebGPUSupported = useMemo(() => {
-    try {
-      return unifiedRenderingAPI.isWebGPUSupported()
-    } catch {
-      return false
-    }
-  }, [])
+
 
   // 更新动画星球数据
   useEffect(() => {
@@ -108,30 +101,19 @@ export const PlanetCluster: React.FC<PlanetClusterProps> = ({ planets }) => {
       }
     })
 
-    // 使用统一渲染API进行批量更新（自动选择WebGPU或WebGL优化路径）
-    try {
-      unifiedRenderingAPI.batchUpdateInstancedMesh(meshRef.current, updates)
+    // 传统的更新方式
+    updates.forEach(({ index, position, scale, color }) => {
+      tempObject.position.copy(position)
+      tempObject.scale.copy(scale)
+      tempObject.updateMatrix()
 
-      if (isWebGPUSupported && updates.length > 1000) {
-        console.log('🚀 使用WebGPU优化路径更新', updates.length, '个星球')
-      }
-    } catch (error) {
-      // 降级到传统更新方式
-      console.warn('统一渲染API更新失败，降级到传统方式:', error)
+      meshRef.current!.setMatrixAt(index, tempObject.matrix)
+      meshRef.current!.setColorAt(index, color)
+    })
 
-      updates.forEach(({ index, position, scale, color }) => {
-        tempObject.position.copy(position)
-        tempObject.scale.copy(scale)
-        tempObject.updateMatrix()
-
-        meshRef.current!.setMatrixAt(index, tempObject.matrix)
-        meshRef.current!.setColorAt(index, color)
-      })
-
-      meshRef.current.instanceMatrix.needsUpdate = true
-      if (meshRef.current.instanceColor) {
-        meshRef.current.instanceColor.needsUpdate = true
-      }
+    meshRef.current.instanceMatrix.needsUpdate = true
+    if (meshRef.current.instanceColor) {
+      meshRef.current.instanceColor.needsUpdate = true
     }
   }
 
