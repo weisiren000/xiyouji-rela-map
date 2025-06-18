@@ -1,0 +1,110 @@
+/* 详情视图返回按钮样式 */
+
+.detail-view-back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.detail-view-back-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.detail-view-back-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.detail-view-back-button:hover .back-icon {
+  transform: translateX(-2px);
+}
+
+.back-text {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+  .detail-view-back-button {
+    top: 15px;
+    left: 15px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+  
+  .back-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .detail-view-back-button {
+    background: #000;
+    border-color: #fff;
+  }
+  
+  .detail-view-back-button:hover {
+    background: #333;
+  }
+}
+
+/* 减少动画模式支持 */
+@media (prefers-reduced-motion: reduce) {
+  .detail-view-back-button {
+    transition: none;
+  }
+  
+  .back-icon {
+    transition: none;
+  }
+  
+  .detail-view-back-button:hover {
+    transform: none;
+  }
+  
+  .detail-view-back-button:hover .back-icon {
+    transform: none;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "a0000",
+  "name": "法宝名称",
+  "type": "artifact",
+  "owner": "拥有者",
+  "description": "法宝描述",
+  "abilities": ["能力1", "能力2"],
+  "origin": "来源",
+  "notable_events": ["相关事件1", "相关事件2"],
+  "relationships": [
+    {
+      "target": "目标ID",
+      "relationship": "关系类型",
+      "description": "关系描述"
+    }
+  ],
+  "metadata": {
+    "created": "2024-06-18",
+    "last_updated": "2024-06-18",
+    "source": "西游记原著"
+  }
+}

@@ -1,0 +1,59 @@
+{
+    "unid": "a0007",
+    "isAlias": false,
+    "basic": {
+        "name": "杨柳玉净瓶",
+        "pinyin": "yang_liu_yu_jing_ping",
+        "aliases": [
+            "甘露瓶",
+            "观音净瓶",
+            "杨柳净瓶"
+        ],
+        "type": "artifact",
+        "category": "magical_container"
+    },
+    "attributes": {
+        "level": {
+            "id": "sheng_qi",
+            "name": "圣器",
+            "tier": 8,
+            "category": "divine"
+        },
+        "rank": 3,
+        "power": 87,
+        "influence": 90,
+        "element": "water"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "relationship": "primary_artifact"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0019",
+                "name": "黄风岭遇黄风怪"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "观音菩萨的法器，净瓶中盛有甘露圣水，能起死回生、消灾解难。瓶中常插一根杨柳枝，用来洒甘露水普度众生。是观音菩萨大慈大悲的象征，西游记中多次解救师徒危难。",
+        "tags": [
+            "magical_container",
+            "divine",
+            "water",
+            "buddhist",
+            "healing",
+            "guanyin",
+            "divine_tool",
+            "vase",
+            "purification",
+            "salvation"
+        ],
+        "sourceChapters": [19, 27, 42, 58, 69, 71, 82],
+        "firstAppearance": 19,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+} 

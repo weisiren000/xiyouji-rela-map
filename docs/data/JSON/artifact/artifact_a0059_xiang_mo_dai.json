@@ -1,0 +1,60 @@
+{
+    "unid": "a0059",
+    "isAlias": false,
+    "basic": {
+        "name": "降魔带",
+        "pinyin": "xiang_mo_dai",
+        "aliases": [
+            "束魔索",
+            "金刚带"
+        ],
+        "type": "artifact",
+        "category": "restraint"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 50,
+        "influence": 45,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0093",
+            "name": "如来佛祖",
+            "relationship": "guardian"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0007",
+                "name": "如来收服孙悟空"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "降魔带是佛门秘传法器，金线织就，上绣佛门密咒。此带能自动伸缩变化，缠绕妖魔，使其无法动弹，也能封印其法力。带上有特殊禁制，被缚者越挣扎越紧，且无法用蛮力挣脱。如来曾用此带缚住孙悟空，使其无法逃脱。带子能感应妖气，主动追击妖魔，还能根据妖魔实力自动调整强度。佛门弟子常用此带捕获妖魔，带回寺庙超度或惩罚。",
+        "tags": [
+            "restraint",
+            "belt",
+            "buddhist",
+            "buddha",
+            "binding",
+            "capture",
+            "sealing",
+            "golden",
+            "scripture",
+            "flexible",
+            "demon_subjugation",
+            "holy"
+        ],
+        "sourceChapters": [7, 8, 39],
+        "firstAppearance": 7,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

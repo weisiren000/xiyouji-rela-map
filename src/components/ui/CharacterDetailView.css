@@ -1,0 +1,100 @@
+/* 角色详情视图样式 */
+
+.character-detail-view {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 左侧3D场景容器 */
+.detail-scene-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* 右侧信息面板容器 */
+.detail-panel-container {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* 错误状态样式 */
+.detail-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+.detail-error h2 {
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.detail-error p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .character-detail-view {
+    grid-template-columns: 1fr 350px;
+  }
+}
+
+@media (max-width: 900px) {
+  .character-detail-view {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60vh 40vh;
+  }
+  
+  .detail-panel-container {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .character-detail-view {
+    grid-template-rows: 50vh 50vh;
+  }
+  
+  .detail-panel-container {
+    padding: 15px;
+  }
+}
+
+/* 滚动条样式 */
+.detail-panel-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.detail-panel-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.detail-panel-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.detail-panel-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,59 @@
+{
+    "unid": "a0017",
+    "isAlias": false,
+    "basic": {
+        "name": "定风丹",
+        "pinyin": "ding_feng_dan",
+        "aliases": [
+            "定风珠",
+            "灵吉丹",
+            "克风丹"
+        ],
+        "type": "artifact",
+        "category": "medicine"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 60,
+        "influence": 40,
+        "element": "earth"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0123",
+            "name": "灵吉菩萨",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0019",
+                "name": "黄风岭遇黄风怪"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "灵吉菩萨的法宝，是专门克制风力的宝丹。当孙悟空师徒被黄风怪的三昧神风困住时，观音菩萨指点孙悟空找到灵吉菩萨，借得此丹制服了黄风怪。具有镇压、消除狂风的神奇功效。",
+        "tags": [
+            "medicine",
+            "magical",
+            "pill",
+            "divine",
+            "earth",
+            "wind_control",
+            "elemental_artifact",
+            "counter_weapon",
+            "bodhisattva_tool",
+            "weather_control"
+        ],
+        "sourceChapters": [20, 21],
+        "firstAppearance": 20,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}
