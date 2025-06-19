@@ -1,0 +1,61 @@
+{
+    "unid": "e0010",
+    "isAlias": false,
+    "basic": {
+        "name": "如来佛祖压制五行山",
+        "pinyin": "ru_lai_fo_zu_ya_zhi_wu_xing_shan",
+        "aliases": [
+            "五行山镇压",
+            "如来压山",
+            "两界山"
+        ],
+        "type": "event",
+        "category": "imprisonment"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 9,
+            "category": "critical"
+        },
+        "significance": 95,
+        "impact": 90
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0006",
+            "name": "如来佛祖",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0056",
+            "name": "五行山",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "天庭众神无法降服孙悟空，最后请来如来佛祖出手。佛祖与孙悟空打赌，结果猴王输了，被压在五行山下五百年，等待未来有缘人的解救。",
+        "tags": [
+            "imprisonment",
+            "buddha",
+            "mountain",
+            "punishment",
+            "bet",
+            "divine_power"
+        ],
+        "sourceChapters": [7, 8],
+        "chronology": {
+            "order": 10,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

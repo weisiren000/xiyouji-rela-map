@@ -1,0 +1,75 @@
+{
+    "unid": "e0038",
+    "isAlias": false,
+    "basic": {
+        "name": "荆棘岭木仙庵遇劲节十八公",
+        "pinyin": "jing_ji_ling_mu_xian_an_yu_jin_jie_shi_ba_gong",
+        "aliases": [
+            "劲节十八公",
+            "荆棘岭",
+            "木仙庵"
+        ],
+        "type": "event",
+        "category": "encounter"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "standard"
+        },
+        "significance": 65,
+        "impact": 60
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0019",
+            "name": "荆棘岭",
+            "role": "primary"
+        },
+        {
+            "unid": "l0059",
+            "name": "木仙庵",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到荆棘岭，遇到木仙庵的劲节十八公，一种会说人话的古树精。这些树精已经修行多年，不害人，反而助人为乐。他们热情招待唐僧师徒，并为他们指路。这是一次罕见的与善良妖怪的和平相处的经历。",
+        "tags": [
+            "encounter",
+            "peaceful",
+            "tree_spirit",
+            "hospitality",
+            "guidance"
+        ],
+        "sourceChapters": [64],
+        "chronology": {
+            "order": 38,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

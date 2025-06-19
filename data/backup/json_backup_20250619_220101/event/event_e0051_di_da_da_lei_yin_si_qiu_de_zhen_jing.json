@@ -1,0 +1,102 @@
+{
+    "unid": "e0051",
+    "isAlias": false,
+    "basic": {
+        "name": "抵达大雷音寺求得真经",
+        "pinyin": "di_da_da_lei_yin_si_qiu_de_zhen_jing",
+        "aliases": [
+            "灵山取经",
+            "大雷音寺",
+            "求得真经"
+        ],
+        "type": "event",
+        "category": "milestone"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 9,
+            "category": "critical"
+        },
+        "significance": 95,
+        "impact": 90
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0005",
+            "name": "白龙马",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0011",
+            "name": "如来佛祖",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0066",
+            "name": "阿傩",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0067",
+            "name": "迦叶",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0105",
+            "name": "大雷音寺",
+            "role": "primary"
+        },
+        {
+            "unid": "l0106",
+            "name": "灵山",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0027",
+            "name": "真经",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "经过九九八十一难，唐僧师徒终于抵达灵山大雷音寺。如来佛祖接见了他们，并命阿傩、迦叶二尊者将真经交给唐僧。然而，阿傩、迦叶却给了唐僧一些没有字的空白经书。孙悟空发现后非常愤怒，如来佛祖解释说这是因为他们没有奉上供养。唐僧师徒付出供养后，终于获得了有字的真经，完成了取经使命。",
+        "tags": [
+            "milestone",
+            "achievement",
+            "buddhism",
+            "scripture",
+            "journey_end"
+        ],
+        "sourceChapters": [98, 99],
+        "chronology": {
+            "order": 51,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

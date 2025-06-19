@@ -1,0 +1,57 @@
+{
+    "unid": "ca0006",
+    "isAlias": true,
+    "basic": {
+        "name": "金公",
+        "pinyin": "jin_gong",
+        "aliases": [
+            "金公道人"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_luo_jin_xian",
+            "name": "大罗金仙",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 1,
+        "power": 95,
+        "influence": 90,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "孙悟空的道教称谓，在丹道修炼中，金公代表阳性的金属性，与木母（猪八戒）相对应。",
+        "tags": [
+            "alias",
+            "taoist_concept",
+            "alchemy",
+            "yang_principle",
+            "metal_element"
+        ],
+        "sourceChapters": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+        ],
+        "firstAppearance": 14,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0001"
+    }
+}

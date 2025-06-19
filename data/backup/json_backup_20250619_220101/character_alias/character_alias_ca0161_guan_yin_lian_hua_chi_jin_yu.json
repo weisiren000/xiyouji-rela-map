@@ -1,0 +1,49 @@
+{
+    "unid": "ca0161",
+    "isAlias": true,
+    "basic": {
+        "name": "观音莲花池金鱼",
+        "pinyin": "guan_yin_lian_hua_chi_jin_yu",
+        "aliases": [
+            "金鱼精",
+            "观音莲花池金鱼",
+            "通天河鱼怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 38,
+        "power": 68,
+        "influence": 62,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "灵感大王的出身地详细称号，强调其来自观音菩萨莲花池的神圣背景。莲花池是佛教圣地的重要组成部分，金鱼在此修行本应得到佛法熏陶，但却偷跑下凡作恶，体现了从神圣环境到邪恶行为的堕落过程。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "fish",
+            "water_control",
+            "child_sacrifice",
+            "sacred_origin",
+            "buddhist_background"
+        ],
+        "sourceChapters": [
+            47,
+            48,
+            49
+        ],
+        "firstAppearance": 47,
+        "significance": "体现了灵感大王的神圣出身和从佛教圣地堕落的背景",
+        "culturalBackground": "莲花池在佛教中象征纯净，金鱼从此堕落体现了修行环境的重要性",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0038"
+    }
+}

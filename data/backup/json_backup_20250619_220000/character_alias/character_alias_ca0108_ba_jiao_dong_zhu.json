@@ -1,0 +1,50 @@
+{
+    "unid": "ca0108",
+    "isAlias": true,
+    "basic": {
+        "name": "芭蕉洞主",
+        "pinyin": "ba_jiao_dong_zhu",
+        "aliases": [
+            "铁扇公主",
+            "罗刹女",
+            "铁扇仙"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 21,
+        "power": 80,
+        "influence": 75,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "铁扇公主的地域称号，指其作为翠云山芭蕉洞洞主的身份。芭蕉洞是其居住和修炼的洞府，也是其势力范围的中心。这个称号体现了其在当地的统治地位和领土主权，同时也与其法宝芭蕉扇形成呼应，展现了名字与居所的文化关联。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "female",
+            "territorial_title",
+            "cave_master",
+            "ruler",
+            "residence_based",
+            "authority",
+            "local_power",
+            "domain_owner"
+        ],
+        "sourceChapters": [
+            59,
+            60,
+            61
+        ],
+        "firstAppearance": 59,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0021"
+    }
+}

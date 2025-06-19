@@ -1,0 +1,71 @@
+{
+    "unid": "e0021",
+    "isAlias": false,
+    "basic": {
+        "name": "四圣试禅心",
+        "pinyin": "si_sheng_shi_chan_xin",
+        "aliases": [
+            "黎山老母试心",
+            "四圣试心",
+            "禅心考验"
+        ],
+        "type": "event",
+        "category": "test"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "notable"
+        },
+        "significance": 70,
+        "impact": 65
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "tested"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0062",
+            "name": "黎山",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "师徒四人在黎山老母和四圣真人化身的贫困村妇家借宿，以衣物和盘缠试探唐僧的慈悲心。唐僧慷慨布施锦襕袈裟，通过了试验。",
+        "tags": [
+            "test",
+            "compassion",
+            "charity",
+            "disguise",
+            "divine_test",
+            "moral_challenge"
+        ],
+        "sourceChapters": [23],
+        "chronology": {
+            "order": 21,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

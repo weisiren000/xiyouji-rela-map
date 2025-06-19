@@ -1,0 +1,46 @@
+{
+    "unid": "c0016",
+    "isAlias": false,
+    "basic": {
+        "name": "普贤菩萨",
+        "pinyin": "pu_xian_pu_sa",
+        "aliases": [
+            "普贤",
+            "白象主人"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 16,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "行愿第一的菩萨，白象的主人。在狮驼岭收服白象精，以实践和行愿著称，是佛教四大菩萨之一，与文殊菩萨并称。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "action_oriented",
+            "elephant_master",
+            "compassionate",
+            "practical",
+            "devoted",
+            "protector",
+            "enlightened",
+            "virtuous"
+        ],
+        "sourceChapters": [
+            89, 90, 91
+        ],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

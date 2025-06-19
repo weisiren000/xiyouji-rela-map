@@ -1,0 +1,50 @@
+{
+    "unid": "ca0175",
+    "isAlias": true,
+    "basic": {
+        "name": "观音坐骑",
+        "pinyin": "guan_yin_zuo_qi",
+        "aliases": [
+            "观音菩萨坐骑",
+            "菩萨坐骑",
+            "观音座下"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 43,
+        "power": 75,
+        "influence": 72,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "赛太岁的身份地位称谓，强调其作为观音菩萨坐骑的神圣地位。这个称谓体现了佛教护法体系中的等级关系，突出了赛太岁在佛教世界中的重要地位。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "mount",
+            "divine_beast",
+            "buddhist_guardian",
+            "sacred_position",
+            "religious_title"
+        ],
+        "sourceChapters": [
+            68,
+            69,
+            70,
+            71
+        ],
+        "firstAppearance": 68,
+        "significance": "体现了赛太岁在佛教体系中的神圣地位和与观音菩萨的关系",
+        "culturalBackground": "佛教文化中菩萨坐骑的神圣地位，体现了护法神兽的重要作用",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0043"
+    }
+}

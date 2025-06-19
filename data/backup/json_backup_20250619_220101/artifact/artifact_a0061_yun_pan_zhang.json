@@ -1,0 +1,55 @@
+{
+    "unid": "a0061",
+    "isAlias": false,
+    "basic": {
+        "name": "云盘杖",
+        "pinyin": "yun_pan_zhang",
+        "aliases": [
+            "腾云杖",
+            "祥云杖"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 45,
+        "influence": 35,
+        "element": "air"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0122",
+            "name": "灵吉菩萨",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "云盘杖是灵吉菩萨的法器，通体浅蓝色，杖头盘旋如祥云形状。此杖挥舞时可召唤祥云，使持有者腾云驾雾，飞行速度极快。杖身轻盈如羽，却坚固异常，能承受巨大冲击。除飞行外，云盘杖还能控制天气，召唤微风细雨，驱散浓雾阴云。在战斗中，灵吉菩萨常用此杖制造云雾，迷惑敌人视线，或形成云盾防护自身。杖中蕴含风行之力，使用者移动速度大增。",
+        "tags": [
+            "weapon",
+            "staff",
+            "cloud",
+            "flying",
+            "air",
+            "buddhist",
+            "bodhisattva",
+            "weather_control",
+            "fog",
+            "speed",
+            "mist",
+            "lightweight"
+        ],
+        "sourceChapters": [25, 46],
+        "firstAppearance": 25,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

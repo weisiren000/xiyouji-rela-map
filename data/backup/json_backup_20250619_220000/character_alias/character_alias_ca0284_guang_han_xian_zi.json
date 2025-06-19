@@ -1,0 +1,49 @@
+{
+    "unid": "ca0284",
+    "isAlias": true,
+    "basic": {
+        "name": "广寒仙子",
+        "pinyin": "guang_han_xian_zi",
+        "aliases": [
+            "广寒宫仙子",
+            "广寒宫主",
+            "广寒仙女"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_zi",
+            "name": "仙子",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 118,
+        "power": 78,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "嫦娥的宫殿居所称谓，强调其作为广寒宫主人的神圣地位。这个称谓体现了嫦娥在月宫中的居住环境和仙界身份，广寒宫是月宫的正式名称，代表着清冷和高洁。",
+        "tags": [
+            "moon_goddess",
+            "celestial_fairy",
+            "palace_resident",
+            "lunar_deity",
+            "immortal_beauty",
+            "cold_palace_mistress",
+            "celestial_court",
+            "divine_feminine"
+        ],
+        "sourceChapters": [
+            95,
+            96
+        ],
+        "firstAppearance": 95,
+        "significance": "体现了嫦娥作为广寒宫主人的神圣地位和月宫身份",
+        "culturalBackground": "广寒仙子是嫦娥的经典称谓，广寒宫是中国神话中月宫的名称，体现了月宫的清冷和嫦娥的高洁品格",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0118"
+    }
+}

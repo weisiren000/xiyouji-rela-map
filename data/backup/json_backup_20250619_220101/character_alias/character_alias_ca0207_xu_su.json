@@ -1,0 +1,52 @@
+{
+    "unid": "ca0207",
+    "isAlias": true,
+    "basic": {
+        "name": "虚宿",
+        "pinyin": "xu_su",
+        "aliases": [
+            "虚星",
+            "虚宿星官",
+            "北方虚宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 61,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "虚日鼠的星宿称谓，强调其作为北方玄武七宿之四的重要地位。这个称谓体现了虚日鼠在二十八宿体系中的日德属性，突出了其作为玄武腹部星宿的天文学意义和虚无缥缈的哲学内涵。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "northern_black_tortoise",
+            "sun_element",
+            "constellation_name",
+            "astronomical_system",
+            "tortoise_abdomen",
+            "emptiness_philosophy"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了虚日鼠作为北方玄武七宿第四位的重要地位和日德属性",
+        "culturalBackground": "虚宿在二十八宿中代表北方玄武的腹部，象征着虚无和空灵，体现了道家哲学中的虚无境界和日德的光明特性",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0061"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "unid": "c0125",
+    "isAlias": false,
+    "basic": {
+        "name": "泾河龙王",
+        "pinyin": "jing_he_long_wang",
+        "aliases": [
+            "袁守诚事件龙王",
+            "被魏征梦斩",
+            "泾河龙君",
+            "龙王"
+        ],
+        "type": "character",
+        "category": "dragon"
+    },
+    "attributes": {
+        "level": {
+            "id": "long_wang",
+            "name": "龙王",
+            "tier": 6,
+            "category": "dragon"
+        },
+        "rank": 125,
+        "power": 70,
+        "influence": 50,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "泾河龙王，因与袁守诚打赌下雨时辰和雨量，违背天条私改雨量，被魏征在梦中斩杀，引发唐太宗游地府的故事。",
+        "tags": [
+            "dragon",
+            "king",
+            "tragic",
+            "deceased",
+            "water_deity",
+            "rule_breaker"
+        ],
+        "sourceChapters": [
+            9, 10, 11
+        ],
+        "firstAppearance": 9,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

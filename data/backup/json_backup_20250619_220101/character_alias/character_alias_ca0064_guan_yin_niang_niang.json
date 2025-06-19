@@ -1,0 +1,60 @@
+{
+    "unid": "ca0064",
+    "isAlias": true,
+    "basic": {
+        "name": "观音娘娘",
+        "pinyin": "guan_yin_niang_niang",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 7,
+        "power": 90,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "观音菩萨的民间称呼，'娘娘'是民间对女性神祇的亲切敬称。在西游记中体现了观音菩萨慈母般的形象和民间信仰。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "folk_title",
+            "compassionate",
+            "protector",
+            "healer",
+            "wise",
+            "merciful",
+            "guardian",
+            "maternal"
+        ],
+        "sourceChapters": [
+            8,
+            11,
+            17,
+            22,
+            42,
+            46,
+            49,
+            52,
+            58,
+            64,
+            67,
+            77,
+            83,
+            86,
+            88,
+            91,
+            94
+        ],
+        "firstAppearance": 8,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0007"
+    }
+}

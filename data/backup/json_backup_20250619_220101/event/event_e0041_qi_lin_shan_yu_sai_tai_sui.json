@@ -1,0 +1,97 @@
+{
+    "unid": "e0041",
+    "isAlias": false,
+    "basic": {
+        "name": "麒麟山遇赛太岁",
+        "pinyin": "qi_lin_shan_yu_sai_tai_sui",
+        "aliases": [
+            "金毛犼",
+            "麒麟山",
+            "赛太岁"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 78
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0043",
+            "name": "赛太岁",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0149",
+            "name": "金圣宫娘娘",
+            "role": "victim"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0122",
+            "name": "麒麟山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0018",
+            "name": "朱紫国",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0004",
+            "name": "紫金铃",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到朱紫国，发现国王久病不愈，原是被麒麟山的赛太岁（金毛犼）所害，它掳走了王后金圣宫娘娘。孙悟空等人与赛太岁大战，最终观音菩萨现身，原来赛太岁是观音菩萨的坐骑，因贪恋人间富贵而下凡作恶。观音菩萨用紫金铃将其降服，救回金圣宫娘娘，国王病也痊愈。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "divine_intervention",
+            "rescue",
+            "royal_family"
+        ],
+        "sourceChapters": [67, 68, 69],
+        "chronology": {
+            "order": 41,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

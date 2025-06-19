@@ -1,0 +1,53 @@
+{
+    "unid": "ca0069",
+    "isAlias": true,
+    "basic": {
+        "name": "高天上圣大慈仁者",
+        "pinyin": "gao_tian_shang_sheng_da_ci_ren_zhe",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yu_huang",
+            "name": "玉皇",
+            "tier": 9,
+            "category": "divine"
+        },
+        "rank": 8,
+        "power": 95,
+        "influence": 100,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "玉皇大帝的德行称号，强调其慈悲仁爱的品德。'高天上圣'指居于最高天界的圣者，'大慈仁者'体现其慈悲为怀、仁爱众生的品格，是对玉皇大帝道德品质的赞颂。",
+        "tags": [
+            "deity",
+            "emperor",
+            "virtue_title",
+            "supreme_ruler",
+            "divine",
+            "authority",
+            "heavenly_court",
+            "compassionate",
+            "benevolent",
+            "moral"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7,
+            18,
+            25,
+            37,
+            78,
+            87,
+            100
+        ],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0008"
+    }
+}

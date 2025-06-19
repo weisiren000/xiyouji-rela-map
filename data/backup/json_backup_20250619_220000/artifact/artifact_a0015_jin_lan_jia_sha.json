@@ -1,0 +1,69 @@
+{
+    "unid": "a0015",
+    "isAlias": false,
+    "basic": {
+        "name": "锦襕袈裟",
+        "pinyin": "jin_lan_jia_sha",
+        "aliases": [
+            "袈裟",
+            "佛衣",
+            "锦襕衣"
+        ],
+        "type": "artifact",
+        "category": "clothing"
+    },
+    "attributes": {
+        "level": {
+            "id": "shen_qi",
+            "name": "神器",
+            "tier": 8,
+            "category": "divine"
+        },
+        "rank": 4,
+        "power": 75,
+        "influence": 95,
+        "element": "light"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0002",
+            "name": "唐僧",
+            "relationship": "protective_garment"
+        },
+        "previousOwners": [
+            {
+                "unid": "c0006",
+                "name": "如来佛祖",
+                "relationship": "creator"
+            }
+        ],
+        "associatedEvents": [
+            {
+                "unid": "e0016",
+                "name": "观音院僧谋宝贝"
+            },
+            {
+                "unid": "e0017",
+                "name": "黑风山遇黑熊精"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "如来佛祖赐给唐僧的袈裟，共有两领，一领唐僧穿在身上，一领装在包袱里。据说此袈裟乃佛祖舍利子化成，可保平安无事，历经寿数，不遭垢秽。是取经路上多次被妖怪觊觎的宝物。",
+        "tags": [
+            "garment",
+            "protection",
+            "magical",
+            "divine",
+            "light",
+            "buddhist",
+            "robe",
+            "sacred",
+            "tang_monk",
+            "dharma_protection"
+        ],
+        "sourceChapters": [12, 13, 14, 16, 17, 18, 35, 57, 77],
+        "firstAppearance": 12,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

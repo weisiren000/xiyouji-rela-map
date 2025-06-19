@@ -1,0 +1,49 @@
+{
+    "unid": "ca0168",
+    "isAlias": true,
+    "basic": {
+        "name": "万岁狐王之女",
+        "pinyin": "wan_sui_hu_wang_zhi_nv",
+        "aliases": [
+            "狐王女儿",
+            "万岁狐王的女儿",
+            "狐族公主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 41,
+        "power": 60,
+        "influence": 65,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "玉面公主的身份称谓，强调其作为万岁狐王女儿的血统地位。这个称谓体现了妖怪世界中的家族关系和血统传承，突出了玉面公主的出身背景和在狐族中的地位。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "fox",
+            "female",
+            "princess",
+            "bloodline",
+            "family_title"
+        ],
+        "sourceChapters": [
+            59,
+            60,
+            61
+        ],
+        "firstAppearance": 59,
+        "significance": "体现了玉面公主的血统出身和在狐族中的尊贵地位",
+        "culturalBackground": "中国传统文化中重视血统和家族关系的体现，狐王之女的身份象征着妖族的等级制度",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0041"
+    }
+}

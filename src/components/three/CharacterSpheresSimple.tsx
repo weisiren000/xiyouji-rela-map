@@ -65,10 +65,23 @@ interface CharacterSpheresSimpleProps {
 }
 
 /**
- * 基于类型的颜色映射 (来自dataServer.js)
+ * 基于类型的颜色映射 (适配汉化后的数据库)
  */
 const getCharacterColor = (category: string): string => {
   const colorMap = {
+    // 中文分类映射
+    '主角': '#FFD700',           // 金色
+    '神仙': '#87CEEB',           // 天蓝色
+    '妖魔': '#FF6347',           // 红色
+    '龙族': '#00CED1',           // 青色
+    '佛教': '#DDA0DD',           // 紫色
+    '天庭': '#F0E68C',           // 卡其色
+    '地府': '#696969',           // 灰色
+    '人类': '#FFA500',           // 橙色
+    '仙人': '#98FB98',           // 浅绿色
+    '反派': '#DC143C',           // 深红色
+    '别名': '#C0C0C0',           // 银色
+    // 兼容英文分类映射
     'protagonist': '#FFD700',    // 金色
     'deity': '#87CEEB',          // 天蓝色
     'demon': '#FF6347',          // 红色
@@ -77,7 +90,9 @@ const getCharacterColor = (category: string): string => {
     'celestial': '#F0E68C',      // 卡其色
     'underworld': '#696969',     // 灰色
     'human': '#FFA500',          // 橙色
-    'alias': '#CCCCCC'           // 别名默认颜色
+    'immortal': '#98FB98',       // 浅绿色
+    'antagonist': '#DC143C',     // 深红色
+    'alias': '#C0C0C0'           // 银色
   }
   return colorMap[category as keyof typeof colorMap] || '#FFFFFF'
 }
@@ -400,6 +415,19 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     const baseRadius = galaxyConfig.galaxyRadius * (0.6 + normalizedRank * 0.8) * radiusMultiplier
 
     const categoryAngles = {
+      // 中文分类映射
+      '主角': Math.PI / 6,
+      '神仙': Math.PI * 2 / 3 + Math.PI / 6,
+      '妖魔': Math.PI * 4 / 3 + Math.PI / 6,
+      '龙族': Math.PI / 2 + Math.PI / 6,
+      '佛教': Math.PI + Math.PI / 6,
+      '天庭': Math.PI / 4 + Math.PI / 6,
+      '地府': Math.PI * 3 / 2 + Math.PI / 6,
+      '人类': Math.PI * 5 / 4 + Math.PI / 6,
+      '仙人': Math.PI / 3 + Math.PI / 6,
+      '反派': Math.PI * 7 / 4 + Math.PI / 6,
+      '别名': Math.PI / 8 + Math.PI / 6,
+      // 兼容英文分类映射
       'protagonist': Math.PI / 6,
       'deity': Math.PI * 2 / 3 + Math.PI / 6,
       'demon': Math.PI * 4 / 3 + Math.PI / 6,
@@ -435,6 +463,19 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     const baseRadius = galaxyConfig.galaxyRadius * (0.2 + normalizedRank * 0.6) * radiusMultiplier
 
     const categoryAngles = {
+      // 中文分类映射
+      '主角': 0,
+      '神仙': Math.PI * 2 / 3,
+      '妖魔': Math.PI * 4 / 3,
+      '龙族': Math.PI / 2,
+      '佛教': Math.PI,
+      '天庭': Math.PI / 4,
+      '地府': Math.PI * 3 / 2,
+      '人类': Math.PI * 5 / 4,
+      '仙人': Math.PI / 3,
+      '反派': Math.PI * 7 / 4,
+      '别名': Math.PI / 8,
+      // 兼容英文分类映射
       'protagonist': 0,
       'deity': Math.PI * 2 / 3,
       'demon': Math.PI * 4 / 3,

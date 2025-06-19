@@ -1,0 +1,97 @@
+{
+    "unid": "e0028",
+    "isAlias": false,
+    "basic": {
+        "name": "红孩儿火云洞",
+        "pinyin": "hong_hai_er_huo_yun_dong",
+        "aliases": [
+            "圣婴大王",
+            "火云洞",
+            "红孩儿"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "important"
+        },
+        "significance": 86,
+        "impact": 83
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0022",
+            "name": "红孩儿",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0010",
+            "name": "牛魔王",
+            "role": "related"
+        },
+        {
+            "unid": "c0021",
+            "name": "铁扇公主",
+            "role": "related"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0049",
+            "name": "号山枯松涧火云洞",
+            "role": "primary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0023",
+            "name": "火尖枪",
+            "role": "weapon"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒途经号山枯松涧，遇到牛魔王与铁扇公主之子红孩儿。红孩儿使用三昧真火困住师徒，欲抓唐僧食用。孙悟空多方求救未果，最终请来观音菩萨，用净瓶甘露收服红孩儿，并将其带回南海，改名善财童子。",
+        "tags": [
+            "battle",
+            "fire",
+            "kidnapping",
+            "divine_intervention",
+            "redemption"
+        ],
+        "sourceChapters": [40, 41, 42],
+        "chronology": {
+            "order": 28,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

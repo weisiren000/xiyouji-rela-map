@@ -1,0 +1,50 @@
+{
+    "unid": "ca0109",
+    "isAlias": true,
+    "basic": {
+        "name": "圣婴大王",
+        "pinyin": "sheng_ying_da_wang",
+        "aliases": [
+            "红孩儿",
+            "善财童子",
+            "火云洞童子"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 22,
+        "power": 75,
+        "influence": 70,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "红孩儿的妖王称号，体现了其在妖界中的王者地位。虽然年幼，但因其强大的三昧真火和显赫的出身（牛魔王之子），在妖界享有圣婴大王的尊称。这个称号既体现了其神圣的血统，又展现了其作为妖王的威严和实力。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "child",
+            "royal_title",
+            "fire_control",
+            "powerful",
+            "noble_birth",
+            "young_king",
+            "sacred_child",
+            "prestigious"
+        ],
+        "sourceChapters": [
+            40,
+            41,
+            42
+        ],
+        "firstAppearance": 40,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0022"
+    }
+}

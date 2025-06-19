@@ -1,0 +1,49 @@
+{
+    "unid": "ca0276",
+    "isAlias": true,
+    "basic": {
+        "name": "准提道人",
+        "pinyin": "zhun_ti_dao_ren",
+        "aliases": [
+            "准提祖师",
+            "准提仙人",
+            "准提真人"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "zu_shi",
+            "name": "祖师",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 112,
+        "power": 95,
+        "influence": 92,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "菩提祖师的道教称谓，强调其在道教体系中的真人地位。这个称谓体现了菩提祖师作为道教高人的身份，准提道人代表着道教的修行境界和超脱智慧，融合了佛道两家的精髓。",
+        "tags": [
+            "taoist_master",
+            "enlightened_sage",
+            "monkey_king_teacher",
+            "taoist_patriarch",
+            "wisdom_master",
+            "dao_teacher",
+            "spiritual_guide",
+            "ancient_sage"
+        ],
+        "sourceChapters": [
+            1,
+            2
+        ],
+        "firstAppearance": 1,
+        "significance": "体现了菩提祖师在道教体系中的真人地位和超脱智慧",
+        "culturalBackground": "准提道人是菩提祖师的道教称谓，体现了其在道教文化中的高深修为，准提代表着清净和智慧，融合了佛道两家的修行精髓",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0112"
+    }
+}

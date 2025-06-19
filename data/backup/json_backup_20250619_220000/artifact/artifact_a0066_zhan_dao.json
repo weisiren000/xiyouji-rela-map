@@ -1,0 +1,60 @@
+{
+    "unid": "a0066",
+    "isAlias": false,
+    "basic": {
+        "name": "斩刀",
+        "pinyin": "zhan_dao",
+        "aliases": [
+            "斩妖刀",
+            "斩首刀"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 55,
+        "influence": 30,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0098",
+            "name": "托塔李天王",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0006",
+                "name": "二郎神捉拿孙悟空"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "斩刀是托塔李天王的武器，形似偃月大刀，刀身厚重，刀刃锋利。此刀通体墨黑，刀锋处却泛着寒光，是天庭处决重犯的专用法器。刀身上刻有天规条文，挥舞时发出低沉呼啸，令人心生畏惧。斩刀不仅能斩断普通物质，还能切断妖魔的法力联系，使其无法施展法术。天王用此刀斩杀过无数作乱妖魔，刀上积累了特殊能量，对妖魔有天然克制作用，能造成额外伤害。",
+        "tags": [
+            "weapon",
+            "blade",
+            "execution",
+            "metal",
+            "heavenly",
+            "li_jing",
+            "justice",
+            "punishment",
+            "demon_slaying",
+            "law",
+            "cutting",
+            "intimidation"
+        ],
+        "sourceChapters": [6, 29],
+        "firstAppearance": 6,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

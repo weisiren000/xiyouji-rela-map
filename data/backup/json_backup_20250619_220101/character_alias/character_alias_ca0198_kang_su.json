@@ -1,0 +1,51 @@
+{
+    "unid": "ca0198",
+    "isAlias": true,
+    "basic": {
+        "name": "亢宿",
+        "pinyin": "kang_su",
+        "aliases": [
+            "亢星",
+            "亢宿星官",
+            "东方亢宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 52,
+        "power": 74,
+        "influence": 77,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "亢金龙的星宿称谓，强调其作为东方青龙七宿之二的重要地位。这个称谓体现了亢金龙在二十八宿体系中的金德属性，突出了其作为青龙颈部星宿的天文学意义。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "eastern_azure_dragon",
+            "metal_element",
+            "constellation_name",
+            "astronomical_system",
+            "dragon_neck"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了亢金龙在东方青龙七宿中的重要地位和金德属性",
+        "culturalBackground": "亢宿在二十八宿中代表东方青龙的颈部，象征着力量和威严",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0052"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "unid": "c0095",
+    "isAlias": false,
+    "basic": {
+        "name": "中岳嵩山中天崇圣大帝",
+        "pinyin": "zhong_yue_da_di",
+        "aliases": ["嵩山中天崇圣大帝", "嵩山神", "中岳嵩山大帝", "中天大帝"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yue_di",
+            "name": "岳帝",
+            "tier": 6,
+            "category": "mountain"
+        },
+        "rank": 95,
+        "power": 75,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["东岳大帝", "南岳大帝", "北岳大帝", "西岳大帝"],
+        "subordinates": ["嵩山神将", "山神土地", "中岳部众"],
+        "superior": ["玉皇大帝", "天庭"],
+        "allies": ["五岳大帝"]
+    },
+    "abilities": {
+        "weapons": ["中岳神印", "嵩山宝剑"],
+        "skills": ["山岳神通", "中天统领", "土德掌管", "中央调和"],
+        "specialties": ["掌管嵩山", "中央山岳", "土德之力", "五行调和"]
+    },
+    "locations": {
+        "residence": ["嵩山", "中岳庙", "中天殿"],
+        "territory": ["嵩山山脉", "中央山岳", "中原大地"],
+        "frequentPlaces": ["天庭", "五岳聚会"]
+    },
+    "metadata": {
+        "description": "五岳大帝之一，掌管嵩山和中央山岳，司掌土德和五行调和，中央山神",
+        "tags": ["deity", "mountain", "earth_element", "balance", "central_ruler"],
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "culturalBackground": "中国传统文化中的重要山神，嵩山崇拜的核心",
+        "religiousSignificance": "道教和民间信仰中的重要神祇，掌管中央和土德",
+        "literaryRole": "西游记中山神体系的重要组成部分",
+        "mountainSignificance": "嵩山为中岳，位居中央，有调和四方之意",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

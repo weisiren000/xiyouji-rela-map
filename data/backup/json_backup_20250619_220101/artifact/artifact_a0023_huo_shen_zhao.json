@@ -1,0 +1,54 @@
+{
+    "unid": "a0023",
+    "isAlias": false,
+    "basic": {
+        "name": "火神罩",
+        "pinyin": "huo_shen_zhao",
+        "aliases": [
+            "七彩光罩",
+            "炎帝宝罩"
+        ],
+        "type": "artifact",
+        "category": "defensive"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 40,
+        "influence": 35,
+        "element": "fire"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0099",
+            "name": "火德星君",
+            "relationship": "personal_tool"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "火神罩是火德星君的法宝，形似巨大透明罩子，能发出七彩火光，可收敛一切火焰或释放熊熊烈火。此宝可保护使用者免受外界伤害，也可困住敌人并以内部高温灼烧。它能控制周围温度，在炼丹、炼器时作为辅助工具，精确控制火候。",
+        "tags": [
+            "fire",
+            "defense",
+            "protective",
+            "celestial",
+            "star_god",
+            "barrier",
+            "containment",
+            "temperature_control",
+            "capture",
+            "heavenly_artifact",
+            "fire_deity"
+        ],
+        "sourceChapters": [60, 61],
+        "firstAppearance": 60,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

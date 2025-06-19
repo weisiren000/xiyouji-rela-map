@@ -1,0 +1,51 @@
+{
+    "unid": "c0093",
+    "isAlias": false,
+    "basic": {
+        "name": "东岳泰山天齐仁圣大帝",
+        "pinyin": "dong_yue_da_di",
+        "aliases": ["泰山天齐仁圣大帝", "泰山神", "东岳泰山大帝", "天齐大帝"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yue_di",
+            "name": "岳帝",
+            "tier": 6,
+            "category": "mountain"
+        },
+        "rank": 93,
+        "power": 78,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["南岳大帝", "中岳大帝", "北岳大帝", "西岳大帝"],
+        "subordinates": ["泰山神将", "山神土地", "东岳部众"],
+        "superior": ["玉皇大帝", "天庭"],
+        "allies": ["五岳大帝"]
+    },
+    "abilities": {
+        "weapons": ["东岳神印", "泰山宝剑"],
+        "skills": ["山岳神通", "生死主宰", "福禄决断", "东方统领"],
+        "specialties": ["掌管泰山", "生死册籍", "东方山岳", "人间福禄"]
+    },
+    "locations": {
+        "residence": ["泰山", "东岳庙", "天齐殿"],
+        "territory": ["泰山山脉", "东方山岳", "齐鲁大地"],
+        "frequentPlaces": ["天庭", "五岳聚会"]
+    },
+    "metadata": {
+        "description": "五岳大帝之首，掌管泰山和东方山岳，主宰人间生死福禄，地位崇高",
+        "tags": ["deity", "mountain", "life_death", "fortune", "eastern_ruler"],
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "culturalBackground": "中国传统文化中最重要的山神，泰山崇拜的核心",
+        "religiousSignificance": "道教和民间信仰中的重要神祇，掌管生死和福禄",
+        "literaryRole": "西游记中地府体系的重要组成部分，与阎王系统相关",
+        "specialNote": "五岳大帝之首，泰山在中国文化中地位最高",
+        "mountainSignificance": "泰山为五岳之首，有'五岳独尊'之称",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

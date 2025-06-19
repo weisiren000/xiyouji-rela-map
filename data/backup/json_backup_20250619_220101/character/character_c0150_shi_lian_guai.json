@@ -1,0 +1,46 @@
+{
+    "unid": "c0150",
+    "basic": {
+        "name": "狮猁怪",
+        "aliases": [
+            "文殊菩萨坐骑(狮猁怪)",
+            "青毛狮子",
+            "狮猁王"
+        ],
+        "category": "demon",
+        "pinyin": "shi_lian_guai",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 5,
+            "category": "demon",
+            "id": "yao_wang",
+            "name": "妖王"
+        },
+        "rank": 150,
+        "power": 78,
+        "influence": 70,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "文殊菩萨的坐骑，青毛狮子精。",
+        "tags": [
+            "demon",
+            "狮子精",
+            "文殊坐骑",
+            "威猛"
+        ],
+        "culturalBackground": "狮子文化的体现，象征着威猛和力量",
+        "religiousSignificance": "佛教护法坐骑的角色",
+        "literaryRole": "展现佛教坐骑下凡考验的角色",
+        "sourceChapters": [
+            89,
+            90,
+            91
+        ],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

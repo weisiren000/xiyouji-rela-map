@@ -1,0 +1,50 @@
+{
+    "unid": "ca0324",
+    "isAlias": true,
+    "basic": {
+        "name": "真公主",
+        "pinyin": "zhen_gong_zhu",
+        "aliases": [
+            "天竺真公主",
+            "正牌公主",
+            "真正公主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "wang_shi",
+            "name": "王室",
+            "tier": 5,
+            "category": "royal"
+        },
+        "rank": 143,
+        "power": 30,
+        "influence": 70,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "天竺国公主的别名，强调了其作为真正公主的身份，与玉兔精冒充的假公主形成对比。这个别名体现了真假对立的主题，真公主代表着正统和纯真，被玉兔精冒充后的遭遇体现了善恶的较量。真公主的身份象征着王室血统的纯正和政治地位的合法性。",
+        "tags": [
+            "royalty",
+            "princess",
+            "authenticity",
+            "legitimacy",
+            "purity",
+            "truth",
+            "nobility",
+            "victim"
+        ],
+        "sourceChapters": [
+            93,
+            94,
+            95
+        ],
+        "firstAppearance": 93,
+        "significance": "展现了真正身份的珍贵和正统的重要性",
+        "culturalBackground": "体现了中国古代公主的尊贵地位和真假善恶的对比",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0143"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "unid": "c0133",
+    "isAlias": false,
+    "basic": {
+        "name": "倚海龙",
+        "pinyin": "yi_hai_long",
+        "aliases": ["海龙", "倚海蛟龙", "龙妖"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 3,
+            "category": "dragon"
+        },
+        "rank": 133,
+        "power": 42,
+        "influence": 28,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["巴山虎", "其他小妖"],
+        "subordinates": [],
+        "superior": ["妖王"],
+        "allies": ["妖族"],
+        "enemies": ["取经团队"]
+    },
+    "abilities": {
+        "weapons": ["龙爪", "水系法器"],
+        "skills": ["蛟龙神通", "水系法术", "海洋之力", "倚海绝技"],
+        "specialties": ["海洋之子", "蛟龙威势", "倚海神力", "水族本能"]
+    },
+    "locations": {
+        "residence": ["海边", "水中洞穴"],
+        "territory": ["海洋地带"],
+        "frequentPlaces": ["倚海", "海洋", "妖洞"]
+    },
+    "metadata": {
+        "description": "倚海地区的蛟龙妖，掌控水系力量，是海洋中的小妖头目",
+        "tags": ["demon", "dragon", "ocean", "water", "beast"],
+        "sourceChapters": ["多处出现"],
+        "firstAppearance": 17,
+        "culturalBackground": "中国传统蛟龙妖怪文化的体现",
+        "religiousSignificance": "体现海洋蛟龙的威势和力量",
+        "literaryRole": "西游记中海洋小妖的代表",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

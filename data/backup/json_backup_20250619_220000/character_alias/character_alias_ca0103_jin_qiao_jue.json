@@ -1,0 +1,51 @@
+{
+    "unid": "ca0103",
+    "isAlias": true,
+    "basic": {
+        "name": "金乔觉",
+        "pinyin": "jin_qiao_jue",
+        "aliases": [
+            "地藏王菩萨",
+            "地藏",
+            "地藏菩萨",
+            "幽冥教主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 18,
+        "power": 85,
+        "influence": 90,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "地藏王菩萨的历史人物本名，传说中的新罗国王子。历史上确有其人，唐代来华求法的新罗僧人，在九华山修行，圆寂后被认为是地藏菩萨的化身。这个名字体现了佛教中历史人物与菩萨化身的融合，展现了中韩佛教文化交流的深厚历史。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "historical_name",
+            "korean_origin",
+            "prince",
+            "monk",
+            "incarnation",
+            "devoted",
+            "compassionate",
+            "cultural_bridge"
+        ],
+        "sourceChapters": [
+            3,
+            10,
+            11
+        ],
+        "firstAppearance": 3,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0018"
+    }
+}

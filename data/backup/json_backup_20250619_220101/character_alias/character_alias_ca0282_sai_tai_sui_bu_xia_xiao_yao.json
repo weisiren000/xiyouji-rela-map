@@ -1,0 +1,50 @@
+{
+    "unid": "ca0282",
+    "isAlias": true,
+    "basic": {
+        "name": "赛太岁部下小妖",
+        "pinyin": "sai_tai_sui_bu_xia_xiao_yao",
+        "aliases": [
+            "赛太岁手下",
+            "赛太岁小弟",
+            "赛太岁属下"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 2,
+            "category": "demon"
+        },
+        "rank": 117,
+        "power": 33,
+        "influence": 23,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "有来有去在妖怪组织中的从属身份称谓，强调其作为赛太岁部下的具体定位。这个称谓体现了有来有去在妖怪等级体系中的从属地位，突出了其服从性和忠诚性特征。",
+        "tags": [
+            "small_demon",
+            "subordinate_demon",
+            "demon_hierarchy",
+            "loyal_minion",
+            "minor_antagonist",
+            "organizational_member",
+            "demon_follower",
+            "underling"
+        ],
+        "sourceChapters": [
+            68,
+            69,
+            70
+        ],
+        "firstAppearance": 68,
+        "significance": "体现了有来有去在妖怪组织中的从属身份和等级地位",
+        "culturalBackground": "部下小妖体现了古代中国妖怪文化中的等级制度，小妖往往依附于大妖，形成严密的组织结构",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0117"
+    }
+}

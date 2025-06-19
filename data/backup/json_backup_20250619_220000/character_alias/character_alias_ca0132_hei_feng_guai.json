@@ -1,0 +1,49 @@
+{
+    "unid": "ca0132",
+    "isAlias": true,
+    "basic": {
+        "name": "黑风怪",
+        "pinyin": "hei_feng_guai",
+        "aliases": [
+            "黑熊精",
+            "守山大神",
+            "观音院妖怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 30,
+        "power": 72,
+        "influence": 65,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "黑熊精的能力特征称号，强调其操控黑风的神通法术。'黑风'指其能够召唤和操控黑色旋风的能力，这是其主要的战斗手段和标志性神通。'怪'字体现了其妖怪身份，这个称号突出了其独特的法术能力和令人畏惧的战斗方式。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "bear",
+            "wind_control",
+            "dark_magic",
+            "ability_based",
+            "fearsome_power",
+            "黑风神通",
+            "法术能力",
+            "战斗特征"
+        ],
+        "sourceChapters": [
+            16,
+            17
+        ],
+        "firstAppearance": 16,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0030"
+    }
+}

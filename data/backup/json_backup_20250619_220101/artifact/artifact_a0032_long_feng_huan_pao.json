@@ -1,0 +1,55 @@
+{
+    "unid": "a0032",
+    "isAlias": false,
+    "basic": {
+        "name": "龙凤环袍",
+        "pinyin": "long_feng_huan_pao",
+        "aliases": [
+            "帝王袍",
+            "龙凤衮服"
+        ],
+        "type": "artifact",
+        "category": "clothing"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 20,
+        "influence": 75,
+        "element": "royal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0030",
+            "name": "玉皇大帝",
+            "relationship": "personal_item"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "龙凤环袍是玉皇大帝的御用礼服，以天界珍贵丝绸织就，绣有盘龙飞凤图案，象征天地至高权威。此袍金丝镶边，袖口镶嵌明珠，闪烁瑞光。穿上此袍可增强威严，令众仙敬畏。虽非战斗法宝，却具有强大的防护能力，能抵御一般法术攻击。是玉帝举行重大典礼时的正式装束，代表天庭最高统治者的地位。",
+        "tags": [
+            "clothing",
+            "robe",
+            "imperial",
+            "dragon",
+            "phoenix",
+            "jade_emperor",
+            "heaven",
+            "authority",
+            "ceremonial",
+            "protection",
+            "status_symbol",
+            "royal"
+        ],
+        "sourceChapters": [4, 7],
+        "firstAppearance": 4,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

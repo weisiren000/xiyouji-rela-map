@@ -1,0 +1,43 @@
+{
+    "unid": "ca0312",
+    "isAlias": true,
+    "basic": {
+        "name": "金鼻白毛老鼠精",
+        "pinyin": "jin_bi_bai_mao_lao_shu_jing",
+        "aliases": [
+            "金鼻白毛鼠",
+            "白毛老鼠精",
+            "地涌夫人鼠精"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_jing",
+            "name": "仙境",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 3,
+        "power": 75,
+        "influence": 60,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "地涌夫人的别名，强调其金鼻白毛的鼠类本体特征，体现了妖怪的动物本性和变化能力。",
+        "tags": [
+            "alias",
+            "demon",
+            "mouse_spirit",
+            "transformation",
+            "animal_nature"
+        ],
+        "sourceChapters": [
+            83
+        ],
+        "firstAppearance": 83,
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0137"
+    }
+}

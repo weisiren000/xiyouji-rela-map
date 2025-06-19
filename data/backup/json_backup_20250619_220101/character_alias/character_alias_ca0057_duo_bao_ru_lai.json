@@ -1,0 +1,48 @@
+{
+    "unid": "ca0057",
+    "isAlias": true,
+    "basic": {
+        "name": "多宝如来",
+        "pinyin": "duo_bao_ru_lai",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 6,
+        "power": 100,
+        "influence": 100,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "如来佛祖的另一个佛号，多宝如来在佛教中是过去佛之一，象征着无量的功德和智慧宝藏。在西游记中体现了如来佛祖的无尽法宝和神通。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "past_buddha",
+            "supreme_leader",
+            "omnipotent",
+            "wise",
+            "compassionate",
+            "enlightened",
+            "divine",
+            "treasure_lord"
+        ],
+        "sourceChapters": [
+            7,
+            10,
+            98,
+            99,
+            100
+        ],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0006"
+    }
+}

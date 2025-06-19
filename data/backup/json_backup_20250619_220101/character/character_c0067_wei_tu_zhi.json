@@ -1,0 +1,86 @@
+{
+    "unid": "c0067",
+    "basic": {
+        "name": "胃土雉",
+        "pinyin": "wei_tu_zhi",
+        "aliases": [
+            "胃宿",
+            "西方白虎七宿之三",
+            "胃星官"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 67,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": [
+            "二十八宿星官"
+        ],
+        "group": [
+            "西方白虎七宿"
+        ],
+        "superior": [
+            "玉皇大帝"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "天庭",
+            "星宫"
+        ],
+        "territory": [
+            "西方星域"
+        ],
+        "appearances": [
+            "天庭",
+            "人间"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "星官法器"
+        ],
+        "skills": [
+            "星辰神通",
+            "胃宿星力",
+            "土德法术"
+        ],
+        "specialties": [
+            "西方白虎胃宿",
+            "胃星之力",
+            "土德神通"
+        ]
+    },
+    "metadata": {
+        "description": "二十八宿中西方白虎七宿之三，胃宿星官，掌管西方星域和土德之力",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "western_white_tiger",
+            "earth_element"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，体现了中国古代天文学文化",
+        "culturalBackground": "胃宿在二十八宿中代表西方白虎的一部分，与土德相关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

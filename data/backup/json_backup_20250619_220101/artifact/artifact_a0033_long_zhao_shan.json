@@ -1,0 +1,60 @@
+{
+    "unid": "a0033",
+    "isAlias": false,
+    "basic": {
+        "name": "龙爪扇",
+        "pinyin": "long_zhao_shan",
+        "aliases": [
+            "水龙扇",
+            "龙王宝扇"
+        ],
+        "type": "artifact",
+        "category": "tool"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 50,
+        "influence": 40,
+        "element": "water"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0010",
+            "name": "东海龙王",
+            "relationship": "personal_tool"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0003",
+                "name": "东海龙宫"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "龙爪扇是东海龙王的法宝，扇骨由龙爪制成，扇面绘有水族图案。此扇挥动可引动四海之水，召唤风雨，掀起巨浪。是龙王控制水域的重要工具，也是彰显身份的象征。扇面上的灵珠可储存水元素能量，增强扇子的威力。在对敌时，此扇不仅能发动水攻，还能操控周围水分，形成水牢困敌。",
+        "tags": [
+            "fan",
+            "dragon",
+            "water",
+            "sea",
+            "storm",
+            "wave",
+            "control",
+            "dragon_king",
+            "ocean",
+            "weather_manipulation",
+            "flooding",
+            "royal_artifact"
+        ],
+        "sourceChapters": [3, 50],
+        "firstAppearance": 3,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

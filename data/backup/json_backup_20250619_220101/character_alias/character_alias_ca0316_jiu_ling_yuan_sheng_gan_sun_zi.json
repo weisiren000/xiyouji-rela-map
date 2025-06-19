@@ -1,0 +1,45 @@
+{
+    "unid": "ca0316",
+    "isAlias": true,
+    "basic": {
+        "name": "九灵元圣干孙子",
+        "pinyin": "jiu_ling_yuan_sheng_gan_sun_zi",
+        "aliases": [
+            "九灵元圣干孙",
+            "九头狮子干孙子",
+            "太乙天尊坐骑干孙"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_jing",
+            "name": "仙境",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 3,
+        "power": 80,
+        "influence": 70,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "黄狮精的别名，体现其与九灵元圣的干亲关系，突出了妖怪世界中的辈分关系和血缘纽带。",
+        "tags": [
+            "alias",
+            "demon",
+            "lion_spirit",
+            "family_relation",
+            "kinship_bond"
+        ],
+        "sourceChapters": [
+            89,
+            90,
+            91
+        ],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0139"
+    }
+}

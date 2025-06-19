@@ -1,0 +1,44 @@
+{
+    "unid": "c0149",
+    "isAlias": false,
+    "basic": {
+        "name": "金圣宫娘娘",
+        "pinyin": "jin_sheng_gong_niang_niang",
+        "aliases": [
+            "朱紫国王后",
+            "金圣宫",
+            "王后",
+            "娘娘"
+        ],
+        "type": "character",
+        "category": "human"
+    },
+    "attributes": {
+        "level": {
+            "id": "fan_ren",
+            "name": "凡人",
+            "tier": 1,
+            "category": "human"
+        },
+        "rank": 149,
+        "power": 5,
+        "influence": 30,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "金圣宫娘娘，朱紫国的王后，被赛太岁劫掠到麒麟山，后被孙悟空等人救出。",
+        "tags": [
+            "human",
+            "queen",
+            "victim",
+            "noble",
+            "rescued",
+            "royal"
+        ],
+        "sourceChapters": [
+            68, 69, 70, 71
+        ],
+        "firstAppearance": 68,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

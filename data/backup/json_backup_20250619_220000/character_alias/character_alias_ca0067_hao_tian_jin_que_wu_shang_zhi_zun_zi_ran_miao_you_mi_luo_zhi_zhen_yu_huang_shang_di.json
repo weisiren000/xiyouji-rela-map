@@ -1,0 +1,53 @@
+{
+    "unid": "ca0067",
+    "isAlias": true,
+    "basic": {
+        "name": "昊天金阙无上至尊自然妙有弥罗至真玉皇上帝",
+        "pinyin": "hao_tian_jin_que_wu_shang_zhi_zun_zi_ran_miao_you_mi_luo_zhi_zhen_yu_huang_shang_di",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yu_huang",
+            "name": "玉皇",
+            "tier": 9,
+            "category": "divine"
+        },
+        "rank": 8,
+        "power": 95,
+        "influence": 100,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "玉皇大帝的完整正式尊号，体现了其作为三界至高无上统治者的地位。'昊天'指广大的天空，'金阙'指金色宫殿，'无上至尊'表明其最高地位，'自然妙有'体现道教哲学，'弥罗至真'指真实不虚的境界。",
+        "tags": [
+            "deity",
+            "emperor",
+            "full_title",
+            "supreme_ruler",
+            "divine",
+            "authority",
+            "heavenly_court",
+            "administrator",
+            "majestic",
+            "formal"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7,
+            18,
+            25,
+            37,
+            78,
+            87,
+            100
+        ],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0008"
+    }
+}

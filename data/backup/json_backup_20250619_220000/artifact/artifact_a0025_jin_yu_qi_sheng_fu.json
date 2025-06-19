@@ -1,0 +1,60 @@
+{
+    "unid": "a0025",
+    "isAlias": false,
+    "basic": {
+        "name": "金玉蟠龙七星符",
+        "pinyin": "jin_yu_qi_sheng_fu",
+        "aliases": [
+            "七星符",
+            "蟠龙符"
+        ],
+        "type": "artifact",
+        "category": "talisman"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_bao",
+            "name": "法宝",
+            "tier": 5,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 60,
+        "influence": 65,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0070",
+            "name": "菩提祖师",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0001",
+                "name": "孙悟空出世"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "金玉蟠龙七星符是菩提祖师炼制的高级符箓，以金玉为基，刻有蟠龙图案和七星阵列。此符能镇压妖魔，化解灾厄，具有极强的封印和防护能力。符箓中蕴含北斗七星之力，可借天罡之势，镇妖伏魔。菩提祖师曾将此符传授给孙悟空，作为重要法术之一。",
+        "tags": [
+            "talisman",
+            "dragon",
+            "seven_stars",
+            "protection",
+            "exorcism",
+            "celestial",
+            "gold",
+            "jade",
+            "sealing",
+            "subhuti",
+            "magical_text",
+            "big_dipper"
+        ],
+        "sourceChapters": [1, 2],
+        "firstAppearance": 1,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "unid": "ca0212",
+    "isAlias": true,
+    "basic": {
+        "name": "娄宿",
+        "pinyin": "lou_su",
+        "aliases": [
+            "娄星",
+            "娄宿星官",
+            "西方娄宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 66,
+        "power": 77,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "娄金狗的星宿称谓，强调其作为西方白虎七宿之二的重要地位。这个称谓体现了娄金狗在二十八宿体系中的金德属性，突出了其作为白虎颈部星宿的天文学意义和聚集汇合的象征功能。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "western_white_tiger",
+            "metal_element",
+            "constellation_name",
+            "astronomical_system",
+            "tiger_neck",
+            "gathering_symbol"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了娄金狗作为西方白虎七宿第二位的重要地位和金德属性",
+        "culturalBackground": "娄宿在二十八宿中代表西方白虎的颈部，象征着聚集和汇合，体现了金德的坚固和凝聚特性，与古代的聚会和集市相关",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0066"
+    }
+}

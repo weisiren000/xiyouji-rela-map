@@ -1,0 +1,48 @@
+{
+    "unid": "ca0153",
+    "isAlias": true,
+    "basic": {
+        "name": "通风大圣(六耳猕猴)",
+        "pinyin": "tong_feng_da_sheng_liu_er_mi_hou",
+        "aliases": [
+            "假美猴王",
+            "通风大圣",
+            "六耳弥猴"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "ling_hou",
+            "name": "灵猴",
+            "tier": 7,
+            "category": "demon"
+        },
+        "rank": 36,
+        "power": 90,
+        "influence": 85,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "六耳猕猴的大圣称号，体现了其与孙悟空齐天大圣相对应的地位。通风二字体现了六耳猕猴善于听风辨音、无所不知的神通，能够洞察天地间的一切声音和秘密。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "monkey",
+            "doppelganger",
+            "four_spiritual_monkeys",
+            "great_sage_title",
+            "supernatural_hearing"
+        ],
+        "sourceChapters": [
+            57,
+            58
+        ],
+        "firstAppearance": 57,
+        "significance": "体现了六耳猕猴的超凡听力和与孙悟空平等的地位",
+        "culturalBackground": "通风在道教文化中指能够感知天地间一切信息的神通，体现了六耳的特殊能力",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0036"
+    }
+}

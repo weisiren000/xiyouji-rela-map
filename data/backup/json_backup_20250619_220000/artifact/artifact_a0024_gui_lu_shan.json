@@ -1,0 +1,60 @@
+{
+    "unid": "a0024",
+    "isAlias": false,
+    "basic": {
+        "name": "龟鹿丹",
+        "pinyin": "gui_lu_shan",
+        "aliases": [
+            "龟鹿延寿丹",
+            "万寿丹"
+        ],
+        "type": "artifact",
+        "category": "medicine"
+    },
+    "attributes": {
+        "level": {
+            "id": "ling_yao",
+            "name": "灵药",
+            "tier": 7,
+            "category": "consumable"
+        },
+        "rank": 9,
+        "power": 10,
+        "influence": 75,
+        "element": "earth"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0097",
+            "name": "太上老君",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0045",
+                "name": "西海龙宫宴会"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "龟鹿丹是太上老君炼制的珍贵仙丹，以千年龟精和万年鹿角为主料，融合多种天材地宝炼成。服用后可延年益寿，增强体质，治愈百病。此丹药香气扑鼻，入口即化，药效持久，是道教最珍贵的延寿灵药之一，常被用作贵重礼品赠予有功之人或尊贵宾客。",
+        "tags": [
+            "medicine",
+            "pill",
+            "longevity",
+            "healing",
+            "immortality",
+            "taoist",
+            "laozi",
+            "rare",
+            "valuable",
+            "gift",
+            "animal_essence",
+            "life_extension"
+        ],
+        "sourceChapters": [23, 40, 69],
+        "firstAppearance": 23,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

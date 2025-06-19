@@ -1,0 +1,55 @@
+{
+    "unid": "a0064",
+    "isAlias": false,
+    "basic": {
+        "name": "玉水金",
+        "pinyin": "yu_shui_jin",
+        "aliases": [
+            "玉液金精",
+            "天界玉金"
+        ],
+        "type": "artifact",
+        "category": "material"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_cai_di_bao",
+            "name": "天材地宝",
+            "tier": 8,
+            "category": "material"
+        },
+        "rank": 9,
+        "power": 40,
+        "influence": 75,
+        "element": "metal_water"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0097",
+            "name": "太上老君",
+            "relationship": "guardian"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "玉水金是太上老君炼丹房中的稀有材料，呈流动状的金色液体，散发幽幽光芒。此材料由天界玉髓和纯阳金精融合而成，极难提炼，千年难得一见。玉水金是炼制高阶仙丹和法宝的必备材料，能增强法器灵性，延长使用寿命。一滴玉水金可强化普通法器，提升数倍威力；用于修复破损法宝，效果奇佳。老君常将此物用于重要法器的锻造和维护，极为珍视。",
+        "tags": [
+            "material",
+            "metal",
+            "water",
+            "liquid",
+            "gold",
+            "jade",
+            "alchemy",
+            "taoist",
+            "laozi",
+            "rare",
+            "enhancement",
+            "forging"
+        ],
+        "sourceChapters": [21, 65],
+        "firstAppearance": 21,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

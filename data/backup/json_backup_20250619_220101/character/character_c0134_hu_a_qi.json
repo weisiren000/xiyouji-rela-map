@@ -1,0 +1,43 @@
+{
+    "unid": "c0134",
+    "isAlias": false,
+    "basic": {
+        "name": "狐阿七",
+        "pinyin": "hu_a_qi",
+        "aliases": [
+            "压龙洞九尾狐弟弟",
+            "狐妖",
+            "阿七",
+            "狐精"
+        ],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 3,
+            "category": "demon"
+        },
+        "rank": 134,
+        "power": 25,
+        "influence": 10,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "狐阿七，压龙洞九尾狐的弟弟，在平顶山莲花洞事件中出现的狐妖。",
+        "tags": [
+            "demon",
+            "fox_demon",
+            "brother",
+            "minion",
+            "antagonist"
+        ],
+        "sourceChapters": [
+            32, 33, 34, 35
+        ],
+        "firstAppearance": 32,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

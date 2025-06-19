@@ -1,0 +1,50 @@
+{
+    "unid": "ca0194",
+    "isAlias": true,
+    "basic": {
+        "name": "比丘国美后",
+        "pinyin": "bi_qiu_guo_mei_hou",
+        "aliases": [
+            "比丘国王后",
+            "比丘美后",
+            "国王美妃"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 4,
+            "category": "demon"
+        },
+        "rank": 49,
+        "power": 55,
+        "influence": 60,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "白面狐狸在比丘国的身份称谓，强调其通过美色迷惑国王获得的王后地位。这个称谓体现了狐狸精的魅惑能力和对王室的渗透，突出了美色祸国的传统主题和狐妖的典型形象。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "fox",
+            "female",
+            "seductress",
+            "royal_consort",
+            "political_manipulation",
+            "beauty_trap"
+        ],
+        "sourceChapters": [
+            78,
+            79,
+            80
+        ],
+        "firstAppearance": 78,
+        "significance": "体现了狐狸精通过美色迷惑君王获得权力的典型手段",
+        "culturalBackground": "中国古代美色祸国的传统故事和狐狸精迷惑君王的民间传说，体现了对女色误国的文化警示",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0049"
+    }
+}

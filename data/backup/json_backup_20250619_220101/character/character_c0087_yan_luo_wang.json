@@ -1,0 +1,52 @@
+{
+    "unid": "c0087",
+    "isAlias": false,
+    "basic": {
+        "name": "阎罗王",
+        "pinyin": "yan_luo_wang",
+        "aliases": ["第五殿阎王", "森罗王", "阎王爷", "五殿阎君", "阎罗天子"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yan_wang",
+            "name": "阎王",
+            "tier": 6,
+            "category": "underworld"
+        },
+        "rank": 87,
+        "power": 75,
+        "influence": 85,
+        "morality": "lawful_neutral"
+    },
+    "relationships": {
+        "colleagues": ["秦广王", "楚江王", "宋帝王", "五官王", "卞城王", "泰山王", "都市王", "平等王", "转轮王"],
+        "subordinates": ["判官", "牛头马面", "鬼差", "崔判官"],
+        "superior": ["地藏王菩萨", "酆都大帝"],
+        "allies": ["十殿阎王"],
+        "special": ["唐太宗(曾审判)", "魏征(梦中斩龙)"]
+    },
+    "abilities": {
+        "weapons": ["阎王印", "生死簿", "森罗宝镜"],
+        "skills": ["审判亡魂", "生死决断", "地府神通", "最终判决"],
+        "specialties": ["中央审判", "生死决断", "地府统领", "因果审判"]
+    },
+    "locations": {
+        "residence": ["第五殿", "阎罗王殿", "森罗殿"],
+        "territory": ["地府第五殿", "中央审判台"],
+        "frequentPlaces": ["地府", "十殿阎王会议", "生死簿库"]
+    },
+    "metadata": {
+        "description": "十殿阎王之首领，最著名的阎王，掌管生死簿，是地府的核心审判官",
+        "tags": ["deity", "underworld", "chief_judge", "life_death", "central_authority"],
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "culturalBackground": "中国传统地府文化中最著名的神祇，民间信仰中的地府之王",
+        "religiousSignificance": "佛教和道教中的地府最高审判官，掌管生死轮回",
+        "literaryRole": "西游记中审判唐太宗，体现因果报应和生死轮回思想",
+        "specialNote": "十殿阎王中最著名的一位，常被视为地府的代表",
+        "judgeScope": "掌管生死簿，进行最终的生死判决和轮回安排",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

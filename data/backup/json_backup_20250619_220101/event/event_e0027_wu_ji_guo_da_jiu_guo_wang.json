@@ -1,0 +1,90 @@
+{
+    "unid": "e0027",
+    "isAlias": false,
+    "basic": {
+        "name": "乌鸡国搭救国王",
+        "pinyin": "wu_ji_guo_da_jiu_guo_wang",
+        "aliases": [
+            "青毛狮子",
+            "乌鸡国",
+            "搭救国王"
+        ],
+        "type": "event",
+        "category": "rescue"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "important"
+        },
+        "significance": 85,
+        "impact": 82
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0033",
+            "name": "青狮精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0015",
+            "name": "文殊菩萨",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0136",
+            "name": "全真道人",
+            "role": "disguise"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0015",
+            "name": "乌鸡国",
+            "role": "primary"
+        },
+        {
+            "unid": "l0032",
+            "name": "五台山",
+            "role": "secondary"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到乌鸡国，发现国王被文殊菩萨的坐骑青毛狮子所害，已死三年，狮精变作国王模样统治国家。孙悟空识破真相，前往五台山请文殊菩萨收服青狮精，并用还魂香救活了真国王，使国家重获安宁。",
+        "tags": [
+            "rescue",
+            "deception",
+            "impersonation",
+            "buddhism",
+            "resurrection"
+        ],
+        "sourceChapters": [36, 37, 38, 39],
+        "chronology": {
+            "order": 27,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

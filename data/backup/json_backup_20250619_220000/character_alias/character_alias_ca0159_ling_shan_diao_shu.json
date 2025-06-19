@@ -1,0 +1,48 @@
+{
+    "unid": "ca0159",
+    "isAlias": true,
+    "basic": {
+        "name": "灵山貂鼠",
+        "pinyin": "ling_shan_diao_shu",
+        "aliases": [
+            "黄风大王",
+            "黄毛貂鼠",
+            "灵吉菩萨坐骑"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 37,
+        "power": 70,
+        "influence": 65,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "黄风怪的出身地称号，强调其来自灵山的神圣背景。作为灵山的貂鼠，本应在佛教圣地修行护法，但却偷跑下凡为妖，体现了从神圣到堕落的转变过程和对修行环境的背叛。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "rat",
+            "wind_control",
+            "mount",
+            "sacred_origin",
+            "fallen_spirit"
+        ],
+        "sourceChapters": [
+            20,
+            21
+        ],
+        "firstAppearance": 20,
+        "significance": "体现了黄风怪的神圣出身和从灵山堕落的背景",
+        "culturalBackground": "灵山在佛教中是神圣之地，从灵山堕落体现了修行路上的考验和诱惑",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0037"
+    }
+}

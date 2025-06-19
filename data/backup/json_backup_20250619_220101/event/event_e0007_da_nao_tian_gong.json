@@ -1,0 +1,113 @@
+{
+    "unid": "e0007",
+    "isAlias": false,
+    "basic": {
+        "name": "大闹天宫",
+        "pinyin": "da_nao_tian_gong",
+        "aliases": [
+            "搅乱蟠桃会",
+            "偷吃金丹",
+            "反出南天门"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 9,
+            "category": "critical"
+        },
+        "significance": 98,
+        "impact": 95
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0008",
+            "name": "玉皇大帝",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0120",
+            "name": "王母娘娘",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0009",
+            "name": "太上老君",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0013",
+            "name": "托塔李天王",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0012",
+            "name": "哪吒",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0011",
+            "name": "二郎神",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0001",
+            "name": "天庭",
+            "role": "primary"
+        },
+        {
+            "unid": "l0023",
+            "name": "蟠桃园",
+            "role": "secondary"
+        },
+        {
+            "unid": "l0022",
+            "name": "南天门",
+            "role": "secondary"
+        },
+        {
+            "unid": "l0024",
+            "name": "兜率宫",
+            "role": "secondary"
+        }
+    ],
+    "items_consumed": [
+        {
+            "unid": "i0004",
+            "name": "蟠桃",
+            "significance": "major"
+        },
+        {
+            "unid": "i0001",
+            "name": "九转金丹",
+            "significance": "major"
+        }
+    ],
+    "metadata": {
+        "description": "孙悟空因未被邀请参加蟠桃会而大怒，捣乱蟠桃宴会，盗吃仙桃，又潜入太上老君炼丹房偷吃金丹，最后与天庭众神大战，闹得天宫大乱。",
+        "tags": [
+            "battle",
+            "rebellion",
+            "chaos",
+            "peach_banquet",
+            "elixir_theft",
+            "heavenly_court"
+        ],
+        "sourceChapters": [5, 6, 7],
+        "chronology": {
+            "order": 7,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

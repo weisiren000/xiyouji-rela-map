@@ -1,0 +1,66 @@
+{
+    "unid": "a0027",
+    "isAlias": false,
+    "basic": {
+        "name": "栏杆大刀枪",
+        "pinyin": "lan_gan_da_hao_qiang",
+        "aliases": [
+            "栏杆枪",
+            "天蓬神枪"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 45,
+        "influence": 35,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [
+            {
+                "unid": "c0003_alias_pre",
+                "name": "天蓬元帅",
+                "relationship": "original_owner"
+            }
+        ],
+        "associatedEvents": [
+            {
+                "unid": "e0015",
+                "name": "高老庄收八戒"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "栏杆大刀枪是猪八戒的兵器，原为其在天庭担任天蓬元帅时所用。此枪通体黑铁打造，形似栏杆，一头尖锐如刀，可刺可砍。虽不及如意金箍棒神异，但也是一件不俗的法器，能随主人心意变大变小，具有一定威力。猪八戒用此枪与孙悟空交战后，最终皈依佛门，随唐僧西行。",
+        "tags": [
+            "weapon",
+            "spear",
+            "metal",
+            "zhu_bajie",
+            "pig",
+            "heavenly_marshal",
+            "shape_shifting",
+            "battle",
+            "iron",
+            "disciples",
+            "journeying_west",
+            "fighting_style"
+        ],
+        "sourceChapters": [19, 20],
+        "firstAppearance": 19,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

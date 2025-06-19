@@ -1,0 +1,50 @@
+{
+    "unid": "c0100",
+    "isAlias": false,
+    "basic": {
+        "name": "日值功曹",
+        "pinyin": "ri_zhi_gong_cao",
+        "aliases": ["日神", "日值神", "值日功曹", "日官神"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "gong_cao",
+            "name": "功曹",
+            "tier": 5,
+            "category": "time"
+        },
+        "rank": 100,
+        "power": 63,
+        "influence": 66,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["年值功曹", "月值功曹", "时值功曹"],
+        "subordinates": ["日神部众", "日官神将"],
+        "superior": ["玉皇大帝", "天庭"],
+        "allies": ["四值功曹"]
+    },
+    "abilities": {
+        "weapons": ["日神印", "日官宝册"],
+        "skills": ["日官神通", "时间掌控", "日运调节", "日程管理"],
+        "specialties": ["掌管日程", "时间流转", "日运变化", "日常事务"]
+    },
+    "locations": {
+        "residence": ["日神殿", "日官宫"],
+        "territory": ["时间长河", "日程轮回"],
+        "frequentPlaces": ["天庭", "功曹聚会", "人间日常"]
+    },
+    "metadata": {
+        "description": "四值功曹之一，掌管日程时间，负责日运调节和日常管理，时间神系统的重要组成",
+        "tags": ["deity", "time", "day", "fortune", "daily"],
+        "sourceChapters": [7, 26],
+        "firstAppearance": 7,
+        "culturalBackground": "中国传统文化中的时间神，日程崇拜的核心",
+        "religiousSignificance": "道教和民间信仰中的重要神祇，掌管日运和日程",
+        "literaryRole": "西游记中时间神体系的重要组成部分，常与其他功曹一起出现",
+        "timeScope": "掌管一日的时间周期，负责日运和日程变化",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

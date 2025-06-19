@@ -1,0 +1,52 @@
+{
+    "unid": "ca0093",
+    "isAlias": true,
+    "basic": {
+        "name": "文殊师利菩萨",
+        "pinyin": "wen_shu_shi_li_pu_sa",
+        "aliases": [
+            "文殊菩萨",
+            "文殊师利",
+            "青狮主人",
+            "智慧菩萨"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 15,
+        "power": 85,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "文殊菩萨的完整梵文音译名称，梵语Mañjuśrī的音译。在佛教经典中，这是文殊菩萨最正式的称呼，体现了其在佛教体系中的崇高地位。文殊师利意为'妙吉祥'，象征着智慧的圆满和吉祥的加持。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "sanskrit_name",
+            "formal_title",
+            "wisdom",
+            "auspicious",
+            "lion_master",
+            "intelligent",
+            "compassionate",
+            "enlightened"
+        ],
+        "sourceChapters": [
+            39,
+            89,
+            90,
+            91
+        ],
+        "firstAppearance": 39,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0015"
+    }
+}

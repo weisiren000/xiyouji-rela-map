@@ -1,0 +1,71 @@
+{
+    "unid": "e0004",
+    "isAlias": false,
+    "basic": {
+        "name": "地府勾除生死簿",
+        "pinyin": "di_fu_gou_chu_sheng_si_bu",
+        "aliases": [
+            "销名生死簿",
+            "地府除名",
+            "阎王勾魂"
+        ],
+        "type": "event",
+        "category": "rebellion"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "significant"
+        },
+        "significance": 85,
+        "impact": 80
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0083",
+            "name": "秦广王",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0087",
+            "name": "阎罗王",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0013",
+            "name": "幽冥界",
+            "role": "primary"
+        },
+        {
+            "unid": "l0038",
+            "name": "生死簿库房",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "孙悟空潜入地府，强行在十殿阎君的生死簿上勾除了自己和花果山猴子们的名字，使得猴族不再受阎王管束。",
+        "tags": [
+            "rebellion",
+            "immortality",
+            "underworld",
+            "book_of_life_and_death",
+            "monkeys",
+            "freedom"
+        ],
+        "sourceChapters": [3],
+        "chronology": {
+            "order": 4,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

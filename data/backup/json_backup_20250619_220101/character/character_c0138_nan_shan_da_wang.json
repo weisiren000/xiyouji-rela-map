@@ -1,0 +1,45 @@
+{
+    "unid": "c0138",
+    "basic": {
+        "name": "南山大王",
+        "aliases": [
+            "艾叶花皮豹子精",
+            "豹子精",
+            "隐雾山妖王"
+        ],
+        "category": "demon",
+        "pinyin": "nan_shan_da_wang",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 4,
+            "category": "demon",
+            "id": "xiao_yao",
+            "name": "小妖"
+        },
+        "rank": 138,
+        "power": 68,
+        "influence": 50,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "艾叶花皮豹子精，在南山作乱的妖王。",
+        "tags": [
+            "demon",
+            "豹子精",
+            "隐雾山",
+            "山林妖王"
+        ],
+        "culturalBackground": "山林妖怪传说，体现了自然界的野性力量",
+        "religiousSignificance": "佛教降妖伏魔的对象",
+        "literaryRole": "展现妖怪世界等级秩序的角色",
+        "sourceChapters": [
+            79,
+            80
+        ],
+        "firstAppearance": 79,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

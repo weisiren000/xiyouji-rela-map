@@ -1,0 +1,55 @@
+{
+    "unid": "a0065",
+    "isAlias": false,
+    "basic": {
+        "name": "玉清针",
+        "pinyin": "yu_qing_zhen",
+        "aliases": [
+            "纯阳针",
+            "玉虚针"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 45,
+        "influence": 40,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0118",
+            "name": "玉清真人",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "玉清针是玉清真人的法器，一套九枚银白色细针，长约寸许，收存于玉盒之中。此针由天界寒铁打造，锋利无比，能穿透一切物质。针上刻有道家符文，注入使用者法力后，能飞射而出，精准命中目标。玉清针最擅长破解法术和结界，也能封闭妖魔穴位，使其法力暂时失效。九针可单独使用，也可同时祭出，形成阵法攻击。每针都有特殊功效：有的专破火法，有的克制水系，灵活多变。",
+        "tags": [
+            "weapon",
+            "needle",
+            "metal",
+            "precision",
+            "taoist",
+            "flying",
+            "penetration",
+            "set",
+            "acupuncture",
+            "sealing",
+            "formation",
+            "jade_purity"
+        ],
+        "sourceChapters": [26, 55],
+        "firstAppearance": 26,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "unid": "ca0298",
+    "isAlias": true,
+    "basic": {
+        "name": "三大仙",
+        "pinyin": "san_da_xian",
+        "aliases": [
+            "三仙",
+            "三位大仙",
+            "三妖仙"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_xian",
+            "name": "大仙",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 121,
+        "power": 67,
+        "influence": 74,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "虎力、鹿力、羊力三位大仙的集体称谓，强调其作为三位一体妖仙团体的整体地位。这个称谓体现了三位大仙在车迟国的集体形象和团队合作，代表着动物成精后的修行成就。",
+        "tags": [
+            "collective_immortals",
+            "three_sages",
+            "animal_trinity",
+            "demon_trio",
+            "beast_immortals",
+            "transformed_animals",
+            "group_antagonists",
+            "animal_collective"
+        ],
+        "sourceChapters": [
+            44,
+            45,
+            46
+        ],
+        "firstAppearance": 44,
+        "significance": "体现了虎力、鹿力、羊力三位大仙的集体地位和团队形象",
+        "culturalBackground": "三大仙是车迟国故事中的重要角色群体，代表着动物成精后的修行成就，体现了中国古代动物崇拜和妖仙文化",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0121"
+    }
+}

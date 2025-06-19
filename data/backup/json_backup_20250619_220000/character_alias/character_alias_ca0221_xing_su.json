@@ -1,0 +1,52 @@
+{
+    "unid": "ca0221",
+    "isAlias": true,
+    "basic": {
+        "name": "星宿",
+        "pinyin": "xing_su",
+        "aliases": [
+            "星星",
+            "星宿星官",
+            "南方星宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 75,
+        "power": 80,
+        "influence": 83,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "星日马的星宿称谓，强调其作为南方朱雀七宿之四的重要地位。这个称谓体现了星日马在二十八宿体系中的日德属性，突出了其作为朱雀腹部星宿的天文学意义和众星之王的璀璨光辉。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "southern_vermillion_bird",
+            "sun_element",
+            "constellation_name",
+            "astronomical_system",
+            "bird_abdomen",
+            "star_king"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了星日马作为南方朱雀七宿第四位的重要地位和日德属性",
+        "culturalBackground": "星宿在二十八宿中代表南方朱雀的腹部，象征着众星之王和璀璨光辉，体现了日德的照耀和温暖特性，与天文观测和星象学相关",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0075"
+    }
+}

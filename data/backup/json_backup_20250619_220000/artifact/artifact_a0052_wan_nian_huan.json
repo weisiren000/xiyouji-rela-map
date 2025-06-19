@@ -1,0 +1,55 @@
+{
+    "unid": "a0052",
+    "isAlias": false,
+    "basic": {
+        "name": "万年环",
+        "pinyin": "wan_nian_huan",
+        "aliases": [
+            "混元金环",
+            "长生环"
+        ],
+        "type": "artifact",
+        "category": "jewelry"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 35,
+        "influence": 60,
+        "element": "gold"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0097",
+            "name": "太上老君",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "万年环是太上老君炼制的奇珍，纯金打造，圆环形状，无接缝处，象征永恒不断。此环能保护佩戴者延年益寿，抵挡外界侵害。环上刻有道家符文，闪烁金光，佩戴时能形成一层无形保护罩。除防护功能外，万年环还可辅助修炼，稳固元神，防止走火入魔。老君常将此环赐予有缘道士或功德之士，作为保命法器。",
+        "tags": [
+            "jewelry",
+            "ring",
+            "gold",
+            "protection",
+            "longevity",
+            "taoist",
+            "laozi",
+            "circular",
+            "eternity",
+            "cultivation",
+            "spirit_stabilizing",
+            "defensive"
+        ],
+        "sourceChapters": [24, 48],
+        "firstAppearance": 24,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

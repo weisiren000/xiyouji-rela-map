@@ -1,0 +1,88 @@
+{
+    "unid": "c0027",
+    "basic": {
+        "name": "黄袍怪",
+        "pinyin": "huang_pao_guai",
+        "aliases": [
+            "二十八宿奎木狼",
+            "二十八宿西方白虎七宿之首"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 27,
+        "power": 80,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "spouse": [
+            "百花羞公主"
+        ],
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ],
+        "colleagues": [
+            "二十八宿星官"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "波月洞",
+            "碗子山"
+        ],
+        "territory": [
+            "碗子山波月洞"
+        ],
+        "appearances": [
+            "宝象国",
+            "碗子山",
+            "波月洞"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "钢刀"
+        ],
+        "skills": [
+            "变化术",
+            "星官神通",
+            "妖术"
+        ],
+        "specialties": [
+            "奎木狼星力",
+            "变化人形",
+            "妖术变化"
+        ]
+    },
+    "metadata": {
+        "description": "二十八宿中的奎木狼星官，私自下界与宝象国公主结为夫妻，后被召回天庭",
+        "tags": [
+            "antagonist",
+            "celestial",
+            "star_deity",
+            "love_story"
+        ],
+        "sourceChapters": [
+            28,
+            29,
+            30,
+            31
+        ],
+        "firstAppearance": 28,
+        "significance": "宝象国情节的核心角色，体现了天界神仙的情感纠葛",
+        "culturalBackground": "奎木狼是二十八宿之一，体现了中国古代天文学和神话的结合",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

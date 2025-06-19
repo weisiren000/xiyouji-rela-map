@@ -1,0 +1,71 @@
+{
+    "unid": "e0005",
+    "isAlias": false,
+    "basic": {
+        "name": "天庭招安当弼马温",
+        "pinyin": "tian_ting_zhao_an_dang_bi_ma_wen",
+        "aliases": [
+            "弼马温",
+            "天庭招安",
+            "御马监"
+        ],
+        "type": "event",
+        "category": "appointment"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "significant"
+        },
+        "significance": 80,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0008",
+            "name": "玉皇大帝",
+            "role": "authority"
+        },
+        {
+            "unid": "c0014",
+            "name": "太白金星",
+            "role": "mediator"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0001",
+            "name": "天庭",
+            "role": "primary"
+        },
+        {
+            "unid": "l0029",
+            "name": "弼马温府",
+            "role": "secondary"
+        }
+    ],
+    "metadata": {
+        "description": "天庭为安抚孙悟空，派太白金星前去招安，封其为弼马温，管理天庭马匹。孙悟空初以为是高官，后知是低微之职，心生不满。",
+        "tags": [
+            "appointment",
+            "heaven",
+            "deception",
+            "jade_emperor",
+            "stable_master",
+            "divine_court"
+        ],
+        "sourceChapters": [4],
+        "chronology": {
+            "order": 5,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

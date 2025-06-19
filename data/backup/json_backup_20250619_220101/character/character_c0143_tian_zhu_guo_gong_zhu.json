@@ -1,0 +1,46 @@
+{
+    "unid": "c0143",
+    "basic": {
+        "name": "天竺国公主",
+        "aliases": [
+            "真公主",
+            "天竺真公主",
+            "天竺国真公主"
+        ],
+        "category": "human",
+        "pinyin": "tian_zhu_guo_gong_zhu",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 3,
+            "category": "demon",
+            "id": "xiao_yao",
+            "name": "小妖"
+        },
+        "rank": 143,
+        "power": 25,
+        "influence": 70,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "天竺国的真公主，被玉兔精冒充，后被救出。",
+        "tags": [
+            "人类",
+            "princess",
+            "天竺国",
+            "真公主"
+        ],
+        "culturalBackground": "中国古代公主形象，体现了女性的美德和智慧",
+        "religiousSignificance": "佛教中情缘考验的象征",
+        "literaryRole": "展现唐僧情感考验的重要角色",
+        "sourceChapters": [
+            93,
+            94,
+            95
+        ],
+        "firstAppearance": 93,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

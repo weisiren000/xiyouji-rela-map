@@ -1,0 +1,43 @@
+{
+    "unid": "c0131",
+    "isAlias": false,
+    "basic": {
+        "name": "白花蛇精",
+        "pinyin": "bai_hua_she_jing",
+        "aliases": [
+            "黑熊精友",
+            "蛇妖",
+            "白花蛇",
+            "蛇精"
+        ],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 3,
+            "category": "demon"
+        },
+        "rank": 131,
+        "power": 30,
+        "influence": 15,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "白花蛇精，黑熊精的朋友，在观音禅院袈裟事件中与黑熊精一起出现的蛇妖。",
+        "tags": [
+            "demon",
+            "snake_demon",
+            "friend",
+            "accomplice",
+            "antagonist"
+        ],
+        "sourceChapters": [
+            17
+        ],
+        "firstAppearance": 17,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

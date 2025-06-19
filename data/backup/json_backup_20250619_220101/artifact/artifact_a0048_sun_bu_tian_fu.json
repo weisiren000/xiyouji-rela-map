@@ -1,0 +1,60 @@
+{
+    "unid": "a0048",
+    "isAlias": false,
+    "basic": {
+        "name": "孙不二符",
+        "pinyin": "sun_bu_tian_fu",
+        "aliases": [
+            "金光符",
+            "太上神符"
+        ],
+        "type": "artifact",
+        "category": "talisman"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 45,
+        "influence": 55,
+        "element": "golden_light"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0097",
+            "name": "太上老君",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0019",
+                "name": "八戒变猪"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "孙不二符是太上老君创制的高级符箓，以金纸朱砂书写，融合日月精华。此符能发出金光，照破妖邪，有极强的驱魔除妖之效。符箓上刻有道教密咒和金光咒，能结成金光罩保护使用者。太上老君曾用此符点化猪八戒，使其从天蓬元帅转世成猪形。道士常用此符对付邪魔，也可用于治病救人，消灾解厄。",
+        "tags": [
+            "talisman",
+            "golden_light",
+            "taoist",
+            "laozi",
+            "protection",
+            "exorcism",
+            "transformation",
+            "purification",
+            "magical_text",
+            "barrier",
+            "healing",
+            "spell"
+        ],
+        "sourceChapters": [19, 47],
+        "firstAppearance": 19,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

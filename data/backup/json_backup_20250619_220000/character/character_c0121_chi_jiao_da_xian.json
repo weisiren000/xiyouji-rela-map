@@ -1,0 +1,44 @@
+{
+    "unid": "c0121",
+    "isAlias": false,
+    "basic": {
+        "name": "赤脚大仙",
+        "pinyin": "chi_jiao_da_xian",
+        "aliases": [
+            "散仙",
+            "蟠桃会常客",
+            "赤脚仙人",
+            "大仙"
+        ],
+        "type": "character",
+        "category": "immortal"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_xian",
+            "name": "大仙",
+            "tier": 7,
+            "category": "immortal"
+        },
+        "rank": 121,
+        "power": 75,
+        "influence": 50,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "赤脚大仙，天庭中的散仙，经常参加王母娘娘的蟠桃会，以赤脚行走而得名。",
+        "tags": [
+            "immortal",
+            "sage",
+            "celestial",
+            "barefoot",
+            "wise",
+            "peaceful"
+        ],
+        "sourceChapters": [
+            5, 7
+        ],
+        "firstAppearance": 5,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

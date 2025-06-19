@@ -1,0 +1,102 @@
+{
+    "unid": "e0050",
+    "isAlias": false,
+    "basic": {
+        "name": "天竺国遇玉兔",
+        "pinyin": "tian_zhu_guo_yu_yu_tu",
+        "aliases": [
+            "玉兔精",
+            "天竺国",
+            "假公主"
+        ],
+        "type": "event",
+        "category": "adventure"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0062",
+            "name": "玉兔精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0063",
+            "name": "天竺国国王",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0064",
+            "name": "天竺国公主",
+            "role": "victim"
+        },
+        {
+            "unid": "c0065",
+            "name": "太阴星君",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0103",
+            "name": "天竺国",
+            "role": "primary"
+        },
+        {
+            "unid": "l0104",
+            "name": "皇宫",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0026",
+            "name": "捣药杵",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到天竺国，发现国王的女儿被一只玉兔精所害。玉兔精是月宫中的玉兔，它下凡来到人间，变化成公主的模样，将真公主囚禁起来，自己冒充公主。孙悟空识破了妖怪的真面目，与猪八戒一同与玉兔精展开激战。最终孙悟空请来太阴星君，收服了玉兔精，救出真公主。",
+        "tags": [
+            "battle",
+            "deception",
+            "rescue",
+            "rabbit_spirit",
+            "impersonation"
+        ],
+        "sourceChapters": [90, 91, 92],
+        "chronology": {
+            "order": 50,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

@@ -1,0 +1,49 @@
+{
+    "unid": "ca0186",
+    "isAlias": true,
+    "basic": {
+        "name": "车迟国国师(羊力)",
+        "pinyin": "che_chi_guo_guo_shi_yang_li",
+        "aliases": [
+            "羊力国师",
+            "车迟国师父",
+            "国师羊力"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 46,
+        "power": 64,
+        "influence": 66,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "羊力大仙在车迟国的官方职位称谓，强调其国师身份和政治地位。这个称谓体现了妖怪通过道术获得人间权力的情节，突出了羊力在车迟国的统治地位。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "goat",
+            "taoist_magic",
+            "political_power",
+            "national_advisor",
+            "religious_authority"
+        ],
+        "sourceChapters": [
+            44,
+            45,
+            46
+        ],
+        "firstAppearance": 44,
+        "significance": "体现了羊力通过道术获得的政治权力和宗教地位",
+        "culturalBackground": "中国古代国师制度和道教在政治中的影响力，体现了宗教与政治的结合",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0046"
+    }
+}

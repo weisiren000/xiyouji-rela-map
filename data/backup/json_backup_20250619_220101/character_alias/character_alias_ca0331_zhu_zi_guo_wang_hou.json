@@ -1,0 +1,50 @@
+{
+    "unid": "ca0331",
+    "isAlias": true,
+    "basic": {
+        "name": "朱紫国王后",
+        "pinyin": "zhu_zi_guo_wang_hou",
+        "aliases": [
+            "朱紫王后",
+            "金圣宫王后",
+            "国母"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "wang_shi",
+            "name": "王室",
+            "tier": 5,
+            "category": "royal"
+        },
+        "rank": 149,
+        "power": 35,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "金圣宫娘娘的别名，强调了其作为朱紫国王后的尊贵地位和政治身份。这个别名体现了其在朱紫国的重要地位，作为国王的王后，金圣宫娘娘不仅是王室成员，更是国家的象征。她被赛太岁劫掠的事件，成为朱紫国的重大危机，体现了王后在国家中的重要性。",
+        "tags": [
+            "royalty",
+            "queen",
+            "nobility",
+            "political_status",
+            "national_symbol",
+            "crisis",
+            "importance",
+            "dignity"
+        ],
+        "sourceChapters": [
+            68,
+            69,
+            70
+        ],
+        "firstAppearance": 68,
+        "significance": "展现了王后在国家政治中的象征意义",
+        "culturalBackground": "体现了中国古代王后的地位和政治重要性",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0149"
+    }
+}

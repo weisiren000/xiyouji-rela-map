@@ -1,0 +1,80 @@
+{
+    "unid": "e0024",
+    "isAlias": false,
+    "basic": {
+        "name": "黄袍怪宝象国",
+        "pinyin": "huang_pao_guai_bao_xiang_guo",
+        "aliases": [
+            "奎木狼",
+            "宝象国",
+            "黄袍怪"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 78,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0065",
+            "name": "奎木狼",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0014",
+            "name": "宝象国",
+            "role": "primary"
+        },
+        {
+            "unid": "l0044",
+            "name": "波月洞",
+            "role": "secondary"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到宝象国，发现国王信奉道教，不敬佛法。原来是二十八宿中的奎木狼化作黄袍怪，占据了波月洞，并蛊惑国王。孙悟空识破其身份，与其大战，最终降服了黄袍怪，使宝象国重新信奉佛法。",
+        "tags": [
+            "battle",
+            "deception",
+            "religion_conflict",
+            "twenty_eight_constellations",
+            "bao_xiang_kingdom"
+        ],
+        "sourceChapters": [31, 32, 33],
+        "chronology": {
+            "order": 24,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

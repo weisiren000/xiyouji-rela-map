@@ -1,0 +1,48 @@
+{
+    "unid": "ca0308",
+    "isAlias": true,
+    "basic": {
+        "name": "压龙洞狐妖",
+        "pinyin": "ya_long_dong_hu_yao",
+        "aliases": [
+            "洞府狐妖",
+            "狐族妖怪",
+            "狐精"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 8,
+            "category": "demon"
+        },
+        "rank": 134,
+        "power": 55,
+        "influence": 45,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "狐阿七的别名，突出了其狐妖身份和在压龙洞中的地位。作为狐族成员，狐阿七继承了狐族的智慧、狡猾和变化能力，在压龙洞中发挥着重要作用。这个别名强调了其妖怪本质和种族特征，体现了狐妖在中国传统文化中的独特地位和神秘色彩。",
+        "tags": [
+            "demon",
+            "fox_spirit",
+            "transformation",
+            "wisdom",
+            "cunning",
+            "mystical",
+            "traditional_culture",
+            "supernatural"
+        ],
+        "sourceChapters": [
+            25
+        ],
+        "firstAppearance": 25,
+        "significance": "展现了狐族在妖怪世界中的独特地位",
+        "culturalBackground": "体现了中国传统文化中狐妖的神秘色彩和智慧形象",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0134"
+    }
+}

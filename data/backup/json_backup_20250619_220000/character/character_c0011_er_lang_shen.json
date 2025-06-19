@@ -1,0 +1,48 @@
+{
+    "unid": "c0011",
+    "isAlias": false,
+    "basic": {
+        "name": "二郎神",
+        "pinyin": "er_lang_shen",
+        "aliases": [
+            "杨戬",
+            "显圣二郎真君",
+            "二郎真君",
+            "清源妙道真君"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "zhen_jun",
+            "name": "真君",
+            "tier": 7,
+            "category": "divine"
+        },
+        "rank": 11,
+        "power": 90,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "灌江口显圣二郎真君，拥有三尖两刃刀和哮天犬，能够七十二变。曾与孙悟空大战三百回合不分胜负，是天庭的重要战将。",
+        "tags": [
+            "deity",
+            "warrior",
+            "shapeshifter",
+            "dog_owner",
+            "spear_wielder",
+            "powerful",
+            "loyal",
+            "skilled_fighter",
+            "divine_general",
+            "protector"
+        ],
+        "sourceChapters": [
+            6, 7, 63, 87
+        ],
+        "firstAppearance": 6,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}
