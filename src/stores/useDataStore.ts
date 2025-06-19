@@ -73,7 +73,7 @@ export const useDataStore = create<DataState>((set) => ({
   },
   
   config: {
-    dataPath: 'D:\\codee\\xiyouji-rela-map\\docs\\data\\JSON',
+    dataPath: './docs/data/JSON',
     autoSave: true,
     autoSaveInterval: 30,
     maxUndoSteps: 50,
@@ -86,7 +86,7 @@ export const useDataStore = create<DataState>((set) => ({
   stats: null,
   
   loader: {
-    dataPath: 'D:\\codee\\xiyouji-rela-map\\docs\\data\\JSON',
+    dataPath: './docs/data/JSON',
     isScanning: false,
     foundFiles: [],
     selectedFiles: [],

@@ -231,7 +231,7 @@ export const DataLoader: React.FC = () => {
           </button>
         </div>
         <div className="path-hint">
-          默认路径: D:\codee\xiyouji-rela-map\docs\data\JSON
+          默认路径: docs/data/JSON
         </div>
       </div>
 

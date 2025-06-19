@@ -14,8 +14,6 @@ export default defineConfig({
       '@types': resolve(__dirname, 'src/types'),
       '@utils': resolve(__dirname, 'src/utils'),
       '@hooks': resolve(__dirname, 'src/hooks'),
-      '@assets': resolve(__dirname, 'src/assets'),
-      '@shaders': resolve(__dirname, 'src/shaders'),
     },
   },
   server: {
