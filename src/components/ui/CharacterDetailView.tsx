@@ -2,6 +2,7 @@ import React from 'react'
 import { CharacterDetailScene } from '../three/CharacterDetailScene'
 import { CharacterDetailPanel } from './CharacterDetailPanel'
 import { DetailViewBackButton } from './DetailViewBackButton'
+import ModelGUIManager from './ModelGUIManager'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import './CharacterDetailView.css'
 
@@ -41,6 +42,12 @@ export const CharacterDetailView: React.FC = () => {
       <div className="detail-panel-container">
         <CharacterDetailPanel character={selectedCharacter} />
       </div>
+
+      {/* 模型GUI管理器 - 在Canvas外部 */}
+      <ModelGUIManager
+        characterName={selectedCharacter.name}
+        visible={true}
+      />
     </div>
   )
 }

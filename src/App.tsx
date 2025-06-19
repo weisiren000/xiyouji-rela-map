@@ -2,14 +2,15 @@
 import { useEffect } from 'react'
 import { GalaxyScene } from '@scenes/GalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/ui/ControlPanel'
-import { PerformanceDisplay } from '@components/ui/PerformanceDisplay'
 
 
 import { DataDashboard } from '@components/dashboard/DataDashboard'
 import { CharacterInfoOverlay } from '@components/ui/CharacterInfoOverlay'
 import { CharacterDetailView } from '@components/ui/CharacterDetailView'
+import { ModelQuickAccess } from '@components/ui/ModelQuickAccess'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
+
 
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
@@ -54,6 +55,8 @@ function App() {
     }
   }, [hoveredCharacter, mousePosition, showInfoCard])
 
+
+
   return (
     <div className="app">
       {/* 条件渲染：全局视图 vs 详情视图 */}
@@ -66,14 +69,14 @@ function App() {
           {/* 3D场景 */}
           <GalaxyScene />
 
-          {/* 性能显示 */}
-          <PerformanceDisplay />
-
           {/* 控制面板 */}
           <ControlPanel />
 
           {/* 数据管理Dashboard */}
           <DataDashboard />
+
+          {/* 模型快速访问 */}
+          <ModelQuickAccess />
         </>
       ) : (
         <>

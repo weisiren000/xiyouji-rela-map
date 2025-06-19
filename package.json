@@ -20,7 +20,11 @@
     "start:auto:bat": "scripts/start-with-auto-port.bat",
     "start:simple": "powershell -ExecutionPolicy Bypass -File scripts/start-simple.ps1",
     "start:simple:bat": ".\\scripts\\start-simple.bat",
-    "install:server": "cd src/server && npm install"
+    "install:server": "cd src/server && npm install",
+    "models:index": "node scripts/generate-model-index.js",
+    "models:scan": "node scripts/generate-model-index.js",
+    "models:watch": "node scripts/watch-models.js",
+    "models:test": "node scripts/test-model-detection.js"
   },
   "dependencies": {
     "react": "^18.2.0",

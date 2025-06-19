@@ -4,6 +4,9 @@ import { OrbitControls } from '@react-three/drei'
 import { InstancedMesh, Object3D, Color, Vector3 } from 'three'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { StarField } from './Galaxy'
+import ModelSystem from './ModelSystem'
+import SimpleModelTest from './SimpleModelTest'
+import { useModelExists } from './ModelLoader'
 
 /**
  * 角色详情场景组件
@@ -148,8 +151,13 @@ export const CharacterDetailScene: React.FC = () => {
         {/* 背景星空 - 保持与主场景一致 */}
         <StarField />
 
-        {/* 选中的角色球体 */}
-        <SingleCharacterSphere />
+        {/* 模型系统：条件渲染模型或球体 - 不显示GUI */}
+        <ModelSystem
+          characterName={selectedCharacter.name}
+          fallbackSphere={<SingleCharacterSphere />}
+          showGUI={false}
+          visible={true}
+        />
 
         {/* 相机控制 */}
         <DetailSceneCamera />

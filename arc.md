@@ -50,9 +50,16 @@ xiyouji-rela-map/
 - **App.tsx**: 应用入口
 - **GalaxyScene.tsx**: 3D星空场景
 - **CharacterMapper.tsx**: 角色映射组件
-- **CharacterDetailScene.tsx**: 角色详情场景
+- **CharacterDetailScene.tsx**: 角色详情场景 (已集成模型系统)
 - **CharacterControlPanel.tsx**: 角色控制面板
 - **CharacterDataPanel.tsx**: 角色数据面板
+
+### 3D模型系统 (新增)
+- **ModelSystem.tsx**: 统一模型管理系统
+- **ModelLoader.tsx**: GLB模型加载器
+- **ModelEffectRenderer.tsx**: 模型特效渲染器
+- **ModelEffectGUI.tsx**: 模型调试GUI面板
+- **ModelShaders.ts**: 高级Shader特效代码
 
 ### 数据
 - **dataApi.ts**: 数据API服务
@@ -96,6 +103,12 @@ xiyouji-rela-map/
    - 按颜色分组创建独立InstancedMesh
    - 保持高性能和动画效果
    - 支持9种角色类型颜色映射
+8. **局部视图模型特效系统** (EXP124) ✅
+   - 实现完整的GLB模型加载和特效渲染系统
+   - 条件渲染：模型存在时显示特效，否则显示球体
+   - 高级Shader特效：线框+点特效，噪声动画，脉冲效果
+   - 专业GUI调试面板：实时参数调整，预设管理
+   - 模块化架构：ModelSystem统一管理所有功能
 
 ## 最新技术改进
 - **多颜色渲染**: 实现protagonist(金色)、deity(天蓝色)、demon(红色)等9种颜色
@@ -103,6 +116,10 @@ xiyouji-rela-map/
 - **性能优化**: 保持InstancedMesh高性能，支持482个角色球体同时渲染
 - **代码清理**: 移除旧的instanceColor代码，简化组件架构
 - **兼容性**: 支持新旧JSON数据结构，确保数据访问稳定性
+- **3D模型系统**: 完整的GLB模型加载和特效渲染架构
+- **Shader特效**: 高级噪声动画、脉冲效果、多调色板支持
+- **GUI调试**: 专业的lil-gui调试面板，支持实时参数调整
+- **条件渲染**: 智能模型检测和回退机制
 
 ## 颜色映射系统
 ```
@@ -134,8 +151,17 @@ alias: #CCCCCC (银色) - 别名角色
 
 ## 当前工作交接状态 (2025-06-18)
 - ✅ **多颜色分组渲染已实现** - 基于角色类型的9种颜色映射
+- ✅ **局部视图模型特效系统已完成** - 完整的GLB模型加载和特效渲染
 - ✅ 代码重构和架构优化完成
-- 🔄 等待视觉效果验证 (浏览器测试)
-- 🔄 交互功能需要重新实现 (适配多InstancedMesh)
-- 🛠️ 开发环境就绪: http://localhost:3005/
+- ✅ 交互功能正常 (点击角色进入局部视图)
+- ✅ 模型系统集成完成 (条件渲染、GUI调试)
+- 🛠️ 开发环境就绪: http://localhost:3001/
 - 📊 支持482个角色球体 (150角色 + 332别名)
+- 🎯 支持GLB模型: sun_wu_kong.glb, 孙悟空.glb
+
+## 模型特效系统功能
+- **智能加载**: 根据角色名称自动检测和加载对应模型
+- **高级特效**: 线框渲染、点特效、噪声动画、脉冲效果
+- **GUI调试**: 实时参数调整、预设保存/加载、分组管理
+- **条件渲染**: 模型存在时显示特效，否则回退到球体
+- **性能优化**: Shader材质、AdditiveBlending、深度控制
