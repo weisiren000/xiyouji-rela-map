@@ -1,1 +1,0 @@
-crewai # uv pip install crewai or crewai[tools]

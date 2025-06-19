@@ -9,3 +9,7 @@ venv
 # node包
 **/node_modules
 node_modules
+
+# 构建产物
+.vite/
+_archive/
