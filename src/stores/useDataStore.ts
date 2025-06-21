@@ -144,6 +144,7 @@ export const useDataStore = create<DataState>((set) => ({
   setCharacters: (characters) => {
     const stats: DataStats = {
       totalCharacters: characters.length,
+      totalAliases: 0, // 需要从别名数据中获取
       charactersByType: characters.reduce((acc, char) => {
         acc[char.type] = (acc[char.type] || 0) + 1
         return acc
@@ -152,7 +153,17 @@ export const useDataStore = create<DataState>((set) => ({
         acc[char.faction] = (acc[char.faction] || 0) + 1
         return acc
       }, {} as any),
-      relationshipCount: characters.reduce((acc, char) => 
+      charactersByCategory: characters.reduce((acc, char) => {
+        // 使用type作为category的替代，因为CharacterData中没有category字段
+        acc[char.type] = (acc[char.type] || 0) + 1
+        return acc
+      }, {} as any),
+      powerDistribution: {
+        high: characters.filter(c => (c.power || 0) >= 80).length,
+        medium: characters.filter(c => (c.power || 0) >= 40 && (c.power || 0) < 80).length,
+        low: characters.filter(c => (c.power || 0) < 40).length
+      },
+      relationshipCount: characters.reduce((acc, char) =>
         acc + (char.relationships?.length || 0), 0),
       lastUpdated: new Date().toISOString()
     }

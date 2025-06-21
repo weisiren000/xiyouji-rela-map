@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { ModelEffectConfig } from '../components/three/ModelEffectRenderer'
+import { ModelEffectConfig } from '../components/three/ModelSystem/components/ModelEffectRenderer'
 
 const defaultConfig: ModelEffectConfig = {
   showWireframe: true,

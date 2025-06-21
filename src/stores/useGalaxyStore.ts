@@ -2,7 +2,6 @@ import { create } from 'zustand'
 import { GalaxyConfig, FogConfig, BloomConfig, PlanetData } from '../types/galaxy'
 import { CharacterData } from '../types/character'
 import { Vector3 } from 'three'
-import { CharacterData } from '../types/character'
 
 /**
  * 银河系状态管理

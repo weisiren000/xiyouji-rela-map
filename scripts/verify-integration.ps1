@@ -5,8 +5,8 @@ Write-Host "🎯 开始验证CharacterInfoCard集成..." -ForegroundColor Green
 
 # 检查关键文件是否存在
 $files = @(
-    "src/components/three/CharacterSpheresSimple.tsx",
-    "src/components/ui/CharacterInfoCard.tsx",
+    "src/components/three/Galaxy/components/CharacterSpheresSimple/CharacterSpheresSimple.tsx",
+    "src/components/panels/CharacterInfoCard/CharacterInfoCard.tsx",
     "src/hooks/useCharacterInteraction.ts"
 )
 
@@ -22,7 +22,7 @@ foreach ($file in $files) {
 
 # 检查CharacterSpheresSimple.tsx中的关键导入
 Write-Host "`n🔍 检查关键导入..." -ForegroundColor Yellow
-$content = Get-Content "src/components/three/CharacterSpheresSimple.tsx" -Raw
+$content = Get-Content "src/components/three/Galaxy/components/CharacterSpheresSimple/CharacterSpheresSimple.tsx" -Raw
 
 if ($content -match "createPortal") {
     Write-Host "✅ createPortal 导入正确" -ForegroundColor Green

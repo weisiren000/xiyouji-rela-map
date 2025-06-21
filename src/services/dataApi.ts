@@ -10,7 +10,7 @@ import { CharacterData, DataStats } from '@/types/character'
 const POSSIBLE_PORTS = [3003, 3002, 3001, 3000, 8080, 8000]
 
 // 外部API URL（用于生产环境或外部访问）
-const EXTERNAL_API_URL = import.meta.env.VITE_API_URL || null
+const EXTERNAL_API_URL = (import.meta as any).env?.VITE_API_URL || null
 
 // 动态API配置
 let API_BASE_URL = EXTERNAL_API_URL || 'http://localhost:3003/api' // 优先使用外部URL

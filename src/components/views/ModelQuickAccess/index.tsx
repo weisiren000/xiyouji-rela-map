@@ -1,0 +1,1 @@
+export { ModelQuickAccess } from './ModelQuickAccess';

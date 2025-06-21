@@ -1,13 +1,13 @@
 
 import { useEffect } from 'react'
 import { GalaxyScene } from '@scenes/GalaxyScene'
-import { ControlPanel, InfoDisplay } from '@components/ui/ControlPanel'
+import { ControlPanel, InfoDisplay } from '@components/controls/ControlPanel'
 
 
 import { DataDashboard } from '@components/dashboard/DataDashboard'
-import { CharacterInfoOverlay } from '@components/ui/CharacterInfoOverlay'
-import { CharacterDetailView } from '@components/ui/CharacterDetailView'
-import { ModelQuickAccess } from '@components/ui/ModelQuickAccess'
+import { CharacterInfoOverlay } from '@components/indicators/CharacterInfoOverlay'
+import { CharacterDetailView } from '@components/views/CharacterDetailView'
+import { ModelQuickAccess } from '@components/views/ModelQuickAccess'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 
@@ -29,7 +29,7 @@ function App() {
   const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
 
   // 🎯 视图状态管理
-  const { viewMode, selectedCharacter } = useGalaxyStore()
+  const { viewMode } = useGalaxyStore()
 
   // 应用启动日志
   useEffect(() => {

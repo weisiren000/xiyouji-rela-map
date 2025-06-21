@@ -1,0 +1,1 @@
+export { CharacterInfoOverlay } from './CharacterInfoOverlay';

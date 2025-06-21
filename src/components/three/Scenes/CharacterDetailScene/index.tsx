@@ -1,0 +1,1 @@
+export { CharacterDetailScene } from './CharacterDetailScene';

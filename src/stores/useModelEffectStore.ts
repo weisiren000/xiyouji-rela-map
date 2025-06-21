@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { ModelEffectConfig } from '../components/three/ModelEffectRenderer'
+import { ModelEffectConfig } from '../components/three/ModelSystem/components/ModelEffectRenderer'
 
 interface ModelEffectState {
   // 当前配置

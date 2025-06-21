@@ -1,12 +1,12 @@
 import React, { Suspense, useRef, useEffect, useState } from 'react'
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Galaxy, StarField, CentralSun } from '@components/three/Galaxy'
-import { CharacterControlPanel } from '@components/ui/CharacterControlPanel'
+import { CharacterControlPanel } from '@components/controls/CharacterControlPanel'
 
 import { useGalaxyStore } from '@stores/useGalaxyStore'
-import { usePerformanceMonitor, getDevicePerformanceLevel, PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
+import { usePerformanceMonitor, PERFORMANCE_CONFIGS } from '@/hooks/usePerformanceMonitor'
 
 
 
@@ -119,7 +119,7 @@ export const GalaxyScene: React.FC = () => {
   } = useGalaxyStore()
 
   // 渲染器状态管理
-  const [rendererInfo, setRendererInfo] = useState<string>('WebGL')
+  // const [rendererInfo, setRendererInfo] = useState<string>('WebGL') // 暂时注释
 
   // 角色数据显示控制
   const [characterDataVisible, setCharacterDataVisible] = useState(true)
@@ -177,11 +177,11 @@ export const GalaxyScene: React.FC = () => {
     }
   }, [autoPerformance, detectedLevel, performanceLevel, setPerformanceLevel])
 
-  // 初始化渲染器信息
-  useEffect(() => {
-    setRendererInfo('WebGL')
-    console.log('🔧 使用WebGL渲染器')
-  }, [])
+  // 初始化渲染器信息 - 暂时注释
+  // useEffect(() => {
+  //   setRendererInfo('WebGL')
+  //   console.log('🔧 使用WebGL渲染器')
+  // }, [])
 
   return (
     <div style={{ width: '100vw', height: '100vh', background: '#000' }}>
