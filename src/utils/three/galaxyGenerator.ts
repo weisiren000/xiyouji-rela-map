@@ -1,5 +1,5 @@
 import { Vector3, Color } from 'three'
-import { GalaxyConfig, PlanetData } from '../types/galaxy'
+import { GalaxyConfig, PlanetData } from '../../types/galaxy'
 
 /**
  * 生成银河系星球数据

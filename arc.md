@@ -33,7 +33,12 @@ xiyouji-rela-map/
 │   ├── services/          # 服务层
 │   ├── stores/            # 状态管理
 │   ├── types/             # 类型定义
-│   └── utils/             # 工具函数
+│   └── utils/             # 工具函数 (按功能域细化组织)
+│       ├── data/          # 数据处理工具
+│       ├── performance/   # 性能优化工具 (原renderOptimization)
+│       ├── three/         # Three.js工具
+│       │   └── galaxyGenerator.ts # 银河系生成算法
+│       └── ui/            # UI工具函数
 ├── data/                  # 数据文件 (SQLite统一存储)
 │   ├── characters.db      # SQLite数据库 (482条记录)
 │   ├── backup/            # JSON数据备份
@@ -51,10 +56,24 @@ xiyouji-rela-map/
 ├── reference/             # 参考资料
 │   ├── rebuild/           # 重建参考
 │   └── refer/             # 其他参考
-├── scripts/               # 脚本工具 (pnpm统一管理)
-│   ├── generate-model-index.js # 模型索引自动生成
-│   ├── data-migration/    # 数据迁移脚本
-│   └── start-*.ps1        # 启动脚本
+├── scripts/               # 脚本工具 (pnpm统一管理，按功能分组)
+│   ├── build/             # 构建相关脚本
+│   │   ├── generate-model-index.js # 模型索引自动生成
+│   │   └── verify-integration.ps1  # 集成验证
+│   ├── dev/               # 开发工具脚本
+│   │   ├── start-simple.ps1        # 简单启动
+│   │   ├── start-with-auto-port.ps1 # 自动端口启动
+│   │   ├── switch-server.ps1       # 服务器切换
+│   │   └── watch-models.js         # 模型监控
+│   ├── testing/           # 测试脚本
+│   │   ├── test-interaction.js     # 交互测试
+│   │   ├── test-model-detection.js # 模型检测测试
+│   │   └── test-performance-monitoring.js # 性能监控测试
+│   └── maintenance/       # 维护脚本
+│       ├── debug-aliases.cjs       # 别名调试
+│       ├── delete_inconsistent_artifacts.ps1 # 清理脚本
+│       ├── validate_character_alias_files.py # 文件验证
+│       └── performance-analysis.js # 性能分析
 ├── public/                # 静态资源
 │   └── models/            # 3D模型文件 (11个GLB)
 │       └── index.json     # 模型索引 (自动生成)

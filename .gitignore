@@ -13,3 +13,14 @@ node_modules
 # 构建产物
 .vite/
 _archive/
+
+# 脚本
+scripts
+
+reference
+
+docs
+
+.cursor
+
+_experiments
