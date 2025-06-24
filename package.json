@@ -1,6 +1,6 @@
 {
   "name": "galaxy-density-field",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "Three.js密度函数引力场银河系效果 - React现代化重构版",
   "type": "module",
   "scripts": {
