@@ -18,12 +18,14 @@ xiyouji-rela-map/
 │   │   ├── views/         # 视图组件群
 │   │   ├── indicators/    # 指示器组件群
 │   │   ├── dashboard/     # 仪表盘组件群
+│   │   ├── navigation/    # 导航组件群 (新增)
 │   │   └── three/         # Three.js 3D渲染组件群
 │   │       ├── Effects/   # 特效组件
 │   │       ├── Scenes/    # 场景组件
 │   │       ├── Galaxy/    # 星空组件
 │   │       └── ModelSystem/ # 模型系统
 │   ├── hooks/             # React Hooks
+│   ├── pages/             # 页面组件 (新增)
 │   ├── scenes/            # 场景组件
 │   ├── server/            # 后端服务 (SQLite统一版本)
 │   │   ├── dataServer.js  # SQLite数据服务器
@@ -94,6 +96,9 @@ xiyouji-rela-map/
 ### 前端
 - **App.tsx**: 应用入口
 - **GalaxyScene.tsx**: 3D星空场景
+- **EmptyGalaxyScene.tsx**: 空银河系场景 (无数据点) (新增)
+- **EmptyGalaxyPage.tsx**: 空银河系页面 (新增)
+- **PageSwitcher.tsx**: 页面切换器 (新增)
 - **CharacterMapper.tsx**: 角色映射组件
 - **CharacterDetailScene.tsx**: 角色详情场景 (已集成模型系统)
 - **CharacterControlPanel.tsx**: 角色控制面板

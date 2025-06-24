@@ -42,61 +42,61 @@ export const ModelEffectGUI: React.FC<ModelEffectGUIProps> = ({
     // 全局设置文件夹
     const globalFolder = gui.addFolder('全局设置')
     globalFolder.add(guiConfig, 'showWireframe').name('显示线框').onChange((value: boolean) => {
-      onConfigChange({ ...guiConfig, showWireframe: value })
+      onConfigChange({ ...config, showWireframe: value })
     })
     globalFolder.add(guiConfig, 'showPoints').name('显示点').onChange((value: boolean) => {
-      onConfigChange({ ...guiConfig, showPoints: value })
+      onConfigChange({ ...config, showPoints: value })
     })
     globalFolder.add(guiConfig, 'activePaletteIndex', 0, 3, 1).name('调色板').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, activePaletteIndex: value })
+      onConfigChange({ ...config, activePaletteIndex: value })
     })
 
     // 点特效文件夹
     const pointsFolder = gui.addFolder('点特效')
     pointsFolder.add(guiConfig, 'pointSize', 0.1, 50.0, 0.1).name('点大小').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, pointSize: value })
+      onConfigChange({ ...config, pointSize: value })
     })
     pointsFolder.add(guiConfig, 'pointBrightness', 0.0, 2.0, 0.1).name('点亮度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, pointBrightness: value })
+      onConfigChange({ ...config, pointBrightness: value })
     })
     pointsFolder.add(guiConfig, 'pointOpacity', 0.0, 1.0, 0.1).name('点透明度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, pointOpacity: value })
+      onConfigChange({ ...config, pointOpacity: value })
     })
 
     // 线框特效文件夹
     const wireframeFolder = gui.addFolder('线框特效')
     wireframeFolder.add(guiConfig, 'wireframeBrightness', 0.0, 2.0, 0.1).name('线框亮度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, wireframeBrightness: value })
+      onConfigChange({ ...config, wireframeBrightness: value })
     })
     wireframeFolder.add(guiConfig, 'wireframeOpacity', 0.0, 1.0, 0.1).name('线框透明度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, wireframeOpacity: value })
+      onConfigChange({ ...config, wireframeOpacity: value })
     })
 
     // 动画参数文件夹
     const animationFolder = gui.addFolder('动画参数')
     animationFolder.add(guiConfig, 'pulseIntensity', 0.0, 2.0, 0.1).name('脉冲强度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, pulseIntensity: value })
+      onConfigChange({ ...config, pulseIntensity: value })
     })
     animationFolder.add(guiConfig, 'pulseSpeed', 0.5, 10.0, 0.5).name('脉冲速度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, pulseSpeed: value })
+      onConfigChange({ ...config, pulseSpeed: value })
     })
     animationFolder.add(guiConfig, 'rotationSpeed', 0.0, 0.01, 0.0001).name('旋转速度').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, rotationSpeed: value })
+      onConfigChange({ ...config, rotationSpeed: value })
     })
 
     // 模型变换文件夹
     const transformFolder = gui.addFolder('模型变换')
     transformFolder.add(guiConfig, 'modelScale', 0.1, 50.0, 0.1).name('缩放').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, modelScale: value })
+      onConfigChange({ ...config, modelScale: value })
     })
     transformFolder.add(guiConfig, 'modelRotationX', -Math.PI, Math.PI, 0.1).name('X轴旋转').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, modelRotationX: value })
+      onConfigChange({ ...config, modelRotationX: value })
     })
     transformFolder.add(guiConfig, 'modelRotationY', -Math.PI, Math.PI, 0.1).name('Y轴旋转').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, modelRotationY: value })
+      onConfigChange({ ...config, modelRotationY: value })
     })
     transformFolder.add(guiConfig, 'modelRotationZ', -Math.PI, Math.PI, 0.1).name('Z轴旋转').onChange((value: number) => {
-      onConfigChange({ ...guiConfig, modelRotationZ: value })
+      onConfigChange({ ...config, modelRotationZ: value })
     })
 
     // 预设管理
@@ -167,7 +167,7 @@ export const ModelEffectGUI: React.FC<ModelEffectGUIProps> = ({
         guiRef.current = null
       }
     }
-  }, [visible])
+  }, [visible, config, onConfigChange]) // 添加config和onConfigChange到依赖项
 
   // 当配置改变时更新GUI显示
   useEffect(() => {
@@ -191,12 +191,14 @@ export const ModelEffectGUI: React.FC<ModelEffectGUIProps> = ({
       ref={containerRef}
       style={{
         position: 'fixed',
-        top: '20px',
-        right: '1080px',
+        top: '0px',
+        right: '400px', // 修复空格问题，移动到右上角
         zIndex: 1000,
         background: 'rgba(0, 0, 0, 0.8)',
         borderRadius: '8px',
-        padding: '10px'
+        padding: '10px',
+        // backdropFilter: 'blur(10px)', // 添加毛玻璃效果
+        // border: '1px solid rgba(255, 255, 255, 0.2)' // 添加边框
       }}
     />
   )

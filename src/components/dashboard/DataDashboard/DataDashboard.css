@@ -1,8 +1,8 @@
 /* Dashboard主样式 */
 .dashboard-toggle {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  bottom: 20px; /* 移动到底部 */
+  left: 20px;   /* 保持左侧，稍微向右一点 */
   z-index: 2000;
 }
 
@@ -25,10 +25,10 @@
 
 .data-dashboard {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  bottom: 80px; /* 从底部开始，留出按钮空间 */
+  left: 20px;   /* 与按钮对齐 */
   width: 800px;
-  max-height: 90vh;
+  max-height: calc(100vh - 120px); /* 调整最大高度，避免超出屏幕 */
   background: rgba(0, 0, 0, 0.95);
   border: 1px solid #333;
   border-radius: 12px;
@@ -1375,8 +1375,13 @@
   .data-dashboard {
     width: 95vw;
     left: 2.5vw;
-    top: 5px;
-    max-height: 95vh;
+    bottom: 70px; /* 移动端也从底部开始 */
+    max-height: calc(100vh - 90px); /* 调整最大高度 */
+  }
+
+  .dashboard-toggle {
+    bottom: 10px; /* 移动端按钮位置调整 */
+    left: 10px;
   }
 
   .dashboard-tabs {
