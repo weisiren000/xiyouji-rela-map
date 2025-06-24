@@ -1,133 +1,124 @@
 /**
- * 西游记数据服务器
- * 负责读取JSON文件并提供API接口
+ * 西游记数据服务器 - SQLite版本
+ * 负责从SQLite数据库读取数据并提供API接口
  */
 
 const express = require('express')
-const fs = require('fs').promises
 const path = require('path')
 const cors = require('cors')
+const Database = require('better-sqlite3')
 
 const app = express()
 const PORT = 3003
 
-// 数据路径配置
-const DATA_PATH = 'D:\\codee\\xiyouji-rela-map\\docs\\data\\JSON'
-const CHARACTER_PATH = path.join(DATA_PATH, 'character')
-const ALIAS_PATH = path.join(DATA_PATH, 'character_alias')
+// 数据库路径配置
+const DB_PATH = path.join(__dirname, '../../data/characters.db')
 
 // 中间件
 app.use(cors())
 app.use(express.json())
 
-// 数据缓存
-let charactersCache = null
-let aliasesCache = null
-let lastCacheTime = null
+// 数据库连接
+let db = null
 
 /**
- * 扫描指定目录下的JSON文件
+ * 初始化数据库连接
  */
-async function scanJsonFiles(directoryPath) {
+function initDatabase() {
   try {
-    const files = await fs.readdir(directoryPath)
-    return files.filter(file => file.endsWith('.json'))
+    db = new Database(DB_PATH)
+    console.log('✅ SQLite数据库连接成功')
+    console.log(`📍 数据库路径: ${DB_PATH}`)
+    
+    // 验证数据库
+    const count = db.prepare('SELECT COUNT(*) as count FROM characters').get().count
+    console.log(`📊 数据库中有 ${count} 个角色`)
+    
   } catch (error) {
-    console.error(`扫描目录失败: ${directoryPath}`, error)
-    throw new Error(`无法扫描目录: ${error.message}`)
+    console.error('❌ 数据库连接失败:', error)
+    throw error
   }
 }
 
 /**
- * 读取单个JSON文件
- */
-async function readJsonFile(filePath) {
-  try {
-    const content = await fs.readFile(filePath, 'utf8')
-    return JSON.parse(content)
-  } catch (error) {
-    console.error(`读取文件失败: ${filePath}`, error)
-    throw new Error(`无法读取文件: ${error.message}`)
-  }
-}
-
-/**
- * 转换JSON数据为前端格式
- */
-function transformCharacterData(rawData, filePath) {
-  try {
-    return {
-      id: rawData.unid,
-      name: rawData.basic.name,
-      pinyin: rawData.basic.pinyin,
-      aliases: rawData.basic.aliases || [],
-      type: mapCharacterType(rawData.basic.category),
-      category: rawData.basic.category,
-      faction: mapFaction(rawData.basic.category, rawData.attributes),
-      rank: rawData.attributes.rank,
-      level: rawData.attributes.level,
-      power: rawData.attributes.power,
-      influence: rawData.attributes.influence,
-      morality: rawData.attributes.morality,
-      description: rawData.metadata.description,
-      tags: rawData.metadata.tags || [],
-      chapters: rawData.metadata.sourceChapters || [],
-      firstAppearance: rawData.metadata.firstAppearance,
-      isAlias: rawData.isAlias || false,
-      aliasOf: rawData.aliasOf,
-      visual: generateVisualConfig(rawData),
-      metadata: {
-        source: filePath,
-        lastModified: rawData.metadata.lastUpdated || new Date().toISOString(),
-        verified: true
-      }
-    }
-  } catch (error) {
-    console.error(`转换数据失败: ${filePath}`, error)
-    return null
-  }
-}
-
-/**
- * 映射角色类型
+ * 映射角色类型 (适配汉化后的数据库)
  */
 function mapCharacterType(category) {
   const typeMap = {
+    // 中文映射
+    '主角': 'PROTAGONIST',
+    '神仙': 'DEITY',
+    '妖魔': 'DEMON',
+    '人类': 'HUMAN',
+    '龙族': 'DRAGON',
+    '天庭': 'CELESTIAL',
+    '佛教': 'BUDDHIST',
+    '地府': 'UNDERWORLD',
+    '仙人': 'IMMORTAL',
+    '反派': 'ANTAGONIST',
+    '别名': 'ALIAS',
+    // 兼容英文映射
     'protagonist': 'PROTAGONIST',
-    'deity': 'DEITY', 
+    'deity': 'DEITY',
     'demon': 'DEMON',
     'human': 'HUMAN',
     'dragon': 'DRAGON',
     'celestial': 'CELESTIAL',
     'buddhist': 'BUDDHIST',
-    'underworld': 'UNDERWORLD'
+    'underworld': 'UNDERWORLD',
+    'immortal': 'IMMORTAL',
+    'antagonist': 'ANTAGONIST',
+    'alias': 'ALIAS'
   }
   return typeMap[category] || 'HUMAN'
 }
 
 /**
- * 映射势力
+ * 映射势力 (适配汉化后的数据库)
  */
 function mapFaction(category, attributes) {
-  if (category === 'protagonist') return '取经团队'
-  if (attributes.level?.category === 'buddhist') return '佛教'
-  if (attributes.level?.category === 'immortal') return '天庭'
-  if (category === 'demon') return '妖魔'
-  if (category === 'dragon') return '龙族'
-  if (category === 'underworld') return '地府'
+  // 中文分类映射
+  if (category === '主角' || category === 'protagonist') return '取经团队'
+  if (category === '佛教' || category === 'buddhist') return '佛教'
+  if (category === '天庭' || category === 'celestial') return '天庭'
+  if (category === '神仙' || category === 'deity') return '天庭'
+  if (category === '妖魔' || category === 'demon') return '妖魔'
+  if (category === '龙族' || category === 'dragon') return '龙族'
+  if (category === '地府' || category === 'underworld') return '地府'
+  if (category === '人类' || category === 'human') return '凡间'
+  if (category === '仙人' || category === 'immortal') return '天庭'
+  if (category === '反派' || category === 'antagonist') return '反派势力'
+
+  // 基于属性的映射
+  if (attributes?.level?.category === 'buddhist' || attributes?.level?.category === '佛教') return '佛教'
+  if (attributes?.level?.category === 'immortal' || attributes?.level?.category === '仙人') return '天庭'
+
   return '其他'
 }
 
 /**
  * 生成可视化配置
  */
-function generateVisualConfig(rawData) {
-  const rank = rawData.attributes.rank
-  const power = rawData.attributes.power || 50
-  const category = rawData.basic.category
+function generateVisualConfig(character) {
+  const rank = character.rank || 0
+  const power = character.power || 50
+  const category = character.category
   
-  // 基于类型的颜色映射
+  // 基于类型的颜色映射 (适配汉化后的数据库)
   const colorMap = {
+    // 中文分类映射
+    '主角': '#FFD700',           // 金色
+    '神仙': '#87CEEB',           // 天蓝色
+    '妖魔': '#FF6347',           // 红色
+    '龙族': '#00CED1',           // 青色
+    '佛教': '#DDA0DD',           // 紫色
+    '天庭': '#F0E68C',           // 卡其色
+    '地府': '#696969',           // 灰色
+    '人类': '#FFA500',           // 橙色
+    '仙人': '#98FB98',           // 浅绿色
+    '反派': '#DC143C',           // 深红色
+    '别名': '#C0C0C0',           // 银色
+    // 兼容英文分类映射
     'protagonist': '#FFD700',    // 金色
     'deity': '#87CEEB',          // 天蓝色
     'demon': '#FF6347',          // 红色
@@ -135,7 +126,10 @@ function generateVisualConfig(rawData) {
     'buddhist': '#DDA0DD',       // 紫色
     'celestial': '#F0E68C',      // 卡其色
     'underworld': '#696969',     // 灰色
-    'human': '#FFA500'           // 橙色
+    'human': '#FFA500',          // 橙色
+    'immortal': '#98FB98',       // 浅绿色
+    'antagonist': '#DC143C',     // 深红色
+    'alias': '#C0C0C0'           // 银色
   }
   
   // 基于排名的大小
@@ -152,37 +146,72 @@ function generateVisualConfig(rawData) {
 }
 
 /**
- * 加载所有角色数据
+ * 转换SQLite数据为前端格式
  */
-async function loadAllCharacters() {
+function transformSqliteToFrontend(sqliteData) {
   try {
-    console.log('开始加载角色数据...')
+    // 解析JSON字段
+    const aliases = JSON.parse(sqliteData.aliases || '[]')
+    const tags = JSON.parse(sqliteData.tags || '[]')
+    const chapters = JSON.parse(sqliteData.source_chapters || '[]')
+    const attributes = JSON.parse(sqliteData.attributes || '{}')
     
-    // 扫描角色文件
-    const characterFiles = await scanJsonFiles(CHARACTER_PATH)
-    console.log(`找到 ${characterFiles.length} 个角色文件`)
-    
-    // 加载角色数据
-    const characters = []
-    for (const fileName of characterFiles) {
-      try {
-        const filePath = path.join(CHARACTER_PATH, fileName)
-        const rawData = await readJsonFile(filePath)
-        const characterData = transformCharacterData(rawData, filePath)
-        
-        if (characterData) {
-          characters.push(characterData)
-        }
-      } catch (error) {
-        console.error(`加载角色文件失败: ${fileName}`, error)
+    return {
+      id: sqliteData.unid,
+      name: sqliteData.name,
+      pinyin: sqliteData.pinyin,
+      aliases: aliases,
+      type: mapCharacterType(sqliteData.category),
+      category: sqliteData.category,
+      faction: mapFaction(sqliteData.category, attributes),
+      rank: sqliteData.rank,
+      level: attributes.level,
+      power: sqliteData.power,
+      influence: sqliteData.influence,
+      morality: sqliteData.morality,
+      description: sqliteData.description,
+      tags: tags,
+      chapters: chapters,
+      firstAppearance: sqliteData.first_appearance,
+      isAlias: sqliteData.is_alias === 1,
+      aliasOf: sqliteData.alias_of,
+      visual: generateVisualConfig(sqliteData),
+      metadata: {
+        source: 'sqlite',
+        lastModified: sqliteData.updated_at || new Date().toISOString(),
+        verified: true
       }
     }
+  } catch (error) {
+    console.error('转换数据失败:', error)
+    return null
+  }
+}
+
+/**
+ * 加载所有角色数据
+ */
+function loadAllCharacters() {
+  try {
+    console.log('开始从SQLite加载角色数据...')
     
-    console.log(`成功加载 ${characters.length} 个角色`)
+    const query = `
+      SELECT c.*, m.aliases, m.tags, m.source_chapters, m.attributes, m.description
+      FROM characters c 
+      LEFT JOIN character_metadata m ON c.unid = m.unid
+      WHERE c.is_alias = 0
+    `
+    
+    const rawData = db.prepare(query).all()
+    const characters = rawData
+      .map(transformSqliteToFrontend)
+      .filter(char => char !== null)
+    
+    console.log(`✅ 成功加载 ${characters.length} 个角色`)
     return characters
     
   } catch (error) {
-    console.error('加载角色数据失败:', error)
+    console.error('❌ 加载角色数据失败:', error)
     throw error
   }
 }
@@ -190,35 +219,27 @@ async function loadAllCharacters() {
 /**
  * 加载所有别名数据
  */
-async function loadAllAliases() {
+function loadAllAliases() {
   try {
-    console.log('开始加载别名数据...')
+    console.log('开始从SQLite加载别名数据...')
     
-    // 扫描别名文件
-    const aliasFiles = await scanJsonFiles(ALIAS_PATH)
-    console.log(`找到 ${aliasFiles.length} 个别名文件`)
+    const query = `
+      SELECT c.*, m.aliases, m.tags, m.source_chapters, m.attributes, m.description
+      FROM characters c 
+      LEFT JOIN character_metadata m ON c.unid = m.unid
+      WHERE c.is_alias = 1
+    `
     
-    // 加载别名数据
-    const aliases = []
-    for (const fileName of aliasFiles) {
-      try {
-        const filePath = path.join(ALIAS_PATH, fileName)
-        const rawData = await readJsonFile(filePath)
-        const aliasData = transformCharacterData(rawData, filePath)
-        
-        if (aliasData) {
-          aliases.push(aliasData)
-        }
-      } catch (error) {
-        console.error(`加载别名文件失败: ${fileName}`, error)
-      }
-    }
+    const rawData = db.prepare(query).all()
+    const aliases = rawData
+      .map(transformSqliteToFrontend)
+      .filter(alias => alias !== null)
     
-    console.log(`成功加载 ${aliases.length} 个别名`)
+    console.log(`✅ 成功加载 ${aliases.length} 个别名`)
     return aliases
     
   } catch (error) {
-    console.error('加载别名数据失败:', error)
+    console.error('❌ 加载别名数据失败:', error)
     throw error
   }
 }
@@ -260,6 +281,11 @@ function calculateStats(characters, aliases) {
   return stats
 }
 
+// 数据缓存
+let charactersCache = null
+let aliasesCache = null
+let lastCacheTime = null
+
 // API路由
 
 /**
@@ -274,12 +300,13 @@ app.get('/api/characters', async (req, res) => {
         success: true,
         data: charactersCache,
         cached: true,
+        source: 'sqlite',
         timestamp: new Date().toISOString()
       })
     }
     
     // 重新加载数据
-    const characters = await loadAllCharacters()
+    const characters = loadAllCharacters()
     charactersCache = characters
     lastCacheTime = now
     
@@ -287,6 +314,7 @@ app.get('/api/characters', async (req, res) => {
       success: true,
       data: characters,
       cached: false,
+      source: 'sqlite',
       timestamp: new Date().toISOString()
     })
     
@@ -311,18 +339,20 @@ app.get('/api/aliases', async (req, res) => {
         success: true,
         data: aliasesCache,
         cached: true,
+        source: 'sqlite',
         timestamp: new Date().toISOString()
       })
     }
     
     // 重新加载数据
-    const aliases = await loadAllAliases()
+    const aliases = loadAllAliases()
     aliasesCache = aliases
     
     res.json({
       success: true,
       data: aliases,
       cached: false,
+      source: 'sqlite',
       timestamp: new Date().toISOString()
     })
     
@@ -340,8 +370,8 @@ app.get('/api/aliases', async (req, res) => {
  */
 app.get('/api/data/complete', async (req, res) => {
   try {
-    const characters = await loadAllCharacters()
-    const aliases = await loadAllAliases()
+    const characters = loadAllCharacters()
+    const aliases = loadAllAliases()
     const stats = calculateStats(characters, aliases)
     
     res.json({
@@ -351,6 +381,67 @@ app.get('/api/data/complete', async (req, res) => {
         aliases,
         stats
       },
+      source: 'sqlite',
+      timestamp: new Date().toISOString()
+    })
+    
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
+/**
+ * 搜索角色 (新功能 - SQLite独有)
+ */
+app.get('/api/characters/search', async (req, res) => {
+  try {
+    const { q, category, minPower, maxPower } = req.query
+    
+    let query = `
+      SELECT c.*, m.aliases, m.tags, m.source_chapters, m.attributes, m.description
+      FROM characters c 
+      LEFT JOIN character_metadata m ON c.unid = m.unid
+      WHERE 1=1
+    `
+    const params = []
+    
+    if (q) {
+      query += ` AND (c.name LIKE ? OR c.pinyin LIKE ? OR m.description LIKE ?)`
+      params.push(`%${q}%`, `%${q}%`, `%${q}%`)
+    }
+    
+    if (category) {
+      query += ` AND c.category = ?`
+      params.push(category)
+    }
+    
+    if (minPower) {
+      query += ` AND c.power >= ?`
+      params.push(parseInt(minPower))
+    }
+    
+    if (maxPower) {
+      query += ` AND c.power <= ?`
+      params.push(parseInt(maxPower))
+    }
+    
+    query += ` ORDER BY c.rank`
+    
+    const rawData = db.prepare(query).all(...params)
+    const results = rawData
+      .map(transformSqliteToFrontend)
+      .filter(char => char !== null)
+    
+    res.json({
+      success: true,
+      data: results,
+      query: req.query,
+      count: results.length,
+      source: 'sqlite',
       timestamp: new Date().toISOString()
     })
     
@@ -368,13 +459,14 @@ app.get('/api/data/complete', async (req, res) => {
  */
 app.get('/api/stats', async (req, res) => {
   try {
-    const characters = charactersCache || await loadAllCharacters()
-    const aliases = aliasesCache || await loadAllAliases()
+    const characters = charactersCache || loadAllCharacters()
+    const aliases = aliasesCache || loadAllAliases()
     const stats = calculateStats(characters, aliases)
     
     res.json({
       success: true,
       data: stats,
+      source: 'sqlite',
       timestamp: new Date().toISOString()
     })
     
@@ -399,6 +491,7 @@ app.post('/api/cache/refresh', async (req, res) => {
     res.json({
       success: true,
       message: '缓存已清除',
+      source: 'sqlite',
       timestamp: new Date().toISOString()
     })
     
@@ -411,14 +504,31 @@ app.post('/api/cache/refresh', async (req, res) => {
   }
 })
 
-// 启动服务器
-app.listen(PORT, () => {
-  console.log(`🚀 西游记数据服务器启动成功！`)
-  console.log(`📡 服务地址: http://localhost:${PORT}`)
-  console.log(`📁 数据路径: ${DATA_PATH}`)
-  console.log(`👥 角色路径: ${CHARACTER_PATH}`)
-  console.log(`🏷️ 别名路径: ${ALIAS_PATH}`)
-  console.log(`⏰ 启动时间: ${new Date().toLocaleString()}`)
+// 优雅关闭
+process.on('SIGINT', () => {
+  console.log('\n🔄 正在关闭服务器...')
+  if (db) {
+    db.close()
+    console.log('✅ 数据库连接已关闭')
+  }
+  process.exit(0)
 })
+
+// 启动服务器
+try {
+  initDatabase()
+  
+  app.listen(PORT, () => {
+    console.log(`🚀 西游记数据服务器启动成功！(SQLite版本)`)
+    console.log(`📡 服务地址: http://localhost:${PORT}`)
+    console.log(`🗄️ 数据库路径: ${DB_PATH}`)
+    console.log(`⚡ 新功能: 支持高级搜索 /api/characters/search`)
+    console.log(`⏰ 启动时间: ${new Date().toLocaleString()}`)
+  })
+  
+} catch (error) {
+  console.error('❌ 服务器启动失败:', error)
+  process.exit(1)
+}
 
 module.exports = app

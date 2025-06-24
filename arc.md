@@ -25,13 +25,19 @@ xiyouji-rela-map/
 │   │       └── ModelSystem/ # 模型系统
 │   ├── hooks/             # React Hooks
 │   ├── scenes/            # 场景组件
-│   ├── server/            # 后端服务
+│   ├── server/            # 后端服务 (SQLite统一版本)
+│   │   ├── dataServer.js  # SQLite数据服务器
+│   │   ├── current-server.js # 当前服务器
+│   │   ├── package.json   # 服务器依赖配置
+│   │   └── test.js        # 服务器测试
 │   ├── services/          # 服务层
 │   ├── stores/            # 状态管理
 │   ├── types/             # 类型定义
 │   └── utils/             # 工具函数
-├── data/                  # 数据文件
-│   └── examples/          # 示例数据
+├── data/                  # 数据文件 (SQLite统一存储)
+│   ├── characters.db      # SQLite数据库 (482条记录)
+│   ├── backup/            # JSON数据备份
+│   └── migration-logs/    # 数据迁移日志
 ├── docs/                  # 文档
 │   ├── api.md             # API文档
 │   ├── data/              # 数据相关文档
@@ -45,7 +51,13 @@ xiyouji-rela-map/
 ├── reference/             # 参考资料
 │   ├── rebuild/           # 重建参考
 │   └── refer/             # 其他参考
-├── scripts/               # 脚本工具
+├── scripts/               # 脚本工具 (pnpm统一管理)
+│   ├── generate-model-index.js # 模型索引自动生成
+│   ├── data-migration/    # 数据迁移脚本
+│   └── start-*.ps1        # 启动脚本
+├── public/                # 静态资源
+│   └── models/            # 3D模型文件 (11个GLB)
+│       └── index.json     # 模型索引 (自动生成)
 └── tools/                 # 工具程序
     ├── nlp_tools/         # 自然语言处理工具
     └── updata_tools/      # 数据更新工具

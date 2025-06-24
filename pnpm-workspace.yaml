@@ -1,2 +1,5 @@
+packages:
+  - "src/server"
+
 onlyBuiltDependencies:
   - better-sqlite3
