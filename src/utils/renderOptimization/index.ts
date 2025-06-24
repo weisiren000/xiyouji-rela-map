@@ -9,6 +9,12 @@ export { ShaderManager, shaderManager } from './ShaderManager'
 export { BatchRenderer, batchRenderer } from './BatchRenderer'
 export { PerformanceProfiler, performanceProfiler } from './PerformanceProfiler'
 
+// 导入单例实例用于内部使用
+import { renderOptimizer } from './RenderOptimizer'
+import { shaderManager } from './ShaderManager'
+import { batchRenderer } from './BatchRenderer'
+import { performanceProfiler } from './PerformanceProfiler'
+
 // 类型定义
 export type {
   RenderObject,

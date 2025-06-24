@@ -166,10 +166,10 @@ export class BatchRenderer {
    * 渲染单个批次
    */
   private renderBatch(
-    renderer: THREE.WebGLRenderer,
+    _renderer: THREE.WebGLRenderer,
     batch: RenderBatch,
     scene: THREE.Scene,
-    camera: THREE.Camera
+    _camera: THREE.Camera
   ): void {
     if (batch.instancedMesh) {
       // 使用实例化渲染
@@ -251,6 +251,8 @@ export interface RenderObject {
   position: THREE.Vector3
   rotation: THREE.Euler
   scale: THREE.Vector3
+  material: THREE.Material
+  geometry: THREE.BufferGeometry
   color?: THREE.Color
   distance?: number
 }

@@ -320,8 +320,19 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   // 🔍 恢复原来的交互系统 - 使用第一个mesh作为主要交互对象
   const mainMeshRef = useRef<InstancedMesh>(null)
 
-  // 🔍 启用鼠标交互检测
-  const { interactionState, bindMouseEvents } = useCharacterInteraction(allCharacters, mainMeshRef)
+  // 🔍 启用鼠标交互检测 - 转换为CharacterDataWithPosition类型
+  const charactersWithPosition = useMemo(() => {
+    return allCharacters.map(char => ({
+      ...char,
+      type: char.type as any, // 临时类型断言
+      level: (char as any).level || { id: 'unknown', name: '未知', tier: 0 },
+      description: (char as any).description || '',
+      visual: (char as any).visual || { color: '#FFFFFF', size: 1.0, emissiveIntensity: 0.5 },
+      metadata: (char as any).metadata || { source: 'api', lastModified: new Date().toISOString(), tags: [], verified: false }
+    }))
+  }, [allCharacters])
+
+  const { interactionState, bindMouseEvents } = useCharacterInteraction(charactersWithPosition, mainMeshRef)
 
   // 🌐 全局状态管理
   const { setHoveredCharacter, setMousePosition, clearHover } = useCharacterInfoStore()
@@ -337,7 +348,26 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     if (interactionState.hoveredCharacter) {
       console.log('🖱️ 检测到悬浮:', interactionState.hoveredCharacter.name)
       console.log('🌐 更新全局状态')
-      setHoveredCharacter(interactionState.hoveredCharacter)
+      // 转换CharacterDataWithPosition为CharacterData
+      const characterData = {
+        id: interactionState.hoveredCharacter.id,
+        name: interactionState.hoveredCharacter.name,
+        pinyin: interactionState.hoveredCharacter.pinyin || '',
+        type: interactionState.hoveredCharacter.type,
+        category: (interactionState.hoveredCharacter as any).category || 'human',
+        faction: interactionState.hoveredCharacter.faction,
+        rank: interactionState.hoveredCharacter.rank,
+        power: interactionState.hoveredCharacter.power || 50,
+        influence: interactionState.hoveredCharacter.influence || 50,
+        visual: interactionState.hoveredCharacter.visual || {
+          color: '#FFFFFF',
+          size: 1.0,
+          emissiveIntensity: 0.5
+        },
+        isAlias: interactionState.hoveredCharacter.isAlias,
+        originalCharacter: interactionState.hoveredCharacter.originalCharacter
+      }
+      setHoveredCharacter(characterData)
       if (interactionState.mousePosition) {
         setMousePosition(new Vector2(interactionState.mousePosition.x, interactionState.mousePosition.y))
       }
@@ -350,7 +380,8 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   // mesh引用回调 - 将第一个mesh设为主要交互对象
   const handleMeshRef = (color: string, mesh: InstancedMesh | null) => {
     if (mesh && !mainMeshRef.current) {
-      mainMeshRef.current = mesh
+      // 使用类型断言来绕过只读限制
+      ;(mainMeshRef as React.MutableRefObject<InstancedMesh | null>).current = mesh
       console.log(`🔗 设置主要交互mesh: ${color}`)
     }
   }
