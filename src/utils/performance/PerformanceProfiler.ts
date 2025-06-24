@@ -1,3 +1,5 @@
+import { BVHMetrics, bvhProfiler } from './BVHProfiler'
+
 /**
  * 性能分析器
  * 监控渲染性能，提供详细的性能指标和优化建议
@@ -18,7 +20,8 @@ export class PerformanceProfiler {
       geometries: 0,
       textures: 0,
       total: 0
-    }
+    },
+    bvh: null as BVHMetrics | null
   }
   
   // 历史数据
@@ -127,17 +130,20 @@ export class PerformanceProfiler {
    */
   updateRendererInfo(renderer: THREE.WebGLRenderer): void {
     const info = renderer.info
-    
+
     this.metrics.drawCalls = info.render.calls
     this.metrics.triangles = info.render.triangles
     this.metrics.geometries = info.memory.geometries
     this.metrics.textures = info.memory.textures
     this.metrics.programs = info.programs?.length || 0
-    
+
     // 估算内存使用
     this.metrics.memory.geometries = info.memory.geometries * 1024 // 估算每个几何体1KB
     this.metrics.memory.textures = info.memory.textures * 512 * 512 * 4 // 估算512x512 RGBA纹理
     this.metrics.memory.total = this.metrics.memory.geometries + this.metrics.memory.textures
+
+    // 更新BVH指标
+    this.metrics.bvh = bvhProfiler.getMetrics()
   }
 
   /**

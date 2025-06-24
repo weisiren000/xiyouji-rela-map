@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 // import { Suspense } from 'react' // 暂时注释
 import * as THREE from 'three'
 import { useModelExists } from '@/hooks/useSmartModelDetection'
+import { enableBVHForModel } from '@/utils/three/bvhUtils'
 
 interface ModelLoaderProps {
   characterName: string
@@ -69,14 +70,22 @@ export const ModelLoader: React.FC<ModelLoaderProps> = ({
         model.scale.set(scale, scale, scale)
       }
       
+      // 为模型启用BVH优化
+      enableBVHForModel(model, {
+        maxDepth: 30,
+        maxLeafTris: 8,
+        verbose: false
+      })
+      console.log(`🌳 为模型 ${characterName} 启用BVH优化`)
+
       // 添加到组中
       groupRef.current.add(model)
-      
+
       // 通知父组件模型已加载
       if (onModelLoad) {
         onModelLoad(model)
       }
-      
+
       console.log(`✅ 模型加载成功: ${characterName}.glb`)
     }
   }, [gltf, characterName, onModelLoad])

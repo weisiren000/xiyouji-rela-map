@@ -7,6 +7,7 @@ import { DataApi } from '@/services/dataApi'
 import { useCharacterInteraction } from '@/hooks/useCharacterInteraction'
 import { BeautifulHighlight } from '../../../Effects/BeautifulHighlight'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
+import { bvhManager } from '@/utils/three/bvhUtils'
 
 /**
  * 角色数据点组件 - 使用全局状态管理
@@ -193,7 +194,21 @@ const CharacterGroup: React.FC<CharacterGroupProps> = ({
   // 初始化和更新
   useEffect(() => {
     updateInstancedMesh()
-  }, [characters, globalSize, aliasSize])
+
+    // 为InstancedMesh添加BVH支持
+    if (meshRef.current && characters.length > 0) {
+      bvhManager.computeInstancedBVH(
+        meshRef.current,
+        {
+          maxDepth: 20,
+          maxLeafTris: 5,
+          verbose: false
+        },
+        `character_group_${color}_${characters.length}`
+      )
+      console.log(`🌳 为颜色组 ${color} 创建BVH (${characters.length} 个角色)`)
+    }
+  }, [characters, globalSize, aliasSize, color])
 
   // 动画循环
   useFrame((state) => {
@@ -591,7 +606,7 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
         />
       ))}
 
-      {/* 🔍 隐藏的交互检测mesh */}
+      {/* 🔍 隐藏的交互检测mesh - 支持BVH优化 */}
       <instancedMesh
         ref={(mesh) => {
           if (mesh) {
@@ -609,6 +624,20 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
               mesh.setMatrixAt(i, tempObject.matrix)
             })
             mesh.instanceMatrix.needsUpdate = true
+
+            // 为交互检测mesh添加BVH支持
+            if (allCharacters.length > 0) {
+              bvhManager.computeInstancedBVH(
+                mesh,
+                {
+                  maxDepth: 25,
+                  maxLeafTris: 3,
+                  verbose: false
+                },
+                `interaction_mesh_${allCharacters.length}`
+              )
+              console.log(`🌳 为交互检测mesh创建BVH (${allCharacters.length} 个角色)`)
+            }
           }
         }}
         args={[undefined, undefined, allCharacters.length]}

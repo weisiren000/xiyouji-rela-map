@@ -1,8 +1,10 @@
-import { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { Vector2, Vector3, Raycaster, InstancedMesh } from 'three'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { CharacterData } from '@/types/character'
+import { configureBVHRaycaster, bvhManager } from '@/utils/three/bvhUtils'
+import { bvhProfiler } from '@/utils/performance/BVHProfiler'
 
 // 扩展CharacterData以包含位置信息
 interface CharacterDataWithPosition extends CharacterData {
@@ -29,6 +31,17 @@ export const useCharacterInteraction = (
   const { enterDetailView } = useGalaxyStore()
   const raycaster = useRef(new Raycaster())
   const mouse = useRef(new Vector2())
+
+  // 配置射线投射器以使用BVH优化
+  const initializeBVHRaycaster = useCallback(() => {
+    configureBVHRaycaster(raycaster.current)
+    console.log('🚀 BVH射线投射器已配置')
+  }, [])
+
+  // 初始化BVH优化
+  React.useEffect(() => {
+    initializeBVHRaycaster()
+  }, [initializeBVHRaycaster])
   
   const [interactionState, setInteractionState] = useState<InteractionState>({
     hoveredIndex: null,
@@ -89,7 +102,7 @@ export const useCharacterInteraction = (
   }, [camera, gl.domElement, meshRef, characters, enterDetailView])
 
   /**
-   * 执行射线检测
+   * 执行射线检测 - 使用BVH优化
    */
   const performRaycast = useCallback(() => {
     if (!meshRef.current || !camera || characters.length === 0) {
@@ -108,13 +121,24 @@ export const useCharacterInteraction = (
       return
     }
 
+    // 确保InstancedMesh有BVH
+    if (!meshRef.current.geometry.boundsTree) {
+      bvhManager.computeInstancedBVH(
+        meshRef.current,
+        { maxDepth: 20, maxLeafTris: 5 }, // 针对球体优化的参数
+        `characters_${meshRef.current.uuid}`
+      )
+      console.log('🌳 为角色InstancedMesh创建BVH')
+    }
+
+    const startTime = performance.now()
+
     raycaster.current.setFromCamera(mouse.current, camera)
-
-    // 设置射线检测参数，适合InstancedMesh球体检测
-    raycaster.current.params.Mesh = { threshold: 0.1 }
-    raycaster.current.params.Points = { threshold: 0.1 }
-
+    // BVH优化的射线投射器会自动使用firstHitOnly模式
     const intersects = raycaster.current.intersectObject(meshRef.current)
+
+    const raycastTime = performance.now() - startTime
+    bvhProfiler.recordRaycast(raycastTime, intersects.length)
 
     if (intersects.length > 0) {
       const intersect = intersects[0]
