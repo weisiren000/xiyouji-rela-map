@@ -14,11 +14,3 @@ node_modules
 .vite/
 _archive/
 
-# 脚本
-scripts
-
-reference
-
-.cursor
-
-_experiments
