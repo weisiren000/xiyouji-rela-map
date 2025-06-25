@@ -38,7 +38,7 @@ export const PageSwitcher: React.FC = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          🌌 主页面 (含数据点)
+          🌌 主页面
         </button>
         <button
           onClick={switchToEmpty}
@@ -55,7 +55,7 @@ export const PageSwitcher: React.FC = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          ⭐ 空银河系 (无数据点)
+          ⭐ 空银河系
         </button>
       </div>
 

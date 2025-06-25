@@ -5,6 +5,7 @@ import { DataDashboard } from '@components/dashboard/DataDashboard'
 import { CharacterInfoOverlay } from '@components/indicators/CharacterInfoOverlay'
 import { CharacterDetailView } from '@components/views/CharacterDetailView'
 import { ModelQuickAccess } from '@components/views/ModelQuickAccess'
+import { SpiralControls } from '@components/controls/SpiralDebugGUI'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
@@ -24,7 +25,7 @@ function EmptyGalaxyPage() {
   const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
 
   // 🎯 视图状态管理
-  const { viewMode } = useGalaxyStore()
+  const { viewMode, applyCameraPreset } = useGalaxyStore()
 
   // 应用启动日志
   useEffect(() => {
@@ -32,7 +33,10 @@ function EmptyGalaxyPage() {
     console.log('📡 自动加载:', autoLoadEnabled ? '启用' : '禁用')
     console.log('🌐 服务器状态:', isOnline ? '在线' : '离线')
     console.log('⚠️ 注意：此页面不会加载任何数据点')
-  }, [autoLoadEnabled, isOnline])
+    
+    // 确保使用俯视视角作为默认视角
+    applyCameraPreset('top-view')
+  }, [autoLoadEnabled, isOnline, applyCameraPreset])
 
   // 数据加载状态日志
   useEffect(() => {
@@ -71,6 +75,9 @@ function EmptyGalaxyPage() {
 
           {/* 模型快速访问 */}
           <ModelQuickAccess />
+
+          {/* 螺旋线控制面板 */}
+          <SpiralControls visible={true} />
         </>
       ) : (
         <>
@@ -100,20 +107,7 @@ function EmptyGalaxyPage() {
         />
       )}
 
-      {/* 页面标识 */}
-      <div style={{
-        position: 'fixed',
-        top: '10px',
-        right: '10px',
-        background: 'rgba(0, 0, 0, 0.7)',
-        color: '#fff',
-        padding: '8px 12px',
-        borderRadius: '4px',
-        fontSize: '12px',
-        zIndex: 1000
-      }}>
-        空银河系页面 (无数据点)
-      </div>
+      {/* 页面标识已移除 */}
     </div>
   )
 }

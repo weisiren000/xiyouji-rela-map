@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《西游记》九九八十一难数据可视化</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .chart-container {
+            margin: 30px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 10px;
+        }
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .insights {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        .insights h3 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+        .research-links {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .research-links a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .research-links a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>《西游记》九九八十一难数据分析</h1>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">81</div>
+                <div class="stat-label">总难次数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">73</div>
+                <div class="stat-label">涉及人物</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">61</div>
+                <div class="stat-label">涉及地点</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div class="stat-label">文化主题</div>
+            </div>
+        </div>
+
+        <h2>主要人物出现频次</h2>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="charactersChart"></canvas>
+            </div>
+        </div>
+
+        <h2>地点分布统计</h2>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="locationsChart"></canvas>
+            </div>
+        </div>
+
+        <h2>文化主题分析</h2>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="cultureChart"></canvas>
+            </div>
+        </div>
+
+        <h2>象征意义统计</h2>
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="symbolChart"></canvas>
+            </div>
+        </div>
+
+        <div class="insights">
+            <h3>🔍 核心发现</h3>
+            <ul>
+                <li><strong>孙悟空</strong>是绝对主角，参与了76%的难事，体现了其在取经团队中的核心地位</li>
+                <li><strong>佛教思想</strong>和<strong>智慧考验</strong>并列为最主要的文化主题，各出现8次</li>
+                <li><strong>降魔除障</strong>是最核心的象征意义，出现11次，体现了善恶斗争的主题</li>
+                <li><strong>通天河</strong>和<strong>钻头号山</strong>是最常见的地点，各出现4次，具有重要的叙事功能</li>
+            </ul>
+        </div>
+
+        <div class="research-links">
+            <h3>📚 相关研究资料</h3>
+            <a href="https://book.sina.com.cn/news/whxw/2018-05-08/doc-ihaichqy4168001.shtml" target="_blank">刘勇强解读《西游记》</a>
+            <a href="https://www.sohu.com/a/812633829_121857629" target="_blank">九九八十一难详解</a>
+            <a href="https://doaj.org/article/2000583988f64f4b9fa4a9d5957c7161" target="_blank">宗教文化解读</a>
+            <a href="https://www.163.com/dy/article/GMHE3DLL0541SBZD.html" target="_blank">四十三难分析</a>
+        </div>
+
+        <div class="footer">
+            <p>数据来源：《西游记》原著及相关研究文献 | 分析工具：Python + Chart.js</p>
+            <p>最后更新：2025年6月24日</p>
+        </div>
+    </div>
+
+    <script>
+        // 主要人物数据
+        const charactersData = {
+            labels: ['孙悟空', '唐僧', '观音菩萨', '猪八戒', '红孩儿', '太上老君', '如来佛祖', '沙僧'],
+            datasets: [{
+                label: '出现次数',
+                data: [62, 42, 5, 5, 4, 3, 3, 3],
+                backgroundColor: [
+                    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', 
+                    '#9966FF', '#FF9F40', '#FF6384', '#C9CBCF'
+                ],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        };
+
+        // 地点数据
+        const locationsData = {
+            labels: ['通天河', '钻头号山', '金兜山', '车迟国', '双叉岭', '其他地点'],
+            datasets: [{
+                label: '出现次数',
+                data: [4, 4, 3, 3, 2, 45],
+                backgroundColor: [
+                    '#36A2EB', '#4BC0C0', '#FFCE56', '#FF6384', 
+                    '#9966FF', '#C9CBCF'
+                ],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        };
+
+        // 文化主题数据
+        const cultureData = {
+            labels: ['佛教', '智慧', '慈悲', '修行', '道教', '团队', '正义', '因果', '降魔', '儒家'],
+            datasets: [{
+                label: '出现次数',
+                data: [8, 8, 5, 5, 5, 4, 3, 2, 2, 1],
+                backgroundColor: '#36A2EB',
+                borderColor: '#2E86AB',
+                borderWidth: 1
+            }]
+        };
+
+        // 象征意义数据
+        const symbolData = {
+            labels: ['降魔', '慈悲', '考验', '智慧', '正义', '修行'],
+            datasets: [{
+                label: '出现次数',
+                data: [11, 6, 5, 4, 3, 2],
+                backgroundColor: [
+                    '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'
+                ],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        };
+
+        // 图表配置
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    font: {
+                        size: 16
+                    }
+                }
+            }
+        };
+
+        // 创建图表
+        new Chart(document.getElementById('charactersChart'), {
+            type: 'doughnut',
+            data: charactersData,
+            options: {
+                ...chartOptions,
+                plugins: {
+                    ...chartOptions.plugins,
+                    title: {
+                        ...chartOptions.plugins.title,
+                        text: '主要人物出现频次分布'
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('locationsChart'), {
+            type: 'pie',
+            data: locationsData,
+            options: {
+                ...chartOptions,
+                plugins: {
+                    ...chartOptions.plugins,
+                    title: {
+                        ...chartOptions.plugins.title,
+                        text: '地点分布统计'
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('cultureChart'), {
+            type: 'bar',
+            data: cultureData,
+            options: {
+                ...chartOptions,
+                plugins: {
+                    ...chartOptions.plugins,
+                    title: {
+                        ...chartOptions.plugins.title,
+                        text: '文化主题出现频次'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('symbolChart'), {
+            type: 'polarArea',
+            data: symbolData,
+            options: {
+                ...chartOptions,
+                plugins: {
+                    ...chartOptions.plugins,
+                    title: {
+                        ...chartOptions.plugins.title,
+                        text: '象征意义分布'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { GalaxyConfig, FogConfig, BloomConfig, PlanetData } from '../types/galaxy'
 import { CharacterData } from '../types/character'
+import { JourneyConfig, DEFAULT_JOURNEY_CONFIG } from '../utils/three/journeyGenerator'
 import { Vector3 } from 'three'
 
 /**
@@ -13,6 +14,7 @@ interface GalaxyState {
   galaxyConfig: GalaxyConfig
   fogConfig: FogConfig
   bloomConfig: BloomConfig
+  journeyConfig: JourneyConfig
 
   // 数据
   planets: PlanetData[]
@@ -68,6 +70,7 @@ interface GalaxyState {
   updateGalaxyConfig: (config: Partial<GalaxyConfig>) => void
   updateFogConfig: (config: Partial<FogConfig>) => void
   updateBloomConfig: (config: Partial<BloomConfig>) => void
+  updateJourneyConfig: (config: Partial<JourneyConfig>) => void
   setPlanets: (planets: PlanetData[]) => void
   setAnimating: (isAnimating: boolean) => void
   setRotationSpeed: (speed: number) => void
@@ -142,6 +145,8 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
     strength: 1.2,   // bloomStrength: 1.2 - 增强辉光强度
     radius: 0.4,     // bloomRadius: 0.4 - 增大辉光半径
   },
+
+  journeyConfig: DEFAULT_JOURNEY_CONFIG,
   
   // 初始数据
   planets: [],
@@ -159,18 +164,18 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   cameraAutoRotate: false,
   cameraRotateSpeed: 0.5,
 
-  // 相机位置控制 (默认入场视角)
+  // 相机位置控制 (默认使用俯视视角)
   cameraPositionX: 0,
-  cameraPositionY: 45,
-  cameraPositionZ: 65,
+  cameraPositionY: 90,
+  cameraPositionZ: 0,
 
-  // 相机旋转控制 (弧度制)
-  cameraRotationX: 0,
+  // 相机旋转控制 (弧度制) - 俯视视角的旋转
+  cameraRotationX: -Math.PI/2,
   cameraRotationY: 0,
   cameraRotationZ: 0,
 
   // 相机视野控制
-  cameraFov: 75,
+  cameraFov: 60,
   cameraNear: 0.1,
   cameraFar: 1000,
 
@@ -206,6 +211,11 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   updateBloomConfig: (config) =>
     set((state) => ({
       bloomConfig: { ...state.bloomConfig, ...config },
+    })),
+
+  updateJourneyConfig: (config) =>
+    set((state) => ({
+      journeyConfig: { ...state.journeyConfig, ...config },
     })),
     
   setPlanets: (planets) => set({ planets }),
@@ -260,7 +270,7 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
         fov: 75
       },
       'top-view': {
-        position: [0, 70, 0],
+        position: [0, 90, 0],
         rotation: [-Math.PI/2, 0, 0],
         target: [0, 0, 0],
         fov: 60
@@ -317,15 +327,15 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
 
   resetCameraToDefault: () => set({
     cameraPositionX: 0,
-    cameraPositionY: 45,
-    cameraPositionZ: 65,
-    cameraRotationX: 0,
+    cameraPositionY: 90,
+    cameraPositionZ: 0,
+    cameraRotationX: -Math.PI/2,
     cameraRotationY: 0,
     cameraRotationZ: 0,
     cameraTargetX: 0,
     cameraTargetY: 0,
     cameraTargetZ: 0,
-    cameraFov: 75,
+    cameraFov: 60,
     cameraNear: 0.1,
     cameraFar: 1000
   }),

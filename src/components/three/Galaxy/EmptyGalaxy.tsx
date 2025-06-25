@@ -3,8 +3,10 @@ import { useFrame } from '@react-three/fiber'
 import { Group } from 'three'
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { generateGalaxyPlanets } from '@utils/three/galaxyGenerator'
+import { generateJourneyPoints } from '@utils/three/journeyGenerator'
 import { PlanetCluster } from './components/PlanetCluster'
 import { FogParticles } from './components/FogParticles'
+import { JourneyPoints } from './components/JourneyPoints'
 
 /**
  * 空银河系组件
@@ -16,6 +18,7 @@ export const EmptyGalaxy: React.FC = () => {
   
   const {
     galaxyConfig,
+    journeyConfig,
     planets,
     setPlanets,
     isAnimating,
@@ -48,6 +51,11 @@ export const EmptyGalaxy: React.FC = () => {
     return generateGalaxyPlanets(galaxyConfig)
   }, [structuralConfig, galaxyConfig])
 
+  // 生成西游记取经路径点 - 九九八十一难
+  const journeyPoints = useMemo(() => {
+    return generateJourneyPoints(journeyConfig)
+  }, [journeyConfig])
+
   // 初始化星球数据
   useEffect(() => {
     setPlanets(initialPlanets)
@@ -75,8 +83,20 @@ export const EmptyGalaxy: React.FC = () => {
       {/* 雾气粒子 */}
       <FogParticles planets={planets} />
 
+      {/* 西游记取经路径点 - 九九八十一难 */}
+      <JourneyPoints
+        points={journeyPoints}
+        globalSize={journeyConfig.globalSize}
+        opacity={journeyConfig.opacity}
+        emissiveIntensity={journeyConfig.emissiveIntensity}
+        metalness={journeyConfig.metalness}
+        roughness={journeyConfig.roughness}
+        animationSpeed={journeyConfig.animationSpeed}
+        visible={true}
+      />
+
       {/* 注意：这里不包含 CharacterSpheres 组件 */}
-      {/* 这样就创建了一个没有数据点的纯银河系场景 */}
+      {/* 现在包含了西游记取经路径的81个点，使用单螺旋线从外到内分布 */}
     </group>
   )
 }

@@ -14,6 +14,9 @@ xiyouji-rela-map/
 ├── src/                   # 源代码目录
 │   ├── components/        # 组件 (已重构为文件夹架构)
 │   │   ├── controls/      # 控制面板组件群
+│   │   │   ├── SpiralDebugGUI/ # 螺旋线控制GUI (新增)
+│   │   │   ├── ModelEffectGUI/ # 模型特效GUI
+│   │   │   └── CharacterControlPanel/ # 角色控制面板
 │   │   ├── panels/        # 信息面板组件群
 │   │   ├── views/         # 视图组件群
 │   │   ├── indicators/    # 指示器组件群
@@ -23,6 +26,11 @@ xiyouji-rela-map/
 │   │       ├── Effects/   # 特效组件
 │   │       ├── Scenes/    # 场景组件
 │   │       ├── Galaxy/    # 星空组件
+│   │       │   └── components/
+│   │       │       ├── JourneyPoints/ # 西游记取经路径点组件 (新增)
+│   │       │       ├── CharacterSpheresSimple/ # 角色球体组件
+│   │       │       ├── PlanetCluster/ # 星球集群组件
+│   │       │       └── FogParticles/ # 雾气粒子组件
 │   │       └── ModelSystem/ # 模型系统
 │   ├── hooks/             # React Hooks
 │   ├── pages/             # 页面组件 (新增)
@@ -44,7 +52,8 @@ xiyouji-rela-map/
 │       │   └── RenderOptimizer.ts     # 渲染优化器
 │       ├── three/         # Three.js工具 (新增BVH优化)
 │       │   ├── bvhUtils.ts            # BVH优化工具 (新增)
-│       │   └── galaxyGenerator.ts     # 银河系生成算法
+│       │   ├── galaxyGenerator.ts     # 银河系生成算法
+│       │   └── journeyGenerator.ts    # 西游记取经路径生成器 (新增)
 │       └── ui/            # UI工具函数
 ├── data/                  # 数据文件 (SQLite统一存储)
 │   ├── characters.db      # SQLite数据库 (482条记录)
@@ -159,6 +168,30 @@ xiyouji-rela-map/
    - 高级Shader特效：线框+点特效，噪声动画，脉冲效果
    - 专业GUI调试面板：实时参数调整，预设管理
    - 模块化架构：ModelSystem统一管理所有功能
+9. **西游记取经路径可视化** (EXP151) ✅
+   - 实现九九八十一难的单螺旋线分布
+   - 从外到内的阿基米德螺旋线算法
+   - 蓝色到金色的渐变颜色映射
+   - 支持浮动和脉冲动画效果
+   - 集成到空银河系页面展示
+10. **螺旋线控制GUI面板** (EXP152) ✅
+   - 创建"Spiral Controls"实时调试面板
+   - 支持螺旋形态、Y轴波动、点外观参数调整
+   - 内置多种预设：经典螺旋、紧密螺旋、平缓螺旋
+   - 集成到GalaxyStore状态管理系统
+   - 实时响应参数变化，立即更新视觉效果
+11. **球体动画增强系统** (EXP153) ✅
+   - 扩展JourneyConfig添加球体外观和动画控制
+   - 新增球体材质控制：透明度、金属度、粗糙度
+   - 丰富动画效果：浮动幅度、脉冲强度、大小变化
+   - 更新GUI面板支持5个参数分组、15个控制参数
+   - 新增"动感球体"预设，展示丰富的动画效果
+12. **银河系悬臂螺旋分布** (EXP154) ✅
+   - 将阿基米德螺旋升级为银河系悬臂对数螺旋
+   - 新增armTightness和armIndex参数控制悬臂效果
+   - 实现与银河系生成器一致的对数螺旋算法
+   - 更新GUI面板添加悬臂紧密度和悬臂选择控制
+   - 新增"银河悬臂"预设，展示银河系悬臂效果
 
 ## 最新技术改进
 - **多颜色渲染**: 实现protagonist(金色)、deity(天蓝色)、demon(红色)等9种颜色
