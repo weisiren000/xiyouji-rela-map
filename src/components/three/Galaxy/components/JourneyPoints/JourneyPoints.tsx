@@ -1,31 +1,10 @@
 import React, { useRef, useMemo, useEffect, useState } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { InstancedMesh, Object3D, Color, Vector3, Raycaster, Mesh, MeshBasicMaterial, SphereGeometry, Matrix4, Vector2 } from 'three'
+import { InstancedMesh, Object3D, MeshStandardMaterial, SphereGeometry, Raycaster, Vector2, Mesh } from 'three'
 import { JourneyPoint } from '@utils/three/journeyGenerator'
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { useCharacterInfoStore } from '@stores/useCharacterInfoStore'
 import { CharacterType } from '@/types/character'
-
-// 创建一个简化版的角色信息类型，与CharacterInfoStore兼容
-interface SimpleCharacterInfo {
-  id: string
-  name: string
-  type: CharacterType
-  faction: string
-  rank: number
-  description: string
-  visual: {
-    color: string
-    size: number
-    emissiveIntensity: number
-  }
-  metadata: {
-    source: string
-    lastModified: string
-    tags: string[]
-    verified: boolean
-  }
-}
 
 interface JourneyPointsProps {
   points: JourneyPoint[]
@@ -40,9 +19,7 @@ interface JourneyPointsProps {
 
 /**
  * 西游记取经路径点渲染组件
- * 使用InstancedMesh优化性能，支持81个点的高效渲染
- * 添加射线命中时的脉冲选中效果
- * 选中点时暂停银河系旋转
+ * 显示九九八十一难的3D可视化，包含完整的交互功能
  */
 export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   points,
@@ -55,14 +32,14 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   visible = true,
 }) => {
   const meshRef = useRef<InstancedMesh>(null)
-  const tempObject = useMemo(() => new Object3D(), [])
-  const startTime = useRef(Date.now())
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
-  
-  // 脉冲外壳相关引用 - 添加两层外壳效果
   const pulseShellRef = useRef<Mesh>(null)
   const outerShellRef = useRef<Mesh>(null)
+  const tempObject = useMemo(() => new Object3D(), [])
+  const startTime = useRef(Date.now())
+  
+  // 交互状态
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [hoveredPoint, setHoveredPoint] = useState<JourneyPoint | null>(null)
   const [selectedPoint, setSelectedPoint] = useState<JourneyPoint | null>(null)
   
@@ -70,16 +47,52 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const raycaster = useMemo(() => new Raycaster(), [])
   const mouse = useMemo(() => new Vector2(), [])
   
-  // 获取Three.js相关对象
+  // Three.js 相关对象
   const { camera, gl } = useThree()
   
-  // 获取动画配置参数和控制方法
-  const { journeyConfig, setAnimating } = useGalaxyStore()
-  
-  // 获取角色信息状态
+  // 状态管理
+  const { setAnimating } = useGalaxyStore()
   const { setHoveredCharacter, setShowInfoCard } = useCharacterInfoStore()
+  
+  // 创建基础材质
+  const material = useMemo(() => {
+    return new MeshStandardMaterial({
+      color: '#ffd700',
+      emissive: '#ff6600',
+      emissiveIntensity,
+      metalness,
+      roughness,
+      transparent: true,
+      opacity,
+    })
+  }, [emissiveIntensity, metalness, roughness, opacity])
 
-  // 更新鼠标位置的辅助函数 - 直接从select.html复制
+  // 创建脉冲外壳材质
+  const pulseShellMaterial = useMemo(() => {
+    return new MeshStandardMaterial({
+      color: '#ffaa00',
+      emissive: '#ff4400',
+      emissiveIntensity: 0.8,
+      metalness: 0.1,
+      roughness: 0.3,
+      transparent: true,
+      opacity: 0.4,
+    })
+  }, [])
+
+  const outerShellMaterial = useMemo(() => {
+    return new MeshStandardMaterial({
+      color: '#ff8800',
+      emissive: '#ff2200',
+      emissiveIntensity: 1.2,
+      metalness: 0.05,
+      roughness: 0.2,
+      transparent: true,
+      opacity: 0.2,
+    })
+  }, [])
+
+  // 更新鼠标位置
   const updateMousePosition = (event: MouseEvent | PointerEvent) => {
     const rect = gl.domElement.getBoundingClientRect()
     const x = event.clientX - rect.left
@@ -88,381 +101,225 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
     mouse.y = -(y / rect.height) * 2 + 1
   }
 
-  // 处理鼠标移动 - 完全重新实现
+  // 处理鼠标移动 - 悬浮检测
   const handlePointerMove = (event: PointerEvent) => {
-    // 如果有鼠标按钮被按下，不处理悬停
-    if (event.buttons > 0) return
+    if (event.buttons > 0 || !meshRef.current || points.length === 0) return
     
-    // 如果没有实例网格或没有点，不处理
-    if (!meshRef.current || points.length === 0) return
-    
-    // 更新鼠标位置
     updateMousePosition(event)
-    
-    // 设置射线
     raycaster.setFromCamera(mouse, camera)
     
-    // 执行射线检测
     const intersects = raycaster.intersectObject(meshRef.current)
     
     if (intersects.length > 0) {
       const instanceId = intersects[0].instanceId
-      
-      if (instanceId !== undefined) {
-        // 如果悬停的点不是当前选中的点，才显示悬停效果
-        if (instanceId !== selectedIndex) {
-          handlePointHover(instanceId)
-        }
-      }
-    } else {
-      // 如果没有相交，清除悬停状态
-      if (hoveredIndex !== null && hoveredIndex !== selectedIndex) {
-        clearHover()
-      }
-    }
-  }
-  
-  // 处理点悬停
-  const handlePointHover = (index: number) => {
-    // 如果已经有选中的点，不改变悬停状态
-    if (selectedIndex !== null) return
-    
-    setHoveredIndex(index)
-    setHoveredPoint(points[index])
-    
-    // 当选中点时，暂停银河系旋转
-    setAnimating(false)
-    
-    // 创建一个简化的角色信息对象
-    const journeyPoint = points[index]
-    const characterInfo: SimpleCharacterInfo = {
-      id: journeyPoint.id || `journey-point-${index}`,
-      name: journeyPoint.difficulty || `第${index + 1}难`,
-      type: CharacterType.BUDDHIST, // 设置为佛教类型
-      faction: '取经路上',
-      rank: index + 1,
-      description: `西游记第${index + 1}难: ${journeyPoint.difficulty || ''}`,
-      visual: {
-        color: journeyPoint.color,
-        size: journeyPoint.radius,
-        emissiveIntensity: journeyPoint.emissiveIntensity || 1.0
-      },
-      metadata: {
-        source: '西游记',
-        lastModified: new Date().toISOString(),
-        tags: ['取经', '九九八十一难'],
-        verified: true
-      }
-    }
-    
-    // 将简化的角色信息传递给store
-    setHoveredCharacter(characterInfo as any)
-    setShowInfoCard(true)
-  }
-  
-  // 处理点击选择 - 完全重新实现
-  const handlePointerDown = (event: PointerEvent) => {
-    // 更新鼠标位置
-    updateMousePosition(event)
-    
-    // 设置射线
-    raycaster.setFromCamera(mouse, camera)
-    
-    // 如果没有实例网格，不处理
-    if (!meshRef.current) return
-    
-    // 执行射线检测
-    const intersects = raycaster.intersectObject(meshRef.current)
-    
-    if (intersects.length > 0) {
-      const instanceId = intersects[0].instanceId
-      
-      if (instanceId !== undefined) {
-        // 如果点击的是当前选中的点，取消选择
-        if (instanceId === selectedIndex) {
-          setSelectedIndex(null)
-          setSelectedPoint(null)
-          setAnimating(true) // 恢复银河系旋转
-        } else {
-          // 否则选择新的点
-          setSelectedIndex(instanceId)
-          setSelectedPoint(points[instanceId])
-          setAnimating(false) // 暂停银河系旋转
-          
-          // 创建一个简化的角色信息对象
-          const journeyPoint = points[instanceId]
-          const characterInfo: SimpleCharacterInfo = {
-            id: journeyPoint.id || `journey-point-${instanceId}`,
-            name: journeyPoint.difficulty || `第${instanceId + 1}难`,
-            type: CharacterType.BUDDHIST,
-            faction: '取经路上',
-            rank: instanceId + 1,
-            description: `西游记第${instanceId + 1}难: ${journeyPoint.difficulty || ''}`,
+      if (instanceId !== undefined && instanceId !== hoveredIndex) {
+        const point = points[instanceId]
+        setHoveredIndex(instanceId)
+        setHoveredPoint(point)
+        
+        // 设置角色信息用于显示悬浮卡片
+        if (point.eventData) {
+          setHoveredCharacter({
+            id: `journey-${point.index}`,
+            name: point.eventData.nanming,
+            pinyin: '',
+            aliases: [],
+            type: CharacterType.EVENT,
+            faction: '取经路径',
+            rank: point.index + 1,
+            level: {
+              id: `difficulty-${point.index}`,
+              name: `第${point.index + 1}难`,
+              tier: point.index + 1
+            },
+            description: point.eventData.shijianmiaoshu,
             visual: {
-              color: journeyPoint.color,
-              size: journeyPoint.radius,
-              emissiveIntensity: journeyPoint.emissiveIntensity || 1.0
+              color: '#ffd700',
+              size: point.radius,
+              emissiveIntensity: 0.8,
             },
             metadata: {
-              source: '西游记',
+              source: 'events.db',
               lastModified: new Date().toISOString(),
-              tags: ['取经', '九九八十一难'],
-              verified: true
+              tags: ['九九八十一难', point.eventData.didian, point.eventData.xiangzhengyi],
+              verified: true,
+            },
+            // 扩展事件数据
+            eventInfo: {
+              nanci: point.eventData.nanci,
+              zhuyaorenwu: point.eventData.zhuyaorenwu,
+              didian: point.eventData.didian,
+              xiangzhengyi: point.eventData.xiangzhengyi,
+              wenhuaneihan: point.eventData.wenhuaneihan,
             }
-          }
-          
-          // 将简化的角色信息传递给store
-          setHoveredCharacter(characterInfo as any)
+          } as any)
           setShowInfoCard(true)
-          
-          // 清除悬停状态
-          setHoveredIndex(null)
-          setHoveredPoint(null)
         }
+        
+        gl.domElement.style.cursor = 'pointer'
       }
-    } else {
-      // 如果点击了背景，取消选择
-      setSelectedIndex(null)
-      setSelectedPoint(null)
-      
-      // 如果没有悬停的点，清除信息卡片并恢复旋转
-      if (hoveredIndex === null) {
-        setShowInfoCard(false)
-        setAnimating(true)
+    } else if (hoveredIndex !== null) {
+      setHoveredIndex(null)
+      setHoveredPoint(null)
+      setHoveredCharacter(null)
+      setShowInfoCard(false)
+      gl.domElement.style.cursor = 'default'
+    }
+  }
+
+  // 处理点击 - 选中事件
+  const handlePointerDown = (event: PointerEvent) => {
+    if (!meshRef.current || points.length === 0) return
+    
+    updateMousePosition(event)
+    raycaster.setFromCamera(mouse, camera)
+    
+    const intersects = raycaster.intersectObject(meshRef.current)
+    
+    if (intersects.length > 0) {
+      const instanceId = intersects[0].instanceId
+      if (instanceId !== undefined) {
+        const point = points[instanceId]
+        
+        if (selectedIndex === instanceId) {
+          // 取消选中
+          setSelectedIndex(null)
+          setSelectedPoint(null)
+          setAnimating(true)
+        } else {
+          // 选中新点
+          setSelectedIndex(instanceId)
+          setSelectedPoint(point)
+          setAnimating(false) // 暂停银河系旋转
+          
+          console.log(`🎯 选中第${point.index + 1}难:`, point.eventData?.nanming || point.difficulty)
+          if (point.eventData) {
+            console.log('📍 地点:', point.eventData.didian)
+            console.log('👥 主要人物:', point.eventData.zhuyaorenwu)
+            console.log('📖 事件描述:', point.eventData.shijianmiaoshu)
+          }
+        }
       }
     }
   }
-  
-  // 清除悬停状态
-  const clearHover = () => {
-    // 如果有选中的点，不清除信息卡片
-    if (selectedIndex !== null) return
-    
-    setHoveredIndex(null)
-    setHoveredPoint(null)
-    setShowInfoCard(false)
-    
-    // 当取消选中点时，恢复银河系旋转
-    setAnimating(true)
-  }
 
-  // 添加事件监听器
+  // 绑定事件监听器
   useEffect(() => {
     const canvas = gl.domElement
-    
-    // 添加事件监听器 - 完全按照select.html实现
     canvas.addEventListener('pointermove', handlePointerMove)
     canvas.addEventListener('pointerdown', handlePointerDown)
     
     return () => {
-      // 移除事件监听器
       canvas.removeEventListener('pointermove', handlePointerMove)
       canvas.removeEventListener('pointerdown', handlePointerDown)
     }
-  }, [camera, gl, points, setAnimating, setShowInfoCard, hoveredIndex, selectedIndex])
+  }, [hoveredIndex, selectedIndex, points])
 
-  // 动画更新
-  useFrame(() => {
-    if (!meshRef.current || points.length === 0 || !visible) return
+  // 更新实例矩阵
+  useEffect(() => {
+    if (!meshRef.current || points.length === 0) return
 
-    const currentTime = Date.now()
-    const deltaTime = currentTime - startTime.current
-    
-    // 不再在useFrame中处理射线检测，完全由事件监听器处理
-
-    points.forEach((point, i) => {
-      // 浮动效果 - 使用配置的浮动幅度
-      const floatOffset = Math.sin(deltaTime * 0.001 * animationSpeed + point.userData.spiralAngle) * journeyConfig.floatAmplitude
-
-      // 更新位置
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i]
+      
       tempObject.position.copy(point.position)
-      tempObject.position.y += floatOffset
-
-      // 脉冲效果 - 仅对非悬停和非选中点应用
-      let pulseScale = 1.0
-      if (i !== selectedIndex && i !== hoveredIndex) {
-        // 只有非选中点和非悬浮点才应用脉冲效果
-        pulseScale = 1 + Math.sin(deltaTime * 0.002 * animationSpeed + point.userData.progressRatio * Math.PI) * journeyConfig.pulseIntensity
-      }
-
-      // 大小变化 - 添加更复杂的大小变化，但仅对非悬停和非选中点
-      let sizeVariation = 1.0
-      if (i !== selectedIndex && i !== hoveredIndex) {
-        // 只有非选中点和非悬浮点才应用大小变化
-        sizeVariation = 1 + (
-          Math.sin(deltaTime * 0.0015 * animationSpeed + point.userData.spiralAngle * 2) * 0.3 +
-          Math.cos(deltaTime * 0.001 * animationSpeed + point.userData.progressRatio * Math.PI * 3) * 0.2
-        ) * journeyConfig.sizeVariation
-      }
-
-      // 如果是被悬停或选中的点，增加其大小但不脉冲
-      if (i === hoveredIndex) {
-        // 悬浮点使用固定放大倍数，不再有动画变化
-        sizeVariation = 1.5
-      } else if (i === selectedIndex) {
-        // 选中点使用固定放大倍数，不再有动画变化
-        sizeVariation = 1.8
-      }
-
-      const finalScale = point.radius * globalSize * pulseScale * sizeVariation
-      tempObject.scale.setScalar(finalScale)
-
+      tempObject.scale.setScalar(point.radius * globalSize)
       tempObject.updateMatrix()
       
-      // 安全地设置矩阵和颜色
-      if (meshRef.current) {
-        meshRef.current.setMatrixAt(i, tempObject.matrix)
-        
-        // 更新点的颜色
-        if (meshRef.current.instanceColor) {
-          if (i === selectedIndex) {
-            // 选中的点使用白色高亮
-            const highlightColor = new Color(0xffffff)
-            meshRef.current.setColorAt(i, highlightColor)
-          } else if (i === hoveredIndex) {
-            // 悬停的点使用蓝色高亮
-            const hoverColor = new Color(0x00aaff)
-            meshRef.current.setColorAt(i, hoverColor)
-          } else {
-            // 恢复原始颜色
-            const originalColor = new Color(point.color)
-            meshRef.current.setColorAt(i, originalColor)
-          }
-        }
-      }
-    })
+      meshRef.current.setMatrixAt(i, tempObject.matrix)
+    }
+    
+    meshRef.current.instanceMatrix.needsUpdate = true
+  }, [points, globalSize, tempObject])
 
-    // 更新脉冲外壳效果 - 为选中或悬停的点
-    const activePoint = selectedPoint || hoveredPoint
-    if (activePoint) {
-      // 获取当前活动点的位置
-      const floatOffset = Math.sin(deltaTime * 0.001 * animationSpeed + activePoint.userData.spiralAngle) * journeyConfig.floatAmplitude;
-      
-      // 更新内层外壳
-      if (pulseShellRef.current) {
-        // 更新外壳位置
-        pulseShellRef.current.position.copy(activePoint.position);
-        pulseShellRef.current.position.y += floatOffset;
-        
-        // 脉冲外壳动画效果 - 保持脉冲动画效果
-        const pulseShellScale = 1.5 + Math.sin(deltaTime * 0.004 * animationSpeed) * 0.3;
-        
-        const baseSize = activePoint.radius * globalSize * 1.3;
-        pulseShellRef.current.scale.setScalar(baseSize * pulseShellScale);
-        
-        // 更新外壳透明度 - 呼吸效果
-        const material = pulseShellRef.current.material as MeshBasicMaterial;
-        
-        // 选中的点使用白色，悬停的点使用蓝色
-        if (selectedPoint) {
-          material.color.set(0xffffff);
-          material.opacity = 0.5 + Math.sin(deltaTime * 0.003 * animationSpeed) * 0.2;
-        } else {
-          material.color.set(0x00aaff);
-          material.opacity = 0.4 + Math.sin(deltaTime * 0.003 * animationSpeed) * 0.2;
-        }
-      }
-      
-      // 更新外层外壳
-      if (outerShellRef.current) {
-        // 更新外壳位置
-        outerShellRef.current.position.copy(activePoint.position);
-        outerShellRef.current.position.y += floatOffset;
-        
-        // 外层外壳动画效果 - 保持脉冲动画效果
-        const outerShellScale = 2.2 + Math.sin(deltaTime * 0.002 * animationSpeed) * 0.5;
-        
-        const outerBaseSize = activePoint.radius * globalSize * 1.5;
-        outerShellRef.current.scale.setScalar(outerBaseSize * outerShellScale);
-        
-        // 更新外壳透明度 - 呼吸效果
-        const material = outerShellRef.current.material as MeshBasicMaterial;
-        
-        // 选中的点使用白色，悬停的点使用蓝色
-        if (selectedPoint) {
-          material.color.set(0xffffff);
-          material.opacity = 0.3 + Math.cos(deltaTime * 0.002 * animationSpeed) * 0.1;
-        } else {
-          material.color.set(0x00aaff);
-          material.opacity = 0.2 + Math.cos(deltaTime * 0.002 * animationSpeed) * 0.1;
-        }
-        
-        // 旋转外层外壳，增加动态效果
-        outerShellRef.current.rotation.y += 0.005;
-        outerShellRef.current.rotation.x += 0.002;
-      }
+  // 更新脉冲外壳位置
+  useEffect(() => {
+    if (hoveredPoint && pulseShellRef.current) {
+      pulseShellRef.current.position.copy(hoveredPoint.position)
+      pulseShellRef.current.visible = true
+    } else if (pulseShellRef.current) {
+      pulseShellRef.current.visible = false
     }
 
-    // 确保meshRef.current存在
-    if (meshRef.current) {
-      meshRef.current.instanceMatrix.needsUpdate = true
-      if (meshRef.current.instanceColor) {
-        meshRef.current.instanceColor.needsUpdate = true
+    if (selectedPoint && outerShellRef.current) {
+      outerShellRef.current.position.copy(selectedPoint.position)
+      outerShellRef.current.visible = true
+    } else if (outerShellRef.current) {
+      outerShellRef.current.visible = false
+    }
+  }, [hoveredPoint, selectedPoint])
+
+  // 动画循环
+  useFrame(() => {
+    if (!meshRef.current || !visible) return
+
+    const elapsed = (Date.now() - startTime.current) * 0.001 * animationSpeed
+    
+    for (let i = 0; i < points.length; i++) {
+      const point = points[i]
+      
+      // 浮动动画
+      const floatY = Math.sin(elapsed + i * 0.1) * 0.1
+      tempObject.position.copy(point.position)
+      tempObject.position.y += floatY
+      
+      // 脉冲大小变化
+      let pulseScale = 1 + Math.sin(elapsed * 2 + i * 0.2) * 0.1
+      
+      // 悬浮和选中状态的特殊效果
+      if (i === hoveredIndex) {
+        pulseScale *= 1.3 // 悬浮时放大
       }
+      if (i === selectedIndex) {
+        pulseScale *= 1.5 // 选中时更大
+      }
+      
+      tempObject.scale.setScalar(point.radius * globalSize * pulseScale)
+      tempObject.updateMatrix()
+      meshRef.current.setMatrixAt(i, tempObject.matrix)
+    }
+    
+    meshRef.current.instanceMatrix.needsUpdate = true
+
+    // 脉冲外壳动画
+    if (pulseShellRef.current && pulseShellRef.current.visible) {
+      const pulseScale = 1.5 + Math.sin(elapsed * 4) * 0.3
+      pulseShellRef.current.scale.setScalar(pulseScale)
+    }
+
+    if (outerShellRef.current && outerShellRef.current.visible) {
+      const outerScale = 2.0 + Math.sin(elapsed * 2) * 0.5
+      outerShellRef.current.scale.setScalar(outerScale)
     }
   })
 
-  // 确保组件卸载时恢复银河系旋转
-  useEffect(() => {
-    return () => {
-      setAnimating(true)
-    }
-  }, [setAnimating])
-
-  if (points.length === 0 || !visible) return null
+  if (!visible || points.length === 0) return null
 
   return (
-    <>
-      {/* 主要的点实例 */}
-      <instancedMesh
-        ref={meshRef}
-        args={[undefined, undefined, points.length]}
-        frustumCulled={true}
+    <group>
+      {/* 主要的实例化球体 */}
+      <instancedMesh 
+        ref={meshRef} 
+        args={[new SphereGeometry(1, 16, 12), material, points.length]}
+      />
+      
+      {/* 悬浮时的脉冲外壳 */}
+      <mesh 
+        ref={pulseShellRef}
+        visible={false}
       >
-        <sphereGeometry args={[1, 16, 16]} />
-        <meshStandardMaterial
-          metalness={metalness}
-          roughness={roughness}
-          emissive="#ffffff"
-          emissiveIntensity={emissiveIntensity}
-          transparent={opacity < 1}
-          opacity={opacity}
-        />
-      </instancedMesh>
+        <sphereGeometry args={[1.2, 16, 12]} />
+        <primitive object={pulseShellMaterial} />
+      </mesh>
       
-      {/* 活动点的内层脉冲外壳效果 */}
-      {(hoveredPoint || selectedPoint) && (
-        <mesh
-          ref={pulseShellRef}
-          position={(selectedPoint || hoveredPoint)!.position.clone()}
-          visible={!!(selectedPoint || hoveredPoint)}
-        >
-          <sphereGeometry args={[1, 24, 24]} />
-          <meshBasicMaterial
-            color={selectedPoint ? "#ffffff" : "#00aaff"}
-            transparent={true}
-            opacity={0.4}
-            wireframe={false}
-          />
-        </mesh>
-      )}
-      
-      {/* 活动点的外层脉冲外壳效果 */}
-      {(hoveredPoint || selectedPoint) && (
-        <mesh
-          ref={outerShellRef}
-          position={(selectedPoint || hoveredPoint)!.position.clone()}
-          visible={!!(selectedPoint || hoveredPoint)}
-        >
-          <sphereGeometry args={[1, 20, 20]} />
-          <meshBasicMaterial
-            color={selectedPoint ? "#ffffff" : "#00aaff"}
-            transparent={true}
-            opacity={0.15}
-            wireframe={false}
-          />
-        </mesh>
-      )}
-    </>
+      {/* 选中时的外层光环 */}
+      <mesh 
+        ref={outerShellRef}
+        visible={false}
+      >
+        <sphereGeometry args={[1.5, 16, 12]} />
+        <primitive object={outerShellMaterial} />
+      </mesh>
+    </group>
   )
 }

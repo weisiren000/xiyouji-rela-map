@@ -13,6 +13,7 @@ const PORT = 3003
 
 // 数据库路径配置
 const DB_PATH = path.join(__dirname, '../../data/characters.db')
+const EVENTS_DB_PATH = path.join(__dirname, '../../data/events.db')
 
 // 中间件
 app.use(cors())
@@ -20,6 +21,7 @@ app.use(express.json())
 
 // 数据库连接
 let db = null
+let eventsDb = null
 
 /**
  * 初始化数据库连接
@@ -36,6 +38,25 @@ function initDatabase() {
     
   } catch (error) {
     console.error('❌ 数据库连接失败:', error)
+    throw error
+  }
+}
+
+/**
+ * 初始化事件数据库连接
+ */
+function initEventsDatabase() {
+  try {
+    eventsDb = new Database(EVENTS_DB_PATH)
+    console.log('✅ Events数据库连接成功')
+    console.log(`📍 Events数据库路径: ${EVENTS_DB_PATH}`)
+    
+    // 验证数据库
+    const count = eventsDb.prepare('SELECT COUNT(*) as count FROM event').get().count
+    console.log(`📚 数据库中有 ${count} 个事件(八十一难)`)
+    
+  } catch (error) {
+    console.error('❌ Events数据库连接失败:', error)
     throw error
   }
 }
@@ -504,12 +525,158 @@ app.post('/api/cache/refresh', async (req, res) => {
   }
 })
 
+/**
+ * 获取所有事件数据 (九九八十一难)
+ */
+app.get('/api/events', async (req, res) => {
+  try {
+    const stmt = eventsDb.prepare('SELECT * FROM event ORDER BY nanci ASC')
+    const events = stmt.all()
+    
+    res.json({
+      success: true,
+      data: events,
+      count: events.length,
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    console.error('❌ 获取事件数据失败:', error)
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
+/**
+ * 根据难次获取特定事件
+ */
+app.get('/api/events/:nanci', async (req, res) => {
+  try {
+    const nanci = parseInt(req.params.nanci)
+    if (isNaN(nanci) || nanci < 1 || nanci > 81) {
+      return res.status(400).json({
+        success: false,
+        error: '难次必须是1-81之间的数字',
+        timestamp: new Date().toISOString()
+      })
+    }
+
+    const stmt = eventsDb.prepare('SELECT * FROM event WHERE nanci = ?')
+    const event = stmt.get(nanci)
+    
+    if (!event) {
+      return res.status(404).json({
+        success: false,
+        error: `第${nanci}难不存在`,
+        timestamp: new Date().toISOString()
+      })
+    }
+
+    res.json({
+      success: true,
+      data: event,
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    console.error('❌ 获取特定事件失败:', error)
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
+/**
+ * 搜索事件数据
+ */
+app.get('/api/events/search', async (req, res) => {
+  try {
+    const { keyword, limit = 50 } = req.query
+    
+    if (!keyword) {
+      return res.status(400).json({
+        success: false,
+        error: '请提供搜索关键词',
+        timestamp: new Date().toISOString()
+      })
+    }
+
+    const stmt = eventsDb.prepare(`
+      SELECT * FROM event 
+      WHERE nanming LIKE ? 
+         OR zhuyaorenwu LIKE ? 
+         OR didian LIKE ? 
+         OR shijianmiaoshu LIKE ?
+      ORDER BY nanci ASC
+      LIMIT ?
+    `)
+    
+    const searchTerm = `%${keyword}%`
+    const events = stmt.all(searchTerm, searchTerm, searchTerm, searchTerm, parseInt(limit))
+    
+    res.json({
+      success: true,
+      data: events,
+      count: events.length,
+      keyword,
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    console.error('❌ 搜索事件数据失败:', error)
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
+/**
+ * 获取事件统计信息
+ */
+app.get('/api/events/stats', async (req, res) => {
+  try {
+    const totalStmt = eventsDb.prepare('SELECT COUNT(*) as count FROM event')
+    const total = totalStmt.get()
+
+    const locationsStmt = eventsDb.prepare('SELECT COUNT(DISTINCT didian) as count FROM event')
+    const locations = locationsStmt.get()
+
+    const avgLengthStmt = eventsDb.prepare('SELECT AVG(LENGTH(shijianmiaoshu)) as avgLength FROM event')
+    const avgLength = avgLengthStmt.get()
+
+    res.json({
+      success: true,
+      data: {
+        totalEvents: total.count,
+        uniqueLocations: locations.count,
+        averageDescriptionLength: Math.round(avgLength.avgLength || 0),
+      },
+      timestamp: new Date().toISOString()
+    })
+  } catch (error) {
+    console.error('❌ 获取事件统计失败:', error)
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
 // 优雅关闭
 process.on('SIGINT', () => {
   console.log('\n🔄 正在关闭服务器...')
   if (db) {
     db.close()
-    console.log('✅ 数据库连接已关闭')
+    console.log('✅ 角色数据库连接已关闭')
+  }
+  if (eventsDb) {
+    eventsDb.close()
+    console.log('✅ 事件数据库连接已关闭')
   }
   process.exit(0)
 })
@@ -517,12 +684,15 @@ process.on('SIGINT', () => {
 // 启动服务器
 try {
   initDatabase()
+  initEventsDatabase()
   
   app.listen(PORT, () => {
     console.log(`🚀 西游记数据服务器启动成功！(SQLite版本)`)
     console.log(`📡 服务地址: http://localhost:${PORT}`)
-    console.log(`🗄️ 数据库路径: ${DB_PATH}`)
+    console.log(`🗄️ 角色数据库: ${DB_PATH}`)
+    console.log(`📚 事件数据库: ${EVENTS_DB_PATH}`)
     console.log(`⚡ 新功能: 支持高级搜索 /api/characters/search`)
+    console.log(`⚡ 新功能: 支持事件数据 /api/events`)
     console.log(`⏰ 启动时间: ${new Date().toLocaleString()}`)
   })
   

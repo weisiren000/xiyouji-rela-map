@@ -72,7 +72,8 @@ export enum CharacterType {
   DRAGON = 'dragon',            // 龙族
   CELESTIAL = 'celestial',      // 天庭
   BUDDHIST = 'buddhist',        // 佛教
-  UNDERWORLD = 'underworld'     // 地府
+  UNDERWORLD = 'underworld',    // 地府
+  EVENT = 'event'               // 事件/难题
 }
 
 export enum RelationshipType {

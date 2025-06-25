@@ -1,7 +1,7 @@
 import { Vector3, Color } from 'three'
 
 /**
- * 西游记取经路径点接口
+ * 西游记取经路径点接口 - 增强版，包含事件数据
  */
 export interface JourneyPoint {
   id: string
@@ -10,7 +10,9 @@ export interface JourneyPoint {
   radius: number
   color: string
   emissiveIntensity: number
-  difficulty: string // 难度名称（可选）
+  // 事件数据
+  eventData?: EventData | null
+  difficulty: string // 难度名称
   userData: {
     spiralAngle: number
     distanceFromCenter: number
@@ -81,13 +83,16 @@ export const DEFAULT_JOURNEY_CONFIG: JourneyConfig = {
 /**
  * 生成西游记九九八十一难的取经路径点
  * 使用银河系悬臂对数螺旋分布
+ * 可以选择性地包含真实的事件数据
  */
-export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CONFIG): JourneyPoint[] {
+export function generateJourneyPoints(
+  config: JourneyConfig = DEFAULT_JOURNEY_CONFIG,
+  eventsData?: EventData[]
+): JourneyPoint[] {
   const {
     pointCount,
     maxRadius,
     minRadius,
-    totalTurns,
     waveHeight,
     waveFrequency,
     pointSize,
@@ -113,8 +118,12 @@ export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CO
     const z = radius * Math.sin(spiralAngle)
     const y = waveHeight * Math.sin(waveFrequency * spiralAngle)
 
+    // 获取对应的事件数据
+    const eventData = eventsData?.find(event => event.nanci === i + 1)
+    
     // 生成渐变颜色：从蓝色(起点)到金色(终点)
-    const color = generateJourneyColor(progressRatio)
+    // 如果有事件数据，可以根据事件类型调整颜色
+    const color = generateJourneyColor(progressRatio, eventData)
 
     // 计算发光强度：越接近终点越亮
     const currentEmissiveIntensity = emissiveIntensity * (0.3 + 0.7 * progressRatio)
@@ -131,12 +140,13 @@ export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CO
       radius: currentRadius,
       color: color,
       emissiveIntensity: currentEmissiveIntensity,
-      difficulty: `第${i + 1}难`, // 可以后续扩展为具体的难度名称
+      difficulty: eventData?.nanming || `第${i + 1}难`, // 使用真实的难名或默认名称
       userData: {
         spiralAngle,
         distanceFromCenter: radius,
         progressRatio,
       },
+      eventData, // 包含完整的事件数据
     }
 
     points.push(point)
@@ -148,8 +158,9 @@ export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CO
 /**
  * 生成取经路径的渐变颜色
  * 从蓝色(起点)渐变到金色(终点)
+ * 可以根据事件数据调整颜色
  */
-function generateJourneyColor(progressRatio: number): string {
+function generateJourneyColor(progressRatio: number, eventData?: EventData): string {
   // 起点颜色：深蓝色 #1e40af
   const startColor = new Color(0x1e40af)
 
@@ -171,27 +182,152 @@ function generateJourneyColor(progressRatio: number): string {
     resultColor = midColor.clone().lerp(endColor, localRatio)
   }
 
+  // 如果有事件数据，可以根据内容调整颜色强度
+  if (eventData) {
+    // 根据文化内涵或象征意义调整颜色深浅
+    const hasDeepMeaning = eventData.wenhuaneihan.length > 10 || eventData.xiangzhengyi.length > 10
+    if (hasDeepMeaning) {
+      // 有深层文化内涵的事件使用更亮的颜色
+      resultColor.multiplyScalar(1.2)
+    }
+  }
+
   return `#${resultColor.getHexString()}`
 }
 
 /**
  * 获取特定难度的详细信息
- * 可以扩展为包含具体的西游记故事情节
+ * 整合真实的西游记事件数据
  */
-export function getJourneyDifficultyInfo(index: number): {
+export function getJourneyDifficultyInfo(index: number, eventData?: EventData): {
   name: string
   description: string
   location: string
   type: 'demon' | 'natural' | 'divine' | 'human'
+  characters: string[]
+  culturalMeaning: string
+  symbolism: string
 } {
-  // 这里可以扩展为完整的81难数据
-  // 目前返回基础信息
+  if (eventData) {
+    // 使用真实的事件数据
+    return {
+      name: eventData.nanming,
+      description: eventData.shijianmiaoshu,
+      location: eventData.didian,
+      type: determineEventType(eventData),
+      characters: eventData.zhuyaorenwu.split('、').filter(name => name.trim()),
+      culturalMeaning: eventData.wenhuaneihan,
+      symbolism: eventData.xiangzhengyi,
+    }
+  }
+
+  // 回退到基础信息
   return {
     name: `第${index + 1}难`,
     description: `西游记取经路上的第${index + 1}个磨难`,
     location: '未知地点',
     type: index % 4 === 0 ? 'demon' :
           index % 4 === 1 ? 'natural' :
-          index % 4 === 2 ? 'divine' : 'human'
+          index % 4 === 2 ? 'divine' : 'human',
+    characters: [],
+    culturalMeaning: '',
+    symbolism: '',
   }
+}
+
+/**
+ * 根据事件内容判断事件类型
+ */
+function determineEventType(eventData: EventData): 'demon' | 'natural' | 'divine' | 'human' {
+  const description = eventData.shijianmiaoshu.toLowerCase()
+  const characters = eventData.zhuyaorenwu.toLowerCase()
+  
+  // 妖魔类：包含妖、怪、精、魔等
+  if (description.includes('妖') || description.includes('怪') || 
+      description.includes('精') || description.includes('魔') ||
+      characters.includes('妖') || characters.includes('怪')) {
+    return 'demon'
+  }
+  
+  // 神仙类：包含佛、神、仙、菩萨等
+  if (description.includes('佛') || description.includes('神') || 
+      description.includes('仙') || description.includes('菩萨') ||
+      characters.includes('佛') || characters.includes('观音') ||
+      characters.includes('如来')) {
+    return 'divine'
+  }
+  
+  // 自然类：包含山、水、河、天气等
+  if (description.includes('山') || description.includes('河') || 
+      description.includes('水') || description.includes('风') ||
+      description.includes('雨') || description.includes('火')) {
+    return 'natural'
+  }
+  
+  // 默认为人类
+  return 'human'
+}
+
+/**
+ * 异步生成带有事件数据的西游记取经路径点
+ */
+export async function generateJourneyPointsWithEvents(
+  config: JourneyConfig = DEFAULT_JOURNEY_CONFIG
+): Promise<JourneyPoint[]> {
+  try {
+    // 首先获取所有事件数据
+    const response = await fetch('http://localhost:3003/api/events')
+    let eventsData: EventData[] = []
+    
+    if (response.ok) {
+      const result = await response.json()
+      if (result.success) {
+        eventsData = result.data
+        console.log(`📚 成功获取 ${eventsData.length} 个事件数据`)
+      }
+    } else {
+      console.warn('⚠️ 无法获取事件数据，使用默认名称')
+    }
+
+    // 生成基础的路径点
+    const basePoints = generateJourneyPoints(config)
+    
+    // 为每个点添加事件数据
+    const pointsWithEvents = basePoints.map((point, index) => {
+      const eventData = eventsData.find(event => event.nanci === index + 1)
+      
+      return {
+        ...point,
+        eventData,
+        difficulty: eventData ? eventData.nanming : `第${index + 1}难`,
+      }
+    })
+
+    console.log(`✅ 成功生成 ${pointsWithEvents.length} 个带事件数据的路径点`)
+    return pointsWithEvents
+    
+  } catch (error) {
+    console.error('❌ 生成带事件数据的路径点失败:', error)
+    // 回退到基础生成器
+    const basePoints = generateJourneyPoints(config)
+    return basePoints.map((point, index) => ({
+      ...point,
+      eventData: null,
+      difficulty: `第${index + 1}难`,
+    }))
+  }
+}
+
+/**
+ * 事件数据接口（临时定义，避免导入错误）
+ */
+interface EventData {
+  id: number
+  nanci: number
+  nanming: string
+  zhuyaorenwu: string
+  didian: string
+  shijianmiaoshu: string
+  xiangzhengyi: string
+  wenhuaneihan: string
 }
