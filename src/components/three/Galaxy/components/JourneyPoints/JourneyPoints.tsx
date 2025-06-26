@@ -3,29 +3,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { InstancedMesh, Object3D, Color, Vector3, Raycaster, Mesh, MeshBasicMaterial, SphereGeometry, Matrix4, Vector2 } from 'three'
 import { JourneyPoint } from '@utils/three/journeyGenerator'
 import { useGalaxyStore } from '@stores/useGalaxyStore'
-import { useCharacterInfoStore } from '@stores/useCharacterInfoStore'
-import { CharacterType } from '@/types/character'
-
-// 创建一个简化版的角色信息类型，与CharacterInfoStore兼容
-interface SimpleCharacterInfo {
-  id: string
-  name: string
-  type: CharacterType
-  faction: string
-  rank: number
-  description: string
-  visual: {
-    color: string
-    size: number
-    emissiveIntensity: number
-  }
-  metadata: {
-    source: string
-    lastModified: string
-    tags: string[]
-    verified: boolean
-  }
-}
+import { useEventInfoStore } from '@stores/useEventInfoStore'
 
 interface JourneyPointsProps {
   points: JourneyPoint[]
@@ -76,8 +54,8 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   // 获取动画配置参数和控制方法
   const { journeyConfig, setAnimating } = useGalaxyStore()
   
-  // 获取角色信息状态
-  const { setHoveredCharacter, setShowInfoCard } = useCharacterInfoStore()
+  // 获取事件信息状态
+  const { setHoveredEvent, setShowInfoCard, setMousePosition } = useEventInfoStore()
 
   // 更新鼠标位置的辅助函数 - 直接从select.html复制
   const updateMousePosition = (event: MouseEvent | PointerEvent) => {
@@ -86,6 +64,9 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
     const y = event.clientY - rect.top
     mouse.x = (x / rect.width) * 2 - 1
     mouse.y = -(y / rect.height) * 2 + 1
+
+    // 同时更新事件信息store的鼠标位置
+    setMousePosition(new Vector2(event.clientX, event.clientY))
   }
 
   // 处理鼠标移动 - 完全重新实现
@@ -126,37 +107,38 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const handlePointHover = (index: number) => {
     // 如果已经有选中的点，不改变悬停状态
     if (selectedIndex !== null) return
-    
+
     setHoveredIndex(index)
     setHoveredPoint(points[index])
-    
+
     // 当选中点时，暂停银河系旋转
     setAnimating(false)
-    
-    // 创建一个简化的角色信息对象
+
+    // 获取对应的事件数据
     const journeyPoint = points[index]
-    const characterInfo: SimpleCharacterInfo = {
-      id: journeyPoint.id || `journey-point-${index}`,
-      name: journeyPoint.difficulty || `第${index + 1}难`,
-      type: CharacterType.BUDDHIST, // 设置为佛教类型
-      faction: '取经路上',
-      rank: index + 1,
-      description: `西游记第${index + 1}难: ${journeyPoint.difficulty || ''}`,
-      visual: {
-        color: journeyPoint.color,
-        size: journeyPoint.radius,
-        emissiveIntensity: journeyPoint.emissiveIntensity || 1.0
-      },
-      metadata: {
-        source: '西游记',
-        lastModified: new Date().toISOString(),
-        tags: ['取经', '九九八十一难'],
-        verified: true
+    if (journeyPoint.eventData) {
+      // 如果有真实的事件数据，使用它
+      setHoveredEvent(journeyPoint.eventData)
+    } else {
+      // 如果没有事件数据，创建一个临时的事件对象
+      const tempEvent = {
+        id: index + 1,
+        nanci: index + 1,
+        nanming: journeyPoint.difficulty || `第${index + 1}难`,
+        zhuyaorenwu: '唐僧师徒',
+        didian: '取经路上',
+        shijianmiaoshu: `西游记第${index + 1}难的相关事件`,
+        xiangzhengyi: '修行路上的考验与磨砺',
+        wenhuaneihan: '体现了佛教文化中的修行理念',
+        metadata: {
+          source: '西游记',
+          lastModified: new Date().toISOString(),
+          verified: false
+        }
       }
+      setHoveredEvent(tempEvent)
     }
-    
-    // 将简化的角色信息传递给store
-    setHoveredCharacter(characterInfo as any)
+
     setShowInfoCard(true)
   }
   
@@ -237,11 +219,12 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const clearHover = () => {
     // 如果有选中的点，不清除信息卡片
     if (selectedIndex !== null) return
-    
+
     setHoveredIndex(null)
     setHoveredPoint(null)
+    setHoveredEvent(null)
     setShowInfoCard(false)
-    
+
     // 当取消选中点时，恢复银河系旋转
     setAnimating(true)
   }
@@ -259,7 +242,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
       canvas.removeEventListener('pointermove', handlePointerMove)
       canvas.removeEventListener('pointerdown', handlePointerDown)
     }
-  }, [camera, gl, points, setAnimating, setShowInfoCard, hoveredIndex, selectedIndex])
+  }, [camera, gl, points, setAnimating, setShowInfoCard, setHoveredEvent, hoveredIndex, selectedIndex])
 
   // 动画更新
   useFrame(() => {

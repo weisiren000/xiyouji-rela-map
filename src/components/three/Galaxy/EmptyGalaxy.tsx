@@ -1,9 +1,11 @@
-import React, { useRef, useMemo, useEffect } from 'react'
+import React, { useRef, useMemo, useEffect, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Group } from 'three'
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { generateGalaxyPlanets } from '@utils/three/galaxyGenerator'
-import { generateJourneyPoints } from '@utils/three/journeyGenerator'
+import { generateJourneyPoints, generateJourneyPointsWithEvents } from '@utils/three/journeyGenerator'
+import { getAllEvents } from '@services/eventsService'
+import type { EventData } from '@/types/events'
 import { PlanetCluster } from './components/PlanetCluster'
 import { FogParticles } from './components/FogParticles'
 import { JourneyPoints } from './components/JourneyPoints'
@@ -15,7 +17,12 @@ import { JourneyPoints } from './components/JourneyPoints'
  */
 export const EmptyGalaxy: React.FC = () => {
   const groupRef = useRef<Group>(null)
-  
+
+  // 事件数据状态
+  const [eventsData, setEventsData] = useState<EventData[]>([])
+  const [eventsLoading, setEventsLoading] = useState(true)
+  const [eventsError, setEventsError] = useState<string | null>(null)
+
   const {
     galaxyConfig,
     journeyConfig,
@@ -25,6 +32,26 @@ export const EmptyGalaxy: React.FC = () => {
     rotationSpeed,
     needsRegeneration,
   } = useGalaxyStore()
+
+  // 加载81难事件数据
+  useEffect(() => {
+    const loadEventsData = async () => {
+      try {
+        setEventsLoading(true)
+        setEventsError(null)
+        const events = await getAllEvents()
+        setEventsData(events)
+        console.log('✅ 成功加载81难事件数据:', events.length, '个事件')
+      } catch (error) {
+        console.error('❌ 加载81难事件数据失败:', error)
+        setEventsError(error instanceof Error ? error.message : '未知错误')
+      } finally {
+        setEventsLoading(false)
+      }
+    }
+
+    loadEventsData()
+  }, [])
 
   // 只有影响星球结构的参数才触发重新生成
   const structuralConfig = useMemo(() => ({
@@ -51,10 +78,24 @@ export const EmptyGalaxy: React.FC = () => {
     return generateGalaxyPlanets(galaxyConfig)
   }, [structuralConfig, galaxyConfig])
 
-  // 生成西游记取经路径点 - 九九八十一难
+  // 生成西游记取经路径点 - 九九八十一难（带真实事件数据）
   const journeyPoints = useMemo(() => {
-    return generateJourneyPoints(journeyConfig)
-  }, [journeyConfig])
+    if (eventsLoading || eventsError || eventsData.length === 0) {
+      // 如果事件数据还在加载或出错，使用默认生成器
+      console.log('🔄 使用默认路径点生成器 (事件数据未就绪)')
+      return generateJourneyPoints(journeyConfig)
+    }
+
+    // 使用真实事件数据生成路径点
+    console.log('✨ 使用真实事件数据生成路径点:', eventsData.length, '个事件')
+    const pointsWithEvents = generateJourneyPointsWithEvents(journeyConfig, eventsData)
+
+    // 验证数据集成
+    const pointsWithEventData = pointsWithEvents.filter(point => point.eventData)
+    console.log('📊 成功集成事件数据的点:', pointsWithEventData.length, '/', pointsWithEvents.length)
+
+    return pointsWithEvents
+  }, [journeyConfig, eventsData, eventsLoading, eventsError])
 
   // 初始化星球数据
   useEffect(() => {
@@ -97,6 +138,13 @@ export const EmptyGalaxy: React.FC = () => {
 
       {/* 注意：这里不包含 CharacterSpheres 组件 */}
       {/* 现在包含了西游记取经路径的81个点，使用单螺旋线从外到内分布 */}
+      {/* ✨ 新功能：集成了真实的81难事件数据，每个点都包含对应的难的详细信息 */}
+      {eventsError && (
+        <mesh position={[0, 50, 0]}>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshBasicMaterial color="red" />
+        </mesh>
+      )}
     </group>
   )
 }

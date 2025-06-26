@@ -4,3 +4,7 @@
 # Python 编译文件
 **/__pycache__
 **/node_modules
+
+data/backup/
+
+doc/data

@@ -1,4 +1,5 @@
 import { Vector3, Color } from 'three'
+import type { EventData } from '@/types/events'
 
 /**
  * 西游记取经路径点接口
@@ -11,6 +12,10 @@ export interface JourneyPoint {
   color: string
   emissiveIntensity: number
   difficulty: string // 难度名称（可选）
+
+  // 真实的81难事件数据
+  eventData?: EventData
+
   userData: {
     spiralAngle: number
     distanceFromCenter: number
@@ -132,6 +137,83 @@ export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CO
       color: color,
       emissiveIntensity: currentEmissiveIntensity,
       difficulty: `第${i + 1}难`, // 可以后续扩展为具体的难度名称
+      userData: {
+        spiralAngle,
+        distanceFromCenter: radius,
+        progressRatio,
+      },
+    }
+
+    points.push(point)
+  }
+
+  return points
+}
+
+/**
+ * 生成带有真实事件数据的西游记取经路径点
+ * 使用银河系悬臂对数螺旋分布，并集成81难真实数据
+ */
+export function generateJourneyPointsWithEvents(
+  config: JourneyConfig = DEFAULT_JOURNEY_CONFIG,
+  eventsData: EventData[] = []
+): JourneyPoint[] {
+  const {
+    pointCount,
+    maxRadius,
+    minRadius,
+    totalTurns,
+    waveHeight,
+    waveFrequency,
+    pointSize,
+    emissiveIntensity,
+    armTightness,
+    armIndex,
+  } = config
+
+  const points: JourneyPoint[] = []
+
+  for (let i = 0; i < pointCount; i++) {
+    // 计算进度比例 (0到1，从外到内)
+    const progressRatio = i / (pointCount - 1)
+
+    // 银河系悬臂对数螺旋：半径从外到内分布
+    const radius = maxRadius - progressRatio * (maxRadius - minRadius)
+
+    // 对数螺旋角度：模拟银河系悬臂效果
+    const spiralAngle = Math.log(radius + 1) * armTightness + (armIndex * 2 * Math.PI / 4)
+
+    // 计算3D位置
+    const x = radius * Math.cos(spiralAngle)
+    const z = radius * Math.sin(spiralAngle)
+    const y = waveHeight * Math.sin(waveFrequency * spiralAngle)
+
+    // 生成渐变颜色：从蓝色(起点)到金色(终点)
+    const color = generateJourneyColor(progressRatio)
+
+    // 计算发光强度：越接近终点越亮
+    const currentEmissiveIntensity = emissiveIntensity * (0.3 + 0.7 * progressRatio)
+
+    // 计算点的大小：重要节点稍大，添加更多变化
+    const baseSize = pointSize * (0.8 + 0.4 * Math.sin(progressRatio * Math.PI))
+    const sizeVariationFactor = 1 + (Math.sin(progressRatio * Math.PI * 4) * 0.3 + Math.cos(progressRatio * Math.PI * 6) * 0.2) * config.sizeVariation
+    const currentRadius = baseSize * sizeVariationFactor
+
+    // 查找对应的事件数据 (i+1 对应难次)
+    const eventData = eventsData.find(event => event.nanci === i + 1)
+
+    // 使用真实数据或默认值
+    const difficulty = eventData ? eventData.nanming : `第${i + 1}难`
+
+    const point: JourneyPoint = {
+      id: `journey_${i}`,
+      index: i,
+      position: new Vector3(x, y, z),
+      radius: currentRadius,
+      color: color,
+      emissiveIntensity: currentEmissiveIntensity,
+      difficulty: difficulty,
+      eventData: eventData, // 添加真实事件数据
       userData: {
         spiralAngle,
         distanceFromCenter: radius,

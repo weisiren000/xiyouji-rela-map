@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import { EmptyGalaxyScene } from '@scenes/EmptyGalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/controls/ControlPanel'
 import { DataDashboard } from '@components/dashboard/DataDashboard'
-import { CharacterInfoOverlay } from '@components/indicators/CharacterInfoOverlay'
+import { EventInfoOverlay } from '@components/indicators/EventInfoOverlay'
 import { CharacterDetailView } from '@components/views/CharacterDetailView'
 import { ModelQuickAccess } from '@components/views/ModelQuickAccess'
 import { SpiralControls } from '@components/controls/SpiralDebugGUI'
-import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
+import { useEventInfoStore } from '@/stores/useEventInfoStore'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
@@ -21,8 +21,8 @@ function EmptyGalaxyPage() {
   const { isLoading, hasData, dataCount } = useLoadingStatus()
   const { isOnline } = useServerConnection()
 
-  // 🌐 全局角色信息状态
-  const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
+  // 🌐 全局事件信息状态
+  const { hoveredEvent, mousePosition, showInfoCard } = useEventInfoStore()
 
   // 🎯 视图状态管理
   const { viewMode, applyCameraPreset } = useGalaxyStore()
@@ -48,12 +48,12 @@ function EmptyGalaxyPage() {
 
   // 🌐 全局状态变化日志
   useEffect(() => {
-    if (hoveredCharacter) {
-      console.log('📱 EmptyGalaxyPage层接收到角色信息:', hoveredCharacter.name)
+    if (hoveredEvent) {
+      console.log('📱 EmptyGalaxyPage层接收到事件信息:', hoveredEvent.nanming)
       console.log('📍 鼠标位置:', mousePosition.x, mousePosition.y)
       console.log('💳 显示信息卡片:', showInfoCard)
     }
-  }, [hoveredCharacter, mousePosition, showInfoCard])
+  }, [hoveredEvent, mousePosition, showInfoCard])
 
   return (
     <div className="app">
@@ -98,10 +98,10 @@ function EmptyGalaxyPage() {
         </div>
       )}
 
-      {/* 🎯 全局角色信息卡片 - 只在银河系视图中显示 */}
+      {/* 🎯 全局事件信息卡片 - 只在银河系视图中显示 */}
       {viewMode === 'galaxy' && (
-        <CharacterInfoOverlay
-          character={hoveredCharacter}
+        <EventInfoOverlay
+          event={hoveredEvent}
           mousePosition={mousePosition}
           visible={showInfoCard}
         />
