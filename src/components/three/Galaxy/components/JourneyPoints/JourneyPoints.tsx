@@ -37,6 +37,8 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const startTime = useRef(Date.now())
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [lastClickTime, setLastClickTime] = useState<number>(0)
+  const [lastClickIndex, setLastClickIndex] = useState<number | null>(null)
   
   // 脉冲外壳相关引用 - 添加两层外壳效果
   const pulseShellRef = useRef<Mesh>(null)
@@ -52,7 +54,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const { camera, gl } = useThree()
   
   // 获取动画配置参数和控制方法
-  const { journeyConfig, setAnimating } = useGalaxyStore()
+  const { journeyConfig, setAnimating, enterEventDetailView } = useGalaxyStore()
   
   // 获取事件信息状态
   const { setHoveredEvent, setShowInfoCard, setMousePosition } = useEventInfoStore()
@@ -142,61 +144,80 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
     setShowInfoCard(true)
   }
   
-  // 处理点击选择 - 完全重新实现
+  // 处理点击选择 - 支持双击进入详情视图
   const handlePointerDown = (event: PointerEvent) => {
     // 更新鼠标位置
     updateMousePosition(event)
-    
+
     // 设置射线
     raycaster.setFromCamera(mouse, camera)
-    
+
     // 如果没有实例网格，不处理
     if (!meshRef.current) return
-    
+
     // 执行射线检测
     const intersects = raycaster.intersectObject(meshRef.current)
-    
+
     if (intersects.length > 0) {
       const instanceId = intersects[0].instanceId
-      
+
       if (instanceId !== undefined) {
-        // 如果点击的是当前选中的点，取消选择
+        const currentTime = Date.now()
+        const journeyPoint = points[instanceId]
+
+        // 检测双击
+        const isDoubleClick =
+          lastClickIndex === instanceId &&
+          currentTime - lastClickTime < 300 // 300ms内的双击
+
+        if (isDoubleClick && journeyPoint.eventData) {
+          // 双击进入详情视图
+          console.log('🎯 双击进入事件详情视图:', journeyPoint.eventData.nanming)
+          enterEventDetailView(journeyPoint.eventData)
+          return
+        }
+
+        // 更新双击检测状态
+        setLastClickTime(currentTime)
+        setLastClickIndex(instanceId)
+
+        // 单击选择逻辑
         if (instanceId === selectedIndex) {
+          // 如果点击的是当前选中的点，取消选择
           setSelectedIndex(null)
           setSelectedPoint(null)
           setAnimating(true) // 恢复银河系旋转
         } else {
           // 否则选择新的点
           setSelectedIndex(instanceId)
-          setSelectedPoint(points[instanceId])
+          setSelectedPoint(journeyPoint)
           setAnimating(false) // 暂停银河系旋转
-          
-          // 创建一个简化的角色信息对象
-          const journeyPoint = points[instanceId]
-          const characterInfo: SimpleCharacterInfo = {
-            id: journeyPoint.id || `journey-point-${instanceId}`,
-            name: journeyPoint.difficulty || `第${instanceId + 1}难`,
-            type: CharacterType.BUDDHIST,
-            faction: '取经路上',
-            rank: instanceId + 1,
-            description: `西游记第${instanceId + 1}难: ${journeyPoint.difficulty || ''}`,
-            visual: {
-              color: journeyPoint.color,
-              size: journeyPoint.radius,
-              emissiveIntensity: journeyPoint.emissiveIntensity || 1.0
-            },
-            metadata: {
-              source: '西游记',
-              lastModified: new Date().toISOString(),
-              tags: ['取经', '九九八十一难'],
-              verified: true
+
+          // 显示事件信息
+          if (journeyPoint.eventData) {
+            setHoveredEvent(journeyPoint.eventData)
+          } else {
+            // 如果没有事件数据，创建一个临时的事件对象
+            const tempEvent = {
+              id: instanceId + 1,
+              nanci: instanceId + 1,
+              nanming: journeyPoint.difficulty || `第${instanceId + 1}难`,
+              zhuyaorenwu: '唐僧师徒',
+              didian: '取经路上',
+              shijianmiaoshu: `西游记第${instanceId + 1}难的相关事件`,
+              xiangzhengyi: '修行路上的考验与磨砺',
+              wenhuaneihan: '体现了佛教文化中的修行理念',
+              metadata: {
+                source: '西游记',
+                lastModified: new Date().toISOString(),
+                verified: false
+              }
             }
+            setHoveredEvent(tempEvent)
           }
-          
-          // 将简化的角色信息传递给store
-          setHoveredCharacter(characterInfo as any)
+
           setShowInfoCard(true)
-          
+
           // 清除悬停状态
           setHoveredIndex(null)
           setHoveredPoint(null)
@@ -206,7 +227,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
       // 如果点击了背景，取消选择
       setSelectedIndex(null)
       setSelectedPoint(null)
-      
+
       // 如果没有悬停的点，清除信息卡片并恢复旋转
       if (hoveredIndex === null) {
         setShowInfoCard(false)

@@ -1,0 +1,82 @@
+/* 事件详情视图样式 */
+.event-detail-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 错误状态 */
+.detail-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.detail-error h2 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+}
+
+.detail-error p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+/* 主要内容区域 */
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  height: 100vh;
+  gap: 0;
+}
+
+/* 左侧3D场景容器 */
+.detail-scene-container {
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+/* 右侧信息面板容器 */
+.detail-panel-container {
+  background: rgba(0, 0, 0, 0.9);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  padding: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .detail-content {
+    grid-template-columns: 1fr 350px;
+  }
+}
+
+@media (max-width: 900px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .detail-panel-container {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-panel-container {
+    max-height: 50vh;
+  }
+}

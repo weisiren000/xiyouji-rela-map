@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import { GalaxyConfig, FogConfig, BloomConfig, PlanetData } from '../types/galaxy'
 import { CharacterData } from '../types/character'
+import { EventData } from '../types/events'
 import { JourneyConfig, DEFAULT_JOURNEY_CONFIG } from '../utils/three/journeyGenerator'
 import { Vector3 } from 'three'
 
@@ -22,6 +23,7 @@ interface GalaxyState {
   // 视图状态管理
   viewMode: 'galaxy' | 'detail'
   selectedCharacter: CharacterData | null
+  selectedEvent: EventData | null
   detailViewCameraPosition: Vector3
 
   // 控制状态
@@ -81,8 +83,10 @@ interface GalaxyState {
   // 视图状态管理方法
   setViewMode: (mode: 'galaxy' | 'detail') => void
   setSelectedCharacter: (character: CharacterData | null) => void
+  setSelectedEvent: (event: EventData | null) => void
   setDetailViewCameraPosition: (position: Vector3) => void
   enterDetailView: (character: CharacterData) => void
+  enterEventDetailView: (event: EventData) => void
   exitDetailView: () => void
 
   // 相机位置控制方法
@@ -154,6 +158,7 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   // 视图状态初始值
   viewMode: 'galaxy',
   selectedCharacter: null,
+  selectedEvent: null,
   detailViewCameraPosition: new Vector3(0, 10, 20), // 详情视图的固定相机位置
 
   isAnimating: true,
@@ -350,15 +355,24 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   // 视图状态管理方法实现
   setViewMode: (mode) => set({ viewMode: mode }),
   setSelectedCharacter: (character) => set({ selectedCharacter: character }),
+  setSelectedEvent: (event) => set({ selectedEvent: event }),
   setDetailViewCameraPosition: (position) => set({ detailViewCameraPosition: position }),
 
   enterDetailView: (character) => set({
     viewMode: 'detail',
-    selectedCharacter: character
+    selectedCharacter: character,
+    selectedEvent: null
+  }),
+
+  enterEventDetailView: (event) => set({
+    viewMode: 'detail',
+    selectedCharacter: null,
+    selectedEvent: event
   }),
 
   exitDetailView: () => set({
     viewMode: 'galaxy',
-    selectedCharacter: null
+    selectedCharacter: null,
+    selectedEvent: null
   }),
 }))

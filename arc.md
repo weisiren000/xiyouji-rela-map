@@ -18,13 +18,17 @@ xiyouji-rela-map/
 │   │   │   ├── ModelEffectGUI/ # 模型特效GUI
 │   │   │   └── CharacterControlPanel/ # 角色控制面板
 │   │   ├── panels/        # 信息面板组件群
+│   │   │   └── EventDetailPanel/ # 事件详情面板 (新增)
 │   │   ├── views/         # 视图组件群
+│   │   │   ├── CharacterDetailView/ # 角色详情视图
+│   │   │   └── EventDetailView/ # 事件详情视图 (新增)
 │   │   ├── indicators/    # 指示器组件群
 │   │   ├── dashboard/     # 仪表盘组件群
 │   │   ├── navigation/    # 导航组件群 (新增)
 │   │   └── three/         # Three.js 3D渲染组件群
 │   │       ├── Effects/   # 特效组件
 │   │       ├── Scenes/    # 场景组件
+│   │       │   └── EventDetailScene/ # 事件详情场景 (新增)
 │   │       ├── Galaxy/    # 星空组件
 │   │       │   └── components/
 │   │       │       ├── JourneyPoints/ # 西游记取经路径点组件 (新增)
@@ -192,6 +196,13 @@ xiyouji-rela-map/
    - 实现与银河系生成器一致的对数螺旋算法
    - 更新GUI面板添加悬臂紧密度和悬臂选择控制
    - 新增"银河悬臂"预设，展示银河系悬臂效果
+13. **空银河系事件详情视图** (EXP158) ✅
+   - 扩展useGalaxyStore支持事件数据的局部视图
+   - 创建EventDetailView、EventDetailPanel、EventDetailScene组件
+   - 实现双击事件点进入详情视图功能
+   - 事件详情面板显示难次、人物、地点、描述、象征意义等
+   - 事件详情场景显示单个事件球体的3D特效
+   - 复用现有的返回按钮和视图切换逻辑
 
 ## 最新技术改进
 - **多颜色渲染**: 实现protagonist(金色)、deity(天蓝色)、demon(红色)等9种颜色

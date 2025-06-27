@@ -4,6 +4,7 @@ import { ControlPanel, InfoDisplay } from '@components/controls/ControlPanel'
 import { DataDashboard } from '@components/dashboard/DataDashboard'
 import { EventInfoOverlay } from '@components/indicators/EventInfoOverlay'
 import { CharacterDetailView } from '@components/views/CharacterDetailView'
+import { EventDetailView } from '@components/views/EventDetailView'
 import { ModelQuickAccess } from '@components/views/ModelQuickAccess'
 import { SpiralControls } from '@components/controls/SpiralDebugGUI'
 import { useEventInfoStore } from '@/stores/useEventInfoStore'
@@ -25,7 +26,7 @@ function EmptyGalaxyPage() {
   const { hoveredEvent, mousePosition, showInfoCard } = useEventInfoStore()
 
   // 🎯 视图状态管理
-  const { viewMode, applyCameraPreset } = useGalaxyStore()
+  const { viewMode, selectedCharacter, selectedEvent, applyCameraPreset } = useGalaxyStore()
 
   // 应用启动日志
   useEffect(() => {
@@ -81,8 +82,9 @@ function EmptyGalaxyPage() {
         </>
       ) : (
         <>
-          {/* 角色详情视图 */}
-          <CharacterDetailView />
+          {/* 详情视图 - 根据选中的内容类型显示不同的详情视图 */}
+          {selectedCharacter && <CharacterDetailView />}
+          {selectedEvent && <EventDetailView />}
         </>
       )}
 

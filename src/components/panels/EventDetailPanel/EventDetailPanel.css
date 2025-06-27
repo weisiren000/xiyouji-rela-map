@@ -1,0 +1,219 @@
+/* 事件详情面板样式 */
+.event-detail-panel {
+  height: 100%;
+  padding: 2rem;
+  color: #fff;
+  overflow-y: auto;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 40, 0.95) 100%);
+}
+
+/* 标题区域 */
+.event-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.event-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.difficulty-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 详细信息区域 */
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.info-section:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 1.2rem;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 2px;
+}
+
+/* 信息网格 */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* 描述文本 */
+.event-description,
+.event-meaning,
+.event-culture {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+  text-align: justify;
+}
+
+/* 元数据区域 */
+.metadata-section {
+  background: rgba(100, 100, 100, 0.1);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metadata-label {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 500;
+}
+
+.metadata-value {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.metadata-value.verified {
+  color: #4ade80;
+}
+
+.metadata-value.unverified {
+  color: #fbbf24;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .event-detail-panel {
+    padding: 1.5rem;
+  }
+  
+  .event-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .event-detail-panel {
+    padding: 1rem;
+  }
+  
+  .event-title {
+    font-size: 1.6rem;
+  }
+  
+  .metadata-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 滚动条样式 */
+.event-detail-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.event-detail-panel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.event-detail-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.event-detail-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
