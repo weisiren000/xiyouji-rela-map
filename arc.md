@@ -29,6 +29,8 @@ xiyouji-rela-map/
 │   │       ├── Effects/   # 特效组件
 │   │       ├── Scenes/    # 场景组件
 │   │       │   └── EventDetailScene/ # 事件详情场景 (新增)
+│   │       │       └── components/   # 事件场景组件
+│   │       │           └── EventCharacterGraph/ # 事件角色关系图谱 (新增)
 │   │       ├── Galaxy/    # 星空组件
 │   │       │   └── components/
 │   │       │       ├── JourneyPoints/ # 西游记取经路径点组件 (新增)
@@ -45,6 +47,7 @@ xiyouji-rela-map/
 │   │   ├── package.json   # 服务器依赖配置
 │   │   └── test.js        # 服务器测试
 │   ├── services/          # 服务层
+│   ├── eventCharacterService.ts # 事件角色关系服务 (新增)
 │   ├── stores/            # 状态管理
 │   ├── types/             # 类型定义
 │   └── utils/             # 工具函数 (按功能域细化组织)
@@ -203,6 +206,13 @@ xiyouji-rela-map/
    - 事件详情面板显示难次、人物、地点、描述、象征意义等
    - 事件详情场景显示单个事件球体的3D特效
    - 复用现有的返回按钮和视图切换逻辑
+14. **事件角色关系图谱** (EXP159) ✅
+   - 创建eventCharacterService服务解析事件中的主要人物
+   - 实现EventCharacterGraph组件显示角色3D球体
+   - 角色围绕中心事件点圆形分布，带连接线
+   - 支持角色名称智能匹配和颜色映射
+   - 添加关系图谱显示/隐藏控制按钮
+   - 集成到事件详情场景中
 
 ## 最新技术改进
 - **多颜色渲染**: 实现protagonist(金色)、deity(天蓝色)、demon(红色)等9种颜色

@@ -1,9 +1,10 @@
-import React, { useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { InstancedMesh, Object3D, Color } from 'three'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { StarField } from '../../Galaxy'
+import { EventCharacterGraph } from './components'
 
 /**
  * 单个事件球体组件
@@ -113,12 +114,14 @@ const DetailSceneCamera: React.FC = () => {
  * 事件详情场景组件
  * 功能：
  * - 独立的3D场景，只显示选中的事件球体
+ * - 显示事件相关角色的关系图谱
  * - 保持星空背景
  * - 固定的最佳观察相机角度
  * - 专门用于事件详情展示
  */
 export const EventDetailScene: React.FC = () => {
   const { selectedEvent } = useGalaxyStore()
+  const [showCharacterGraph, setShowCharacterGraph] = useState(true)
 
   if (!selectedEvent) {
     return (
@@ -137,7 +140,33 @@ export const EventDetailScene: React.FC = () => {
   }
 
   return (
-    <div style={{ width: '100%', height: '100%', background: '#000' }}>
+    <div style={{ width: '100%', height: '100%', background: '#000', position: 'relative' }}>
+      {/* 关系图谱控制按钮 */}
+      <div style={{
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        zIndex: 1000,
+        display: 'flex',
+        gap: '10px'
+      }}>
+        <button
+          onClick={() => setShowCharacterGraph(!showCharacterGraph)}
+          style={{
+            padding: '8px 16px',
+            backgroundColor: showCharacterGraph ? '#4CAF50' : '#666',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '12px',
+            transition: 'background-color 0.3s'
+          }}
+        >
+          {showCharacterGraph ? '隐藏关系图谱' : '显示关系图谱'}
+        </button>
+      </div>
+
       <Canvas
         camera={{
           position: [0, 2, 8],
@@ -173,6 +202,12 @@ export const EventDetailScene: React.FC = () => {
 
         {/* 选中的事件球体 */}
         <SingleEventSphere />
+
+        {/* 事件角色关系图谱 */}
+        <EventCharacterGraph
+          event={selectedEvent}
+          visible={showCharacterGraph}
+        />
 
         {/* 相机控制 */}
         <DetailSceneCamera />
