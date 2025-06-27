@@ -119,7 +119,9 @@ export function getCharacterColor(character?: CharacterData): string {
     'alias': '#C0C0C0'           // 银色
   }
 
-  return colorMap[character.category] || character.visual?.color || '#FFFFFF'
+  // 尝试从不同位置获取category信息
+  const category = (character as any).category || (character as any).basic?.category || character.type
+  return (colorMap as Record<string, string>)[category] || character.visual?.color || '#FFFFFF'
 }
 
 /**
@@ -154,7 +156,7 @@ export async function getEventCharacterGraph(event: EventData): Promise<EventCha
         role: 'participant', // 默认角色
         character: character || undefined,
         position: positions[i],
-        color: getCharacterColor(character),
+        color: getCharacterColor(character || undefined),
         size: character?.visual?.size || 1.0,
         emissiveIntensity: character?.visual?.emissiveIntensity || 0.5
       }

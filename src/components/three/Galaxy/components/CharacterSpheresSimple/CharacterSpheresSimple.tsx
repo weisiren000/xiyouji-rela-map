@@ -23,7 +23,7 @@ interface CharacterData {
   name: string
   pinyin: string
   type: string
-  category: string
+  category?: string  // 改为可选，因为可能从basic.category获取
   faction: string
   rank: number
   power: number
@@ -461,7 +461,7 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     const normalizedRank = Math.max(0, Math.min(1, (150 - rank) / 150))
     const baseRadius = galaxyConfig.galaxyRadius * (0.6 + normalizedRank * 0.8) * radiusMultiplier
 
-    const categoryAngles = {
+    const categoryAngles: Record<string, number> = {
       // 中文分类映射
       '主角': Math.PI / 6,
       '神仙': Math.PI * 2 / 3 + Math.PI / 6,
@@ -482,10 +482,13 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
       'buddhist': Math.PI + Math.PI / 6,
       'celestial': Math.PI / 4 + Math.PI / 6,
       'underworld': Math.PI * 3 / 2 + Math.PI / 6,
-      'human': Math.PI * 5 / 4 + Math.PI / 6
+      'human': Math.PI * 5 / 4 + Math.PI / 6,
+      'immortal': Math.PI / 3 + Math.PI / 6,
+      'antagonist': Math.PI * 7 / 4 + Math.PI / 6,
+      'alias': Math.PI / 8 + Math.PI / 6
     }
 
-    const baseAngle = categoryAngles[category as keyof typeof categoryAngles] || Math.PI / 6
+    const baseAngle = categoryAngles[category] || Math.PI / 6
     const angleOffset = (Math.random() - 0.5) * (influence / 100) * Math.PI / 2
     const angle = baseAngle + angleOffset
     const armAngle = angle + baseRadius * galaxyConfig.armTightness / galaxyConfig.galaxyRadius
@@ -509,7 +512,7 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     const normalizedRank = Math.max(0, Math.min(1, (150 - rank) / 150))
     const baseRadius = galaxyConfig.galaxyRadius * (0.2 + normalizedRank * 0.6) * radiusMultiplier
 
-    const categoryAngles = {
+    const categoryAngles: Record<string, number> = {
       // 中文分类映射
       '主角': 0,
       '神仙': Math.PI * 2 / 3,
@@ -530,10 +533,13 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
       'buddhist': Math.PI,
       'celestial': Math.PI / 4,
       'underworld': Math.PI * 3 / 2,
-      'human': Math.PI * 5 / 4
+      'human': Math.PI * 5 / 4,
+      'immortal': Math.PI / 3,
+      'antagonist': Math.PI * 7 / 4,
+      'alias': Math.PI / 8
     }
 
-    const baseAngle = categoryAngles[category as keyof typeof categoryAngles] || 0
+    const baseAngle = categoryAngles[category] || 0
     const angleOffset = (Math.random() - 0.5) * (influence / 100) * Math.PI / 4
     const angle = baseAngle + angleOffset
     const armAngle = angle + baseRadius * galaxyConfig.armTightness / galaxyConfig.galaxyRadius
