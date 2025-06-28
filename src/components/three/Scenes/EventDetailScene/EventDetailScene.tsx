@@ -106,8 +106,8 @@ const DetailSceneCamera: React.FC<DetailSceneCameraProps> = ({ enabled = true })
       enablePan={enabled}
       enableZoom={enabled}
       enableRotate={enabled}
-      minDistance={3}
-      maxDistance={15}
+      minDistance={0.5}
+      maxDistance={50}
       minPolarAngle={0}
       maxPolarAngle={Math.PI}
       autoRotate={false}

@@ -88,8 +88,8 @@ const DetailSceneCamera: React.FC = () => {
       enablePan={true}
       enableZoom={true}
       enableRotate={true}
-      minDistance={5}
-      maxDistance={50}
+      minDistance={0.5}
+      maxDistance={100}
       autoRotate={false}
     />
   )

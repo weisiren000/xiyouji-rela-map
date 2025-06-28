@@ -49,8 +49,8 @@ const CameraController: React.FC = () => {
       zoomSpeed={0.6}
       panSpeed={0.8}
       rotateSpeed={0.4}
-      minDistance={10}
-      maxDistance={500}
+      minDistance={1}
+      maxDistance={2000}
       minPolarAngle={0}
       maxPolarAngle={Math.PI}
       autoRotate={cameraAutoRotate}
