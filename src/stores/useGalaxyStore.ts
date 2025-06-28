@@ -3,6 +3,7 @@ import { GalaxyConfig, FogConfig, BloomConfig, PlanetData } from '../types/galax
 import { CharacterData } from '../types/character'
 import { EventData } from '../types/events'
 import { JourneyConfig, DEFAULT_JOURNEY_CONFIG } from '../utils/three/journeyGenerator'
+import { EventCharacterGraphConfig, DEFAULT_EVENT_CHARACTER_GRAPH_CONFIG } from '../types/eventCharacterGraph'
 import { Vector3 } from 'three'
 
 /**
@@ -16,6 +17,7 @@ interface GalaxyState {
   fogConfig: FogConfig
   bloomConfig: BloomConfig
   journeyConfig: JourneyConfig
+  eventCharacterGraphConfig: EventCharacterGraphConfig
 
   // 数据
   planets: PlanetData[]
@@ -73,6 +75,7 @@ interface GalaxyState {
   updateFogConfig: (config: Partial<FogConfig>) => void
   updateBloomConfig: (config: Partial<BloomConfig>) => void
   updateJourneyConfig: (config: Partial<JourneyConfig>) => void
+  updateEventCharacterGraphConfig: (config: Partial<EventCharacterGraphConfig>) => void
   setPlanets: (planets: PlanetData[]) => void
   setAnimating: (isAnimating: boolean) => void
   setRotationSpeed: (speed: number) => void
@@ -151,7 +154,8 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   },
 
   journeyConfig: DEFAULT_JOURNEY_CONFIG,
-  
+  eventCharacterGraphConfig: DEFAULT_EVENT_CHARACTER_GRAPH_CONFIG,
+
   // 初始数据
   planets: [],
 
@@ -221,6 +225,11 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   updateJourneyConfig: (config) =>
     set((state) => ({
       journeyConfig: { ...state.journeyConfig, ...config },
+    })),
+
+  updateEventCharacterGraphConfig: (config) =>
+    set((state) => ({
+      eventCharacterGraphConfig: { ...state.eventCharacterGraphConfig, ...config },
     })),
     
   setPlanets: (planets) => set({ planets }),

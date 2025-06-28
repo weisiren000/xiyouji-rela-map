@@ -528,19 +528,19 @@ function createLightningBolts() {
   const boltMaterial = new THREE.LineBasicMaterial({
     color: colors.accentColor,
     transparent: true,
-    opacity: 0.8
+    opacity: 1.0 // 默认设置为1
   });
   
   const branchMaterial = new THREE.LineBasicMaterial({
     color: colors.highlightColor,
     transparent: true,
-    opacity: 0.6
+    opacity: 1.0 // 默认设置为1
   });
   
   const subBranchMaterial = new THREE.LineBasicMaterial({
     color: new THREE.Color().lerpColors(colors.accentColor, colors.highlightColor, 0.5),
     transparent: true,
-    opacity: 0.5
+    opacity: 1.0 // 默认设置为1
   });
   
   for (let i = 0; i < boltCount; i++) {

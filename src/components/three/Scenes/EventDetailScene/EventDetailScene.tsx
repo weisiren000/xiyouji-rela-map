@@ -5,6 +5,7 @@ import { InstancedMesh, Object3D, Color } from 'three'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { StarField } from '../../Galaxy'
 import { EventCharacterGraph } from './components'
+import { EventCharacterGraphGUI } from '@/components/controls/EventCharacterGraphGUI'
 
 /**
  * 单个事件球体组件
@@ -85,7 +86,7 @@ const SingleEventSphere: React.FC = () => {
         metalness={0.2}
         roughness={0.4}
         transparent
-        opacity={0.9}
+        opacity={1}
       />
     </instancedMesh>
   )
@@ -94,12 +95,17 @@ const SingleEventSphere: React.FC = () => {
 /**
  * 详情场景相机控制组件
  */
-const DetailSceneCamera: React.FC = () => {
+interface DetailSceneCameraProps {
+  enabled?: boolean
+}
+
+const DetailSceneCamera: React.FC<DetailSceneCameraProps> = ({ enabled = true }) => {
   return (
     <OrbitControls
-      enablePan={true}
-      enableZoom={true}
-      enableRotate={true}
+      enabled={enabled}
+      enablePan={enabled}
+      enableZoom={enabled}
+      enableRotate={enabled}
       minDistance={3}
       maxDistance={15}
       minPolarAngle={0}
@@ -122,6 +128,9 @@ const DetailSceneCamera: React.FC = () => {
 export const EventDetailScene: React.FC = () => {
   const { selectedEvent } = useGalaxyStore()
   const [showCharacterGraph, setShowCharacterGraph] = useState(true)
+  const [resetTrigger, setResetTrigger] = useState(0)
+  const [dragStatus, setDragStatus] = useState<string>('')
+  const [controlsEnabled, setControlsEnabled] = useState(true)
 
   if (!selectedEvent) {
     return (
@@ -165,7 +174,94 @@ export const EventDetailScene: React.FC = () => {
         >
           {showCharacterGraph ? '隐藏关系图谱' : '显示关系图谱'}
         </button>
+
+        {/* 重置位置按钮 */}
+        <button
+          onClick={() => setResetTrigger(prev => prev + 1)}
+          style={{
+            padding: '8px 16px',
+            backgroundColor: '#FF9800',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontSize: '12px',
+            transition: 'background-color 0.3s'
+          }}
+          title="重置角色位置"
+        >
+          🔄 重置位置
+        </button>
       </div>
+
+      {/* 拖拽状态指示器 */}
+      {dragStatus && (
+        <div style={{
+          position: 'absolute',
+          top: '70px',
+          right: '20px',
+          zIndex: 1000,
+          backgroundColor: 'rgba(255, 215, 0, 0.9)',
+          color: '#000',
+          padding: '8px 12px',
+          borderRadius: '4px',
+          fontSize: '12px',
+          fontWeight: 'bold',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+        }}>
+          🎯 {dragStatus}
+        </div>
+      )}
+
+      {/* 相机控制状态指示器 */}
+      {!controlsEnabled && (
+        <div style={{
+          position: 'absolute',
+          top: '70px',
+          left: '20px',
+          zIndex: 1000,
+          backgroundColor: 'rgba(255, 69, 0, 0.9)',
+          color: '#fff',
+          padding: '8px 12px',
+          borderRadius: '4px',
+          fontSize: '12px',
+          fontWeight: 'bold',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.3)'
+        }}>
+          🔒 视角控制已禁用
+        </div>
+      )}
+
+      {/* 交互说明 */}
+      {showCharacterGraph && (
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '20px',
+          zIndex: 1000,
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          color: '#fff',
+          padding: '12px 16px',
+          borderRadius: '8px',
+          fontSize: '12px',
+          maxWidth: '320px',
+          lineHeight: '1.4'
+        }}>
+          <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>💡 交互提示</div>
+          <div>• <strong>长按拖拽</strong>：长按角色球体300ms后拖动可改变位置</div>
+          <div>• <strong>双击进入</strong>：双击角色球体进入角色详情视图</div>
+          <div>• <strong>重置位置</strong>：点击右上角重置按钮恢复原始布局</div>
+          <div style={{ marginTop: '8px', fontSize: '11px', opacity: 0.8 }}>
+            💡 <strong>拖拽特性</strong>：基于当前视角的平移，移动方向跟随视角
+          </div>
+          <div style={{ marginTop: '4px', fontSize: '11px', opacity: 0.8 }}>
+            🎯 <strong>视觉提示</strong>：长按时球体变金色，拖拽时明显放大
+          </div>
+          <div style={{ marginTop: '4px', fontSize: '11px', opacity: 0.8 }}>
+            🔒 <strong>注意</strong>：拖拽时视角控制会自动禁用，释放后恢复
+          </div>
+        </div>
+      )}
 
       <Canvas
         camera={{
@@ -207,11 +303,20 @@ export const EventDetailScene: React.FC = () => {
         <EventCharacterGraph
           event={selectedEvent}
           visible={showCharacterGraph}
+          resetTrigger={resetTrigger}
+          onDragStatusChange={setDragStatus}
+          onControlsEnabledChange={setControlsEnabled}
         />
 
         {/* 相机控制 */}
-        <DetailSceneCamera />
+        <DetailSceneCamera enabled={controlsEnabled} />
       </Canvas>
+
+      {/* 关系图谱GUI控制面板 */}
+      <EventCharacterGraphGUI
+        visible={showCharacterGraph}
+        position={{ bottom: 20, left: 20 }}
+      />
     </div>
   )
 }
