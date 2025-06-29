@@ -390,6 +390,7 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   // 使用 ref 来避免无限循环
   const previousHoveredCharacterRef = useRef<any>(null)
   const previousMousePositionRef = useRef<any>(null)
+  const mouseUpdateTimeoutRef = useRef<number | null>(null)
 
   // 绑定拖拽事件
   useEffect(() => {
@@ -400,7 +401,6 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   // 🔄 同步拖拽交互状态到全局状态 - 使用 ref 避免无限循环
   useEffect(() => {
     const currentHoveredCharacter = dragInteractionState.hoveredCharacter
-    const currentMousePosition = dragInteractionState.mousePosition
 
     // 只有当悬浮角色实际发生变化时才更新
     if (currentHoveredCharacter !== previousHoveredCharacterRef.current) {
@@ -434,15 +434,41 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
         clearHover()
       }
     }
+  }, [dragInteractionState.hoveredCharacter])
 
-    // 只有当鼠标位置实际发生变化时才更新
-    if (currentMousePosition !== previousMousePositionRef.current) {
-      previousMousePositionRef.current = currentMousePosition
-      if (currentMousePosition && currentHoveredCharacter) {
-        setMousePosition(new Vector2(currentMousePosition.x, currentMousePosition.y))
+  // 🖱️ 单独处理鼠标位置更新，使用防抖避免频繁调用
+  useEffect(() => {
+    const currentMousePosition = dragInteractionState.mousePosition
+    const currentHoveredCharacter = dragInteractionState.hoveredCharacter
+    
+    // 清除之前的防抖定时器
+    if (mouseUpdateTimeoutRef.current) {
+      clearTimeout(mouseUpdateTimeoutRef.current)
+    }
+    
+    // 只有当鼠标位置发生显著变化时才更新（避免微小移动造成的频繁更新）
+    const isSignificantMove = currentMousePosition && previousMousePositionRef.current && (
+      Math.abs(currentMousePosition.x - previousMousePositionRef.current.x) > 1 ||
+      Math.abs(currentMousePosition.y - previousMousePositionRef.current.y) > 1
+    )
+    
+    if (currentMousePosition && (isSignificantMove || !previousMousePositionRef.current)) {
+      // 使用防抖，延迟16ms（约1帧）更新鼠标位置
+      mouseUpdateTimeoutRef.current = setTimeout(() => {
+        previousMousePositionRef.current = currentMousePosition
+        if (currentHoveredCharacter) {
+          setMousePosition(new Vector2(currentMousePosition.x, currentMousePosition.y))
+        }
+      }, 16)
+    }
+    
+    // 清理函数
+    return () => {
+      if (mouseUpdateTimeoutRef.current) {
+        clearTimeout(mouseUpdateTimeoutRef.current)
       }
     }
-  }, [dragInteractionState.hoveredCharacter, dragInteractionState.mousePosition])
+  }, [dragInteractionState.mousePosition, dragInteractionState.hoveredCharacter])
 
   // mesh引用回调 - 将第一个mesh设为主要交互对象
   const handleMeshRef = (color: string, mesh: InstancedMesh | null) => {
