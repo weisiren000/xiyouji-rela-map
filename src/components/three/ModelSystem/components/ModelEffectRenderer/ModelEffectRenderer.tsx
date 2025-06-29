@@ -114,7 +114,7 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
     const visitedNodes = new Set<THREE.Object3D>()
     let traverseDepth = 0
     const MAX_DEPTH = 50
-    const MAX_VERTICES = 50000 // 限制顶点数量防止内存溢出
+    const MAX_VERTICES = 200000 // 限制顶点数量防止内存溢出
 
     const safeTraverse = (object: THREE.Object3D, depth: number = 0) => {
       // 防止无限递归
