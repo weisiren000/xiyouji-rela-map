@@ -646,17 +646,17 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
       </instancedMesh>
 
       {/* ✨ 高亮效果 - 恢复显示 */}
-      {interactionState.hoveredCharacter && (
+      {dragInteractionState.hoveredCharacter && (
         <BeautifulHighlight
           position={
-            (interactionState as any).worldPosition ||
-            interactionState.hoveredCharacter.position ||
+            (dragInteractionState as any).worldPosition ||
+            dragInteractionState.hoveredCharacter.position ||
             new Vector3(0, 0, 0)
           }
           size={1.0 * globalSize}
           color={getCharacterColor(
-            (interactionState.hoveredCharacter as any).basic?.category ||
-            (interactionState.hoveredCharacter as any).category ||
+            (dragInteractionState.hoveredCharacter as any).basic?.category ||
+            (dragInteractionState.hoveredCharacter as any).category ||
             'human'
           )}
           visible={true}
