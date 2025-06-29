@@ -13,43 +13,7 @@ import { usePerformanceMonitor, PERFORMANCE_CONFIGS } from '@/hooks/usePerforman
 
 
 
-/**
- * 自由探索相机控制组件
- * 模仿角色局部视图的自由交互效果
- */
-const FreeExplorationCameraController: React.FC = () => {
-  return (
-    <OrbitControls
-      // 自由探索模式：无自动旋转，完全由用户控制
-      autoRotate={false}
 
-      // 启用所有交互功能
-      enablePan={true}
-      enableZoom={true}
-      enableRotate={true}
-
-      // 阻尼效果，让交互更平滑
-      enableDamping={true}
-      dampingFactor={0.05}
-
-      // 调整交互灵敏度，适合自由探索
-      zoomSpeed={1.0}      // 提高缩放速度
-      panSpeed={1.0}       // 提高平移速度
-      rotateSpeed={0.5}    // 适中的旋转速度
-
-      // 扩大距离范围，支持远近观察
-      minDistance={0.5}    // 允许非常近距离观察角色
-      maxDistance={500}    // 适中的最大距离，不要太远
-
-      // 移除极角限制，允许全方位观察
-      minPolarAngle={0}
-      maxPolarAngle={Math.PI}
-
-      // 目标点设置为场景中心
-      target={[0, 0, 0]}
-    />
-  )
-}
 
 /**
  * 动态相机组件
@@ -93,6 +57,9 @@ const DynamicCamera: React.FC = () => {
  * 1:1复刻原始HTML文件效果 + 性能优化
  */
 export const GalaxyScene: React.FC = () => {
+  // 简化状态管理
+  const [dragStatus, setDragStatus] = useState<string>('')
+
   const {
     bloomConfig,
     performanceLevel,
@@ -220,13 +187,29 @@ export const GalaxyScene: React.FC = () => {
             colorIntensity={characterColorIntensity}
             useOriginalColors={characterUseOriginalColors}
             regeneratePositions={characterRegeneratePositions}
+
           />
         </Suspense>
 
 
 
-        {/* 自由探索相机控制 */}
-        <FreeExplorationCameraController />
+        {/* 普通相机控制 */}
+        <OrbitControls
+          autoRotate={false}
+          enablePan={true}
+          enableZoom={true}
+          enableRotate={true}
+          enableDamping={true}
+          dampingFactor={0.05}
+          zoomSpeed={1.0}
+          panSpeed={1.0}
+          rotateSpeed={0.5}
+          minDistance={0.5}
+          maxDistance={500}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI}
+          target={[0, 0, 0]}
+        />
 
         {/* 后期处理效果 - 根据性能等级条件渲染 */}
         {config.bloomEnabled && (
@@ -281,6 +264,25 @@ export const GalaxyScene: React.FC = () => {
         onResetToDefaults={resetCharacterControlsToDefaults}
         onRegeneratePositions={regenerateCharacterPositions}
       />
+
+      {/* 拖拽状态显示 */}
+      {dragStatus && (
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'rgba(0, 0, 0, 0.8)',
+          color: 'white',
+          padding: '8px 16px',
+          borderRadius: '4px',
+          fontSize: '14px',
+          zIndex: 1000,
+          pointerEvents: 'none'
+        }}>
+          {dragStatus}
+        </div>
+      )}
     </div>
   )
 }

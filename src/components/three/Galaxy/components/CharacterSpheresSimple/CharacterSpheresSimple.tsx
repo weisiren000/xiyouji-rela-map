@@ -4,7 +4,9 @@ import { InstancedMesh, Object3D, Vector3, Vector2 } from 'three'
 // import * as THREE from 'three' // 暂时注释，如需要可以恢复
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { DataApi } from '@/services/dataApi'
-import { useCharacterInteraction } from '@/hooks/useCharacterInteraction'
+
+import { useGalaxyCharacterDrag } from '@/hooks/useGalaxyCharacterDrag'
+
 import { BeautifulHighlight } from '../../../Effects/BeautifulHighlight'
 import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 import { bvhManager } from '@/utils/three/bvhUtils'
@@ -281,7 +283,8 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   regeneratePositions = false,
   showAliases = true,
   aliasOpacity = 0.7,
-  aliasSize = 0.8
+  aliasSize = 0.8,
+
 }) => {
   console.log('🚀 CharacterSpheresSimple 组件渲染，参数:', {
     visible,
@@ -290,7 +293,7 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     useOriginalColors
   })
 
-  const { galaxyConfig, isAnimating } = useGalaxyStore()
+  const { isAnimating } = useGalaxyStore()
 
 
 
@@ -347,50 +350,68 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     }))
   }, [allCharacters])
 
-  const { interactionState, bindMouseEvents } = useCharacterInteraction(charactersWithPosition, mainMeshRef)
+  // 🎯 拖拽状态管理
+  const [dragStatus, setDragStatus] = useState<string>('')
+  const [controlsEnabled, setControlsEnabled] = useState(true)
+
+  // 🎯 使用拖拽交互系统
+  const {
+    interactionState: dragInteractionState,
+    bindMouseEvents: bindDragEvents,
+    resetTemporaryPositions
+  } = useGalaxyCharacterDrag(
+    charactersWithPosition,
+    mainMeshRef,
+    (index: number, position: Vector3) => {
+      // 处理角色位置更新
+      console.log(`🎯 角色位置更新: ${charactersWithPosition[index]?.name}`, position.toArray())
+    },
+    setDragStatus,
+    setControlsEnabled
+  )
 
   // 🌐 全局状态管理
   const { setHoveredCharacter, setMousePosition, clearHover } = useCharacterInfoStore()
 
-  // 正确绑定鼠标事件
+  // 绑定拖拽事件
   useEffect(() => {
-    const cleanup = bindMouseEvents()
+    const cleanup = bindDragEvents()
     return cleanup
-  }, [bindMouseEvents])
+  }, [bindDragEvents])
 
-  // 🔄 同步交互状态到全局状态
+  // 🔄 同步拖拽交互状态到全局状态
   useEffect(() => {
-    if (interactionState.hoveredCharacter) {
-      console.log('🖱️ 检测到悬浮:', interactionState.hoveredCharacter.name)
+    if (dragInteractionState.hoveredCharacter) {
+      console.log('🖱️ 检测到悬浮:', dragInteractionState.hoveredCharacter.name)
       console.log('🌐 更新全局状态')
       // 转换CharacterDataWithPosition为CharacterData
       const characterData = {
-        id: interactionState.hoveredCharacter.id,
-        name: interactionState.hoveredCharacter.name,
-        pinyin: interactionState.hoveredCharacter.pinyin || '',
-        type: interactionState.hoveredCharacter.type,
-        category: (interactionState.hoveredCharacter as any).category || 'human',
-        faction: interactionState.hoveredCharacter.faction,
-        rank: interactionState.hoveredCharacter.rank,
-        power: interactionState.hoveredCharacter.power || 50,
-        influence: interactionState.hoveredCharacter.influence || 50,
-        visual: interactionState.hoveredCharacter.visual || {
+        id: dragInteractionState.hoveredCharacter.id,
+        name: dragInteractionState.hoveredCharacter.name,
+        pinyin: dragInteractionState.hoveredCharacter.pinyin || '',
+        type: dragInteractionState.hoveredCharacter.type,
+        category: (dragInteractionState.hoveredCharacter as any).category || 'human',
+        faction: dragInteractionState.hoveredCharacter.faction,
+        rank: dragInteractionState.hoveredCharacter.rank,
+        power: dragInteractionState.hoveredCharacter.power || 50,
+        influence: dragInteractionState.hoveredCharacter.influence || 50,
+        visual: dragInteractionState.hoveredCharacter.visual || {
           color: '#FFFFFF',
           size: 1.0,
           emissiveIntensity: 0.5
         },
-        isAlias: interactionState.hoveredCharacter.isAlias,
-        originalCharacter: interactionState.hoveredCharacter.originalCharacter
+        isAlias: dragInteractionState.hoveredCharacter.isAlias,
+        originalCharacter: dragInteractionState.hoveredCharacter.originalCharacter
       }
       setHoveredCharacter(characterData)
-      if (interactionState.mousePosition) {
-        setMousePosition(new Vector2(interactionState.mousePosition.x, interactionState.mousePosition.y))
+      if (dragInteractionState.mousePosition) {
+        setMousePosition(new Vector2(dragInteractionState.mousePosition.x, dragInteractionState.mousePosition.y))
       }
     } else {
       console.log('🚫 清除悬浮状态')
       clearHover()
     }
-  }, [interactionState.hoveredCharacter, interactionState.mousePosition, setHoveredCharacter, setMousePosition, clearHover])
+  }, [dragInteractionState.hoveredCharacter, dragInteractionState.mousePosition, setHoveredCharacter, setMousePosition, clearHover])
 
   // mesh引用回调 - 将第一个mesh设为主要交互对象
   const handleMeshRef = (color: string, mesh: InstancedMesh | null) => {
@@ -453,104 +474,74 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   }
 
   /**
-   * 为别名生成3D位置
+   * 为别名生成3D位置 - 球形随机分布算法
    */
   const generateAliasPosition = (alias: any): Vector3 => {
-    const { rank, power, influence, category } = alias
+    const { rank } = alias
 
+    // 别名使用稍大的分布半径 (40-80的半径范围)
     const normalizedRank = Math.max(0, Math.min(1, (150 - rank) / 150))
-    const baseRadius = galaxyConfig.galaxyRadius * (0.6 + normalizedRank * 0.8) * radiusMultiplier
+    const baseRadius = 40 + normalizedRank * 40
 
-    const categoryAngles: Record<string, number> = {
-      // 中文分类映射
-      '主角': Math.PI / 6,
-      '神仙': Math.PI * 2 / 3 + Math.PI / 6,
-      '妖魔': Math.PI * 4 / 3 + Math.PI / 6,
-      '龙族': Math.PI / 2 + Math.PI / 6,
-      '佛教': Math.PI + Math.PI / 6,
-      '天庭': Math.PI / 4 + Math.PI / 6,
-      '地府': Math.PI * 3 / 2 + Math.PI / 6,
-      '人类': Math.PI * 5 / 4 + Math.PI / 6,
-      '仙人': Math.PI / 3 + Math.PI / 6,
-      '反派': Math.PI * 7 / 4 + Math.PI / 6,
-      '别名': Math.PI / 8 + Math.PI / 6,
-      // 兼容英文分类映射
-      'protagonist': Math.PI / 6,
-      'deity': Math.PI * 2 / 3 + Math.PI / 6,
-      'demon': Math.PI * 4 / 3 + Math.PI / 6,
-      'dragon': Math.PI / 2 + Math.PI / 6,
-      'buddhist': Math.PI + Math.PI / 6,
-      'celestial': Math.PI / 4 + Math.PI / 6,
-      'underworld': Math.PI * 3 / 2 + Math.PI / 6,
-      'human': Math.PI * 5 / 4 + Math.PI / 6,
-      'immortal': Math.PI / 3 + Math.PI / 6,
-      'antagonist': Math.PI * 7 / 4 + Math.PI / 6,
-      'alias': Math.PI / 8 + Math.PI / 6
-    }
+    // 在球体内均匀随机分布 - 使用球坐标系
+    const phi = Math.random() * Math.PI * 2 // 方位角 0-2π
+    const cosTheta = Math.random() * 2 - 1 // cos(极角) -1到1
+    const u = Math.random() // 径向随机因子
 
-    const baseAngle = categoryAngles[category] || Math.PI / 6
-    const angleOffset = (Math.random() - 0.5) * (influence / 100) * Math.PI / 2
-    const angle = baseAngle + angleOffset
-    const armAngle = angle + baseRadius * galaxyConfig.armTightness / galaxyConfig.galaxyRadius
-    const height = (power - 50) / 50 * 4 * heightMultiplier
-    const radiusVariation = (Math.random() - 0.5) * randomSpread * 1.5
-    const finalRadius = baseRadius + radiusVariation
+    // 球坐标转换为笛卡尔坐标
+    const theta = Math.acos(cosTheta)
+    const r = baseRadius * Math.cbrt(u) * radiusMultiplier // 立方根确保球内均匀分布
+
+    const x = r * Math.sin(theta) * Math.cos(phi)
+    const y = r * Math.sin(theta) * Math.sin(phi) * heightMultiplier
+    const z = r * Math.cos(theta)
+
+    // 别名添加更大的随机扰动
+    const randomOffset = randomSpread * 2.5
+    const offsetX = (Math.random() - 0.5) * randomOffset
+    const offsetY = (Math.random() - 0.5) * randomOffset
+    const offsetZ = (Math.random() - 0.5) * randomOffset
 
     return new Vector3(
-      Math.cos(armAngle) * finalRadius,
-      height + (Math.random() - 0.5) * 1.0,
-      Math.sin(armAngle) * finalRadius
+      x + offsetX,
+      y + offsetY,
+      z + offsetZ
     )
   }
 
   /**
-   * 为角色生成3D位置
+   * 为角色生成3D位置 - 球形随机分布算法
    */
   const generateCharacterPosition = (character: any): Vector3 => {
-    const { rank, power, influence, category } = character
+    const { rank } = character
 
+    // 基础分布半径，根据等级调整 (30-70的半径范围)
     const normalizedRank = Math.max(0, Math.min(1, (150 - rank) / 150))
-    const baseRadius = galaxyConfig.galaxyRadius * (0.2 + normalizedRank * 0.6) * radiusMultiplier
+    const baseRadius = 30 + normalizedRank * 40
 
-    const categoryAngles: Record<string, number> = {
-      // 中文分类映射
-      '主角': 0,
-      '神仙': Math.PI * 2 / 3,
-      '妖魔': Math.PI * 4 / 3,
-      '龙族': Math.PI / 2,
-      '佛教': Math.PI,
-      '天庭': Math.PI / 4,
-      '地府': Math.PI * 3 / 2,
-      '人类': Math.PI * 5 / 4,
-      '仙人': Math.PI / 3,
-      '反派': Math.PI * 7 / 4,
-      '别名': Math.PI / 8,
-      // 兼容英文分类映射
-      'protagonist': 0,
-      'deity': Math.PI * 2 / 3,
-      'demon': Math.PI * 4 / 3,
-      'dragon': Math.PI / 2,
-      'buddhist': Math.PI,
-      'celestial': Math.PI / 4,
-      'underworld': Math.PI * 3 / 2,
-      'human': Math.PI * 5 / 4,
-      'immortal': Math.PI / 3,
-      'antagonist': Math.PI * 7 / 4,
-      'alias': Math.PI / 8
-    }
+    // 在球体内均匀随机分布 - 使用球坐标系
+    const phi = Math.random() * Math.PI * 2 // 方位角 0-2π
+    const cosTheta = Math.random() * 2 - 1 // cos(极角) -1到1
+    const u = Math.random() // 径向随机因子
 
-    const baseAngle = categoryAngles[category] || 0
-    const angleOffset = (Math.random() - 0.5) * (influence / 100) * Math.PI / 4
-    const angle = baseAngle + angleOffset
-    const armAngle = angle + baseRadius * galaxyConfig.armTightness / galaxyConfig.galaxyRadius
-    const height = (power - 50) / 50 * 3 * heightMultiplier
-    const radiusVariation = (Math.random() - 0.5) * randomSpread
-    const finalRadius = baseRadius + radiusVariation
+    // 球坐标转换为笛卡尔坐标
+    const theta = Math.acos(cosTheta)
+    const r = baseRadius * Math.cbrt(u) * radiusMultiplier // 立方根确保球内均匀分布
+
+    const x = r * Math.sin(theta) * Math.cos(phi)
+    const y = r * Math.sin(theta) * Math.sin(phi) * heightMultiplier
+    const z = r * Math.cos(theta)
+
+    // 添加随机扰动增加自然感
+    const randomOffset = randomSpread * 2
+    const offsetX = (Math.random() - 0.5) * randomOffset
+    const offsetY = (Math.random() - 0.5) * randomOffset
+    const offsetZ = (Math.random() - 0.5) * randomOffset
 
     return new Vector3(
-      Math.cos(armAngle) * finalRadius,
-      height + (Math.random() - 0.5) * 0.5,
-      Math.sin(armAngle) * finalRadius
+      x + offsetX,
+      y + offsetY,
+      z + offsetZ
     )
   }
 
@@ -655,9 +646,13 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
       </instancedMesh>
 
       {/* ✨ 高亮效果 - 恢复显示 */}
-      {interactionState.hoveredCharacter && interactionState.worldPosition && (
+      {interactionState.hoveredCharacter && (
         <BeautifulHighlight
-          position={interactionState.worldPosition}
+          position={
+            (interactionState as any).worldPosition ||
+            interactionState.hoveredCharacter.position ||
+            new Vector3(0, 0, 0)
+          }
           size={1.0 * globalSize}
           color={getCharacterColor(
             (interactionState.hoveredCharacter as any).basic?.category ||
