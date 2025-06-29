@@ -69,6 +69,8 @@ const SingleCharacterSphere: React.FC = () => {
         color={color}
         emissive={color}
         emissiveIntensity={emissiveIntensity}
+        metalness={0.3}
+        roughness={1.0}
         transparent
         opacity={0.9}
       />

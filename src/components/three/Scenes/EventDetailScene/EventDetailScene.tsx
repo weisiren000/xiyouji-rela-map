@@ -84,7 +84,7 @@ const SingleEventSphere: React.FC = () => {
         emissive={getEventColor(selectedEvent.nanci)}
         emissiveIntensity={0.3}
         metalness={0.2}
-        roughness={0.4}
+        roughness={1.0}
         transparent
         opacity={1}
       />

@@ -97,7 +97,7 @@ const DynamicCamera: React.FC = () => {
 }
 
 /**
- * 空银河系场景
+ * 八十一难场景
  * 与主银河系场景相同，但不包含任何数据点
  * 用于测试和演示银河系基础效果
  */
@@ -115,7 +115,7 @@ export const EmptyGalaxyScene: React.FC = () => {
     cameraFar
   } = useGalaxyStore()
 
-  // 角色数据显示控制 - 在空银河系中默认隐藏
+  // 角色数据显示控制 - 在八十一难中默认隐藏
   const [characterDataVisible, setCharacterDataVisible] = useState(false)
   const [characterDataOpacity, setCharacterDataOpacity] = useState(0.8)
 

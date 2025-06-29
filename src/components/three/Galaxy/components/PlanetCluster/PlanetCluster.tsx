@@ -138,7 +138,7 @@ export const PlanetCluster: React.FC<PlanetClusterProps> = ({ planets }) => {
       <sphereGeometry args={[1, config.geometryDetail, config.geometryDetail]} />
       <meshStandardMaterial
         metalness={0.3}
-        roughness={0.5}
+        roughness={1.0}
         emissive="#ffffff"
         emissiveIntensity={galaxyConfig.maxEmissiveIntensity}
       />

@@ -11,7 +11,7 @@ import { FogParticles } from './components/FogParticles'
 import { JourneyPoints } from './components/JourneyPoints'
 
 /**
- * 空银河系组件
+ * 八十一难组件
  * 与原始Galaxy组件相同，但不包含角色数据点
  * 只显示星球集群和雾气效果
  */

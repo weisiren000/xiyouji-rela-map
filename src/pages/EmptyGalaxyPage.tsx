@@ -12,7 +12,7 @@ import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
 
 /**
- * 空银河系页面组件
+ * 八十一难页面组件
  * 与主页面相同的界面和功能，但不加载任何数据点
  * 用于测试和演示银河系基础效果
  */
@@ -30,7 +30,7 @@ function EmptyGalaxyPage() {
 
   // 应用启动日志
   useEffect(() => {
-    console.log('🚀 空银河系可视化页面启动')
+    console.log('🚀 八十一难可视化页面启动')
     console.log('📡 自动加载:', autoLoadEnabled ? '启用' : '禁用')
     console.log('🌐 服务器状态:', isOnline ? '在线' : '离线')
     console.log('⚠️ 注意：此页面不会加载任何数据点')
@@ -42,7 +42,7 @@ function EmptyGalaxyPage() {
   // 数据加载状态日志
   useEffect(() => {
     if (isInitialized) {
-      console.log('✅ 空银河系页面初始化完成')
+      console.log('✅ 八十一难页面初始化完成')
       console.log('📊 数据状态:', hasData ? `已加载 ${dataCount} 个角色` : '无数据')
     }
   }, [isInitialized, hasData, dataCount])
@@ -50,7 +50,7 @@ function EmptyGalaxyPage() {
   // 🌐 全局状态变化日志
   useEffect(() => {
     if (hoveredEvent) {
-      console.log('📱 EmptyGalaxyPage层接收到事件信息:', hoveredEvent.nanming)
+      console.log('📱 八十一难页面层接收到事件信息:', hoveredEvent.nanming)
       console.log('📍 鼠标位置:', mousePosition.x, mousePosition.y)
       console.log('💳 显示信息卡片:', showInfoCard)
     }
@@ -61,11 +61,11 @@ function EmptyGalaxyPage() {
       {/* 条件渲染：全局视图 vs 详情视图 */}
       {viewMode === 'galaxy' ? (
         <>
-          {/* 空银河系视图 */}
+          {/* 八十一难视图 */}
           {/* 信息显示 */}
           <InfoDisplay />
 
-          {/* 3D场景 - 使用空银河系场景 */}
+          {/* 3D场景 - 使用八十一难场景 */}
           <EmptyGalaxyScene />
 
           {/* 控制面板 */}

@@ -4,10 +4,11 @@ import EmptyGalaxyPage from '../../pages/EmptyGalaxyPage'
 
 /**
  * 页面切换器组件
- * 提供在主页面和空银河系页面之间切换的功能
+ * 提供在主页面和八十一难页面之间切换的功能
+ * 默认加载八十一难页面作为首页
  */
 export const PageSwitcher: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'main' | 'empty'>('main')
+  const [currentPage, setCurrentPage] = useState<'main' | 'empty'>('empty')
 
   const switchToMain = () => setCurrentPage('main')
   const switchToEmpty = () => setCurrentPage('empty')
@@ -55,7 +56,7 @@ export const PageSwitcher: React.FC = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          ⭐ 空银河系
+          ⭐ 八十一难
         </button>
       </div>
 

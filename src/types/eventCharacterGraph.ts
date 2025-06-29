@@ -122,7 +122,7 @@ export const EVENT_CHARACTER_GRAPH_PRESETS = {
       pulseIntensity: 0.08,
       pulseSpeed: 2.5,
       metalness: 0.5,
-      roughness: 0.2,
+      roughness: 1.0,
       opacity: 0.9,
       lineOpacity: 0.4
     }
