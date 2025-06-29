@@ -4,6 +4,7 @@
  */
 
 import { BVHStats, bvhManager } from '../three/bvhUtils'
+import * as THREE from 'three'
 
 /**
  * BVH 性能指标

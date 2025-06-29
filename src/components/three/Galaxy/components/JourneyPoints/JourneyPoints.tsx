@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useEffect, useState, useCallback } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import { InstancedMesh, Object3D, Color, Vector3, Raycaster, Mesh, MeshBasicMaterial, SphereGeometry, Matrix4, Vector2 } from 'three'
+import { InstancedMesh, Object3D, Color, Raycaster, Mesh, MeshBasicMaterial, Vector2 } from 'three'
 import { JourneyPoint } from '@utils/three/journeyGenerator'
 import { useGalaxyStore } from '@stores/useGalaxyStore'
 import { useEventInfoStore } from '@stores/useEventInfoStore'

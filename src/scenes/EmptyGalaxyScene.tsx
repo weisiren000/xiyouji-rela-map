@@ -131,7 +131,7 @@ export const EmptyGalaxyScene: React.FC = () => {
   const [characterRandomSpread, setCharacterRandomSpread] = useState(5.0)
   const [characterColorIntensity, setCharacterColorIntensity] = useState(1.0)
   const [characterUseOriginalColors, setCharacterUseOriginalColors] = useState(true)
-  const [characterRegeneratePositions, setCharacterRegeneratePositions] = useState(false)
+  // const [characterRegeneratePositions, setCharacterRegeneratePositions] = useState(false)
 
   // 别名控制参数
   const [showAliases, setShowAliases] = useState(true)
@@ -161,7 +161,8 @@ export const EmptyGalaxyScene: React.FC = () => {
 
   // 重新生成角色位置
   const regenerateCharacterPositions = () => {
-    setCharacterRegeneratePositions(prev => !prev) // 切换状态触发重新生成
+    // setCharacterRegeneratePositions(prev => !prev) // 切换状态触发重新生成
+    console.log('regenerateCharacterPositions called')
   }
 
   // 自动性能调节

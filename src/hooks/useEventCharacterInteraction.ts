@@ -27,7 +27,7 @@ interface InteractionState {
 
 const LONG_PRESS_DURATION = 300 // 300ms长按检测（降低阈值）
 const DOUBLE_CLICK_DURATION = 300 // 300ms双击检测
-const DRAG_THRESHOLD = 3 // 3像素拖拽阈值（降低阈值）
+// const DRAG_THRESHOLD = 3 // 3像素拖拽阈值（降低阈值）
 
 /**
  * 基于射线投影计算拖拽位置
@@ -295,10 +295,10 @@ export const useEventCharacterInteraction = (
       // 如果正在长按，检查是否应该开始拖拽
       if (prev.longPressIndex !== null && !prev.dragState.isDragging) {
         const timeSinceLongPress = currentTime - prev.longPressStartTime
-        const mouseDelta = Math.sqrt(
-          Math.pow(event.clientX - prev.dragState.dragStartMouse.x, 2) +
-          Math.pow(event.clientY - prev.dragState.dragStartMouse.y, 2)
-        )
+        // const mouseDelta = Math.sqrt(
+        //   Math.pow(event.clientX - prev.dragState.dragStartMouse.x, 2) +
+        //   Math.pow(event.clientY - prev.dragState.dragStartMouse.y, 2)
+        // )
 
         // 如果长按时间足够，开始拖拽（不需要等待鼠标移动）
         if (timeSinceLongPress >= LONG_PRESS_DURATION) {

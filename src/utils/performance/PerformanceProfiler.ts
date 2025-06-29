@@ -291,7 +291,8 @@ export class PerformanceProfiler {
         geometries: 0,
         textures: 0,
         total: 0
-      }
+      },
+      bvh: null
     }
     
     this.history = {
