@@ -5,9 +5,9 @@
 export interface EventCharacterGraphConfig {
   // 球体基础属性
   baseSize: number              // 基础大小倍数 (默认: 0.8)
-  opacity: number               // 透明度 (默认: 0.8)
+  opacity: number               // 透明度 (默认: 1.0)
   metalness: number             // 金属度 (默认: 0.3)
-  roughness: number             // 粗糙度 (默认: 0.4)
+  roughness: number             // 粗糙度 (默认: 1.0)
   
   // 动画效果
   floatIntensity: number        // 浮动强度 (默认: 0.3)
@@ -29,12 +29,12 @@ export interface EventCharacterGraphConfig {
   
   // 连接线属性
   lineOpacity: number           // 连接线透明度 (默认: 0.3)
-  lineOpacityDrag: number       // 拖拽时连接线透明度 (默认: 0.6)
+  lineOpacityDrag: number       // 拖拽时连接线透明度 (默认: 1.0)
   lineWidth: number             // 连接线宽度 (默认: 2)
   
   // 几何体属性
-  sphereSegments: number        // 球体分段数 (默认: 16)
-  sphereRings: number           // 球体环数 (默认: 16)
+  sphereSegments: number        // 球体分段数 (默认: 32)
+  sphereRings: number           // 球体环数 (默认: 32)
 }
 
 /**
@@ -45,7 +45,7 @@ export const DEFAULT_EVENT_CHARACTER_GRAPH_CONFIG: EventCharacterGraphConfig = {
   baseSize: 0.8,
   opacity: 1.0,
   metalness: 0.3,
-  roughness: 0.4,
+  roughness: 1.0,
   
   // 动画效果
   floatIntensity: 0.3,
@@ -67,12 +67,12 @@ export const DEFAULT_EVENT_CHARACTER_GRAPH_CONFIG: EventCharacterGraphConfig = {
   
   // 连接线属性
   lineOpacity: 0.3,
-  lineOpacityDrag: 0.6,
+  lineOpacityDrag: 1.0,
   lineWidth: 2,
   
   // 几何体属性
-  sphereSegments: 16,
-  sphereRings: 16
+  sphereSegments: 32,
+  sphereRings: 32
 }
 
 /**
