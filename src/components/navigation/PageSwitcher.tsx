@@ -17,7 +17,7 @@ export const setGlobalCurrentPage = (page: 'main' | 'empty') => {
 
 /**
  * 页面切换器组件
- * 提供在主页面和八十一难页面之间切换的功能
+ * 提供在星谱和八十一难页面之间切换的功能
  * 默认加载八十一难页面作为首页
  */
 export const PageSwitcher: React.FC = () => {
@@ -68,7 +68,7 @@ export const PageSwitcher: React.FC = () => {
             transition: 'all 0.3s ease'
           }}
         >
-          🌌 主页面
+          🌌 星谱
         </button>
         <button
           onClick={switchToEmpty}

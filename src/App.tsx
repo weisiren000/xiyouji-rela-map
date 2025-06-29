@@ -28,7 +28,7 @@ function App() {
   // 🌐 全局角色信息状态
   const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
 
-  // 🎯 视图状态管理 - 使用主页面特定的视图状态
+  // 🎯 视图状态管理 - 使用星谱特定的视图状态
   const { mainPageViewMode } = useGalaxyStore()
 
   // 应用启动日志

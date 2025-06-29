@@ -6,7 +6,7 @@ import './DetailViewBackButton.css'
  * 详情视图返回按钮组件
  * 功能：
  * - 左上角固定定位
- * - 点击返回上一个页面（主页面或八十一难页面）
+ * - 点击返回上一个页面（星谱或八十一难页面）
  * - 简洁的图标设计
  * - 悬浮效果
  */
@@ -25,7 +25,7 @@ export const DetailViewBackButton: React.FC = () => {
     }
 
     const previousState = navigationHistory[navigationHistory.length - 1]
-    const pageName = previousState.page === 'main' ? '主页面' : '八十一难页面'
+    const pageName = previousState.page === 'main' ? '星谱' : '八十一难页面'
 
     if (previousState.viewMode === 'galaxy') {
       return `返回${pageName}`

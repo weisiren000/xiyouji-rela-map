@@ -18,8 +18,8 @@
     "start:auto:verbose": "powershell -ExecutionPolicy Bypass -File scripts/start-with-auto-port.ps1 -Verbose",
     "start:simple": "powershell -ExecutionPolicy Bypass -File scripts/start-simple.ps1",
     "install:server": "pnpm install",
-    "models:index": "node scripts/generate-model-index.js",
-    "models:scan": "node scripts/generate-model-index.js",
+    "models:index": "node scripts/build/generate-model-index.js",
+    "models:scan": "node scripts/build/generate-model-index.js",
     "models:watch": "node scripts/watch-models.js",
     "models:test": "node scripts/test-model-detection.js"
   },

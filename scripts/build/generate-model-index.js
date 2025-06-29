@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename)
  * 扫描 public/models 目录，生成 index.json
  */
 function generateModelIndex() {
-  const modelsDir = path.join(__dirname, '../public/models')
+  const modelsDir = path.join(__dirname, '../../public/models')
   const indexPath = path.join(modelsDir, 'index.json')
   
   try {

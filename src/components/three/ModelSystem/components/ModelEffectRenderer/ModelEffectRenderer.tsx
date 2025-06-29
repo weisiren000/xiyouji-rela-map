@@ -109,13 +109,44 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
   const extractGeometryFromModel = (model: THREE.Group) => {
     const vertices: any[] = []
     const edges: any[] = []
-    
-    model.traverse((child) => {
-      if (child instanceof THREE.Mesh && child.geometry) {
-        const geometry = child.geometry
+
+    // 添加递归深度保护和访问过的节点跟踪
+    const visitedNodes = new Set<THREE.Object3D>()
+    let traverseDepth = 0
+    const MAX_DEPTH = 50
+    const MAX_VERTICES = 50000 // 限制顶点数量防止内存溢出
+
+    const safeTraverse = (object: THREE.Object3D, depth: number = 0) => {
+      // 防止无限递归
+      if (depth > MAX_DEPTH) {
+        console.warn('⚠️ 达到最大遍历深度，停止处理')
+        return
+      }
+
+      // 防止循环引用
+      if (visitedNodes.has(object)) {
+        console.warn('⚠️ 检测到循环引用，跳过节点')
+        return
+      }
+
+      visitedNodes.add(object)
+
+      // 处理当前节点
+      if (object instanceof THREE.Mesh && object.geometry) {
+        const geometry = object.geometry
         const positionAttribute = geometry.getAttribute('position')
-        
-        if (!positionAttribute) return
+
+        if (!positionAttribute) {
+          // 继续遍历子节点
+          object.children.forEach(child => safeTraverse(child, depth + 1))
+          return
+        }
+
+        // 检查顶点数量限制
+        if (vertices.length + positionAttribute.count > MAX_VERTICES) {
+          console.warn('⚠️ 达到最大顶点数量限制，停止处理')
+          return
+        }
         
         // 提取顶点
         const meshVertices = []
@@ -124,7 +155,7 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
           vertex.fromBufferAttribute(positionAttribute, i)
           
           // 转换到世界坐标
-          vertex.applyMatrix4(child.matrixWorld)
+          vertex.applyMatrix4(object.matrixWorld)
           
           meshVertices.push({
             position: vertex.clone(),
@@ -161,12 +192,25 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
             }
           }
         }
-        
+
         vertices.push(...meshVertices)
       }
-    })
-    
-    console.log(`🔍 提取了 ${vertices.length} 个顶点和 ${edges.length} 条边`)
+
+      // 递归遍历子节点
+      object.children.forEach(child => safeTraverse(child, depth + 1))
+    }
+
+    // 开始安全遍历
+    try {
+      safeTraverse(model, 0)
+      console.log(`🔍 提取了 ${vertices.length} 个顶点和 ${edges.length} 条边`)
+    } catch (error) {
+      console.error('❌ 模型几何提取失败:', error)
+      // 设置空数据防止崩溃
+      setExtractedVertices([])
+      setExtractedEdges([])
+      return
+    }
     setExtractedVertices(vertices)
     setExtractedEdges(edges)
   }
@@ -174,7 +218,15 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
   // 当模型改变时提取几何数据
   useEffect(() => {
     if (model) {
-      extractGeometryFromModel(model)
+      try {
+        console.log('🔄 开始处理模型:', model)
+        extractGeometryFromModel(model)
+      } catch (error) {
+        console.error('❌ 模型处理失败:', error)
+        // 重置状态防止崩溃
+        setExtractedVertices([])
+        setExtractedEdges([])
+      }
     }
   }, [model])
 
