@@ -17,7 +17,7 @@ export const ModelQuickAccess: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [sortBy, setSortBy] = useState<'name' | 'confidence' | 'type'>('confidence')
 
-  const { enterDetailView } = useGalaxyStore()
+  const { enterMainPageDetailView } = useGalaxyStore()
   const { checking, charactersWithModels, modelCount } = useBatchModelDetection()
 
   // 过滤和排序
@@ -55,7 +55,7 @@ export const ModelQuickAccess: React.FC = () => {
   // 进入角色详情视图
   const handleCharacterClick = (character: CharacterData) => {
     console.log('🎯 快速访问角色:', character.name)
-    enterDetailView(character)
+    enterMainPageDetailView(character)
     setIsVisible(false) // 关闭面板
   }
 

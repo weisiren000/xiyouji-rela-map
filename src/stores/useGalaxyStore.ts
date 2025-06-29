@@ -28,6 +28,18 @@ interface GalaxyState {
   selectedEvent: EventData | null
   detailViewCameraPosition: Vector3
 
+  // 页面特定的视图状态
+  mainPageViewMode: 'galaxy' | 'detail'
+  emptyPageViewMode: 'galaxy' | 'detail'
+
+  // 导航历史栈 - 用于正确的多层级返回
+  navigationHistory: Array<{
+    page: 'main' | 'empty'
+    viewMode: 'galaxy' | 'detail'
+    selectedCharacter: CharacterData | null
+    selectedEvent: EventData | null
+  }>
+
   // 控制状态
   isAnimating: boolean
   rotationSpeed: number
@@ -91,6 +103,26 @@ interface GalaxyState {
   enterDetailView: (character: CharacterData) => void
   enterEventDetailView: (event: EventData) => void
   exitDetailView: () => void
+
+  // 页面特定的视图状态管理方法
+  setMainPageViewMode: (mode: 'galaxy' | 'detail') => void
+  setEmptyPageViewMode: (mode: 'galaxy' | 'detail') => void
+  enterMainPageDetailView: (character: CharacterData) => void
+  enterEmptyPageDetailView: (event: EventData) => void
+  enterEmptyPageCharacterDetailView: (character: CharacterData) => void
+  exitMainPageDetailView: () => void
+  exitEmptyPageDetailView: () => void
+
+  // 导航历史栈管理方法
+  pushNavigationHistory: (state: {
+    page: 'main' | 'empty'
+    viewMode: 'galaxy' | 'detail'
+    selectedCharacter: CharacterData | null
+    selectedEvent: EventData | null
+  }) => void
+  popNavigationHistory: () => void
+  clearNavigationHistory: () => void
+  goBack: () => void
 
   // 相机位置控制方法
   setCameraPosition: (x: number, y: number, z: number) => void
@@ -164,6 +196,13 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
   selectedCharacter: null,
   selectedEvent: null,
   detailViewCameraPosition: new Vector3(0, 10, 20), // 详情视图的固定相机位置
+
+  // 页面特定的视图状态初始值
+  mainPageViewMode: 'galaxy',
+  emptyPageViewMode: 'galaxy',
+
+  // 导航历史栈初始值
+  navigationHistory: [],
 
   isAnimating: true,
   rotationSpeed: 1.0,
@@ -383,5 +422,117 @@ export const useGalaxyStore = create<GalaxyState>((set) => ({
     viewMode: 'galaxy',
     selectedCharacter: null,
     selectedEvent: null
+  }),
+
+  // 页面特定的视图状态管理方法实现
+  setMainPageViewMode: (mode) => set({ mainPageViewMode: mode }),
+  setEmptyPageViewMode: (mode) => set({ emptyPageViewMode: mode }),
+
+  enterMainPageDetailView: (character) => set((prev) => {
+    // 保存当前状态到历史栈
+    const currentState = {
+      page: 'main' as const,
+      viewMode: prev.mainPageViewMode,
+      selectedCharacter: prev.selectedCharacter,
+      selectedEvent: prev.selectedEvent
+    }
+
+    return {
+      navigationHistory: [...prev.navigationHistory, currentState],
+      mainPageViewMode: 'detail',
+      selectedCharacter: character,
+      selectedEvent: null
+    }
+  }),
+
+  enterEmptyPageDetailView: (event) => set((prev) => {
+    // 保存当前状态到历史栈
+    const currentState = {
+      page: 'empty' as const,
+      viewMode: prev.emptyPageViewMode,
+      selectedCharacter: prev.selectedCharacter,
+      selectedEvent: prev.selectedEvent
+    }
+
+    return {
+      navigationHistory: [...prev.navigationHistory, currentState],
+      emptyPageViewMode: 'detail',
+      selectedCharacter: null,
+      selectedEvent: event
+    }
+  }),
+
+  enterEmptyPageCharacterDetailView: (character) => set((prev) => {
+    // 保存当前状态到历史栈
+    const currentState = {
+      page: 'empty' as const,
+      viewMode: prev.emptyPageViewMode,
+      selectedCharacter: prev.selectedCharacter,
+      selectedEvent: prev.selectedEvent
+    }
+
+    return {
+      navigationHistory: [...prev.navigationHistory, currentState],
+      emptyPageViewMode: 'detail',
+      selectedCharacter: character,
+      selectedEvent: null
+    }
+  }),
+
+  exitMainPageDetailView: () => set({
+    mainPageViewMode: 'galaxy',
+    selectedCharacter: null,
+    selectedEvent: null
+  }),
+
+  exitEmptyPageDetailView: () => set({
+    emptyPageViewMode: 'galaxy',
+    selectedCharacter: null,
+    selectedEvent: null
+  }),
+
+  // 导航历史栈管理方法实现
+  pushNavigationHistory: (state) => set((prev) => ({
+    navigationHistory: [...prev.navigationHistory, state]
+  })),
+
+  popNavigationHistory: () => set((prev) => ({
+    navigationHistory: prev.navigationHistory.slice(0, -1)
+  })),
+
+  clearNavigationHistory: () => set({
+    navigationHistory: []
+  }),
+
+  goBack: () => set((prev) => {
+    const history = prev.navigationHistory
+    if (history.length === 0) {
+      console.log('🔙 导航历史为空，无法返回')
+      return prev
+    }
+
+    // 获取上一个状态
+    const previousState = history[history.length - 1]
+    console.log('🔙 返回到:', previousState)
+
+    // 移除历史记录中的最后一项
+    const newHistory = history.slice(0, -1)
+
+    // 根据页面类型设置相应的状态
+    if (previousState.page === 'main') {
+      return {
+        navigationHistory: newHistory,
+        mainPageViewMode: previousState.viewMode,
+        selectedCharacter: previousState.selectedCharacter,
+        selectedEvent: previousState.selectedEvent
+      }
+    } else {
+      return {
+        navigationHistory: newHistory,
+        emptyPageViewMode: previousState.viewMode,
+        selectedCharacter: previousState.selectedCharacter,
+        selectedEvent: previousState.selectedEvent
+      }
+    }
   }),
 }))

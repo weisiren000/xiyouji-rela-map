@@ -139,7 +139,7 @@ export const useEventCharacterInteraction = (
   onControlsEnabledChange?: (enabled: boolean) => void
 ) => {
   const { camera, gl } = useThree()
-  const { enterDetailView } = useGalaxyStore()
+  const { enterEmptyPageCharacterDetailView } = useGalaxyStore()
   const raycaster = useRef(new Raycaster())
   const mouse = useRef(new Vector2())
   
@@ -221,7 +221,7 @@ export const useEventCharacterInteraction = (
           
           // 如果EventCharacter包含完整的CharacterData，直接使用
           if (character.character) {
-            enterDetailView(character.character)
+            enterEmptyPageCharacterDetailView(character.character)
             return prev
           }
 
@@ -252,7 +252,7 @@ export const useEventCharacterInteraction = (
             }
           }
           
-          enterDetailView(characterData)
+          enterEmptyPageCharacterDetailView(characterData)
           return prev
         }
 
@@ -280,7 +280,7 @@ export const useEventCharacterInteraction = (
         }
       })
     }
-  }, [updateMousePosition, performRaycast, characters, enterDetailView])
+  }, [updateMousePosition, performRaycast, characters, enterEmptyPageCharacterDetailView])
 
   /**
    * 处理指针移动事件

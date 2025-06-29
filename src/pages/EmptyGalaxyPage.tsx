@@ -25,8 +25,8 @@ function EmptyGalaxyPage() {
   // 🌐 全局事件信息状态
   const { hoveredEvent, mousePosition, showInfoCard } = useEventInfoStore()
 
-  // 🎯 视图状态管理
-  const { viewMode, selectedCharacter, selectedEvent, applyCameraPreset } = useGalaxyStore()
+  // 🎯 视图状态管理 - 使用八十一难页面特定的视图状态
+  const { emptyPageViewMode, selectedCharacter, selectedEvent, applyCameraPreset } = useGalaxyStore()
 
   // 应用启动日志
   useEffect(() => {
@@ -59,7 +59,7 @@ function EmptyGalaxyPage() {
   return (
     <div className="app">
       {/* 条件渲染：全局视图 vs 详情视图 */}
-      {viewMode === 'galaxy' ? (
+      {emptyPageViewMode === 'galaxy' ? (
         <>
           {/* 八十一难视图 */}
           {/* 信息显示 */}
@@ -101,7 +101,7 @@ function EmptyGalaxyPage() {
       )}
 
       {/* 🎯 全局事件信息卡片 - 只在银河系视图中显示 */}
-      {viewMode === 'galaxy' && (
+      {emptyPageViewMode === 'galaxy' && (
         <EventInfoOverlay
           event={hoveredEvent}
           mousePosition={mousePosition}

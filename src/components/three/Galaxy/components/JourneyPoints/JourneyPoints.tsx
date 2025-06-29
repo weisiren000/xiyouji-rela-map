@@ -58,7 +58,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const { camera, gl } = useThree()
   
   // 获取动画配置参数和控制方法
-  const { journeyConfig, setAnimating, enterEventDetailView } = useGalaxyStore()
+  const { journeyConfig, setAnimating, enterEmptyPageDetailView } = useGalaxyStore()
   
   // 获取事件信息状态
   const { setHoveredEvent, setShowInfoCard, setMousePosition } = useEventInfoStore()
@@ -192,7 +192,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
         if (isDoubleClick && journeyPoint.eventData) {
           // 双击进入详情视图
           console.log('🎯 双击进入事件详情视图:', journeyPoint.eventData.nanming)
-          enterEventDetailView(journeyPoint.eventData)
+          enterEmptyPageDetailView(journeyPoint.eventData)
           return
         }
 
@@ -257,7 +257,7 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
         setAnimating(true)
       }
     }
-  }, [camera, raycaster, mouse, points, lastClickIndex, lastClickTime, enterEventDetailView, setAnimating, setHoveredEvent, setShowInfoCard]) // 添加依赖数组
+  }, [camera, raycaster, mouse, points, lastClickIndex, lastClickTime, enterEmptyPageDetailView, setAnimating, setHoveredEvent, setShowInfoCard]) // 添加依赖数组
   
   // 🔧 修复：使用useCallback包装清除悬停函数
   const clearHover = useCallback(() => {

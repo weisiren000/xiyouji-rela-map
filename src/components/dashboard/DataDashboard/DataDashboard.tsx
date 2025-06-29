@@ -41,7 +41,15 @@ export const DataDashboard: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [dashboard.isVisible, setDashboardVisible])
 
+  // 暂时隐藏数据管理按钮
+  const HIDE_DATA_DASHBOARD = true
+
   if (!dashboard.isVisible) {
+    // 如果设置为隐藏，则不渲染任何内容
+    if (HIDE_DATA_DASHBOARD) {
+      return null
+    }
+
     return (
       <div className="dashboard-toggle">
         <button

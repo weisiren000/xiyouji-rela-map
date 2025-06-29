@@ -1,6 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import App from '../../App'
 import EmptyGalaxyPage from '../../pages/EmptyGalaxyPage'
+
+// 创建一个全局状态来跟踪当前页面
+let globalCurrentPage: 'main' | 'empty' = 'empty'
+let globalSetCurrentPage: ((page: 'main' | 'empty') => void) | null = null
+
+// 导出函数供其他组件使用
+export const getCurrentPage = () => globalCurrentPage
+export const setGlobalCurrentPage = (page: 'main' | 'empty') => {
+  globalCurrentPage = page
+  if (globalSetCurrentPage) {
+    globalSetCurrentPage(page)
+  }
+}
 
 /**
  * 页面切换器组件
@@ -10,8 +23,24 @@ import EmptyGalaxyPage from '../../pages/EmptyGalaxyPage'
 export const PageSwitcher: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'main' | 'empty'>('empty')
 
-  const switchToMain = () => setCurrentPage('main')
-  const switchToEmpty = () => setCurrentPage('empty')
+  // 设置全局引用
+  useEffect(() => {
+    globalSetCurrentPage = setCurrentPage
+    globalCurrentPage = currentPage
+    return () => {
+      globalSetCurrentPage = null
+    }
+  }, [currentPage])
+
+  const switchToMain = () => {
+    setCurrentPage('main')
+    globalCurrentPage = 'main'
+  }
+
+  const switchToEmpty = () => {
+    setCurrentPage('empty')
+    globalCurrentPage = 'empty'
+  }
 
   return (
     <>

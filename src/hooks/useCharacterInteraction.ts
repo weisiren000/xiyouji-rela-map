@@ -28,7 +28,7 @@ export const useCharacterInteraction = (
   meshRef: React.RefObject<InstancedMesh>
 ) => {
   const { camera, gl } = useThree()
-  const { enterDetailView } = useGalaxyStore()
+  const { enterMainPageDetailView } = useGalaxyStore()
   const raycaster = useRef(new Raycaster())
   const mouse = useRef(new Vector2())
 
@@ -95,11 +95,11 @@ export const useCharacterInteraction = (
         const character = characters[instanceId]
         console.log('🎯 点击角色:', character.name, '进入详情视图')
 
-        // 进入详情视图
-        enterDetailView(character)
+        // 进入主页面详情视图
+        enterMainPageDetailView(character)
       }
     }
-  }, [camera, gl.domElement, meshRef, characters, enterDetailView])
+  }, [camera, gl.domElement, meshRef, characters, enterMainPageDetailView])
 
   /**
    * 执行射线检测 - 使用BVH优化
