@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect, useState } from 'react'
+import React, { useRef, useMemo, useEffect, useState, useCallback } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import { InstancedMesh, Object3D, Color, Vector3, Raycaster, Mesh, MeshBasicMaterial, SphereGeometry, Matrix4, Vector2 } from 'three'
 import { JourneyPoint } from '@utils/three/journeyGenerator'
@@ -39,7 +39,11 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const [lastClickTime, setLastClickTime] = useState<number>(0)
   const [lastClickIndex, setLastClickIndex] = useState<number | null>(null)
-  
+
+  // 🔧 修复：使用ref存储最新状态，避免事件监听器闭包问题
+  const hoveredIndexRef = useRef<number | null>(null)
+  const selectedIndexRef = useRef<number | null>(null)
+
   // 脉冲外壳相关引用 - 添加两层外壳效果
   const pulseShellRef = useRef<Mesh>(null)
   const outerShellRef = useRef<Mesh>(null)
@@ -59,6 +63,15 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
   // 获取事件信息状态
   const { setHoveredEvent, setShowInfoCard, setMousePosition } = useEventInfoStore()
 
+  // 🔧 修复：同步ref和state，确保事件处理函数总是能获取到最新状态
+  useEffect(() => {
+    hoveredIndexRef.current = hoveredIndex
+  }, [hoveredIndex])
+
+  useEffect(() => {
+    selectedIndexRef.current = selectedIndex
+  }, [selectedIndex])
+
   // 更新鼠标位置的辅助函数 - 直接从select.html复制
   const updateMousePosition = (event: MouseEvent | PointerEvent) => {
     const rect = gl.domElement.getBoundingClientRect()
@@ -71,44 +84,50 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
     setMousePosition(new Vector2(event.clientX, event.clientY))
   }
 
-  // 处理鼠标移动 - 完全重新实现
-  const handlePointerMove = (event: PointerEvent) => {
+  // 🔧 修复：使用useCallback包装事件处理函数，避免频繁重新绑定
+  const handlePointerMove = useCallback((event: PointerEvent) => {
     // 如果有鼠标按钮被按下，不处理悬停
     if (event.buttons > 0) return
-    
+
     // 如果没有实例网格或没有点，不处理
     if (!meshRef.current || points.length === 0) return
-    
+
     // 更新鼠标位置
     updateMousePosition(event)
-    
+
     // 设置射线
     raycaster.setFromCamera(mouse, camera)
-    
+
     // 执行射线检测
     const intersects = raycaster.intersectObject(meshRef.current)
-    
+
     if (intersects.length > 0) {
       const instanceId = intersects[0].instanceId
-      
+
       if (instanceId !== undefined) {
-        // 如果悬停的点不是当前选中的点，才显示悬停效果
-        if (instanceId !== selectedIndex) {
+        // 🔧 修复：使用ref获取最新状态，避免闭包问题
+        const currentSelected = selectedIndexRef.current
+        if (instanceId !== currentSelected) {
           handlePointHover(instanceId)
         }
       }
     } else {
       // 如果没有相交，清除悬停状态
-      if (hoveredIndex !== null && hoveredIndex !== selectedIndex) {
+      // 🔧 修复：使用ref获取最新状态
+      const currentHovered = hoveredIndexRef.current
+      const currentSelected = selectedIndexRef.current
+      if (currentHovered !== null && currentHovered !== currentSelected) {
         clearHover()
       }
     }
-  }
+  }, [camera, raycaster, mouse, points.length]) // 只包含真正需要的依赖
   
-  // 处理点悬停
-  const handlePointHover = (index: number) => {
+  // 🔧 修复：使用useCallback包装悬停处理函数
+  const handlePointHover = useCallback((index: number) => {
     // 如果已经有选中的点，不改变悬停状态
-    if (selectedIndex !== null) return
+    // 🔧 修复：使用ref获取最新状态
+    const currentSelected = selectedIndexRef.current
+    if (currentSelected !== null) return
 
     setHoveredIndex(index)
     setHoveredPoint(points[index])
@@ -142,10 +161,10 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
     }
 
     setShowInfoCard(true)
-  }
+  }, [points, setAnimating, setHoveredEvent, setShowInfoCard])
   
-  // 处理点击选择 - 支持双击进入详情视图
-  const handlePointerDown = (event: PointerEvent) => {
+  // 🔧 修复：使用useCallback包装点击处理函数
+  const handlePointerDown = useCallback((event: PointerEvent) => {
     // 更新鼠标位置
     updateMousePosition(event)
 
@@ -182,7 +201,9 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
         setLastClickIndex(instanceId)
 
         // 单击选择逻辑
-        if (instanceId === selectedIndex) {
+        // 🔧 修复：使用ref获取最新状态
+        const currentSelected = selectedIndexRef.current
+        if (instanceId === currentSelected) {
           // 如果点击的是当前选中的点，取消选择
           setSelectedIndex(null)
           setSelectedPoint(null)
@@ -229,17 +250,21 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
       setSelectedPoint(null)
 
       // 如果没有悬停的点，清除信息卡片并恢复旋转
-      if (hoveredIndex === null) {
+      // 🔧 修复：使用ref获取最新状态
+      const currentHovered = hoveredIndexRef.current
+      if (currentHovered === null) {
         setShowInfoCard(false)
         setAnimating(true)
       }
     }
-  }
+  }, [camera, raycaster, mouse, points, lastClickIndex, lastClickTime, enterEventDetailView, setAnimating, setHoveredEvent, setShowInfoCard]) // 添加依赖数组
   
-  // 清除悬停状态
-  const clearHover = () => {
+  // 🔧 修复：使用useCallback包装清除悬停函数
+  const clearHover = useCallback(() => {
     // 如果有选中的点，不清除信息卡片
-    if (selectedIndex !== null) return
+    // 🔧 修复：使用ref获取最新状态
+    const currentSelected = selectedIndexRef.current
+    if (currentSelected !== null) return
 
     setHoveredIndex(null)
     setHoveredPoint(null)
@@ -248,22 +273,25 @@ export const JourneyPoints: React.FC<JourneyPointsProps> = ({
 
     // 当取消选中点时，恢复银河系旋转
     setAnimating(true)
-  }
+  }, [setHoveredEvent, setShowInfoCard, setAnimating])
 
-  // 添加事件监听器
+  // 🔧 修复：事件监听器绑定 - 移除状态依赖，避免频繁重新绑定
   useEffect(() => {
     const canvas = gl.domElement
-    
-    // 添加事件监听器 - 完全按照select.html实现
+
+    // 添加事件监听器 - 使用稳定的事件处理函数
     canvas.addEventListener('pointermove', handlePointerMove)
     canvas.addEventListener('pointerdown', handlePointerDown)
-    
+
+    console.log('🎯 JourneyPoints事件监听器已绑定')
+
     return () => {
       // 移除事件监听器
       canvas.removeEventListener('pointermove', handlePointerMove)
       canvas.removeEventListener('pointerdown', handlePointerDown)
+      console.log('🚫 JourneyPoints事件监听器已移除')
     }
-  }, [camera, gl, points, setAnimating, setShowInfoCard, setHoveredEvent, hoveredIndex, selectedIndex])
+  }, [gl, handlePointerMove, handlePointerDown]) // 🔧 关键修复：只包含真正需要重新绑定的依赖
 
   // 动画更新
   useFrame(() => {

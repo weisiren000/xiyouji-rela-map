@@ -74,7 +74,7 @@ export const DEFAULT_JOURNEY_CONFIG: JourneyConfig = {
   globalSize: 1.3, // 全局大小倍数
   opacity: 1.0, // 透明度
   metalness: 0.3, // 金属度
-  roughness: 0.2, // 粗糙度
+  roughness: 1.0, // 粗糙度
 
   // 动画控制
   animationSpeed: 0.9, // 动画速度
@@ -92,7 +92,6 @@ export function generateJourneyPoints(config: JourneyConfig = DEFAULT_JOURNEY_CO
     pointCount,
     maxRadius,
     minRadius,
-    totalTurns,
     waveHeight,
     waveFrequency,
     pointSize,
@@ -162,7 +161,6 @@ export function generateJourneyPointsWithEvents(
     pointCount,
     maxRadius,
     minRadius,
-    totalTurns,
     waveHeight,
     waveFrequency,
     pointSize,
