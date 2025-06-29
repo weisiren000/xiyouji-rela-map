@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect, useState } from 'react'
+import React, { useRef, useMemo, useEffect, useState, useCallback } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { InstancedMesh, Object3D, Vector3, Vector2 } from 'three'
 // import * as THREE from 'three' // 暂时注释，如需要可以恢复
@@ -354,24 +354,42 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   const [dragStatus, setDragStatus] = useState<string>('')
   const [controlsEnabled, setControlsEnabled] = useState(true)
 
+  // 🎯 稳定化回调函数，避免无限重新创建
+  const charactersRef = useRef(charactersWithPosition)
+  charactersRef.current = charactersWithPosition
+
+  const onCharacterPositionUpdate = useCallback((index: number, position: Vector3) => {
+    // 处理角色位置更新
+    const character = charactersRef.current[index]
+    console.log(`🎯 角色位置更新: ${character?.name || 'Unknown'}`, position.toArray())
+  }, [])
+
+  const onDragStatusChange = useCallback((status: string) => {
+    setDragStatus(status)
+  }, [])
+
+  const onControlsEnabledChange = useCallback((enabled: boolean) => {
+    setControlsEnabled(enabled)
+  }, [])
+
   // 🎯 使用拖拽交互系统
   const {
     interactionState: dragInteractionState,
-    bindMouseEvents: bindDragEvents,
-    resetTemporaryPositions
+    bindMouseEvents: bindDragEvents
   } = useGalaxyCharacterDrag(
     charactersWithPosition,
     mainMeshRef,
-    (index: number, position: Vector3) => {
-      // 处理角色位置更新
-      console.log(`🎯 角色位置更新: ${charactersWithPosition[index]?.name}`, position.toArray())
-    },
-    setDragStatus,
-    setControlsEnabled
+    onCharacterPositionUpdate,
+    onDragStatusChange,
+    onControlsEnabledChange
   )
 
   // 🌐 全局状态管理
   const { setHoveredCharacter, setMousePosition, clearHover } = useCharacterInfoStore()
+
+  // 使用 ref 来避免无限循环
+  const previousHoveredCharacterRef = useRef<any>(null)
+  const previousMousePositionRef = useRef<any>(null)
 
   // 绑定拖拽事件
   useEffect(() => {
@@ -379,39 +397,52 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
     return cleanup
   }, [bindDragEvents])
 
-  // 🔄 同步拖拽交互状态到全局状态
+  // 🔄 同步拖拽交互状态到全局状态 - 使用 ref 避免无限循环
   useEffect(() => {
-    if (dragInteractionState.hoveredCharacter) {
-      console.log('🖱️ 检测到悬浮:', dragInteractionState.hoveredCharacter.name)
-      console.log('🌐 更新全局状态')
-      // 转换CharacterDataWithPosition为CharacterData
-      const characterData = {
-        id: dragInteractionState.hoveredCharacter.id,
-        name: dragInteractionState.hoveredCharacter.name,
-        pinyin: dragInteractionState.hoveredCharacter.pinyin || '',
-        type: dragInteractionState.hoveredCharacter.type,
-        category: (dragInteractionState.hoveredCharacter as any).category || 'human',
-        faction: dragInteractionState.hoveredCharacter.faction,
-        rank: dragInteractionState.hoveredCharacter.rank,
-        power: dragInteractionState.hoveredCharacter.power || 50,
-        influence: dragInteractionState.hoveredCharacter.influence || 50,
-        visual: dragInteractionState.hoveredCharacter.visual || {
-          color: '#FFFFFF',
-          size: 1.0,
-          emissiveIntensity: 0.5
-        },
-        isAlias: dragInteractionState.hoveredCharacter.isAlias,
-        originalCharacter: dragInteractionState.hoveredCharacter.originalCharacter
+    const currentHoveredCharacter = dragInteractionState.hoveredCharacter
+    const currentMousePosition = dragInteractionState.mousePosition
+
+    // 只有当悬浮角色实际发生变化时才更新
+    if (currentHoveredCharacter !== previousHoveredCharacterRef.current) {
+      previousHoveredCharacterRef.current = currentHoveredCharacter
+
+      if (currentHoveredCharacter) {
+        console.log('🖱️ 检测到悬浮:', currentHoveredCharacter.name)
+        console.log('🌐 更新全局状态')
+        // 转换CharacterDataWithPosition为CharacterData
+        const characterData = {
+          id: currentHoveredCharacter.id,
+          name: currentHoveredCharacter.name,
+          pinyin: currentHoveredCharacter.pinyin || '',
+          type: currentHoveredCharacter.type,
+          category: (currentHoveredCharacter as any).category || 'human',
+          faction: currentHoveredCharacter.faction,
+          rank: currentHoveredCharacter.rank,
+          power: currentHoveredCharacter.power || 50,
+          influence: currentHoveredCharacter.influence || 50,
+          visual: currentHoveredCharacter.visual || {
+            color: '#FFFFFF',
+            size: 1.0,
+            emissiveIntensity: 0.5
+          },
+          isAlias: currentHoveredCharacter.isAlias,
+          originalCharacter: currentHoveredCharacter.originalCharacter
+        }
+        setHoveredCharacter(characterData)
+      } else {
+        console.log('🚫 清除悬浮状态')
+        clearHover()
       }
-      setHoveredCharacter(characterData)
-      if (dragInteractionState.mousePosition) {
-        setMousePosition(new Vector2(dragInteractionState.mousePosition.x, dragInteractionState.mousePosition.y))
-      }
-    } else {
-      console.log('🚫 清除悬浮状态')
-      clearHover()
     }
-  }, [dragInteractionState.hoveredCharacter, dragInteractionState.mousePosition, setHoveredCharacter, setMousePosition, clearHover])
+
+    // 只有当鼠标位置实际发生变化时才更新
+    if (currentMousePosition !== previousMousePositionRef.current) {
+      previousMousePositionRef.current = currentMousePosition
+      if (currentMousePosition && currentHoveredCharacter) {
+        setMousePosition(new Vector2(currentMousePosition.x, currentMousePosition.y))
+      }
+    }
+  }, [dragInteractionState.hoveredCharacter, dragInteractionState.mousePosition])
 
   // mesh引用回调 - 将第一个mesh设为主要交互对象
   const handleMeshRef = (color: string, mesh: InstancedMesh | null) => {
