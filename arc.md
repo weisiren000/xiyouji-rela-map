@@ -466,3 +466,30 @@ _archive/
 - **修复文件**: `src/components/three/Galaxy/components/JourneyPoints/JourneyPoints.tsx`
 - **技术要点**: React事件处理最佳实践，避免状态依赖导致的性能问题
 - **效果**: 彻底解决悬浮检测失效问题，提高交互稳定性
+
+## 星谱界面银河系移除改造 (2025-06-29)
+- **需求**: 星谱界面需要进行大改动，移除中间的银河系显示，只保留角色点
+- **实施**: 修改GalaxyScene.tsx，移除Galaxy组件和CentralSun组件，直接渲染CharacterSpheresSimple
+- **技术要点**:
+  - 保留背景星空StarField组件
+  - 移除银河系结构PlanetCluster和FogParticles
+  - 移除中心太阳CentralSun组件
+  - 直接使用CharacterSpheresSimple组件渲染角色数据点
+- **修改文件**: `src/scenes/GalaxyScene.tsx`
+- **效果**: 创建纯净的3D空间，只显示角色点，为后续独立交互逻辑做准备
+
+## 星谱界面自由探索交互改造 (2025-06-29)
+- **需求**: 改造星谱界面的用户交互效果，完全独立出来，交互效果和角色局部视图一样自由探索
+- **实施**:
+  - 替换CameraController为FreeExplorationCameraController
+  - 移除自动旋转和动态相机控制
+  - 设置适合自由探索的OrbitControls参数
+  - 优化初始相机位置和光照环境
+- **技术要点**:
+  - **自由交互**: 无自动旋转，完全由用户控制
+  - **灵敏度优化**: 提高缩放和平移速度，适中的旋转速度
+  - **距离范围**: minDistance=0.5支持近距离观察，maxDistance=500适中远距离
+  - **全方位观察**: 移除极角限制，允许360度观察
+  - **增强光照**: 提升环境光强度，添加方向光增强立体感
+- **修改文件**: `src/scenes/GalaxyScene.tsx`
+- **效果**: 实现和角色局部视图一样的自由探索交互体验

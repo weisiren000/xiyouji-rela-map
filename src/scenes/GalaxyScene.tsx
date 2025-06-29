@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Galaxy, StarField, CentralSun } from '@components/three/Galaxy'
+import { CharacterSpheresSimple } from '@components/three/Galaxy/components/CharacterSpheresSimple'
 import { CharacterControlPanel } from '@components/controls/CharacterControlPanel'
 
 import { useGalaxyStore } from '@stores/useGalaxyStore'
@@ -13,52 +14,39 @@ import { usePerformanceMonitor, PERFORMANCE_CONFIGS } from '@/hooks/usePerforman
 
 
 /**
- * 相机控制组件
+ * 自由探索相机控制组件
+ * 模仿角色局部视图的自由交互效果
  */
-const CameraController: React.FC = () => {
-  const controlsRef = useRef<any>(null)
-  const {
-    cameraAutoRotate,
-    cameraRotateSpeed,
-    cameraTargetX,
-    cameraTargetY,
-    cameraTargetZ
-  } = useGalaxyStore()
-
-  useFrame(() => {
-    if (controlsRef.current) {
-      // 自动旋转控制
-      if (cameraAutoRotate) {
-        controlsRef.current.autoRotate = true
-        controlsRef.current.autoRotateSpeed = cameraRotateSpeed
-      } else {
-        controlsRef.current.autoRotate = false
-      }
-
-      // 更新目标点
-      controlsRef.current.target.set(cameraTargetX, cameraTargetY, cameraTargetZ)
-      controlsRef.current.update()
-    }
-  })
-
+const FreeExplorationCameraController: React.FC = () => {
   return (
     <OrbitControls
-      ref={controlsRef}
-      target={[cameraTargetX, cameraTargetY, cameraTargetZ]}
-      enableDamping
-      dampingFactor={0.05}
+      // 自由探索模式：无自动旋转，完全由用户控制
+      autoRotate={false}
+
+      // 启用所有交互功能
       enablePan={true}
       enableZoom={true}
       enableRotate={true}
-      zoomSpeed={0.6}
-      panSpeed={0.8}
-      rotateSpeed={0.4}
-      minDistance={1}
-      maxDistance={2000}
+
+      // 阻尼效果，让交互更平滑
+      enableDamping={true}
+      dampingFactor={0.05}
+
+      // 调整交互灵敏度，适合自由探索
+      zoomSpeed={1.0}      // 提高缩放速度
+      panSpeed={1.0}       // 提高平移速度
+      rotateSpeed={0.5}    // 适中的旋转速度
+
+      // 扩大距离范围，支持远近观察
+      minDistance={0.5}    // 允许非常近距离观察角色
+      maxDistance={500}    // 适中的最大距离，不要太远
+
+      // 移除极角限制，允许全方位观察
       minPolarAngle={0}
       maxPolarAngle={Math.PI}
-      autoRotate={cameraAutoRotate}
-      autoRotateSpeed={cameraRotateSpeed}
+
+      // 目标点设置为场景中心
+      target={[0, 0, 0]}
     />
   )
 }
@@ -187,10 +175,10 @@ export const GalaxyScene: React.FC = () => {
     <div style={{ width: '100vw', height: '100vh', background: '#000' }}>
       <Canvas
         camera={{
-          position: [cameraPositionX, cameraPositionY, cameraPositionZ],
-          fov: cameraFov,
-          near: cameraNear,
-          far: cameraFar,
+          position: [50, 30, 50], // 设置适合自由探索的初始位置
+          fov: 75,                // 适中的视野角度
+          near: 0.1,              // 允许非常近距离观察
+          far: 1000,              // 适中的远距离
         }}
         gl={{
           antialias: true,
@@ -198,43 +186,47 @@ export const GalaxyScene: React.FC = () => {
           powerPreference: 'high-performance' as const
         }}
       >
-        {/* 环境光 */}
-        <ambientLight intensity={0.1} />
+        {/* 增强环境光，适合自由探索 */}
+        <ambientLight intensity={0.3} />
+
+        {/* 添加方向光，增强立体感 */}
+        <directionalLight
+          position={[10, 10, 5]}
+          intensity={0.5}
+          color="#ffffff"
+        />
 
         {/* 背景星空 */}
         <StarField />
 
-        {/* 中心太阳 */}
-        <CentralSun />
-
-        {/* 银河系 */}
+        {/* 只显示角色数据点，移除银河系和中心太阳 */}
         <Suspense fallback={null}>
-          <Galaxy
-            characterDataVisible={characterDataVisible}
-            characterDataOpacity={characterDataOpacity}
-            characterGlobalSize={characterGlobalSize}
-            characterEmissiveIntensity={characterEmissiveIntensity}
-            characterMetalness={characterMetalness}
-            characterRoughness={characterRoughness}
-            characterAnimationSpeed={characterAnimationSpeed}
-            characterFloatAmplitude={characterFloatAmplitude}
+          {/* 直接渲染角色球体组件，不包含银河系结构 */}
+          <CharacterSpheresSimple
+            visible={characterDataVisible}
+            opacity={characterDataOpacity}
+            globalSize={characterGlobalSize}
+            emissiveIntensity={characterEmissiveIntensity}
+            metalness={characterMetalness}
+            roughness={characterRoughness}
+            animationSpeed={characterAnimationSpeed}
+            floatAmplitude={characterFloatAmplitude}
             showAliases={showAliases}
             aliasOpacity={aliasOpacity}
             aliasSize={aliasSize}
-            characterRadiusMultiplier={characterRadiusMultiplier}
-            characterHeightMultiplier={characterHeightMultiplier}
-            characterRandomSpread={characterRandomSpread}
-            characterColorIntensity={characterColorIntensity}
-            characterUseOriginalColors={characterUseOriginalColors}
-            characterRegeneratePositions={characterRegeneratePositions}
+            radiusMultiplier={characterRadiusMultiplier}
+            heightMultiplier={characterHeightMultiplier}
+            randomSpread={characterRandomSpread}
+            colorIntensity={characterColorIntensity}
+            useOriginalColors={characterUseOriginalColors}
+            regeneratePositions={characterRegeneratePositions}
           />
         </Suspense>
 
-        {/* 动态相机控制 */}
-        <DynamicCamera />
 
-        {/* 相机控制 */}
-        <CameraController />
+
+        {/* 自由探索相机控制 */}
+        <FreeExplorationCameraController />
 
         {/* 后期处理效果 - 根据性能等级条件渲染 */}
         {config.bloomEnabled && (
