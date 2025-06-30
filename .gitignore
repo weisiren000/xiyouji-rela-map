@@ -26,8 +26,8 @@ _experiments/
 .augmentignore
 .augmentmemories
 
-TECH_STACK_ARCHIVE.md
-TECH_STACK_ARCHIVE.pdf
+TECH_STACK_ARCHITECTURE.md
+TECH_STACK_ARCHITECTURE.pdf
 TECH_STACK_REPORT.md
 
 reference/
