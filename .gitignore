@@ -40,7 +40,10 @@ TECH_STACK_REPORT.md
 
 reference/
 
+# 忽略docs目录，但保留分支文档
 docs
+!docs/BRANCH_*.md
+!docs/API_ENDPOINT_UPDATE.md
 
 data/backup
 data/migration-logs
