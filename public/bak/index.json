@@ -1,0 +1,22 @@
+{
+  "models": [
+    "哪吒.glb",
+    "唐僧.glb",
+    "太上老君.glb",
+    "如来佛祖.glb",
+    "孙悟空.glb",
+    "朱紫国妖王.glb",
+    "沙僧.glb",
+    "牛魔王.glb",
+    "狮猁怪.glb",
+    "猪八戒.glb",
+    "玉皇大帝.glb",
+    "白龙马.glb",
+    "观音菩萨.glb",
+    "赛太岁.glb"
+  ],
+  "lastUpdated": "2025-06-29T14:20:14.526Z",
+  "count": 14,
+  "generatedBy": "generate-model-index.js",
+  "description": "自动生成的模型文件索引"
+}

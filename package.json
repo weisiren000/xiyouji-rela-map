@@ -1,7 +1,7 @@
 {
-  "name": "galaxy-density-field",
+  "name": "xiyou-starmap",
   "version": "1.2.5",
-  "description": "Three.js密度函数引力场银河系效果 - React现代化重构版",
+  "description": "西游星图 - 基于Three.js的西游记角色关系3D可视化平台",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -58,9 +58,12 @@
     "react",
     "visualization",
     "3d",
+    "xiyou",
+    "journey-to-the-west",
+    "character-relationships",
+    "starmap",
     "galaxy",
-    "density-field",
-    "gravitational-field"
+    "chinese-literature"
   ],
   "author": "weisiren",
   "license": "MIT"

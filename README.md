@@ -1,6 +1,6 @@
-# 西游记关系图谱 3D 可视化
+# 西游星图 (XiYou StarMap)
 
-一个基于 Three.js 和 React 的交互式 3D 银河系可视化项目，用于展示西游记角色关系网络。
+一个基于 Three.js 和 React 的交互式 3D 银河系可视化平台，用于展示西游记角色关系网络和取经路径的星图式呈现。
 
 ## 🌟 项目特色
 
@@ -38,8 +38,8 @@
 ### 安装运行
 ```bash
 # 克隆项目
-git clone https://github.com/weisiren000/xiyouji-rela-map.git
-cd xiyouji-rela-map
+git clone https://github.com/weisiren000/xiyou-starmap.git
+cd xiyou-starmap
 
 # 安装依赖
 pnpm install
@@ -53,7 +53,7 @@ pnpm dev
 
 ### 项目结构
 ```
-xiyouji-rela-map/
+xiyou-starmap/
 ├── src/
 │   ├── components/          # React组件
 │   │   ├── controls/        # 控制面板组件
@@ -174,8 +174,8 @@ xiyouji-rela-map/
 
 如有问题或建议，请通过以下方式联系：
 
-- 提交 [Issue](https://github.com/weisiren000/xiyouji-rela-map/issues)
-- 发起 [Discussion](https://github.com/weisiren000/xiyouji-rela-map/discussions)
+- 提交 [Issue](https://github.com/weisiren000/xiyou-starmap/issues)
+- 发起 [Discussion](https://github.com/weisiren000/xiyou-starmap/discussions)
 
 ---
 
