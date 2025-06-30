@@ -52,6 +52,11 @@ pnpm start
 
 ## 📡 API接口
 
+### 📖 API文档界面
+- 访问地址: `http://localhost:3003` (自动跳转到API文档)
+- 提供完整的API接口说明、参数说明和调用示例
+- 支持响应式设计，适配移动端和桌面端
+
 ### 基础URL
 - 开发环境: `http://localhost:3003/api`
 - 生产环境: 根据部署平台而定
@@ -202,5 +207,5 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 ## 📞 联系方式
 
 - 作者: weisiren
-- 邮箱: [你的邮箱]
+- 邮箱: [cxyvsir04@gmail.com](cxyvsir04@gmail.com)
 - GitHub: [@weisiren](https://github.com/weisiren)
