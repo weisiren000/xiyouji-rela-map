@@ -1040,50 +1040,50 @@ function App() {
         .radial-grid-purple {
           position: absolute;
           inset: 0;
-          background: 
+          background:
             radial-gradient(circle at center, rgba(147, 51, 234, 0.15) 25%, transparent 30%),
-            linear-gradient(transparent 1.5px, rgba(147, 51, 234, 0.4) 1.5px),
-            linear-gradient(90deg, transparent 1.5px, rgba(147, 51, 234, 0.4) 1.5px);
-          background-size: 100% 100%, 12px 12px, 12px 12px;
+            linear-gradient(transparent 1px, rgba(147, 51, 234, 0.4) 1px),
+            linear-gradient(90deg, transparent 1px, rgba(147, 51, 234, 0.4) 1px);
+          background-size: 100% 100%, 8px 8px, 8px 8px;
           background-position: center, center, center;
           clip-path: circle(0% at center);
-          animation: smooth-radial-expand 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: smooth-radial-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .radial-grid-pink {
           position: absolute;
           inset: 0;
-          background: 
+          background:
             radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 25%, transparent 30%),
-            linear-gradient(transparent 1.5px, rgba(236, 72, 153, 0.4) 1.5px),
-            linear-gradient(90deg, transparent 1.5px, rgba(236, 72, 153, 0.4) 1.5px);
-          background-size: 100% 100%, 12px 12px, 12px 12px;
+            linear-gradient(transparent 1px, rgba(236, 72, 153, 0.4) 1px),
+            linear-gradient(90deg, transparent 1px, rgba(236, 72, 153, 0.4) 1px);
+          background-size: 100% 100%, 8px 8px, 8px 8px;
           background-position: center, center, center;
           clip-path: circle(0% at center);
-          animation: smooth-radial-expand 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: smooth-radial-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .radial-grid-cyan {
           position: absolute;
           inset: 0;
-          background: 
+          background:
             radial-gradient(circle at center, rgba(34, 211, 238, 0.15) 25%, transparent 30%),
-            linear-gradient(transparent 1.5px, rgba(34, 211, 238, 0.4) 1.5px),
-            linear-gradient(90deg, transparent 1.5px, rgba(34, 211, 238, 0.4) 1.5px);
-          background-size: 100% 100%, 12px 12px, 12px 12px;
+            linear-gradient(transparent 1px, rgba(34, 211, 238, 0.4) 1px),
+            linear-gradient(90deg, transparent 1px, rgba(34, 211, 238, 0.4) 1px);
+          background-size: 100% 100%, 8px 8px, 8px 8px;
           background-position: center, center, center;
           clip-path: circle(0% at center);
-          animation: smooth-radial-expand 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: smooth-radial-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         @keyframes smooth-radial-expand {
           0% {
             clip-path: circle(0% at center);
-            background-size: 100% 100%, 8px 8px, 8px 8px;
+            background-size: 100% 100%, 6px 6px, 6px 6px;
           }
           100% {
             clip-path: circle(75% at center);
-            background-size: 100% 100%, 18px 18px, 18px 18px;
+            background-size: 100% 100%, 12px 12px, 12px 12px;
           }
         }
         
