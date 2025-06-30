@@ -12,8 +12,8 @@ const app = express()
 const PORT = 3003
 
 // 数据库路径配置
-const DB_PATH = path.join(__dirname, '../../data/characters.db')
-const EVENTS_DB_PATH = path.join(__dirname, '../../data/events.db')
+const DB_PATH = path.join(__dirname, './data/characters.db')
+const EVENTS_DB_PATH = path.join(__dirname, './data/events.db')
 
 // 中间件
 app.use(cors())
@@ -600,47 +600,6 @@ app.get('/api/events', async (req, res) => {
 })
 
 /**
- * 根据难次获取单个事件
- */
-app.get('/api/events/:nanci', async (req, res) => {
-  try {
-    const nanci = parseInt(req.params.nanci)
-
-    if (isNaN(nanci) || nanci < 1 || nanci > 81) {
-      return res.status(400).json({
-        success: false,
-        error: '难次必须是1-81之间的数字',
-        timestamp: new Date().toISOString()
-      })
-    }
-
-    const event = getEventByNanci(nanci)
-
-    if (!event) {
-      return res.status(404).json({
-        success: false,
-        error: `未找到第${nanci}难的数据`,
-        timestamp: new Date().toISOString()
-      })
-    }
-
-    res.json({
-      success: true,
-      data: event,
-      source: 'sqlite',
-      timestamp: new Date().toISOString()
-    })
-
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message,
-      timestamp: new Date().toISOString()
-    })
-  }
-})
-
-/**
  * 搜索事件
  */
 app.get('/api/events/search', async (req, res) => {
@@ -674,6 +633,47 @@ app.get('/api/events/search', async (req, res) => {
       data: results,
       query: req.query,
       count: results.length,
+      source: 'sqlite',
+      timestamp: new Date().toISOString()
+    })
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      timestamp: new Date().toISOString()
+    })
+  }
+})
+
+/**
+ * 根据难次获取单个事件
+ */
+app.get('/api/events/:nanci', async (req, res) => {
+  try {
+    const nanci = parseInt(req.params.nanci)
+
+    if (isNaN(nanci) || nanci < 1 || nanci > 81) {
+      return res.status(400).json({
+        success: false,
+        error: '难次必须是1-81之间的数字',
+        timestamp: new Date().toISOString()
+      })
+    }
+
+    const event = getEventByNanci(nanci)
+
+    if (!event) {
+      return res.status(404).json({
+        success: false,
+        error: `未找到第${nanci}难的数据`,
+        timestamp: new Date().toISOString()
+      })
+    }
+
+    res.json({
+      success: true,
+      data: event,
       source: 'sqlite',
       timestamp: new Date().toISOString()
     })
