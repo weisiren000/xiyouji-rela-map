@@ -11,8 +11,8 @@ import type {
   EventsApiError 
 } from '@/types/events'
 
-// API基础URL
-const API_BASE_URL = 'http://localhost:3003/api'
+// API基础URL - 从环境变量获取，如果没有则使用Railway部署的端点
+const API_BASE_URL = (import.meta as any).env?.VITE_API_URL || 'https://xiyou-rela-map-backend-production.up.railway.app/api'
 
 /**
  * 获取所有81难事件数据

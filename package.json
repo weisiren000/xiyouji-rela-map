@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
+    "test:connection": "node scripts/test-railway-connection.js",
     "models:index": "node scripts/build/generate-model-index.js",
     "models:scan": "node scripts/build/generate-model-index.js",
     "models:watch": "node scripts/watch-models.js",
@@ -37,6 +38,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "node-fetch": "^3.3.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   },

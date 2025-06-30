@@ -46,12 +46,18 @@ cd xiyou-starmap
 # 安装依赖
 pnpm install
 
+# 配置环境变量（可选）
+cp .env.example .env
+# 编辑 .env 文件设置数据API地址
+
 # 启动开发服务器
 pnpm dev
 
 # 访问应用
-# 浏览器打开 http://localhost:3001
+# 浏览器打开 http://localhost:3000
 ```
+
+> **数据端口配置**: 项目默认连接到部署在Railway的后端服务 `https://xiyou-rela-map-backend-production.up.railway.app/`。如需使用本地后端，请在 `.env` 文件中设置 `VITE_API_URL=http://localhost:3003/api`。
 
 ### 项目结构
 ```

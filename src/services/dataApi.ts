@@ -10,7 +10,7 @@ import { CharacterData, DataStats } from '@/types/character'
 const POSSIBLE_PORTS = [3003, 3002, 3001, 3000, 8080, 8000]
 
 // 外部API URL（用于生产环境或外部访问）
-const EXTERNAL_API_URL = (import.meta as any).env?.VITE_API_URL || null
+const EXTERNAL_API_URL = (import.meta as any).env?.VITE_API_URL || 'https://xiyou-rela-map-backend-production.up.railway.app/api'
 
 // 动态API配置
 let API_BASE_URL = EXTERNAL_API_URL || 'http://localhost:3003/api' // 优先使用外部URL
@@ -309,6 +309,72 @@ export class DataApi {
         online: false,
         error: error instanceof Error ? error.message : '未知错误'
       }
+    }
+  }
+
+  /**
+   * 搜索角色 (新增功能)
+   */
+  static async searchCharacters(params: {
+    q?: string           // 搜索关键词
+    category?: string    // 角色分类
+    minPower?: number    // 最低能力值
+    maxPower?: number    // 最高能力值
+  }): Promise<{
+    data: CharacterData[]
+    count: number
+    query: any
+  }> {
+    try {
+      console.log('🔍 正在搜索角色...', params)
+      
+      const searchParams = new URLSearchParams()
+      if (params.q) searchParams.append('q', params.q)
+      if (params.category) searchParams.append('category', params.category)
+      if (params.minPower !== undefined) searchParams.append('minPower', params.minPower.toString())
+      if (params.maxPower !== undefined) searchParams.append('maxPower', params.maxPower.toString())
+      
+      const result = await apiRequest<{
+        data: CharacterData[]
+        count: number
+        query: any
+      }>(`/characters/search?${searchParams.toString()}`)
+      
+      console.log(`✅ 搜索完成，找到 ${result.count} 个角色`)
+      return result
+    } catch (error) {
+      console.error('❌ 角色搜索失败:', error)
+      throw new Error(`角色搜索失败: ${error}`)
+    }
+  }
+
+  /**
+   * 健康检查 (新增功能)
+   */
+  static async healthCheck(): Promise<{
+    status: string
+    timestamp: string
+    uptime: number
+    database: {
+      characters: string
+      events: string
+    }
+  }> {
+    try {
+      console.log('🏥 正在检查服务器健康状态...')
+      
+      const response = await fetch(`${API_BASE_URL.replace('/api', '')}/health`)
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+      }
+      
+      const result = await response.json()
+      console.log('✅ 服务器健康检查完成:', result.status)
+      return result
+    } catch (error) {
+      console.error('❌ 健康检查失败:', error)
+      throw new Error(`健康检查失败: ${error}`)
     }
   }
 }
