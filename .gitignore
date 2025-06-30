@@ -14,3 +14,25 @@ node_modules
 .vite/
 _archive/
 
+frontend
+_experiments/
+.cursor
+.github
+.kilocode
+.roo
+.tmp
+.scripts
+
+.augmentignore
+.augmentmemories
+
+TECH_STACK_REPORT.md
+TECH_STACK_REPORT.pdf
+TECH_STACK_REPORT.md
+
+reference/
+
+docs
+
+data\backup
+data\migration-logs
