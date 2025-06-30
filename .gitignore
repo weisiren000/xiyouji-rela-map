@@ -34,5 +34,5 @@ reference/
 
 docs
 
-data\backup
-data\migration-logs
+data/backup
+data/migration-logs
