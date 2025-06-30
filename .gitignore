@@ -12,6 +12,7 @@ node_modules
 
 # 构建产物
 .vite/
+dist/
 _archive/
 
 frontend
