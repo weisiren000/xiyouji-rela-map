@@ -230,9 +230,7 @@ const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ chart, id }) => {
             boxTextMargin: 5,
             noteMargin: 10,
             messageMargin: 35,
-            mirrorActors: false,
             bottomMarginAdj: 1,
-            useMaxWidth: true,
             rightAngles: false
           }
         });
@@ -246,7 +244,7 @@ const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ chart, id }) => {
         mermaidRef.current.innerHTML = '';
         
         // 使用唯一ID避免缓存
-        const uniqueId = `${id}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        const uniqueId = `${id}-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
         
         // 使用 mermaid.render 方法渲染图表
         const { svg } = await mermaid.render(uniqueId, chart);
@@ -552,10 +550,11 @@ const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ chart, id }) => {
         console.error('Mermaid rendering error:', error);
         // 如果渲染失败，显示错误信息
         if (isMounted && mermaidRef.current) {
+          const errorMessage = error instanceof Error ? error.message : String(error);
           mermaidRef.current.innerHTML = `
             <div class="text-white/60 text-center p-8">
               <p>图表渲染失败，请刷新页面重试</p>
-              <p class="text-sm mt-2 text-white/40">错误: ${error.message}</p>
+              <p class="text-sm mt-2 text-white/40">错误: ${errorMessage}</p>
             </div>
           `;
         }

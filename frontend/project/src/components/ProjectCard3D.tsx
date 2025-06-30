@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ExternalLink, Code, Globe, Bot, Zap, Palette } from 'lucide-react';
 import { gsap } from 'gsap';
 
@@ -25,7 +26,12 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
   const shadowRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [tooltipData, setTooltipData] = useState<{ text: string; x: number; y: number; visible: boolean }>({
+    text: '',
+    x: 0,
+    y: 0,
+    visible: false
+  });
 
   // GSAP动画时间线引用
   const hoverTl = useRef<gsap.core.Timeline | null>(null);
@@ -36,12 +42,31 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
     hoverTl.current = gsap.timeline({ paused: true });
     leaveTl.current = gsap.timeline({ paused: true });
 
+    // 基于索引的入场动画延迟
+    if (cardRef.current) {
+      gsap.fromTo(cardRef.current,
+        {
+          opacity: 0,
+          y: 50,
+          scale: 0.9
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          delay: index * 0.1, // 使用index参数创建错落的动画效果
+          ease: "power3.out"
+        }
+      );
+    }
+
     return () => {
       // 清理时间线
       hoverTl.current?.kill();
       leaveTl.current?.kill();
     };
-  }, []);
+  }, [index]); // 添加index到依赖数组
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -116,8 +141,6 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
     const rect = cardRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
-    setMousePosition({ x, y });
 
     // 计算3D倾斜效果
     const centerX = rect.width / 2;
@@ -177,6 +200,21 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
         ease: "power2.out"
       });
     }
+  };
+
+  // Tooltip事件处理
+  const handleTechMouseEnter = (event: React.MouseEvent, tech: string) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    setTooltipData({
+      text: tech,
+      x: rect.left + rect.width / 2,
+      y: rect.top - 10,
+      visible: true
+    });
+  };
+
+  const handleTechMouseLeave = () => {
+    setTooltipData(prev => ({ ...prev, visible: false }));
   };
 
   const getTechIcon = (tech: string) => {
@@ -317,34 +355,20 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
                 {project.technologies.slice(0, 5).map((tech, techIndex) => (
                   <div
                     key={techIndex}
-                    className="relative flex items-center justify-center w-10 h-10 bg-slate-800/60 rounded-xl border border-slate-600/40 transition-all duration-300 hover:scale-110 hover:bg-slate-700/60 group/tech"
-                    title={tech}
+                    className="flex items-center justify-center w-10 h-10 bg-slate-800/60 rounded-xl border border-slate-600/40 transition-all duration-300 hover:scale-110 hover:bg-slate-700/60 cursor-pointer"
+                    onMouseEnter={(e) => handleTechMouseEnter(e, tech)}
+                    onMouseLeave={handleTechMouseLeave}
                   >
                     {getTechIcon(tech)}
-
-                    {/* 自定义Tooltip - 在悬浮时显示 */}
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-slate-900/95 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover/tech:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap shadow-2xl border border-slate-600/50"
-                         style={{ zIndex: 99999 }}>
-                      {tech}
-                      {/* 小箭头 */}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900/95"></div>
-                    </div>
                   </div>
                 ))}
                 {project.technologies.length > 5 && (
                   <div
-                    className="relative flex items-center justify-center w-10 h-10 bg-slate-800/40 rounded-xl border border-slate-600/30 group/tech"
-                    title={`还有 ${project.technologies.length - 5} 个技术: ${project.technologies.slice(5).join(', ')}`}
+                    className="flex items-center justify-center w-10 h-10 bg-slate-800/40 rounded-xl border border-slate-600/30 transition-all duration-300 hover:scale-110 hover:bg-slate-700/60 cursor-pointer"
+                    onMouseEnter={(e) => handleTechMouseEnter(e, project.technologies.slice(5).join(', '))}
+                    onMouseLeave={handleTechMouseLeave}
                   >
                     <span className="text-white/60 text-xs font-semibold">+{project.technologies.length - 5}</span>
-
-                    {/* 显示剩余技术的Tooltip */}
-                    <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-slate-900/95 backdrop-blur-sm text-white text-sm rounded-lg opacity-0 group-hover/tech:opacity-100 transition-all duration-300 pointer-events-none max-w-64 text-center shadow-2xl border border-slate-600/50"
-                         style={{ zIndex: 99999 }}>
-                      {project.technologies.slice(5).join(', ')}
-                      {/* 小箭头 */}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900/95"></div>
-                    </div>
                   </div>
                 )}
               </div>
@@ -384,42 +408,25 @@ const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project, index }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-2xl -z-10"></div>
       </div>
 
-      {/* Custom styles for this component */}
-      <style jsx>{`
-        .glass-button {
-          position: relative;
-          overflow: hidden;
-          box-shadow: 
-            0 8px 24px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-button:hover {
-          box-shadow: 
-            0 12px 32px rgba(52, 211, 153, 0.3),
-            0 0 24px rgba(52, 211, 153, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.15),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-card {
-          position: relative;
-          overflow: hidden;
-          box-shadow: 
-            0 25px 50px rgba(0, 0, 0, 0.3),
-            0 10px 30px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.06);
-        }
-        
-        .glass-card:hover {
-          box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 15px 40px rgba(52, 211, 153, 0.15),
-            0 0 50px rgba(52, 211, 153, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-      `}</style>
+      {/* Portal渲染的Tooltip - 不会被任何容器遮挡 */}
+      {tooltipData.visible && createPortal(
+        <div
+          className="fixed px-3 py-2 bg-slate-900/95 backdrop-blur-sm text-white text-sm rounded-lg shadow-2xl border border-slate-600/50 pointer-events-none whitespace-nowrap max-w-64 text-center"
+          style={{
+            left: tooltipData.x,
+            top: tooltipData.y,
+            transform: 'translateX(-50%) translateY(-100%)',
+            zIndex: 99999
+          }}
+        >
+          {tooltipData.text}
+          {/* 小箭头 */}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-900/95"></div>
+        </div>,
+        document.body
+      )}
+
+
     </div>
   );
 };
