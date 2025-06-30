@@ -112,7 +112,7 @@ export const ModelEffectRenderer: React.FC<ModelEffectRendererProps> = ({
 
     // 添加递归深度保护和访问过的节点跟踪
     const visitedNodes = new Set<THREE.Object3D>()
-    let traverseDepth = 0
+    // let traverseDepth = 0
     const MAX_DEPTH = 50
     const MAX_VERTICES = 200000 // 限制顶点数量防止内存溢出
 

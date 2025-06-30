@@ -1,8 +1,8 @@
-import React, { Suspense, useRef, useEffect, useState } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import React, { Suspense, useEffect, useState } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Galaxy, StarField, CentralSun } from '@components/three/Galaxy'
+import { StarField } from '@components/three/Galaxy'
 import { CharacterSpheresSimple } from '@components/three/Galaxy/components/CharacterSpheresSimple'
 import { CharacterControlPanel } from '@components/controls/CharacterControlPanel'
 
@@ -19,38 +19,38 @@ import { usePerformanceMonitor, PERFORMANCE_CONFIGS } from '@/hooks/usePerforman
  * 动态相机组件
  * 处理相机位置、旋转和视野的实时更新
  */
-const DynamicCamera: React.FC = () => {
-  const { camera } = useThree()
-  const {
-    cameraPositionX,
-    cameraPositionY,
-    cameraPositionZ,
-    cameraRotationX,
-    cameraRotationY,
-    cameraRotationZ,
-    cameraFov,
-    cameraNear,
-    cameraFar
-  } = useGalaxyStore()
+// const DynamicCamera: React.FC = () => {
+//   const { camera } = useThree()
+//   const {
+//     cameraPositionX,
+//     cameraPositionY,
+//     cameraPositionZ,
+//     cameraRotationX,
+//     cameraRotationY,
+//     cameraRotationZ,
+//     cameraFov,
+//     cameraNear,
+//     cameraFar
+//   } = useGalaxyStore()
 
-  useFrame(() => {
-    // 更新相机位置
-    camera.position.set(cameraPositionX, cameraPositionY, cameraPositionZ)
+//   useFrame(() => {
+//     // 更新相机位置
+//     camera.position.set(cameraPositionX, cameraPositionY, cameraPositionZ)
 
-    // 更新相机旋转
-    camera.rotation.set(cameraRotationX, cameraRotationY, cameraRotationZ)
+//     // 更新相机旋转
+//     camera.rotation.set(cameraRotationX, cameraRotationY, cameraRotationZ)
 
-    // 更新相机视野参数
-    if ('fov' in camera) {
-      (camera as any).fov = cameraFov
-      camera.near = cameraNear
-      camera.far = cameraFar
-      camera.updateProjectionMatrix()
-    }
-  })
+//     // 更新相机视野参数
+//     if ('fov' in camera) {
+//       (camera as any).fov = cameraFov
+//       camera.near = cameraNear
+//       camera.far = cameraFar
+//       camera.updateProjectionMatrix()
+//     }
+//   })
 
-  return null
-}
+//   return null
+// }
 
 /**
  * 银河系主场景
@@ -58,19 +58,19 @@ const DynamicCamera: React.FC = () => {
  */
 export const GalaxyScene: React.FC = () => {
   // 简化状态管理
-  const [dragStatus, setDragStatus] = useState<string>('')
+  // const [dragStatus, setDragStatus] = useState<string>('')
 
   const {
     bloomConfig,
     performanceLevel,
     autoPerformance,
-    setPerformanceLevel,
-    cameraPositionX,
-    cameraPositionY,
-    cameraPositionZ,
-    cameraFov,
-    cameraNear,
-    cameraFar
+    setPerformanceLevel
+    // cameraPositionX,
+    // cameraPositionY,
+    // cameraPositionZ,
+    // cameraFov,
+    // cameraNear,
+    // cameraFar
   } = useGalaxyStore()
 
   // 渲染器状态管理
@@ -266,7 +266,7 @@ export const GalaxyScene: React.FC = () => {
       />
 
       {/* 拖拽状态显示 */}
-      {dragStatus && (
+      {/* {dragStatus && (
         <div style={{
           position: 'absolute',
           top: '20px',
@@ -282,7 +282,7 @@ export const GalaxyScene: React.FC = () => {
         }}>
           {dragStatus}
         </div>
-      )}
+      )} */}
     </div>
   )
 }

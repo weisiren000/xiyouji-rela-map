@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
+import { useThree } from '@react-three/fiber'
 import { Vector2, Vector3, Raycaster, InstancedMesh, Camera } from 'three'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 import { CharacterData } from '@/types/character'

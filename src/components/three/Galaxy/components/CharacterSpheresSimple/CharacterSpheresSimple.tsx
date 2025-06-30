@@ -351,8 +351,8 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   }, [allCharacters])
 
   // 🎯 拖拽状态管理
-  const [dragStatus, setDragStatus] = useState<string>('')
-  const [controlsEnabled, setControlsEnabled] = useState(true)
+  // const [dragStatus, setDragStatus] = useState<string>('')
+  // const [controlsEnabled, setControlsEnabled] = useState(true)
 
   // 🎯 稳定化回调函数，避免无限重新创建
   const charactersRef = useRef(charactersWithPosition)
@@ -365,11 +365,13 @@ export const CharacterSpheresSimple: React.FC<CharacterSpheresSimpleProps> = ({
   }, [])
 
   const onDragStatusChange = useCallback((status: string) => {
-    setDragStatus(status)
+    // setDragStatus(status)
+    console.log('Drag status:', status)
   }, [])
 
   const onControlsEnabledChange = useCallback((enabled: boolean) => {
-    setControlsEnabled(enabled)
+    // setControlsEnabled(enabled)
+    console.log('Controls enabled:', enabled)
   }, [])
 
   // 🎯 使用拖拽交互系统
