@@ -5,16 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "dev:external": "vite --host 0.0.0.0 --port 3000",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
     "test:connection": "node scripts/test-railway-connection.js",
-    "models:index": "node scripts/build/generate-model-index.js",
-    "models:scan": "node scripts/build/generate-model-index.js",
-    "models:watch": "node scripts/watch-models.js",
-    "models:test": "node scripts/test-model-detection.js"
+    "cleanup": "node scripts/cleanup.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^9.92.0",
