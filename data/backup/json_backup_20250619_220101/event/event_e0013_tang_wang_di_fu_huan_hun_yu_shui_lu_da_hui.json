@@ -1,0 +1,66 @@
+{
+    "unid": "e0013",
+    "isAlias": false,
+    "basic": {
+        "name": "唐王地府还魂与水陆大会",
+        "pinyin": "tang_wang_di_fu_huan_hun_yu_shui_lu_da_hui",
+        "aliases": [
+            "水陆大会",
+            "唐王还魂",
+            "地府游记"
+        ],
+        "type": "event",
+        "category": "supernatural"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "significant"
+        },
+        "significance": 80,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0087",
+            "name": "阎罗王",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0013",
+            "name": "幽冥界",
+            "role": "primary"
+        },
+        {
+            "unid": "l0040",
+            "name": "长安城",
+            "role": "secondary"
+        }
+    ],
+    "metadata": {
+        "description": "唐王李世民魂游地府，见到阴司记录他错勾善人性命，特许还阳并补偿。返回人世后，唐王举办水陆大会超度冤魂，唐僧被选为住持。",
+        "tags": [
+            "supernatural",
+            "netherworld",
+            "resurrection",
+            "ritual",
+            "salvation",
+            "ceremony"
+        ],
+        "sourceChapters": [11, 12],
+        "chronology": {
+            "order": 13,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

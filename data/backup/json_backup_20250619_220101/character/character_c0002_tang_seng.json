@@ -1,0 +1,60 @@
+{
+    "unid": "c0002",
+    "isAlias": false,
+    "basic": {
+        "name": "唐僧",
+        "pinyin": "tang_seng",
+        "aliases": [
+            "唐三藏",
+            "玄奘",
+            "金蝉子",
+            "御弟圣僧",
+            "江流儿",
+            "陈玄奘",
+            "三藏法师",
+            "唐长老",
+            "师父",
+            "师傅",
+            "长老",
+            "和尚"
+        ],
+        "type": "character",
+        "category": "protagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_chan_zi",
+            "name": "金蝉子转世",
+            "tier": 7,
+            "category": "buddhist"
+        },
+        "rank": 2,
+        "power": 30,
+        "influence": 95,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "金蝉子转世，西天取经的领队，慈悲为怀的高僧。奉唐王之命前往西天雷音寺取经，是取经团队的精神领袖。",
+        "tags": [
+            "protagonist",
+            "monk",
+            "leader",
+            "compassionate",
+            "buddhist",
+            "reincarnation",
+            "holy_man",
+            "teacher",
+            "pacifist",
+            "devout"
+        ],
+        "sourceChapters": [
+            7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+            21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+            41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+            61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+            81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
+        ],
+        "firstAppearance": 7,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

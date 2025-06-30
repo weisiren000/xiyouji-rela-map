@@ -1,0 +1,48 @@
+{
+    "unid": "ca0303",
+    "isAlias": true,
+    "basic": {
+        "name": "黑熊精友(凌虚子)",
+        "pinyin": "hei_xiong_jing_you_ling_xu_zi",
+        "aliases": [
+            "黑熊精挚友",
+            "凌虚子道友",
+            "苍狼道友"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 8,
+            "category": "demon"
+        },
+        "rank": 130,
+        "power": 50,
+        "influence": 35,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "凌虚子的别名，强调了其与黑熊精深厚友谊关系的重要身份。这个别名体现了妖怪世界中跨种族友谊的珍贵，凌虚子作为苍狼精，能与黑熊精建立深厚的友谊，说明了妖界中友情的真挚。他们经常一起论道、饮酒作乐，展现了妖怪世界中也有真情实意的一面。",
+        "tags": [
+            "demon",
+            "friendship",
+            "wolf_spirit",
+            "cross_species_bond",
+            "demon_society",
+            "companionship",
+            "loyalty",
+            "brotherhood"
+        ],
+        "sourceChapters": [
+            17
+        ],
+        "firstAppearance": 17,
+        "significance": "展现了妖怪之间真挚友情的美好一面",
+        "culturalBackground": "体现了妖怪世界中友谊的珍贵和跨种族交往的和谐",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0130"
+    }
+}

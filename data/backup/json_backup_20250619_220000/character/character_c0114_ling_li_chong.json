@@ -1,0 +1,44 @@
+{
+    "unid": "c0114",
+    "isAlias": false,
+    "basic": {
+        "name": "伶俐虫",
+        "pinyin": "ling_li_chong",
+        "aliases": [
+            "小妖",
+            "伶俐",
+            "虫怪",
+            "妖虫"
+        ],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 2,
+            "category": "demon"
+        },
+        "rank": 114,
+        "power": 15,
+        "influence": 5,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "小妖精，在西游记中出现的妖怪角色，通常作为其他大妖怪的手下或随从。",
+        "tags": [
+            "demon",
+            "minor_character",
+            "evil",
+            "minion",
+            "supernatural",
+            "insect"
+        ],
+        "sourceChapters": [
+            
+        ],
+        "firstAppearance": null,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

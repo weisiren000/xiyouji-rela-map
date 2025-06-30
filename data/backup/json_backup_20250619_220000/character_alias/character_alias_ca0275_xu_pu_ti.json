@@ -1,0 +1,49 @@
+{
+    "unid": "ca0275",
+    "isAlias": true,
+    "basic": {
+        "name": "须菩提",
+        "pinyin": "xu_pu_ti",
+        "aliases": [
+            "须菩提祖师",
+            "须菩提老祖",
+            "须菩提仙师"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "zu_shi",
+            "name": "祖师",
+            "tier": 8,
+            "category": "immortal"
+        },
+        "rank": 112,
+        "power": 95,
+        "influence": 92,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "菩提祖师的佛教称谓，强调其在佛教体系中的尊者地位。这个称谓体现了菩提祖师作为佛教高僧的身份，须菩提是佛陀十大弟子之一，以解空第一著称，代表着深邃的佛法智慧。",
+        "tags": [
+            "buddhist_master",
+            "enlightened_sage",
+            "monkey_king_teacher",
+            "buddhist_patriarch",
+            "wisdom_master",
+            "dharma_teacher",
+            "spiritual_guide",
+            "ancient_sage"
+        ],
+        "sourceChapters": [
+            1,
+            2
+        ],
+        "firstAppearance": 1,
+        "significance": "体现了菩提祖师在佛教体系中的尊者地位和解空智慧",
+        "culturalBackground": "须菩提是佛教中的重要尊者，佛陀十大弟子之一，以解空第一著称，在佛教文化中代表着对空性的深刻理解和智慧",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0112"
+    }
+}

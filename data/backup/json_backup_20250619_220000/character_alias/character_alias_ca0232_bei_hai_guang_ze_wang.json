@@ -1,0 +1,51 @@
+{
+    "unid": "ca0232",
+    "isAlias": true,
+    "basic": {
+        "name": "北海广泽王",
+        "pinyin": "bei_hai_guang_ze_wang",
+        "aliases": [
+            "广泽龙王",
+            "北海广泽君",
+            "广泽王"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "long_wang",
+            "name": "龙王",
+            "tier": 5,
+            "category": "celestial"
+        },
+        "rank": 82,
+        "power": 81,
+        "influence": 84,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "北海龙王的正式封号称谓，强调其广施恩泽、润泽北方的仁君形象。这个称谓体现了敖顺在天庭体系中的正式地位，突出了其作为北海统治者的恩泽理念和深沉睿智的统治风格。",
+        "tags": [
+            "deity",
+            "dragon_king",
+            "four_seas_dragon_king",
+            "northern_sea",
+            "water_deity",
+            "benevolent_ruler",
+            "official_title",
+            "celestial_bureaucracy"
+        ],
+        "sourceChapters": [
+            8,
+            9,
+            43,
+            44
+        ],
+        "firstAppearance": 8,
+        "significance": "体现了北海龙王的正式封号和恩泽统治理念",
+        "culturalBackground": "广泽王是北海龙王的正式封号，体现了其广施恩泽、润泽北方的统治理念，在道教神仙体系中代表着深沉和恩泽",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0082"
+    }
+}

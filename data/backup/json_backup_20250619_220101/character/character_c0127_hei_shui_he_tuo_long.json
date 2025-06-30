@@ -1,0 +1,44 @@
+{
+    "unid": "c0127",
+    "isAlias": false,
+    "basic": {
+        "name": "黑水河鼍龙",
+        "pinyin": "hei_shui_he_tuo_long",
+        "aliases": [
+            "西海龙王外甥",
+            "鼍龙",
+            "黑水河龙",
+            "鼍怪"
+        ],
+        "type": "character",
+        "category": "dragon"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 127,
+        "power": 60,
+        "influence": 30,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "黑水河的鼍龙，西海龙王的外甥，在黑水河兴风作浪，阻挡取经队伍过河，后被降服。",
+        "tags": [
+            "dragon",
+            "demon",
+            "water_demon",
+            "antagonist",
+            "relative",
+            "obstacle"
+        ],
+        "sourceChapters": [
+            43
+        ],
+        "firstAppearance": 43,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

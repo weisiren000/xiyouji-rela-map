@@ -1,0 +1,48 @@
+{
+    "unid": "ca0318",
+    "isAlias": true,
+    "basic": {
+        "name": "玄英洞犀牛精(辟寒)",
+        "pinyin": "xuan_ying_dong_xi_niu_jing_bi_han",
+        "aliases": [
+            "辟寒犀牛精",
+            "玄英洞辟寒",
+            "犀牛精辟寒"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 7,
+            "category": "demon"
+        },
+        "rank": 140,
+        "power": 65,
+        "influence": 45,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "辟寒大王的别名，强调了其作为玄英洞犀牛精的身份和辟寒的特殊能力。辟寒代表着抵御严寒的神通，体现了犀牛精强大的法力和对寒冷的免疫能力。这个别名突出了其在玄英洞三兄弟中的排行和专门职责，展现了犀牛精在恶劣环境中的生存能力。",
+        "tags": [
+            "demon",
+            "rhinoceros_spirit",
+            "cold_resistance",
+            "xuanying_cave",
+            "three_brothers",
+            "environmental_adaptation",
+            "magical_power",
+            "beast_demon"
+        ],
+        "sourceChapters": [
+            92
+        ],
+        "firstAppearance": 92,
+        "significance": "展现了犀牛精的特殊法力和环境适应能力",
+        "culturalBackground": "体现了犀牛在中国文化中的坚韧形象和抗寒能力",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0140"
+    }
+}

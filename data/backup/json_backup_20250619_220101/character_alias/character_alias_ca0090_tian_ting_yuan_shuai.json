@@ -1,0 +1,47 @@
+{
+    "unid": "ca0090",
+    "isAlias": true,
+    "basic": {
+        "name": "天庭元帅",
+        "pinyin": "tian_ting_yuan_shuai",
+        "aliases": [],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 7,
+            "category": "divine"
+        },
+        "rank": 13,
+        "power": 80,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "托塔李天王的职位称号，'天庭'指其服务的机构，'元帅'是高级军事职位。在西游记中体现了其作为天庭军事系统核心人物的地位和权威。",
+        "tags": [
+            "deity",
+            "heavenly_king",
+            "rank_title",
+            "military_leader",
+            "tower_bearer",
+            "father",
+            "commander",
+            "disciplined",
+            "authoritative",
+            "marshal"
+        ],
+        "sourceChapters": [
+            4,
+            6,
+            83,
+            87
+        ],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0013"
+    }
+}

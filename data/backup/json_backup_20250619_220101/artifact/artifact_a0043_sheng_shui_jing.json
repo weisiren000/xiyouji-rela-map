@@ -1,0 +1,55 @@
+{
+    "unid": "a0043",
+    "isAlias": false,
+    "basic": {
+        "name": "圣水瓶",
+        "pinyin": "sheng_shui_jing",
+        "aliases": [
+            "净水瓶",
+            "甘露瓶"
+        ],
+        "type": "artifact",
+        "category": "container"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 40,
+        "influence": 65,
+        "element": "water"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0021",
+            "name": "观音菩萨",
+            "relationship": "personal_item"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "圣水瓶是观音菩萨的法器，盛装仙家净水(甘露)，可治愈伤病，解除毒害，甚至起死回生。瓶身白玉制成，上刻莲花纹饰，瓶口常有柳枝插于其中，用来洒水。此瓶中的圣水取之不尽，用之不竭，具有净化和治愈双重功效。观音常用此瓶中圣水救助苦难众生，也曾多次助唐僧师徒化解危机。是佛门慈悲济世的象征。",
+        "tags": [
+            "container",
+            "water",
+            "healing",
+            "buddhist",
+            "purification",
+            "jade",
+            "lotus",
+            "guanyin",
+            "mercy",
+            "resurrection",
+            "holy_water",
+            "detoxification"
+        ],
+        "sourceChapters": [14, 25, 42],
+        "firstAppearance": 14,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

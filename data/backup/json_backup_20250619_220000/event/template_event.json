@@ -1,0 +1,82 @@
+{
+    "unid": "e00XX",
+    "isAlias": false,
+    "basic": {
+        "name": "事件名称",
+        "pinyin": "pinyin_格式",
+        "aliases": [
+            "别名1",
+            "别名2",
+            "别名3"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0001",
+            "name": "主要地点",
+            "role": "primary"
+        },
+        {
+            "unid": "l0002",
+            "name": "次要地点",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0001",
+            "name": "关键物品",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "事件详细描述...",
+        "tags": [
+            "标签1",
+            "标签2",
+            "标签3",
+            "标签4",
+            "标签5"
+        ],
+        "sourceChapters": [1, 2],
+        "chronology": {
+            "order": 42,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

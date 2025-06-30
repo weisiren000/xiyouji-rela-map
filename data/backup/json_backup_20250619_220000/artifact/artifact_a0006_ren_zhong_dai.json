@@ -1,0 +1,53 @@
+{
+    "unid": "a0006",
+    "isAlias": false,
+    "basic": {
+        "name": "人种袋",
+        "pinyin": "ren_zhong_dai",
+        "aliases": [
+            "后天袋子",
+            "弥勒佛人种袋",
+            "乾坤袋"
+        ],
+        "type": "artifact",
+        "category": "container"
+    },
+    "attributes": {
+        "level": {
+            "id": "sheng_qi",
+            "name": "圣器",
+            "tier": 8,
+            "category": "divine"
+        },
+        "rank": 4,
+        "power": 85,
+        "influence": 88,
+        "element": "earth"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0017",
+            "name": "弥勒佛",
+            "relationship": "primary_container"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "弥勒佛的宝贝袋子，能装天地万物，内有乾坤，外小内大。据说可以用来收纳众生，是佛门重要的法器之一，也是弥勒佛的标志性宝物。",
+        "tags": [
+            "container",
+            "divine",
+            "earth",
+            "buddhist",
+            "spatial_magic",
+            "maitreya",
+            "divine_tool",
+            "pouch",
+            "bottomless"
+        ],
+        "sourceChapters": [31, 67],
+        "firstAppearance": 31,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+} 

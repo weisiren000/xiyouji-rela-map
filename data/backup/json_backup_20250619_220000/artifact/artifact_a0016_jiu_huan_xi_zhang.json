@@ -1,0 +1,54 @@
+{
+    "unid": "a0016",
+    "isAlias": false,
+    "basic": {
+        "name": "九环锡杖",
+        "pinyin": "jiu_huan_xi_zhang",
+        "aliases": [
+            "锡杖",
+            "禅杖",
+            "九环杖"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 45,
+        "influence": 60,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0002",
+            "name": "唐僧",
+            "relationship": "walking_staff"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "唐僧携带的锡杖，上有九环，走路时环环相碰，发出响声。既是行走辅助工具，也是佛家象征物，代表着佛法无边。在取经路上陪伴唐僧，虽不具备特殊神通，但是佛门修行者的重要法器。",
+        "tags": [
+            "staff",
+            "buddhist",
+            "magical",
+            "metal",
+            "travel_aid",
+            "religious_symbol",
+            "monk_tool",
+            "nine_rings",
+            "tang_monk",
+            "pilgrimage_tool"
+        ],
+        "sourceChapters": [12, 14, 22, 38, 53, 68, 81],
+        "firstAppearance": 12,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

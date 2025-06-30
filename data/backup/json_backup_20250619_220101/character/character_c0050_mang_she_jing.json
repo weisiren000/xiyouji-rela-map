@@ -1,0 +1,81 @@
+{
+    "unid": "c0050",
+    "basic": {
+        "name": "蟒蛇精",
+        "pinyin": "mang_she_jing",
+        "aliases": [
+            "七绝山红鳞大蟒",
+            "红鳞蟒蛇",
+            "大蟒精"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 50,
+        "power": 72,
+        "influence": 65,
+        "morality": "chaotic_evil"
+    },
+    "relationships": {
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "七绝山",
+            "稀柿同"
+        ],
+        "territory": [
+            "七绝山"
+        ],
+        "appearances": [
+            "七绝山",
+            "稀柿同"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "毒牙",
+            "蛇尾"
+        ],
+        "skills": [
+            "蟒蛇神通",
+            "毒雾攻击",
+            "缠绕术"
+        ],
+        "specialties": [
+            "红鳞护体",
+            "巨蟒神力",
+            "毒雾弥漫"
+        ]
+    },
+    "metadata": {
+        "description": "七绝山的红鳞大蟒蛇成精，体型巨大，能喷毒雾，阻挡取经路",
+        "tags": [
+            "antagonist",
+            "demon",
+            "snake",
+            "poison",
+            "giant"
+        ],
+        "sourceChapters": [
+            59
+        ],
+        "firstAppearance": 59,
+        "significance": "七绝山情节的主要反派，体现了蛇类妖怪的威胁",
+        "culturalBackground": "大蟒蛇精体现了中国民间对巨蛇的恐惧和神秘化想象",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

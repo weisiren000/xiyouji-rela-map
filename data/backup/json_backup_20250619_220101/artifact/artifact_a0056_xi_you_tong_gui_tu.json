@@ -1,0 +1,66 @@
+{
+    "unid": "a0056",
+    "isAlias": false,
+    "basic": {
+        "name": "西游通关文牒",
+        "pinyin": "xi_you_tong_gui_tu",
+        "aliases": [
+            "通关文牒",
+            "西行通关文书"
+        ],
+        "type": "artifact",
+        "category": "document"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 15,
+        "influence": 90,
+        "element": "spiritual"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0002",
+            "name": "唐僧",
+            "relationship": "user"
+        },
+        "previousOwners": [
+            {
+                "unid": "c0093",
+                "name": "如来佛祖",
+                "relationship": "creator"
+            }
+        ],
+        "associatedEvents": [
+            {
+                "unid": "e0008",
+                "name": "唐僧取经"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "西游通关文牒是唐僧西行必备的官方文书，由观音菩萨传授，上有如来佛祖印鉴。此文牒黄绢为底，朱砂书写，详列唐僧师徒姓名、来历、使命，以及大唐王朝官方印章。文牒具有特殊灵力，能在正义场合自行发光，震慑妖魔，也是唐僧师徒在各国通行的凭证。沿途国王见此文牒多会提供帮助，妖魔见之也常有所忌惮，是西行路上的重要保障。",
+        "tags": [
+            "document",
+            "certificate",
+            "travel",
+            "buddhist",
+            "official",
+            "passage",
+            "authorization",
+            "imperial",
+            "protection",
+            "journeying_west",
+            "tang_monk",
+            "silk"
+        ],
+        "sourceChapters": [12, 15, 35],
+        "firstAppearance": 12,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

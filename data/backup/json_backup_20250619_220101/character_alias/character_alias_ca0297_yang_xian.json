@@ -1,0 +1,50 @@
+{
+    "unid": "ca0297",
+    "isAlias": true,
+    "basic": {
+        "name": "羊仙",
+        "pinyin": "yang_xian",
+        "aliases": [
+            "羊精",
+            "羊妖",
+            "羊神"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "da_xian",
+            "name": "大仙",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 123,
+        "power": 66,
+        "influence": 73,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "羊力大仙的动物本性称谓，强调其作为羊类成精的妖仙身份。这个称谓体现了羊力大仙的动物出身和羊类特征，羊仙代表着温和、祥和和吉祥的动物神性。",
+        "tags": [
+            "sheep_spirit",
+            "animal_immortal",
+            "ovine_demon",
+            "beast_sage",
+            "gentle_spirit",
+            "wild_immortal",
+            "transformed_sheep",
+            "animal_deity"
+        ],
+        "sourceChapters": [
+            44,
+            45,
+            46
+        ],
+        "firstAppearance": 44,
+        "significance": "体现了羊力大仙作为羊类成精的动物本性和妖仙身份",
+        "culturalBackground": "羊仙是中国民间信仰中的动物神，羊被视为温和和吉祥的象征，羊仙往往具有温和、祥和的特点，在民间文化中代表着和谐与吉祥",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0123"
+    }
+}

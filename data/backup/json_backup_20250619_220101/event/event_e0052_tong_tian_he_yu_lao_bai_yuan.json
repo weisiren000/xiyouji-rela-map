@@ -1,0 +1,76 @@
+{
+    "unid": "e0052",
+    "isAlias": false,
+    "basic": {
+        "name": "通天河遇老白鼋",
+        "pinyin": "tong_tian_he_yu_lao_bai_yuan",
+        "aliases": [
+            "老鼋翻船",
+            "老白鼋",
+            "通天河老鼋"
+        ],
+        "type": "event",
+        "category": "adventure"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "standard"
+        },
+        "significance": 70,
+        "impact": 65
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0068",
+            "name": "老白鼋",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0107",
+            "name": "通天河",
+            "role": "primary"
+        }
+    ],
+    "items_involved": [],
+    "metadata": {
+        "description": "唐僧师徒返回长安途中，再次来到通天河。一只老白鼋前来相助，愿意背负唐僧师徒过河。在河中，老白鼋询问唐僧是否在如来佛祖面前提及过它的事情。唐僧承认忘记了此事，老白鼋悲愤交加，故意翻身将唐僧等人抛入河中。幸好孙悟空及时救起师父，并教训了老白鼋。",
+        "tags": [
+            "river_crossing",
+            "betrayal",
+            "rescue",
+            "turtle",
+            "return_journey"
+        ],
+        "sourceChapters": [99],
+        "chronology": {
+            "order": 52,
+            "era": "return"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

@@ -1,0 +1,55 @@
+{
+    "unid": "a0031",
+    "isAlias": false,
+    "basic": {
+        "name": "龙齿神丹",
+        "pinyin": "long_chi_dan",
+        "aliases": [
+            "龙齿丹",
+            "龙牙丹"
+        ],
+        "type": "artifact",
+        "category": "medicine"
+    },
+    "attributes": {
+        "level": {
+            "id": "ling_yao",
+            "name": "灵药",
+            "tier": 7,
+            "category": "consumable"
+        },
+        "rank": 8,
+        "power": 25,
+        "influence": 60,
+        "element": "water"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0010",
+            "name": "东海龙王",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "龙齿神丹是东海龙宫珍藏的灵药，以真龙之牙为主材，融合海底灵草炼制而成。此丹呈蓝白色，光泽如玉，服用后可增强体质，提升水行法力，且对伤势有奇效。尤其对水族生物有特殊功效，能让它们快速成长或进化。作为龙族秘传丹药，极为罕见，通常只在龙族内部流通。",
+        "tags": [
+            "medicine",
+            "pill",
+            "dragon",
+            "healing",
+            "water",
+            "strengthening",
+            "rare",
+            "sea",
+            "dragon_palace",
+            "evolution",
+            "growth",
+            "oceanic"
+        ],
+        "sourceChapters": [15, 31, 50],
+        "firstAppearance": 15,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

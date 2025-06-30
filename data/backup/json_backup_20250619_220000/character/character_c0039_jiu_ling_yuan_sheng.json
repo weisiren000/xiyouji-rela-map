@@ -1,0 +1,89 @@
+{
+    "unid": "c0039",
+    "basic": {
+        "name": "九灵元圣",
+        "pinyin": "jiu_ling_yuan_sheng",
+        "aliases": [
+            "九头狮子",
+            "太乙救苦天尊坐骑",
+            "九头狮子精"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 7,
+            "category": "demon"
+        },
+        "rank": 39,
+        "power": 85,
+        "influence": 82,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "master": [
+            "太乙救苦天尊"
+        ],
+        "grandsons": [
+            "黄狮精"
+        ],
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "竹节山",
+            "九曲盘桓洞"
+        ],
+        "territory": [
+            "竹节山"
+        ],
+        "appearances": [
+            "竹节山",
+            "九曲盘桓洞",
+            "玉华州"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "九头神力"
+        ],
+        "skills": [
+            "九头狮吼",
+            "变化术",
+            "狮王神通"
+        ],
+        "specialties": [
+            "九个头颅",
+            "狮王威势",
+            "天尊坐骑神力"
+        ]
+    },
+    "metadata": {
+        "description": "太乙救苦天尊的坐骑九头狮子，黄狮精的祖父，实力强大的狮王",
+        "tags": [
+            "antagonist",
+            "demon",
+            "lion",
+            "nine_heads",
+            "mount"
+        ],
+        "sourceChapters": [
+            89,
+            90,
+            91
+        ],
+        "firstAppearance": 89,
+        "significance": "玉华州情节的重要角色，展现了多头狮王的威势",
+        "culturalBackground": "九头狮子体现了中国神话中对多头神兽的想象和道教坐骑文化",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

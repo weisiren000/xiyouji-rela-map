@@ -1,0 +1,87 @@
+{
+    "unid": "c0049",
+    "basic": {
+        "name": "白面狐狸",
+        "pinyin": "bai_mian_hu_li",
+        "aliases": [
+            "比丘国美后",
+            "狐狸精",
+            "白面狐妖"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 4,
+            "category": "demon"
+        },
+        "rank": 49,
+        "power": 55,
+        "influence": 60,
+        "morality": "chaotic_evil"
+    },
+    "relationships": {
+        "ally": [
+            "c0048"
+        ],
+        "spouse": [
+            "比丘国王"
+        ],
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "比丘国王宫"
+        ],
+        "territory": [
+            "比丘国"
+        ],
+        "appearances": [
+            "比丘国",
+            "王宫"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "双剑"
+        ],
+        "skills": [
+            "狐媚术",
+            "变化术",
+            "魅惑术"
+        ],
+        "specialties": [
+            "美色迷惑",
+            "狐狸精法术",
+            "蛊惑人心"
+        ]
+    },
+    "metadata": {
+        "description": "狐狸精，化身美女成为比丘国王后，与白鹿精一起迷惑国王，要求童男童女炼制童心丹",
+        "tags": [
+            "antagonist",
+            "demon",
+            "fox",
+            "female",
+            "seductress"
+        ],
+        "sourceChapters": [
+            78,
+            79,
+            80
+        ],
+        "firstAppearance": 78,
+        "significance": "比丘国情节的重要角色，体现了狐狸精迷惑君王的典型形象",
+        "culturalBackground": "狐狸精是中国民间传说中的经典妖怪，体现了对美色祸国的警示",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

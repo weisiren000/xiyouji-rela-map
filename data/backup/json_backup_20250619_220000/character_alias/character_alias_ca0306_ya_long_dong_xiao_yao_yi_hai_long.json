@@ -1,0 +1,48 @@
+{
+    "unid": "ca0306",
+    "isAlias": true,
+    "basic": {
+        "name": "压龙洞小妖(倚海龙)",
+        "pinyin": "ya_long_dong_xiao_yao_yi_hai_long",
+        "aliases": [
+            "压龙洞龙妖",
+            "倚海龙小妖",
+            "海龙小妖"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 9,
+            "category": "demon"
+        },
+        "rank": 133,
+        "power": 42,
+        "influence": 28,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "倚海龙的别名，体现了其在压龙洞妖怪集团中的小妖身份和海洋背景。倚海龙作为龙族出身的小妖，在压龙洞中负责水系法术和战斗支援，展现了妖怪世界中不同种族的融合。这个别名强调了其在九尾狐统领下的从属地位，以及压龙洞作为多种族妖怪聚集地的特色。",
+        "tags": [
+            "demon",
+            "dragon_spirit",
+            "water_magic",
+            "subordinate",
+            "cave_demon",
+            "multi_species",
+            "ocean_background",
+            "support"
+        ],
+        "sourceChapters": [
+            25
+        ],
+        "firstAppearance": 25,
+        "significance": "展现了不同种族妖怪在同一集团中的合作",
+        "culturalBackground": "体现了龙族文化和妖怪世界的多元化组织结构",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0133"
+    }
+}

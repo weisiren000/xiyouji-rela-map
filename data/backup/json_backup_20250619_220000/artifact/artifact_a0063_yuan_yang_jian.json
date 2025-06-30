@@ -1,0 +1,60 @@
+{
+    "unid": "a0063",
+    "isAlias": false,
+    "basic": {
+        "name": "鸳鸯剑",
+        "pinyin": "yuan_yang_jian",
+        "aliases": [
+            "情侣剑",
+            "双生剑"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 7,
+        "power": 50,
+        "influence": 35,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0083",
+            "name": "赤鬼王",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0047",
+                "name": "火焰山斗法"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "鸳鸯剑是一对相似却互补的双剑，一剑鸳纹，主阳刚之力；一剑鸯纹，主阴柔之力。两剑各有千斤重，通常由一人双手持握，或两人各持一把协同作战。剑身银白锃亮，剑柄呈红黑两色。单剑威力一般，但两剑合击威力倍增，可产生火焰与寒冰交织的奇特攻击。在火焰山一带，赤鬼王曾以此剑与孙悟空交战，剑法变幻莫测，攻防兼备。两剑合璧时能形成剑气屏障，抵挡强大攻击。",
+        "tags": [
+            "weapon",
+            "sword",
+            "dual",
+            "yin_yang",
+            "pair",
+            "mandarin_duck",
+            "fire",
+            "ice",
+            "metal",
+            "demon_weapon",
+            "complementary",
+            "partnership"
+        ],
+        "sourceChapters": [59, 60],
+        "firstAppearance": 59,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

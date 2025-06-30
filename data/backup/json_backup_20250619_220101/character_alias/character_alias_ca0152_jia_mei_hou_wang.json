@@ -1,0 +1,48 @@
+{
+    "unid": "ca0152",
+    "isAlias": true,
+    "basic": {
+        "name": "假美猴王",
+        "pinyin": "jia_mei_hou_wang",
+        "aliases": [
+            "假美猴王",
+            "通风大圣",
+            "六耳弥猴"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "ling_hou",
+            "name": "灵猴",
+            "tier": 7,
+            "category": "demon"
+        },
+        "rank": 36,
+        "power": 90,
+        "influence": 85,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "六耳猕猴的最著名称号，体现了其完美模仿孙悟空的能力。这个称号强调了真假难辨的特点，在真假美猴王情节中，连观音菩萨都难以分辨真假，体现了六耳猕猴超凡的模仿神通。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "monkey",
+            "doppelganger",
+            "four_spiritual_monkeys",
+            "impersonation",
+            "deception"
+        ],
+        "sourceChapters": [
+            57,
+            58
+        ],
+        "firstAppearance": 57,
+        "significance": "体现了六耳猕猴完美模仿能力和真假美猴王情节的核心冲突",
+        "culturalBackground": "假冒身份在中国文化中常用来探讨真假、善恶、本我与他我的哲学问题",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0036"
+    }
+}

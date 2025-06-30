@@ -1,0 +1,97 @@
+{
+    "unid": "e0034",
+    "isAlias": false,
+    "basic": {
+        "name": "毒敌山琵琶洞遇蝎子精",
+        "pinyin": "du_di_shan_pi_pa_dong_yu_xie_zi_jing",
+        "aliases": [
+            "琵琶精",
+            "毒敌山",
+            "琵琶洞"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 78
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0040",
+            "name": "蝎子精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0006",
+            "name": "如来佛祖",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0101",
+            "name": "毒敌山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0102",
+            "name": "琵琶洞",
+            "role": "primary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0026",
+            "name": "三股叉",
+            "role": "weapon"
+        },
+        {
+            "unid": "a0027",
+            "name": "倒马毒桩",
+            "role": "weapon"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到毒敌山，唐僧被琵琶洞的蝎子精捉去。蝎子精自称是如来佛祖的克星，使用三股叉和倒马毒桩等武器，连孙悟空也难以对付。最终孙悟空请来如来佛祖，用金钵盂收服了蝎子精。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "poison",
+            "divine_intervention",
+            "rescue"
+        ],
+        "sourceChapters": [56, 57, 58],
+        "chronology": {
+            "order": 34,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

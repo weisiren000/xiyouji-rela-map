@@ -1,0 +1,48 @@
+{
+    "unid": "ca0304",
+    "isAlias": true,
+    "basic": {
+        "name": "黑熊精友(白花蛇精)",
+        "pinyin": "hei_xiong_jing_you_bai_hua_she_jing",
+        "aliases": [
+            "白花蛇精友",
+            "蛇精道友",
+            "白蛇仙子"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 8,
+            "category": "demon"
+        },
+        "rank": 131,
+        "power": 48,
+        "influence": 40,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "白花蛇精的别名，突出了其作为黑熊精朋友圈中重要成员的身份。白花蛇精以其美丽的外表和灵巧的身姿，在黑熊精、凌虚子的友谊圈中扮演着重要角色。这个别名体现了妖怪世界中不同种族间的和谐相处，蛇精的智慧和美丽为这个友谊圈增添了独特的魅力。",
+        "tags": [
+            "demon",
+            "snake_spirit",
+            "friendship",
+            "beauty",
+            "wisdom",
+            "demon_society",
+            "elegance",
+            "harmony"
+        ],
+        "sourceChapters": [
+            17
+        ],
+        "firstAppearance": 17,
+        "significance": "展现了妖怪友谊圈中的多样性和和谐",
+        "culturalBackground": "体现了蛇在中国文化中的美丽与智慧象征，以及妖怪世界的友谊文化",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0131"
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "unid": "c0033",
+    "basic": {
+        "name": "青狮精",
+        "pinyin": "qing_shi_jing",
+        "aliases": [
+            "青狮王",
+            "文殊菩萨坐骑",
+            "青毛狮子"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 33,
+        "power": 82,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "master": [
+            "c0015"
+        ],
+        "allies": [
+            "c0034",
+            "c0035"
+        ],
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "狮驼洞",
+            "狮驼岭"
+        ],
+        "territory": [
+            "狮驼岭"
+        ],
+        "appearances": [
+            "狮驼岭",
+            "狮驼洞",
+            "五台山"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "钢刀"
+        ],
+        "skills": [
+            "狮吼功",
+            "变化术",
+            "狮子神通"
+        ],
+        "specialties": [
+            "青狮坐骑神力",
+            "狮王威势",
+            "文殊法力"
+        ]
+    },
+    "metadata": {
+        "description": "文殊菩萨的坐骑青狮，与白象精、大鹏鸟结为兄弟，占据狮驼岭为妖",
+        "tags": [
+            "antagonist",
+            "demon",
+            "lion",
+            "mount",
+            "three_demons"
+        ],
+        "sourceChapters": [
+            74,
+            75,
+            76,
+            77
+        ],
+        "firstAppearance": 74,
+        "significance": "狮驼岭三妖的老大，体现了佛教坐骑下凡为妖的情节",
+        "culturalBackground": "青狮是文殊菩萨的传统坐骑，体现了佛教护法文化",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

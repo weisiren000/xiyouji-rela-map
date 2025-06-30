@@ -1,0 +1,85 @@
+{
+    "unid": "e0031",
+    "isAlias": false,
+    "basic": {
+        "name": "通天河金鱼精",
+        "pinyin": "tong_tian_he_jin_yu_jing",
+        "aliases": [
+            "灵感大王",
+            "通天河",
+            "金鱼精"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 78,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0038",
+            "name": "灵感大王",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0069",
+            "name": "通天河",
+            "role": "primary"
+        },
+        {
+            "unid": "l0031",
+            "name": "南海普陀山",
+            "role": "secondary"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到通天河，河中灵感大王（观音菩萨莲花池中的金鱼精）作恶，抓走唐僧。孙悟空前往南海普陀山求助观音菩萨，观音菩萨亲自降服金鱼精，使师徒安全渡河。",
+        "tags": [
+            "battle",
+            "water",
+            "fish_spirit",
+            "kidnapping",
+            "divine_intervention"
+        ],
+        "sourceChapters": [47, 48, 49],
+        "chronology": {
+            "order": 31,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

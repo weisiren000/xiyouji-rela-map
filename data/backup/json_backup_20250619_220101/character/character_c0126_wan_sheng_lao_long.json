@@ -1,0 +1,51 @@
+{
+    "unid": "c0126",
+    "isAlias": false,
+    "basic": {
+        "name": "万圣老龙",
+        "pinyin": "wan_sheng_lao_long",
+        "aliases": ["万圣龙王", "碧波潭龙王", "老龙王"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "lao_long",
+            "name": "老龙",
+            "tier": 5,
+            "category": "dragon"
+        },
+        "rank": 126,
+        "power": 72,
+        "influence": 68,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["九头虫"],
+        "subordinates": ["碧波潭水族"],
+        "superior": [],
+        "allies": ["妖族"],
+        "family": ["万圣公主(女)", "九头虫(女婿)"],
+        "enemies": ["孙悟空", "取经团队"]
+    },
+    "abilities": {
+        "weapons": ["龙王宝剑", "定海神珠"],
+        "skills": ["龙族神通", "水系法术", "变化之术", "兴云布雨"],
+        "specialties": ["掌管碧波潭", "龙族法力", "水族统领", "老龙智慧"]
+    },
+    "locations": {
+        "residence": ["碧波潭龙宫"],
+        "territory": ["碧波潭"],
+        "frequentPlaces": ["碧波潭", "龙宫深处"]
+    },
+    "metadata": {
+        "description": "碧波潭龙王，万圣公主之父，与九头虫结为亲家，盗取佛宝舍利子",
+        "tags": ["demon", "dragon", "father", "thief", "water"],
+        "sourceChapters": [63],
+        "firstAppearance": 63,
+        "culturalBackground": "中国传统龙族文化的体现",
+        "religiousSignificance": "体现龙族的复杂性格和道德观念",
+        "literaryRole": "西游记中重要的龙族反派角色",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

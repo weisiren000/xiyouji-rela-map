@@ -1,0 +1,59 @@
+{
+    "unid": "a0022",
+    "isAlias": false,
+    "basic": {
+        "name": "火心镜",
+        "pinyin": "huo_xin_jing",
+        "aliases": [
+            "火镜",
+            "太阳精火"
+        ],
+        "type": "artifact",
+        "category": "tool"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 45,
+        "influence": 30,
+        "element": "fire"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0090",
+            "name": "红孩儿",
+            "relationship": "personal_tool"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0033",
+                "name": "火云洞斗法"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "火心镜是红孩儿的法宝之一，镜面能聚集太阳真火，发出炽热无比的火焰攻击。此镜由天地灵火炼成，可引动天上三昧真火，焚烧万物。在火云洞一战中，红孩儿曾用此宝与孙悟空交战，威力非凡，甚至能将铁棒烧红。",
+        "tags": [
+            "fire",
+            "mirror",
+            "fire_magic",
+            "flame_weapon",
+            "red_boy",
+            "offensive",
+            "burning",
+            "solar_energy",
+            "magical_tool",
+            "demon_artifact",
+            "fire_cave"
+        ],
+        "sourceChapters": [41, 42],
+        "firstAppearance": 41,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "unid": "c0119",
+    "isAlias": false,
+    "basic": {
+        "name": "嫦娥",
+        "pinyin": "chang_e",
+        "aliases": [
+            "广寒仙子",
+            "姮娥仙子",
+            "月宫仙子",
+            "太阴星君",
+            "月神"
+        ],
+        "type": "character",
+        "category": "immortal"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_nu",
+            "name": "仙女",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 119,
+        "power": 70,
+        "influence": 60,
+        "morality": "neutral_good"
+    },
+    "metadata": {
+        "description": "广寒宫的月宫仙子，居住在月亮上的广寒宫中，是中国神话中的月神。在西游记中偶有提及。",
+        "tags": [
+            "immortal",
+            "goddess",
+            "moon_deity",
+            "celestial",
+            "beautiful",
+            "divine"
+        ],
+        "sourceChapters": [
+            95
+        ],
+        "firstAppearance": 95,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

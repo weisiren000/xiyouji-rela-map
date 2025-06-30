@@ -1,0 +1,87 @@
+{
+    "unid": "e0047",
+    "isAlias": false,
+    "basic": {
+        "name": "隐雾山连环洞遇豹子精",
+        "pinyin": "yin_wu_shan_lian_huan_dong_yu_bao_zi_jing",
+        "aliases": [
+            "艾叶花皮豹子",
+            "隐雾山",
+            "连环洞"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "standard"
+        },
+        "significance": 70,
+        "impact": 65
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0055",
+            "name": "艾叶花皮豹子精",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0097",
+            "name": "隐雾山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0098",
+            "name": "连环洞",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0023",
+            "name": "豹皮",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒经过隐雾山，遇到一只艾叶花皮豹子精。这只豹子精有三百年道行，它看中了唐僧的肉，想要吃唐僧以求长生。豹子精将唐僧捉去，孙悟空与猪八戒前往连环洞救师父。经过一番激战，孙悟空最终降服了豹子精，救出唐僧。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "rescue",
+            "leopard_spirit",
+            "mountain"
+        ],
+        "sourceChapters": [84, 85],
+        "chronology": {
+            "order": 47,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

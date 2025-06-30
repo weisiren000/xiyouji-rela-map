@@ -1,0 +1,43 @@
+{
+    "unid": "ca0315",
+    "isAlias": true,
+    "basic": {
+        "name": "豹子精",
+        "pinyin": "bao_zi_jing",
+        "aliases": [
+            "豹精",
+            "豹妖",
+            "山中豹子"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_jing",
+            "name": "仙境",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 3,
+        "power": 78,
+        "influence": 65,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "南山大王的简化别名，直接点明其豹子精怪的本质，体现了山林猛兽的凶猛特性和妖怪身份。",
+        "tags": [
+            "alias",
+            "demon",
+            "leopard_spirit",
+            "wild_beast",
+            "mountain_demon"
+        ],
+        "sourceChapters": [
+            89
+        ],
+        "firstAppearance": 89,
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0138"
+    }
+}

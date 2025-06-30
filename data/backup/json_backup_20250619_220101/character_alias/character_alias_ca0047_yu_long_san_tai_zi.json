@@ -1,0 +1,58 @@
+{
+    "unid": "ca0047",
+    "isAlias": true,
+    "basic": {
+        "name": "玉龙三太子",
+        "pinyin": "yu_long_san_tai_zi",
+        "aliases": [
+            "玉龙",
+            "三太子",
+            "玉龙太子"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "long_wang",
+            "name": "龙王",
+            "tier": 7,
+            "category": "dragon"
+        },
+        "rank": 5,
+        "power": 70,
+        "influence": 65,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "白龙马的尊贵称谓，玉龙体现了其高贵的血统和纯洁的品性。",
+        "tags": [
+            "alias",
+            "noble_title",
+            "jade_dragon",
+            "pure_nature",
+            "royal_blood"
+        ],
+        "sourceChapters": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+        ],
+        "firstAppearance": 15,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0005"
+    }
+}

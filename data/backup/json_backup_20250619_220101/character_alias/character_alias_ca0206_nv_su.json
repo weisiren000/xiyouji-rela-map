@@ -1,0 +1,52 @@
+{
+    "unid": "ca0206",
+    "isAlias": true,
+    "basic": {
+        "name": "女宿",
+        "pinyin": "nv_su",
+        "aliases": [
+            "女星",
+            "女宿星官",
+            "北方女宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 60,
+        "power": 72,
+        "influence": 75,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "女土蝠的星宿称谓，强调其作为北方玄武七宿之三的重要地位。这个称谓体现了女土蝠在二十八宿体系中的土德属性，突出了其作为玄武胸部星宿的天文学意义和织女星的女性神话色彩。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "northern_black_tortoise",
+            "earth_element",
+            "constellation_name",
+            "astronomical_system",
+            "tortoise_chest",
+            "weaver_girl_connection"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了女土蝠作为北方玄武七宿第三位的重要地位和土德属性",
+        "culturalBackground": "女宿在二十八宿中代表北方玄武的胸部，与织女星相关联，象征着纺织技艺和女性智慧，体现了土德的包容特性",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0060"
+    }
+}

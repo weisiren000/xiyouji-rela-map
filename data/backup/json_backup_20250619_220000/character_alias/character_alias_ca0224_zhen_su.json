@@ -1,0 +1,52 @@
+{
+    "unid": "ca0224",
+    "isAlias": true,
+    "basic": {
+        "name": "轸宿",
+        "pinyin": "zhen_su",
+        "aliases": [
+            "轸星",
+            "轸宿星官",
+            "南方轸宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 78,
+        "power": 79,
+        "influence": 82,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "轸水蚓的星宿称谓，强调其作为南方朱雀七宿之七的重要地位。这个称谓体现了轸水蚓在二十八宿体系中的水德属性，突出了其作为朱雀尾部星宿的天文学意义和车轸的承载象征。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "southern_vermillion_bird",
+            "water_element",
+            "constellation_name",
+            "astronomical_system",
+            "bird_tail",
+            "chariot_axle"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了轸水蚓作为南方朱雀七宿末尾的重要地位和水德属性",
+        "culturalBackground": "轸宿在二十八宿中代表南方朱雀的尾部，象征着车轸和承载，体现了水德的包容和支撑特性，与古代的车马和运输相关",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0078"
+    }
+}

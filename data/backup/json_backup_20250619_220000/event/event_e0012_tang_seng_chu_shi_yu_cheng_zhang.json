@@ -1,0 +1,66 @@
+{
+    "unid": "e0012",
+    "isAlias": false,
+    "basic": {
+        "name": "唐僧出世与成长",
+        "pinyin": "tang_seng_chu_shi_yu_cheng_zhang",
+        "aliases": [
+            "金蝉子转世",
+            "唐僧出世",
+            "江流儿"
+        ],
+        "type": "event",
+        "category": "origin"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "critical"
+        },
+        "significance": 90,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0124",
+            "name": "乌巢禅师",
+            "role": "mentor"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0040",
+            "name": "长安城",
+            "role": "primary"
+        },
+        {
+            "unid": "l0055",
+            "name": "大唐",
+            "role": "background"
+        }
+    ],
+    "metadata": {
+        "description": "金蝉子因不听佛法转世为陈玄奘，又名江流儿。他出生后被抛入江中，被金山寺僧人救起抚养，后得乌巢禅师传授佛法，成为高僧。",
+        "tags": [
+            "origin",
+            "reincarnation",
+            "monk",
+            "childhood",
+            "training",
+            "buddhism"
+        ],
+        "sourceChapters": [9, 10],
+        "chronology": {
+            "order": 12,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

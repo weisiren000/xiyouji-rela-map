@@ -1,0 +1,68 @@
+{
+    "unid": "e0003",
+    "isAlias": false,
+    "basic": {
+        "name": "东海龙宫夺取金箍棒",
+        "pinyin": "dong_hai_long_gong",
+        "aliases": [
+            "龙宫借宝",
+            "定海神珍",
+            "如意金箍棒"
+        ],
+        "type": "event",
+        "category": "acquisition"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "significant"
+        },
+        "significance": 90,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0079",
+            "name": "东海龙王",
+            "role": "antagonist"
+        }
+    ],
+    "artifacts_acquired": [
+        {
+            "unid": "a0001",
+            "name": "如意金箍棒",
+            "significance": "major"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0057",
+            "name": "东海龙宫",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "孙悟空来到东海龙宫，向龙王讨要兵器，得到了大禹治水时曾经使用的定海神珍——如意金箍棒。",
+        "tags": [
+            "acquisition",
+            "weapon",
+            "divine_artifact",
+            "dragon_palace",
+            "treasure",
+            "magic_staff"
+        ],
+        "sourceChapters": [3],
+        "chronology": {
+            "order": 3,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

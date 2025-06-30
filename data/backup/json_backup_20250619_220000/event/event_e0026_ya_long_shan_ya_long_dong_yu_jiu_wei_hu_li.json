@@ -1,0 +1,90 @@
+{
+    "unid": "e0026",
+    "isAlias": false,
+    "basic": {
+        "name": "压龙山压龙洞遇九尾狐狸",
+        "pinyin": "ya_long_shan_ya_long_dong_yu_jiu_wei_hu_li",
+        "aliases": [
+            "九尾狐",
+            "压龙山",
+            "压龙洞"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 75,
+        "impact": 72
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0135",
+            "name": "九尾狐",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0134",
+            "name": "狐阿七",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0132",
+            "name": "巴山虎",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0133",
+            "name": "倚海龙",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0050",
+            "name": "压龙山压龙洞",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒路过压龙山，唐僧被九尾狐精及其手下狐阿七、巴山虎、倚海龙捉走。九尾狐精是金角银角的干娘，为报金银角被擒之仇，欲吃唐僧肉。孙悟空智斗九尾狐，最终救出唐僧，降服了妖怪。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "fox_spirit",
+            "revenge",
+            "rescue"
+        ],
+        "sourceChapters": [35, 36],
+        "chronology": {
+            "order": 26,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

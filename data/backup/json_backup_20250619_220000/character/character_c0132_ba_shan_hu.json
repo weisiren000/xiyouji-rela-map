@@ -1,0 +1,50 @@
+{
+    "unid": "c0132",
+    "isAlias": false,
+    "basic": {
+        "name": "巴山虎",
+        "pinyin": "ba_shan_hu",
+        "aliases": ["山虎", "巴山猛虎", "虎妖"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 3,
+            "category": "beast"
+        },
+        "rank": 132,
+        "power": 45,
+        "influence": 30,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["倚海龙", "其他小妖"],
+        "subordinates": [],
+        "superior": ["妖王"],
+        "allies": ["妖族"],
+        "enemies": ["取经团队"]
+    },
+    "abilities": {
+        "weapons": ["虎爪", "小妖兵器"],
+        "skills": ["虎威神通", "山林法术", "猛兽之力", "巴山绝技"],
+        "specialties": ["山林之王", "猛虎威势", "巴山神力", "野兽本能"]
+    },
+    "locations": {
+        "residence": ["巴山", "山林洞穴"],
+        "territory": ["山林地带"],
+        "frequentPlaces": ["巴山", "山林", "妖洞"]
+    },
+    "metadata": {
+        "description": "巴山地区的虎妖，威猛强壮，是山林中的小妖头目",
+        "tags": ["demon", "tiger", "mountain", "fierce", "beast"],
+        "sourceChapters": ["多处出现"],
+        "firstAppearance": 17,
+        "culturalBackground": "中国传统虎类妖怪文化的体现",
+        "religiousSignificance": "体现山林猛兽的威势和力量",
+        "literaryRole": "西游记中山林小妖的代表",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

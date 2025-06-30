@@ -1,0 +1,52 @@
+{
+    "unid": "ca0143",
+    "isAlias": true,
+    "basic": {
+        "name": "文殊菩萨坐骑(青狮)",
+        "pinyin": "wen_shu_pu_sa_zuo_qi_qing_shi",
+        "aliases": [
+            "青狮精",
+            "青狮王",
+            "乌鸡国假国王",
+            "青毛狮子怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 33,
+        "power": 82,
+        "influence": 78,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "青狮精的原身份，指其作为文殊菩萨坐骑时的天界职位。文殊菩萨是智慧菩萨，青狮作为其坐骑，象征着智慧的威猛和佛法的威严。这个称号体现了其佛教背景和在佛界的重要地位，也解释了其强大法力的来源和对佛法的了解。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "lion",
+            "mount",
+            "three_demons",
+            "original_identity",
+            "buddhist_background",
+            "佛教坐骑",
+            "智慧象征",
+            "天界出身"
+        ],
+        "sourceChapters": [
+            74,
+            75,
+            76,
+            77
+        ],
+        "firstAppearance": 74,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0033"
+    }
+}

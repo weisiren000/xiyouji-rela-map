@@ -1,0 +1,60 @@
+{
+    "unid": "a0034",
+    "isAlias": false,
+    "basic": {
+        "name": "罗天大醮",
+        "pinyin": "luo_tian_qiang",
+        "aliases": [
+            "罗天醮",
+            "天神大醮"
+        ],
+        "type": "artifact",
+        "category": "ritual"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_bao",
+            "name": "法宝",
+            "tier": 5,
+            "category": "magical"
+        },
+        "rank": 9,
+        "power": 70,
+        "influence": 95,
+        "element": "spiritual"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0097",
+            "name": "太上老君",
+            "relationship": "creator"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0005",
+                "name": "大闹天宫"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "罗天大醮是道教最高级别的祭天仪式，可请动天界诸神下凡助力。此仪式需特定法器、符箓和咒语，由道行高深者主持。在西游记中，太上老君曾设此大醮对付孙悟空，召来众多天神。仪式进行时，天空会现异象，法力波动强烈，能大幅增强施法者能力，并削弱妖魔力量。是对抗强大妖魔的终极法术之一。",
+        "tags": [
+            "ritual",
+            "ceremony",
+            "taoist",
+            "spiritual",
+            "prayer",
+            "heavenly_assistance",
+            "divine_intervention",
+            "celestial",
+            "laozi",
+            "powerful",
+            "religious",
+            "cosmic"
+        ],
+        "sourceChapters": [6, 7],
+        "firstAppearance": 6,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

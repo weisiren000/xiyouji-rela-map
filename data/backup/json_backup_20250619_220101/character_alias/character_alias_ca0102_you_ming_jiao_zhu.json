@@ -1,0 +1,51 @@
+{
+    "unid": "ca0102",
+    "isAlias": true,
+    "basic": {
+        "name": "幽冥教主",
+        "pinyin": "you_ming_jiao_zhu",
+        "aliases": [
+            "地藏王菩萨",
+            "地藏",
+            "地藏菩萨",
+            "九华山地藏"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "pu_sa",
+            "name": "菩萨",
+            "tier": 8,
+            "category": "buddhist"
+        },
+        "rank": 18,
+        "power": 85,
+        "influence": 90,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "地藏王菩萨的职务称号，体现了其作为幽冥界（地府）教主的身份。在西游记中，幽冥教主负责管理地府，掌管生死簿册，是阴间的最高统治者。这个称号强调了地藏菩萨在佛教宇宙观中的重要地位和救度地狱众生的使命。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "official_title",
+            "underworld_ruler",
+            "death_manager",
+            "authority",
+            "judge",
+            "compassionate",
+            "powerful",
+            "responsible"
+        ],
+        "sourceChapters": [
+            3,
+            10,
+            11
+        ],
+        "firstAppearance": 3,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0018"
+    }
+}

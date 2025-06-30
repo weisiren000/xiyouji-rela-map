@@ -1,0 +1,50 @@
+{
+    "unid": "ca0268",
+    "isAlias": true,
+    "basic": {
+        "name": "多闻天王",
+        "pinyin": "duo_wen_tian_wang",
+        "aliases": [
+            "多闻王",
+            "北方天王",
+            "闻法天王"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 6,
+            "category": "celestial"
+        },
+        "rank": 105,
+        "power": 79,
+        "influence": 82,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "北方多闻天王的护法称谓，强调其多闻佛法、智慧广博的重要特质。这个称谓体现了北方多闻天王在佛教护法体系中的核心地位，负责守护北俱芦洲和传播佛法智慧的神圣使命。",
+        "tags": [
+            "buddhist_guardian",
+            "four_heavenly_kings",
+            "northern_guardian",
+            "dharma_protector",
+            "celestial_warrior",
+            "buddhist_deity",
+            "wisdom_deity",
+            "divine_protector"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了北方多闻天王作为佛教护法天王的重要地位和智慧职责",
+        "culturalBackground": "多闻天王是佛教四大天王之一，守护北方，多闻意为广闻佛法、智慧广博，在佛教文化中是重要的护法神，负责传播佛法和守护智慧",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0105"
+    }
+}

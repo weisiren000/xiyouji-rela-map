@@ -1,0 +1,93 @@
+{
+    "unid": "e0043",
+    "isAlias": false,
+    "basic": {
+        "name": "黄花观遇蜈蚣精",
+        "pinyin": "huang_hua_guan_yu_wu_gong_jing",
+        "aliases": [
+            "百眼魔君",
+            "黄花观",
+            "蜈蚣精"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 78,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0047",
+            "name": "百眼魔君",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0089",
+            "name": "黄花观",
+            "role": "primary"
+        },
+        {
+            "unid": "l0090",
+            "name": "黄花山",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0019",
+            "name": "净瓶甘露",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到黄花观，遇到一个自称是道士的百眼魔君。百眼魔君实为蜈蚣精所化，他迷惑唐僧，想吃唐僧肉以求长生。孙悟空识破了妖怪的真面目，与之展开激战，但百眼魔君法力高强，孙悟空难以取胜。最终孙悟空请来观音菩萨，用净瓶甘露降服了蜈蚣精，救出唐僧。",
+        "tags": [
+            "battle",
+            "deception",
+            "rescue",
+            "centipede_spirit",
+            "divine_intervention"
+        ],
+        "sourceChapters": [74, 75],
+        "chronology": {
+            "order": 43,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+}
+ 

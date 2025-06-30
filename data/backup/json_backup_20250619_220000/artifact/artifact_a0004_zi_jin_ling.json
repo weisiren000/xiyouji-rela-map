@@ -1,0 +1,63 @@
+{
+    "unid": "a0004",
+    "isAlias": false,
+    "basic": {
+        "name": "紫金铃",
+        "pinyin": "zi_jin_ling",
+        "aliases": [
+            "紫金铃儿",
+            "观音坐骑铃"
+        ],
+        "type": "artifact",
+        "category": "magical_item"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_qi",
+            "name": "天器",
+            "tier": 7,
+            "category": "divine"
+        },
+        "rank": 4,
+        "power": 80,
+        "influence": 78,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0174",
+            "name": "赛太岁",
+            "relationship": "accessory"
+        },
+        "previousOwners": [
+            {
+                "unid": "c0007",
+                "name": "观音菩萨",
+                "relationship": "creator"
+            }
+        ],
+        "associatedEvents": [
+            {
+                "unid": "e0041",
+                "name": "麒麟山遇赛太岁"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "观音菩萨坐骑金毛犼身上的紫金铃铛，发出的声音可以迷惑妖魔，安抚人心。铃声清脆悦耳，具有神奇的法力，能够辅助降妖除魔。",
+        "tags": [
+            "magical_item",
+            "divine",
+            "metal",
+            "bell",
+            "sound_based",
+            "buddhist",
+            "guanyin",
+            "divine_tool",
+            "lion_accessory"
+        ],
+        "sourceChapters": [41, 42, 43],
+        "firstAppearance": 41,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+} 

@@ -1,0 +1,46 @@
+{
+    "unid": "c0014",
+    "isAlias": false,
+    "basic": {
+        "name": "太白金星",
+        "pinyin": "tai_bai_jin_xing",
+        "aliases": [
+            "李长庚",
+            "天庭使者"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "jin_xian",
+            "name": "金仙",
+            "tier": 6,
+            "category": "immortal"
+        },
+        "rank": 14,
+        "power": 60,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "天庭的重要使者，以和事佬著称，多次奉玉帝之命招安孙悟空。性格温和，善于外交，是天庭与各方势力沟通的桥梁。",
+        "tags": [
+            "deity",
+            "diplomat",
+            "messenger",
+            "peacemaker",
+            "gentle",
+            "wise",
+            "negotiator",
+            "courteous",
+            "mediator",
+            "trusted_advisor"
+        ],
+        "sourceChapters": [
+            4, 5, 7, 18, 87
+        ],
+        "firstAppearance": 4,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

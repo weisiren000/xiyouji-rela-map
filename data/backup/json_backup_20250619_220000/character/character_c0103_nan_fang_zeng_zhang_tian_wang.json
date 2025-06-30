@@ -1,0 +1,51 @@
+{
+    "unid": "c0103",
+    "isAlias": false,
+    "basic": {
+        "name": "南方增长天王",
+        "pinyin": "nan_fang_zeng_zhang_tian_wang",
+        "aliases": ["增长天王", "毗琉璃", "南方天王", "增长大王"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 6,
+            "category": "guardian"
+        },
+        "rank": 103,
+        "power": 79,
+        "influence": 83,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["东方持国天王", "西方广目天王", "北方多闻天王"],
+        "subordinates": ["鸠槃荼", "薜荔多", "南方护法"],
+        "superior": ["玉皇大帝", "如来佛祖"],
+        "allies": ["四大天王"]
+    },
+    "abilities": {
+        "weapons": ["宝剑", "增长神剑"],
+        "skills": ["护法神通", "南方镇守", "剑术法门", "增长法力"],
+        "specialties": ["守护南方", "增长善根", "剑法神通", "佛法护持"]
+    },
+    "locations": {
+        "residence": ["南方天王殿", "增长宫"],
+        "territory": ["南赡部洲", "南方天界"],
+        "frequentPlaces": ["天庭", "灵山", "四天王聚会"]
+    },
+    "metadata": {
+        "description": "四大天王之一，守护南方，增长善根，以宝剑为法器，统领鸠槃荼等护法",
+        "tags": ["deity", "guardian", "buddhist", "southern_protector", "sword"],
+        "sourceChapters": [4, 5, 6],
+        "firstAppearance": 4,
+        "culturalBackground": "佛教护法神，四大天王之一，守护南方世界",
+        "religiousSignificance": "佛教中的重要护法神，守护佛法和众生",
+        "literaryRole": "西游记中天庭和佛教体系的重要护法，参与降妖除魔",
+        "guardianScope": "守护南赡部洲，护持南方国土和众生",
+        "weaponSymbol": "宝剑象征智慧锋利，能断除烦恼",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

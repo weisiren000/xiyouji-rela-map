@@ -1,0 +1,47 @@
+{
+    "unid": "ca0166",
+    "isAlias": true,
+    "basic": {
+        "name": "如来佛克星",
+        "pinyin": "ru_lai_fo_ke_xing",
+        "aliases": [
+            "琵琶精",
+            "如来佛克星",
+            "毒敌山琵琶洞主"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 40,
+        "power": 72,
+        "influence": 70,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "蝎子精的威名称号，强调其连如来佛祖都曾被其蜇伤的惊人战绩。这个称号体现了蝎子精在西游记中的特殊地位——是少数几个能够威胁到佛祖本人的妖怪，其倒马毒桩的威力可见一斑。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "scorpion",
+            "poison",
+            "buddha_nemesis",
+            "legendary_power",
+            "fearsome_reputation"
+        ],
+        "sourceChapters": [
+            55
+        ],
+        "firstAppearance": 55,
+        "significance": "体现了蝎子精超凡的毒性威力和在佛教体系中的特殊威胁地位",
+        "culturalBackground": "在佛教体系中，能够威胁佛祖的存在极为罕见，体现了蝎毒的可怕威力",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0040"
+    }
+}

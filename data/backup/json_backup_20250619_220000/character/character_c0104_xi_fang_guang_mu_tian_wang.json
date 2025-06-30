@@ -1,0 +1,51 @@
+{
+    "unid": "c0104",
+    "isAlias": false,
+    "basic": {
+        "name": "西方广目天王",
+        "pinyin": "xi_fang_guang_mu_tian_wang",
+        "aliases": ["广目天王", "毗留博叉", "西方天王", "广目大王"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 6,
+            "category": "guardian"
+        },
+        "rank": 104,
+        "power": 78,
+        "influence": 81,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["东方持国天王", "南方增长天王", "北方多闻天王"],
+        "subordinates": ["龙王", "富单那", "西方护法"],
+        "superior": ["玉皇大帝", "如来佛祖"],
+        "allies": ["四大天王"]
+    },
+    "abilities": {
+        "weapons": ["龙索", "广目神索"],
+        "skills": ["护法神通", "西方镇守", "龙索法术", "广目观察"],
+        "specialties": ["守护西方", "广目观察", "龙索神通", "佛法护持"]
+    },
+    "locations": {
+        "residence": ["西方天王殿", "广目宫"],
+        "territory": ["西牛贺洲", "西方天界"],
+        "frequentPlaces": ["天庭", "灵山", "四天王聚会"]
+    },
+    "metadata": {
+        "description": "四大天王之一，守护西方，广目观察，以龙索为法器，统领龙王等护法",
+        "tags": ["deity", "guardian", "buddhist", "western_protector", "dragon"],
+        "sourceChapters": [4, 5, 6],
+        "firstAppearance": 4,
+        "culturalBackground": "佛教护法神，四大天王之一，守护西方世界",
+        "religiousSignificance": "佛教中的重要护法神，守护佛法和众生",
+        "literaryRole": "西游记中天庭和佛教体系的重要护法，参与降妖除魔",
+        "guardianScope": "守护西牛贺洲，护持西方国土和众生",
+        "weaponSymbol": "龙索象征降伏恶龙，制服邪恶",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

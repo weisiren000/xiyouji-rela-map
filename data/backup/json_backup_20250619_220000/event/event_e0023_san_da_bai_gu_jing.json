@@ -1,0 +1,88 @@
+{
+    "unid": "e0023",
+    "isAlias": false,
+    "basic": {
+        "name": "三打白骨精",
+        "pinyin": "san_da_bai_gu_jing",
+        "aliases": [
+            "白骨夫人",
+            "三打白骨精",
+            "白虎岭"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "significant"
+        },
+        "significance": 85,
+        "impact": 80
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "conflict"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0023",
+            "name": "白骨精",
+            "role": "antagonist"
+        }
+    ],
+    "skills_used": [
+        {
+            "unid": "s0001",
+            "name": "七十二变",
+            "significance": "medium"
+        },
+        {
+            "unid": "s0034",
+            "name": "火眼金睛",
+            "significance": "major"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0042",
+            "name": "白虎岭",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "白骨精化作老妇、老翁和小女孩三种形象诱骗唐僧。孙悟空凭火眼金睛识破妖怪本相，三次打死白骨精。唐僧误会悟空滥杀无辜，念紧箍咒惩罚并将其赶走。",
+        "tags": [
+            "battle",
+            "deception",
+            "skeleton_monster",
+            "disguise",
+            "misunderstanding",
+            "banishment"
+        ],
+        "sourceChapters": [27],
+        "chronology": {
+            "order": 23,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

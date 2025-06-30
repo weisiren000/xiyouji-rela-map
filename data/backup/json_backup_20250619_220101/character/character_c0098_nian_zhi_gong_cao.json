@@ -1,0 +1,50 @@
+{
+    "unid": "c0098",
+    "isAlias": false,
+    "basic": {
+        "name": "年值功曹",
+        "pinyin": "nian_zhi_gong_cao",
+        "aliases": ["年神", "年值神", "值年功曹", "岁神"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "gong_cao",
+            "name": "功曹",
+            "tier": 5,
+            "category": "time"
+        },
+        "rank": 98,
+        "power": 65,
+        "influence": 70,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["月值功曹", "日值功曹", "时值功曹"],
+        "subordinates": ["年神部众", "岁时神将"],
+        "superior": ["玉皇大帝", "天庭"],
+        "allies": ["四值功曹"]
+    },
+    "abilities": {
+        "weapons": ["年神印", "岁时宝册"],
+        "skills": ["年岁神通", "时间掌控", "岁运调节", "年节管理"],
+        "specialties": ["掌管年岁", "时间流转", "岁运变化", "年节庆典"]
+    },
+    "locations": {
+        "residence": ["年神殿", "岁时宫"],
+        "territory": ["时间长河", "年岁轮回"],
+        "frequentPlaces": ["天庭", "功曹聚会", "人间年节"]
+    },
+    "metadata": {
+        "description": "四值功曹之一，掌管年岁时间，负责年运调节和年节管理，时间神系统的重要组成",
+        "tags": ["deity", "time", "year", "fortune", "festival"],
+        "sourceChapters": [7, 26],
+        "firstAppearance": 7,
+        "culturalBackground": "中国传统文化中的时间神，年岁崇拜的核心",
+        "religiousSignificance": "道教和民间信仰中的重要神祇，掌管年运和岁时",
+        "literaryRole": "西游记中时间神体系的重要组成部分，常与其他功曹一起出现",
+        "timeScope": "掌管一年的时间周期，负责年运和岁时变化",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "unid": "e0018",
+    "isAlias": false,
+    "basic": {
+        "name": "高老庄收猪八戒",
+        "pinyin": "gao_lao_zhuang_shou_zhu_ba_jie",
+        "aliases": [
+            "天蓬元帅",
+            "收猪八戒",
+            "高老庄"
+        ],
+        "type": "event",
+        "category": "recruitment"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "critical"
+        },
+        "significance": 90,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "recruit"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "background"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0007",
+            "name": "高老庄",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "师徒来到高老庄，遇到被贬下凡的天蓬元帅猪八戒在此作怪。孙悟空与其大战并降服，猪八戒在观音菩萨点化下拜唐僧为师，加入西行队伍。",
+        "tags": [
+            "recruitment",
+            "fallen_deity",
+            "redemption",
+            "battle",
+            "team_formation",
+            "divine_punishment"
+        ],
+        "sourceChapters": [18, 19],
+        "chronology": {
+            "order": 18,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

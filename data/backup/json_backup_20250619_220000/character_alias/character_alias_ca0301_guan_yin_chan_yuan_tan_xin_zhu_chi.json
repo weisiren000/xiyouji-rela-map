@@ -1,0 +1,49 @@
+{
+    "unid": "ca0301",
+    "isAlias": true,
+    "basic": {
+        "name": "观音禅院贪心住持",
+        "pinyin": "guan_yin_chan_yuan_tan_xin_zhu_chi",
+        "aliases": [
+            "贪心住持",
+            "观音院住持",
+            "贪财老僧"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "fan_ren",
+            "name": "凡人",
+            "tier": 9,
+            "category": "mortal"
+        },
+        "rank": 129,
+        "power": 25,
+        "influence": 40,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "金池长老的别名，深刻揭示了其作为观音禅院住持却贪恋宝物的矛盾本性。这个别名强调了金池长老表面上是佛门高僧，实际上却被贪欲蒙蔽心智，见到唐僧的锦襕袈裟后起了贪念，最终引发了一系列灾难。体现了佛门中败类的典型形象，警示修行者要戒除贪欲。",
+        "tags": [
+            "monk",
+            "abbot",
+            "greed",
+            "buddhist_temple",
+            "corruption",
+            "kasaya_incident",
+            "fallen_monk",
+            "moral_failure"
+        ],
+        "sourceChapters": [
+            16,
+            17
+        ],
+        "firstAppearance": 16,
+        "significance": "展现了表里不一的虚伪僧人形象和佛门败类的警示",
+        "culturalBackground": "体现了佛门中贪欲堕落的警示意义和道德教化",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0129"
+    }
+}

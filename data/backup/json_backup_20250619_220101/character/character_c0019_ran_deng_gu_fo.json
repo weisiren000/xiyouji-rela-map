@@ -1,0 +1,46 @@
+{
+    "unid": "c0019",
+    "isAlias": false,
+    "basic": {
+        "name": "燃灯古佛",
+        "pinyin": "ran_deng_gu_fo",
+        "aliases": [
+            "燃灯佛",
+            "过去佛"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 19,
+        "power": 95,
+        "influence": 90,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "过去佛，定光如来，佛教三世佛之一。在取经功德圆满时出现，见证唐僧师徒的成佛过程，代表着过去的智慧和觉悟。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "past_buddha",
+            "ancient",
+            "wise",
+            "enlightened",
+            "witness",
+            "luminous",
+            "eternal",
+            "transcendent"
+        ],
+        "sourceChapters": [
+            98, 99, 100
+        ],
+        "firstAppearance": 98,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

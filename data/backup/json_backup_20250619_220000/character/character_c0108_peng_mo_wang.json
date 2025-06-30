@@ -1,0 +1,51 @@
+{
+    "unid": "c0108",
+    "isAlias": false,
+    "basic": {
+        "name": "鹏魔王",
+        "pinyin": "peng_mo_wang",
+        "aliases": ["移山大圣", "大鹏王", "七大圣之一"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "mo_wang",
+            "name": "魔王",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 108,
+        "power": 72,
+        "influence": 76,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "colleagues": ["齐天大圣孙悟空", "混世魔王", "蛟魔王", "狮驼王", "猕猴王", "禺狨王"],
+        "subordinates": ["大鹏部众", "飞禽手下"],
+        "superior": [],
+        "allies": ["七大圣"],
+        "enemies": ["天庭", "佛教"]
+    },
+    "abilities": {
+        "weapons": ["移山神锤", "大鹏利爪"],
+        "skills": ["大鹏神通", "移山法术", "飞行神速", "风系法术"],
+        "specialties": ["移山倒海", "大鹏之力", "飞禽统领", "风雷神威"]
+    },
+    "locations": {
+        "residence": ["大鹏巢", "移山洞"],
+        "territory": ["高山峻岭", "飞禽势力范围"],
+        "frequentPlaces": ["花果山", "七大圣聚会", "云霄之上"]
+    },
+    "metadata": {
+        "description": "七大圣之一，移山大圣，具有大鹏血统的强大妖王，能够移山倒海",
+        "tags": ["demon", "bird", "sworn_brother", "mountain", "wind_magic"],
+        "sourceChapters": [3, 4],
+        "firstAppearance": 3,
+        "culturalBackground": "中国传统大鹏鸟文化和妖怪文化的结合",
+        "religiousSignificance": "代表妖族中的飞禽势力，体现自由不羁的精神",
+        "literaryRole": "西游记中孙悟空的结拜兄弟，体现妖族的飞行力量",
+        "specialNote": "七大圣中具有大鹏血统的妖王，速度极快",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

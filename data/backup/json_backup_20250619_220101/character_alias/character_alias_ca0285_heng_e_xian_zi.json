@@ -1,0 +1,49 @@
+{
+    "unid": "ca0285",
+    "isAlias": true,
+    "basic": {
+        "name": "姮娥仙子",
+        "pinyin": "heng_e_xian_zi",
+        "aliases": [
+            "姮娥",
+            "姮娥女神",
+            "姮娥仙女"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_zi",
+            "name": "仙子",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 118,
+        "power": 78,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "嫦娥的古代原始称谓，强调其在古代神话中的原始身份。这个称谓体现了嫦娥在中国古代神话传说中的最初形象，姮娥是嫦娥的古代写法，保持了神话的原始性和历史性。",
+        "tags": [
+            "moon_goddess",
+            "celestial_fairy",
+            "ancient_name",
+            "lunar_deity",
+            "immortal_beauty",
+            "mythological_figure",
+            "original_identity",
+            "divine_feminine"
+        ],
+        "sourceChapters": [
+            95,
+            96
+        ],
+        "firstAppearance": 95,
+        "significance": "体现了嫦娥在古代神话中的原始身份和历史传承",
+        "culturalBackground": "姮娥是嫦娥的古代称谓，在古代神话传说中，姮娥是后羿之妻，偷食不死药飞升月宫，是中国月神文化的重要源头",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0118"
+    }
+}

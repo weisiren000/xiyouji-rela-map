@@ -1,0 +1,49 @@
+{
+    "unid": "ca0236",
+    "isAlias": true,
+    "basic": {
+        "name": "第四殿阎王",
+        "pinyin": "di_si_dian_yan_wang",
+        "aliases": [
+            "四殿阎王",
+            "第四殿王",
+            "四殿王"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yan_wang",
+            "name": "阎王",
+            "tier": 6,
+            "category": "underworld"
+        },
+        "rank": 86,
+        "power": 82,
+        "influence": 84,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "五官王在十殿阎王体系中的排序称谓，强调其作为地府第四殿主宰的重要地位。这个称谓体现了五官王在地府官僚体系中的职责，负责审判生前抗粮赖租、交易欺诈的亡魂。",
+        "tags": [
+            "underworld_deity",
+            "ten_kings_of_hell",
+            "fourth_hall",
+            "soul_judgment",
+            "underworld_bureaucracy",
+            "death_deity",
+            "judicial_authority",
+            "commercial_fraud_judgment"
+        ],
+        "sourceChapters": [
+            10,
+            11
+        ],
+        "firstAppearance": 10,
+        "significance": "体现了五官王在十殿阎王体系中的第四位地位和商业诚信审判职责",
+        "culturalBackground": "第四殿阎王是中国传统地府信仰中十殿阎王的第四位，专门负责审判商业欺诈和赖账之罪，体现了古代对商业诚信的重视",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0086"
+    }
+}

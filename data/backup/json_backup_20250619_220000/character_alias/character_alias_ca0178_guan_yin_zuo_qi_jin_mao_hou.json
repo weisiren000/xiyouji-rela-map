@@ -1,0 +1,50 @@
+{
+    "unid": "ca0178",
+    "isAlias": true,
+    "basic": {
+        "name": "观音坐骑金毛犼",
+        "pinyin": "guan_yin_zuo_qi_jin_mao_hou",
+        "aliases": [
+            "观音金毛犼",
+            "菩萨坐骑金毛犼",
+            "观音座下金毛犼"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 43,
+        "power": 75,
+        "influence": 72,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "赛太岁的完整身份称谓，强调其既是观音菩萨的坐骑，又是金毛犼的双重身份。这个称谓体现了其神圣出身和堕落为妖的复杂性，突出了佛教护法与妖魔的对比。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "mount",
+            "buddhist_origin",
+            "sacred_beast",
+            "fallen_guardian",
+            "divine_mount"
+        ],
+        "sourceChapters": [
+            68,
+            69,
+            70,
+            71
+        ],
+        "firstAppearance": 68,
+        "significance": "体现了赛太岁神圣出身与邪恶行为的强烈对比",
+        "culturalBackground": "佛教护法文化中坐骑神兽的威力和地位，体现了神圣与世俗的复杂关系",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0043"
+    }
+}

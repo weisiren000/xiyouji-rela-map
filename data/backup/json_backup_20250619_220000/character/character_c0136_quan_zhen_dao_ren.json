@@ -1,0 +1,41 @@
+{
+    "unid": "c0136",
+    "isAlias": false,
+    "basic": {
+        "name": "全真道人",
+        "pinyin": "quan_zhen_dao_ren",
+        "aliases": ["青毛狮子精化身", "假道人", "乌鸡国假道人"],
+        "type": "character",
+        "category": "demon"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 4,
+            "category": "demon"
+        },
+        "rank": 136,
+        "power": 75,
+        "influence": 60,
+        "morality": "chaotic_evil"
+    },
+    "relationships": {
+        "colleagues": ["文殊菩萨"],
+        "subordinates": ["小妖兵"],
+        "superior": ["文殊菩萨"],
+        "family": []
+    },
+    "abilities": {
+        "weapons": ["七星宝剑"],
+        "skills": ["变化术", "道法", "剑术"],
+        "specialties": ["伪装", "欺骗", "妖术"]
+    },
+    "metadata": {
+        "description": "青毛狮子精变化的假道人，在乌鸡国冒充全真道人，实际是文殊菩萨的坐骑下凡作乱。",
+        "tags": ["demon", "shapeshifter", "false_monk", "mount", "antagonist"],
+        "sourceChapters": [37, 38, 39],
+        "firstAppearance": 37,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

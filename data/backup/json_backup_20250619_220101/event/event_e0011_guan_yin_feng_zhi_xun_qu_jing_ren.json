@@ -1,0 +1,71 @@
+{
+    "unid": "e0011",
+    "isAlias": false,
+    "basic": {
+        "name": "观音奉旨寻取经人",
+        "pinyin": "guan_yin_feng_zhi_xun_qu_jing_ren",
+        "aliases": [
+            "观音寻人",
+            "观音奉旨",
+            "寻找取经人"
+        ],
+        "type": "event",
+        "category": "quest"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 8,
+            "category": "critical"
+        },
+        "significance": 90,
+        "impact": 85
+    },
+    "participants": [
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0006",
+            "name": "如来佛祖",
+            "role": "authority"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0012",
+            "name": "雷音寺",
+            "role": "primary"
+        },
+        {
+            "unid": "l0040",
+            "name": "长安城",
+            "role": "destination"
+        },
+        {
+            "unid": "l0031",
+            "name": "南海普陀山",
+            "role": "origin"
+        }
+    ],
+    "metadata": {
+        "description": "如来佛祖命令观音菩萨下凡寻找取经人，前往东土大唐物色合适的人选，为西行取经大业做准备。",
+        "tags": [
+            "quest",
+            "preparation",
+            "scriptures",
+            "divine_mission",
+            "selection",
+            "journey_planning"
+        ],
+        "sourceChapters": [8],
+        "chronology": {
+            "order": 11,
+            "era": "pre_journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

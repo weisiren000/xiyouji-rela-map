@@ -1,0 +1,48 @@
+{
+    "unid": "ca0330",
+    "isAlias": true,
+    "basic": {
+        "name": "西海龙太子",
+        "pinyin": "xi_hai_long_tai_zi",
+        "aliases": [
+            "西海太子",
+            "龙宫太子",
+            "摩昂太子"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "long_zu",
+            "name": "龙族",
+            "tier": 4,
+            "category": "dragon"
+        },
+        "rank": 148,
+        "power": 75,
+        "influence": 80,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "摩昂太子的别名，强调了其作为西海龙王太子的尊贵身份和龙族血统。这个别名体现了其在龙族中的重要地位，作为西海龙宫的太子，摩昂太子承担着重要的职责，在取经路上多次协助师徒四人，展现了龙族的正义和担当。",
+        "tags": [
+            "dragon",
+            "prince",
+            "nobility",
+            "west_sea",
+            "dragon_palace",
+            "righteousness",
+            "assistance",
+            "responsibility"
+        ],
+        "sourceChapters": [
+            63
+        ],
+        "firstAppearance": 63,
+        "significance": "展现了龙族太子的责任担当和正义品格",
+        "culturalBackground": "体现了龙族在中国文化中的尊贵地位和正义形象",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0148"
+    }
+}

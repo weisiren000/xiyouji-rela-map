@@ -1,0 +1,60 @@
+{
+    "unid": "a0053",
+    "isAlias": false,
+    "basic": {
+        "name": "玮天锁",
+        "pinyin": "wei_tian_suo",
+        "aliases": [
+            "天罡锁",
+            "缚妖锁"
+        ],
+        "type": "artifact",
+        "category": "restraint"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 55,
+        "influence": 40,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0116",
+            "name": "二郎神",
+            "relationship": "personal_tool"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0006",
+                "name": "二郎神捉拿孙悟空"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "玮天锁是二郎神捉拿妖魔的专用法器，由特殊金属打造，可自如伸缩变化。此锁链条上布满符文，能封印妖魔法力，防止变化逃脱。锁一旦锁定目标，会自动收紧，越挣扎越紧，甚至能随心意变化重量，将敌人压制在地。在捉拿孙悟空一战中，二郎神曾用此锁与悟空周旋。锁链末端有特殊机关，可形成各种束缚形态，是捕获强大妖魔的利器。",
+        "tags": [
+            "chain",
+            "lock",
+            "restraint",
+            "metal",
+            "capture",
+            "binding",
+            "sealing",
+            "heavenly",
+            "erlang",
+            "adaptable",
+            "imprisonment",
+            "weight_changing"
+        ],
+        "sourceChapters": [6, 7],
+        "firstAppearance": 6,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "unid": "ca0199",
+    "isAlias": true,
+    "basic": {
+        "name": "氐宿",
+        "pinyin": "di_su",
+        "aliases": [
+            "氐星",
+            "氐宿星官",
+            "东方氐宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 53,
+        "power": 73,
+        "influence": 76,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "氐土貉的星宿称谓，强调其作为东方青龙七宿之三的重要地位。这个称谓体现了氐土貉在二十八宿体系中的土德属性，突出了其作为青龙胸部星宿的天文学意义。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "eastern_azure_dragon",
+            "earth_element",
+            "constellation_name",
+            "astronomical_system",
+            "dragon_chest"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了氐土貉在东方青龙七宿中的重要地位和土德属性",
+        "culturalBackground": "氐宿在二十八宿中代表东方青龙的胸部，象征着稳重和包容",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0053"
+    }
+}

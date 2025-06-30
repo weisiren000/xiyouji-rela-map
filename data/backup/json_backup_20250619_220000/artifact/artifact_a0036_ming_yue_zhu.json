@@ -1,0 +1,55 @@
+{
+    "unid": "a0036",
+    "isAlias": false,
+    "basic": {
+        "name": "明月珠",
+        "pinyin": "ming_yue_zhu",
+        "aliases": [
+            "月华珠",
+            "夜光珠"
+        ],
+        "type": "artifact",
+        "category": "jewelry"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 35,
+        "influence": 50,
+        "element": "light"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0119",
+            "name": "嫦娥",
+            "relationship": "personal_item"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "明月珠是嫦娥的随身宝物，由月宫精华凝结而成的明珠。此珠圆润晶莹，即使在黑暗中也能发出柔和的银白色光芒，如同月光洒落。除了照明，明月珠还具有驱邪安神之效，可令人心境平和，化解戾气。嫦娥常用此珠辅助施法，增强月相之力，也能借珠子观察远方景象。珠子中蕴含的月华精华，对修炼月宫秘法有特殊增益。",
+        "tags": [
+            "pearl",
+            "moon",
+            "light",
+            "illumination",
+            "jewelry",
+            "chang_e",
+            "moon_palace",
+            "lunar_energy",
+            "calming",
+            "divination",
+            "viewing",
+            "night"
+        ],
+        "sourceChapters": [21, 67],
+        "firstAppearance": 21,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

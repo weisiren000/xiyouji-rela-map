@@ -1,0 +1,97 @@
+{
+    "unid": "e0046",
+    "isAlias": false,
+    "basic": {
+        "name": "陷空山无底洞遇白毛老鼠精",
+        "pinyin": "xian_kong_shan_wu_di_dong_yu_bai_mao_lao_shu_jing",
+        "aliases": [
+            "地涌夫人",
+            "陷空山",
+            "无底洞"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 78
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0053",
+            "name": "白毛老鼠精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0054",
+            "name": "地涌夫人",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0095",
+            "name": "陷空山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0096",
+            "name": "无底洞",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0022",
+            "name": "无价宝",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒来到陷空山，遇到白毛老鼠精。这只老鼠精有五百年道行，自称地涌夫人，偷走了宝象国的镇国之宝"无价宝"。唐僧被老鼠精捉去，孙悟空和猪八戒前往无底洞营救。经过一番激战，孙悟空请来观音菩萨帮忙，最终降服了老鼠精，救出唐僧，并取回了无价宝。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "rescue",
+            "mouse_spirit",
+            "treasure"
+        ],
+        "sourceChapters": [81, 82, 83],
+        "chronology": {
+            "order": 46,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

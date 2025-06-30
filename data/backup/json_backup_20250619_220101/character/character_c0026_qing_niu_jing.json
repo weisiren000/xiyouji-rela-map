@@ -1,0 +1,84 @@
+{
+    "unid": "c0026",
+    "basic": {
+        "name": "青牛精",
+        "pinyin": "qing_niu_jing",
+        "aliases": [
+            "独角兕大王",
+            "太上老君坐骑"
+        ],
+        "type": "character",
+        "category": "antagonist"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 26,
+        "power": 82,
+        "influence": 75,
+        "morality": "chaotic_neutral"
+    },
+    "relationships": {
+        "master": [
+            "c0009"
+        ],
+        "enemies": [
+            "c0001",
+            "c0002",
+            "c0003",
+            "c0004"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "兜金洞",
+            "金兜山"
+        ],
+        "territory": [
+            "金兜山兜金洞"
+        ],
+        "appearances": [
+            "金兜山",
+            "兜金洞"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "金刚琢"
+        ],
+        "skills": [
+            "套宝神通",
+            "变化术",
+            "牛力神通"
+        ],
+        "specialties": [
+            "金刚琢套取法宝",
+            "独角神力",
+            "坐骑神通"
+        ]
+    },
+    "metadata": {
+        "description": "太上老君的坐骑青牛，私自下界为妖，拥有能套取一切兵器法宝的金刚琢",
+        "tags": [
+            "antagonist",
+            "demon",
+            "taoist_origin",
+            "mount",
+            "treasure_stealer"
+        ],
+        "sourceChapters": [
+            50,
+            51,
+            52
+        ],
+        "firstAppearance": 50,
+        "significance": "金兜山兜金洞的主要反派，展现了金刚琢的强大威力",
+        "culturalBackground": "青牛是道教中的重要坐骑形象，金刚琢体现了道教法器文化",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

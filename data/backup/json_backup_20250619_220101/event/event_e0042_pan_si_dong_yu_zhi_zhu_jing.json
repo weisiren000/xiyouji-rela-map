@@ -1,0 +1,92 @@
+{
+    "unid": "e0042",
+    "isAlias": false,
+    "basic": {
+        "name": "盘丝洞遇蜘蛛精",
+        "pinyin": "pan_si_dong_yu_zhi_zhu_jing",
+        "aliases": [
+            "七仙姑",
+            "盘丝洞",
+            "蜘蛛精"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "major",
+            "name": "重大事件",
+            "tier": 7,
+            "category": "important"
+        },
+        "significance": 80,
+        "impact": 75
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0042",
+            "name": "七仙姑",
+            "role": "antagonist"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0087",
+            "name": "盘丝洞",
+            "role": "primary"
+        },
+        {
+            "unid": "l0088",
+            "name": "盘丝岭",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0017",
+            "name": "盘丝",
+            "role": "key_item"
+        },
+        {
+            "unid": "a0018",
+            "name": "幌金绳",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒路过盘丝岭，遇到七仙姑所化的美女。七仙姑实为七只蜘蛛精，她们施展媚术迷惑唐僧，欲吞食唐僧肉以求长生。孙悟空识破妖怪的真面目，与猪八戒一同与蜘蛛精展开激战。蜘蛛精用盘丝困住孙悟空和猪八戒，最终孙悟空请来救兵，降服了蜘蛛精，救出唐僧。",
+        "tags": [
+            "battle",
+            "deception",
+            "rescue",
+            "spider_spirit",
+            "seduction"
+        ],
+        "sourceChapters": [72, 73],
+        "chronology": {
+            "order": 42,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

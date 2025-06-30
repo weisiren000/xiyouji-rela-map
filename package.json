@@ -1,0 +1,27 @@
+{
+  "name": "xiyouji-data-server",
+  "version": "1.0.0",
+  "description": "西游记角色数据服务器",
+  "main": "dataServer.js",
+  "scripts": {
+    "start": "node dataServer.js",
+    "dev": "nodemon dataServer.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "xiyouji",
+    "journey-to-the-west",
+    "data-server",
+    "json-api"
+  ],
+  "author": "约翰",
+  "license": "MIT"
+}

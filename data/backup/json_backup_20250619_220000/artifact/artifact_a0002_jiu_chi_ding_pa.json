@@ -1,0 +1,58 @@
+{
+    "unid": "a0002",
+    "isAlias": false,
+    "basic": {
+        "name": "九齿钉耙",
+        "pinyin": "jiu_chi_ding_pa",
+        "aliases": [
+            "上宝沁金钯",
+            "钉耙",
+            "九齿钯"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_qi",
+            "name": "天器",
+            "tier": 8,
+            "category": "divine"
+        },
+        "rank": 2,
+        "power": 89,
+        "influence": 75,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "relationship": "primary_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0018",
+                "name": "高老庄收猪八戒"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "猪八戒的主要兵器，一柄九齿钉钯，钯尖有九个尖锐的铁齿，其表面闪烁着金光，据说重约三千六百斤。虽然不及金箍棒威力，但在西游路上多次立下战功。",
+        "tags": [
+            "weapon",
+            "magical",
+            "metal",
+            "rake",
+            "divine",
+            "heavy",
+            "nine_pronged",
+            "pig_general",
+            "divine_tool"
+        ],
+        "sourceChapters": [19, 27, 33, 41, 50, 59, 67, 75, 88],
+        "firstAppearance": 19,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+} 

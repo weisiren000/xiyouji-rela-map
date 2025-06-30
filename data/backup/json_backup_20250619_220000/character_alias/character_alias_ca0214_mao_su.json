@@ -1,0 +1,52 @@
+{
+    "unid": "ca0214",
+    "isAlias": true,
+    "basic": {
+        "name": "昴宿",
+        "pinyin": "mao_su",
+        "aliases": [
+            "昴星",
+            "昴宿星官",
+            "西方昴宿"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 68,
+        "power": 78,
+        "influence": 81,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "昴日鸡的星宿称谓，强调其作为西方白虎七宿之四的重要地位。这个称谓体现了昴日鸡在二十八宿体系中的日德属性，突出了其作为白虎腹部星宿的天文学意义和昴星团的璀璨光辉。",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "western_white_tiger",
+            "sun_element",
+            "constellation_name",
+            "astronomical_system",
+            "tiger_abdomen",
+            "pleiades_cluster"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "体现了昴日鸡作为西方白虎七宿第四位的重要地位和日德属性",
+        "culturalBackground": "昴宿在二十八宿中代表西方白虎的腹部，对应昴星团(七姊妹星团)，象征着光明和团结，体现了日德的照耀和温暖特性",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0068"
+    }
+}

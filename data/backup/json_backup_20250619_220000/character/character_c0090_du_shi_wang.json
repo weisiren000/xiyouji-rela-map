@@ -1,0 +1,50 @@
+{
+    "unid": "c0090",
+    "isAlias": false,
+    "basic": {
+        "name": "都市王",
+        "pinyin": "du_shi_wang",
+        "aliases": ["第八殿阎王", "都市大王", "八殿阎君"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "yan_wang",
+            "name": "阎王",
+            "tier": 6,
+            "category": "underworld"
+        },
+        "rank": 90,
+        "power": 64,
+        "influence": 69,
+        "morality": "lawful_neutral"
+    },
+    "relationships": {
+        "colleagues": ["秦广王", "楚江王", "宋帝王", "五官王", "阎罗王", "卞城王", "泰山王", "平等王", "转轮王"],
+        "subordinates": ["判官", "牛头马面", "鬼差"],
+        "superior": ["地藏王菩萨", "酆都大帝"],
+        "allies": ["十殿阎王"]
+    },
+    "abilities": {
+        "weapons": ["阎王印", "孝道镜"],
+        "skills": ["审判亡魂", "查验孝道", "地府神通", "伦理判决"],
+        "specialties": ["审判不孝罪", "孝道检查", "地府管理", "因果审判"]
+    },
+    "locations": {
+        "residence": ["第八殿", "都市王殿"],
+        "territory": ["地府第八殿", "孝道台"],
+        "frequentPlaces": ["地府", "十殿阎王会议"]
+    },
+    "metadata": {
+        "description": "十殿阎王之八，专门审判不孝等伦理罪业，掌管孝道镜查验亡魂孝心",
+        "tags": ["deity", "underworld", "judge", "filial_trial", "ethics_judgment"],
+        "sourceChapters": [10, 11],
+        "firstAppearance": 10,
+        "culturalBackground": "中国传统地府文化中的重要神祇，专管孝道伦理审判",
+        "religiousSignificance": "佛教和道教中的地府审判官，强调孝道的重要性",
+        "literaryRole": "西游记中地府体系的重要组成部分，体现传统孝道文化",
+        "judgeScope": "专门审判不孝父母、违背伦理等道德罪业",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

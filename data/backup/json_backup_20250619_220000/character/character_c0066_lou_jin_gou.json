@@ -1,0 +1,86 @@
+{
+    "unid": "c0066",
+    "basic": {
+        "name": "娄金狗",
+        "pinyin": "lou_jin_gou",
+        "aliases": [
+            "娄宿",
+            "西方白虎七宿之二",
+            "娄星官"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "xing_guan",
+            "name": "星官",
+            "tier": 7,
+            "category": "celestial"
+        },
+        "rank": 66,
+        "power": 74,
+        "influence": 77,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": [
+            "二十八宿星官"
+        ],
+        "group": [
+            "西方白虎七宿"
+        ],
+        "superior": [
+            "玉皇大帝"
+        ]
+    },
+    "locations": {
+        "residence": [
+            "天庭",
+            "星宫"
+        ],
+        "territory": [
+            "西方星域"
+        ],
+        "appearances": [
+            "天庭",
+            "人间"
+        ]
+    },
+    "abilities": {
+        "weapons": [
+            "星官法器"
+        ],
+        "skills": [
+            "星辰神通",
+            "娄宿星力",
+            "金德法术"
+        ],
+        "specialties": [
+            "西方白虎娄宿",
+            "娄星之力",
+            "金德神通"
+        ]
+    },
+    "metadata": {
+        "description": "二十八宿中西方白虎七宿之二，娄宿星官，掌管西方星域和金德之力",
+        "tags": [
+            "deity",
+            "star_deity",
+            "twenty_eight_mansions",
+            "western_white_tiger",
+            "metal_element"
+        ],
+        "sourceChapters": [
+            4,
+            5,
+            6,
+            7
+        ],
+        "firstAppearance": 4,
+        "significance": "二十八宿星官体系的重要组成部分，体现了中国古代天文学文化",
+        "culturalBackground": "娄宿在二十八宿中代表西方白虎的一部分，与金德相关",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

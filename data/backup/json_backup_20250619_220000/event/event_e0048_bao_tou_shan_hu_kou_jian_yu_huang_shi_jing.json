@@ -1,0 +1,92 @@
+{
+    "unid": "e0048",
+    "isAlias": false,
+    "basic": {
+        "name": "豹头山虎口涧遇黄狮精",
+        "pinyin": "bao_tou_shan_hu_kou_jian_yu_huang_shi_jing",
+        "aliases": [
+            "黄狮精",
+            "豹头山",
+            "虎口涧"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "standard"
+        },
+        "significance": 72,
+        "impact": 68
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0003",
+            "name": "猪八戒",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0004",
+            "name": "沙僧",
+            "role": "supporting"
+        },
+        {
+            "unid": "c0056",
+            "name": "黄狮精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0057",
+            "name": "文殊菩萨",
+            "role": "supporting"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0099",
+            "name": "豹头山",
+            "role": "primary"
+        },
+        {
+            "unid": "l0100",
+            "name": "虎口涧",
+            "role": "secondary"
+        }
+    ],
+    "items_involved": [
+        {
+            "unid": "a0024",
+            "name": "降妖宝杖",
+            "role": "key_item"
+        }
+    ],
+    "metadata": {
+        "description": "唐僧师徒经过豹头山，来到虎口涧，遇到一只黄狮精。这只狮子精是文殊菩萨的坐骑，它逃下灵山，在此处为害百姓，并且想要吃唐僧肉以求长生。唐僧被狮子精捉去，孙悟空与猪八戒前往救师父。经过一番激战，孙悟空难以取胜，最终请来文殊菩萨，用降妖宝杖收服了狮子精，救出唐僧。",
+        "tags": [
+            "battle",
+            "kidnapping",
+            "rescue",
+            "lion_spirit",
+            "divine_intervention"
+        ],
+        "sourceChapters": [86, 87],
+        "chronology": {
+            "order": 48,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

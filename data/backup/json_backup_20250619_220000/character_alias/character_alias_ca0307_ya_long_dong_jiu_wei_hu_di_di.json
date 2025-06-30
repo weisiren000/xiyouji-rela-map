@@ -1,0 +1,48 @@
+{
+    "unid": "ca0307",
+    "isAlias": true,
+    "basic": {
+        "name": "压龙洞九尾狐弟弟",
+        "pinyin": "ya_long_dong_jiu_wei_hu_di_di",
+        "aliases": [
+            "九尾狐弟弟",
+            "狐阿七弟弟",
+            "狐族弟弟"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 8,
+            "category": "demon"
+        },
+        "rank": 134,
+        "power": 55,
+        "influence": 45,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "狐阿七的别名，强调了其与九尾狐的血缘关系和在压龙洞中的特殊地位。作为九尾狐的弟弟，狐阿七在压龙洞享有特殊的地位，既是家族成员又是重要的助手。这个别名体现了妖怪世界中家族关系的重要性，以及血缘纽带在妖怪集团中的作用。狐族的智慧和狡猾在他身上也有所体现。",
+        "tags": [
+            "demon",
+            "fox_spirit",
+            "family_bond",
+            "blood_relation",
+            "special_status",
+            "wisdom",
+            "cunning",
+            "brotherhood"
+        ],
+        "sourceChapters": [
+            25
+        ],
+        "firstAppearance": 25,
+        "significance": "展现了妖怪世界中家族纽带的力量",
+        "culturalBackground": "体现了狐族文化中的家族观念和血缘关系的重要性",
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0134"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "unid": "ca0138",
+    "isAlias": true,
+    "basic": {
+        "name": "九头驸马",
+        "pinyin": "jiu_tou_fu_ma",
+        "aliases": [
+            "九头虫",
+            "万圣龙王女婿",
+            "碧波潭驸马",
+            "盗取祭赛国佛宝"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_wang",
+            "name": "妖王",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 32,
+        "power": 78,
+        "influence": 75,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "九头虫的身份地位称号，强调其作为驸马的尊贵地位和九头的生理特征。'九头'指其拥有九个头颅的独特外貌，'驸马'则体现了其与万圣公主联姻后获得的皇室地位。这个称号将其妖怪特征与社会地位完美结合，体现了妖界的联姻政治。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "nine_heads",
+            "dragon_son_in_law",
+            "thief",
+            "royal_title",
+            "marriage_alliance",
+            "九头特征",
+            "驸马地位",
+            "联姻政治"
+        ],
+        "sourceChapters": [
+            62,
+            63
+        ],
+        "firstAppearance": 62,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0032"
+    }
+}

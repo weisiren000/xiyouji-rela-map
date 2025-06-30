@@ -1,0 +1,46 @@
+{
+    "unid": "c0017",
+    "isAlias": false,
+    "basic": {
+        "name": "弥勒佛",
+        "pinyin": "mi_le_fo",
+        "aliases": [
+            "东来佛祖",
+            "未来佛"
+        ],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "fo",
+            "name": "佛",
+            "tier": 9,
+            "category": "buddhist"
+        },
+        "rank": 17,
+        "power": 90,
+        "influence": 85,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "未来佛，笑口常开的东来佛祖，拥有人种袋和金铙等法宝。在小雷音寺收服黄眉怪，以慈悲和智慧著称。",
+        "tags": [
+            "deity",
+            "buddhist",
+            "future_buddha",
+            "laughing",
+            "cheerful",
+            "wise",
+            "compassionate",
+            "bag_bearer",
+            "peaceful",
+            "enlightened"
+        ],
+        "sourceChapters": [
+            65, 66
+        ],
+        "firstAppearance": 65,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

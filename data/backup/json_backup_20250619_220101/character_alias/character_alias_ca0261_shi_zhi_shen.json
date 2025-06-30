@@ -1,0 +1,49 @@
+{
+    "unid": "ca0261",
+    "isAlias": true,
+    "basic": {
+        "name": "时值神",
+        "pinyin": "shi_zhi_shen",
+        "aliases": [
+            "时值守神",
+            "时值护神",
+            "时值当班神"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "gong_cao",
+            "name": "功曹",
+            "tier": 5,
+            "category": "celestial"
+        },
+        "rank": 101,
+        "power": 72,
+        "influence": 75,
+        "morality": "lawful_neutral"
+    },
+    "metadata": {
+        "description": "时值功曹的值守神称谓，强调其作为时辰值班守护神的职责地位。这个称谓体现了时值功曹在天庭值班体系中的重要作用，负责时辰时间的值守和管理工作。",
+        "tags": [
+            "time_deity",
+            "four_duty_officers",
+            "duty_guardian",
+            "temporal_authority",
+            "celestial_bureaucracy",
+            "hourly_guardian",
+            "duty_rotation",
+            "time_management"
+        ],
+        "sourceChapters": [
+            7,
+            8
+        ],
+        "firstAppearance": 7,
+        "significance": "体现了时值功曹作为时辰值班守护神的职责地位和管理权威",
+        "culturalBackground": "时值神是道教天庭值班体系的重要组成部分，值神概念体现了天庭严密的值班制度，时值神专门负责时辰时间的值守和管理，确保最精细时间秩序的正常运行",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0101"
+    }
+}

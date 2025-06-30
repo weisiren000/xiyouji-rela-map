@@ -1,0 +1,53 @@
+{
+    "unid": "c0105",
+    "isAlias": false,
+    "basic": {
+        "name": "北方多闻天王",
+        "pinyin": "bei_fang_duo_wen_tian_wang",
+        "aliases": ["多闻天王", "毗沙门", "北方天王", "多闻大王", "毗沙门天王"],
+        "type": "character",
+        "category": "deity"
+    },
+    "attributes": {
+        "level": {
+            "id": "tian_wang",
+            "name": "天王",
+            "tier": 6,
+            "category": "guardian"
+        },
+        "rank": 105,
+        "power": 81,
+        "influence": 87,
+        "morality": "lawful_good"
+    },
+    "relationships": {
+        "colleagues": ["东方持国天王", "南方增长天王", "西方广目天王"],
+        "subordinates": ["夜叉", "罗刹", "北方护法"],
+        "superior": ["玉皇大帝", "如来佛祖"],
+        "allies": ["四大天王"],
+        "family": ["哪吒(义子关系)"]
+    },
+    "abilities": {
+        "weapons": ["宝塔", "多闻神塔"],
+        "skills": ["护法神通", "北方镇守", "宝塔法术", "多闻智慧"],
+        "specialties": ["守护北方", "多闻博学", "宝塔神通", "佛法护持"]
+    },
+    "locations": {
+        "residence": ["北方天王殿", "多闻宫"],
+        "territory": ["北俱芦洲", "北方天界"],
+        "frequentPlaces": ["天庭", "灵山", "四天王聚会"]
+    },
+    "metadata": {
+        "description": "四大天王之首，守护北方，多闻博学，以宝塔为法器，统领夜叉罗刹等护法",
+        "tags": ["deity", "guardian", "buddhist", "northern_protector", "pagoda", "chief"],
+        "sourceChapters": [4, 5, 6],
+        "firstAppearance": 4,
+        "culturalBackground": "佛教护法神，四大天王之首，守护北方世界",
+        "religiousSignificance": "佛教中的重要护法神，四大天王之首领",
+        "literaryRole": "西游记中天庭和佛教体系的重要护法，参与降妖除魔",
+        "specialNote": "四大天王中地位最高，常被视为天王之首",
+        "guardianScope": "守护北俱芦洲，护持北方国土和众生",
+        "weaponSymbol": "宝塔象征佛法庄严，镇压邪魔",
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

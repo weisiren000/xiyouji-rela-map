@@ -1,0 +1,45 @@
+{
+    "unid": "c0137",
+    "basic": {
+        "name": "地涌夫人",
+        "aliases": [
+            "金鼻白毛老鼠精",
+            "白毛老鼠精",
+            "陷空山妖女"
+        ],
+        "category": "demon",
+        "pinyin": "di_yong_fu_ren",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 4,
+            "category": "demon",
+            "id": "xiao_yao",
+            "name": "小妖"
+        },
+        "rank": 137,
+        "power": 70,
+        "influence": 55,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "金鼻白毛老鼠精，在陷空山无底洞作乱，后被李靖父子收服。",
+        "tags": [
+            "demon",
+            "老鼠精",
+            "陷空山",
+            "托塔天王义女"
+        ],
+        "culturalBackground": "民间传说中的鼠妖形象，体现了对贪婪的警示",
+        "religiousSignificance": "佛教中业力因果的体现",
+        "literaryRole": "展现妖怪与神仙复杂关系的角色",
+        "sourceChapters": [
+            82,
+            83
+        ],
+        "firstAppearance": 82,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}

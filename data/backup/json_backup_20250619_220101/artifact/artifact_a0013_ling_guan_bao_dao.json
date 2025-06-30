@@ -1,0 +1,59 @@
+{
+    "unid": "a0013",
+    "isAlias": false,
+    "basic": {
+        "name": "灵官宝刀",
+        "pinyin": "ling_guan_bao_dao",
+        "aliases": [
+            "王灵官刀",
+            "斩妖刀"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "ling_qi",
+            "name": "灵器",
+            "tier": 6,
+            "category": "spiritual"
+        },
+        "rank": 5,
+        "power": 78,
+        "influence": 72,
+        "element": "fire"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0056",
+            "name": "王灵官",
+            "relationship": "primary_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0044",
+                "name": "降服黑熊精",
+                "relationship": "tool_used"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "王灵官的专用武器，呈赤红色，刀刃有火焰缭绕，能发出灼热光芒。在西游记中，此刀曾用于降服诸多妖魔鬼怪。王灵官为道教护法神，其宝刀能斩断一切邪物，具有极强的杀伤力和针对妖魔的特殊效果。",
+        "tags": [
+            "weapon",
+            "spiritual",
+            "fire",
+            "taoist",
+            "slaying",
+            "guardian",
+            "knife",
+            "blade",
+            "protection",
+            "exorcism"
+        ],
+        "sourceChapters": [27, 66, 87],
+        "firstAppearance": 27,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+} 

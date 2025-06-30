@@ -1,0 +1,45 @@
+{
+    "unid": "c0124",
+    "isAlias": false,
+    "basic": {
+        "name": "乌巢禅师",
+        "pinyin": "wu_chao_chan_shi",
+        "aliases": [
+            "浮屠山神秘高僧",
+            "禅师",
+            "高僧",
+            "乌巢"
+        ],
+        "type": "character",
+        "category": "immortal"
+    },
+    "attributes": {
+        "level": {
+            "id": "gao_seng",
+            "name": "高僧",
+            "tier": 7,
+            "category": "immortal"
+        },
+        "rank": 124,
+        "power": 80,
+        "influence": 60,
+        "morality": "lawful_good"
+    },
+    "metadata": {
+        "description": "乌巢禅师，浮屠山上的神秘高僧，在鸟巢中修行，曾传授唐僧《心经》，是一位得道高僧。",
+        "tags": [
+            "immortal",
+            "monk",
+            "sage",
+            "teacher",
+            "mysterious",
+            "wise",
+            "buddhist"
+        ],
+        "sourceChapters": [
+            19
+        ],
+        "firstAppearance": 19,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    }
+}

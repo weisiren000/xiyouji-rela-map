@@ -1,0 +1,60 @@
+{
+    "unid": "a0045",
+    "isAlias": false,
+    "basic": {
+        "name": "双剑",
+        "pinyin": "shuang_jian",
+        "aliases": [
+            "阴阳双剑",
+            "灵犀双剑"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 50,
+        "influence": 35,
+        "element": "metal"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0139",
+            "name": "哪吒",
+            "relationship": "personal_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0006",
+                "name": "二郎神捉拿孙悟空"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "双剑是哪吒的武器之一，一对造型相似但阴阳属性相反的宝剑。一剑泛白光，主守护；一剑闪红芒，善进攻。两剑可分开使用，也可合二为一，威力倍增。哪吒常以双手各持一剑，施展独特剑法，攻防一体。剑身轻盈灵动，适合哪吒敏捷的战斗风格。在捉拿孙悟空一战中，哪吒曾与孙悟空激战，展现此剑非凡威力。",
+        "tags": [
+            "weapon",
+            "sword",
+            "dual",
+            "yin_yang",
+            "nezha",
+            "metal",
+            "pair",
+            "balanced",
+            "offense",
+            "defense",
+            "heavenly_weapon",
+            "child_deity"
+        ],
+        "sourceChapters": [6, 7, 12],
+        "firstAppearance": 6,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

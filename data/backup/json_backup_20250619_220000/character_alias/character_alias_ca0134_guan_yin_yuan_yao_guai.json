@@ -1,0 +1,49 @@
+{
+    "unid": "ca0134",
+    "isAlias": true,
+    "basic": {
+        "name": "观音院妖怪",
+        "pinyin": "guan_yin_yuan_yao_guai",
+        "aliases": [
+            "黑熊精",
+            "黑风怪",
+            "守山大神"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 30,
+        "power": 72,
+        "influence": 65,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "黑熊精在观音院事件中的地域性称号，强调其与观音院袈裟风波的关联。这个称号将其与具体的事件地点联系起来，突出了其在观音院偷取锦襕袈裟的行为。体现了其作为该事件核心反派的身份，是对其在特定情节中角色定位的准确描述。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "bear",
+            "location_based",
+            "event_related",
+            "kasaya_thief",
+            "temple_intruder",
+            "事件相关",
+            "地点标识",
+            "袈裟盗贼"
+        ],
+        "sourceChapters": [
+            16,
+            17
+        ],
+        "firstAppearance": 16,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0030"
+    }
+}

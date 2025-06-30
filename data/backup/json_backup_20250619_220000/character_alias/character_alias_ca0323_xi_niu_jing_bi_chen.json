@@ -1,0 +1,44 @@
+{
+    "unid": "ca0323",
+    "isAlias": true,
+    "basic": {
+        "name": "犀牛精(辟尘)",
+        "pinyin": "xi_niu_jing_bi_chen",
+        "aliases": [
+            "辟尘犀牛精",
+            "犀牛怪辟尘",
+            "尘埃犀牛精"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xian_jing",
+            "name": "仙境",
+            "tier": 6,
+            "category": "demon"
+        },
+        "rank": 2,
+        "power": 82,
+        "influence": 75,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "辟尘大王的简化别名，突出其犀牛精的本质特征和辟尘的专门能力，体现了其在污浊环境中的净化优势。",
+        "tags": [
+            "alias",
+            "demon",
+            "rhinoceros_spirit",
+            "dust_resistance",
+            "environmental_adaptation"
+        ],
+        "sourceChapters": [
+            94,
+            95
+        ],
+        "firstAppearance": 94,
+        "lastUpdated": "2025-06-14T00:00:00Z",
+        "originalCharacter": "c0142"
+    }
+}

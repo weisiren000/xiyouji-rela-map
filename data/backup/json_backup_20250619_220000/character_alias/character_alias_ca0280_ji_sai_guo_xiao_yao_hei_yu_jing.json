@@ -1,0 +1,49 @@
+{
+    "unid": "ca0280",
+    "isAlias": true,
+    "basic": {
+        "name": "祭赛国小妖(黑鱼精)",
+        "pinyin": "ji_sai_guo_xiao_yao_hei_yu_jing",
+        "aliases": [
+            "祭赛国黑鱼精",
+            "祭赛国水妖",
+            "祭赛国鱼怪"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "xiao_yao",
+            "name": "小妖",
+            "tier": 2,
+            "category": "demon"
+        },
+        "rank": 116,
+        "power": 34,
+        "influence": 24,
+        "morality": "chaotic_neutral"
+    },
+    "metadata": {
+        "description": "灞波儿奔在祭赛国的地域身份称谓，强调其作为祭赛国境内小妖的具体定位。这个称谓体现了灞波儿奔在特定地理环境中的活动范围和社会地位，突出了其地域性特征。",
+        "tags": [
+            "fish_demon",
+            "small_demon",
+            "regional_monster",
+            "jisai_kingdom",
+            "local_threat",
+            "minor_antagonist",
+            "territorial_demon",
+            "kingdom_pest"
+        ],
+        "sourceChapters": [
+            62,
+            63
+        ],
+        "firstAppearance": 62,
+        "significance": "体现了灞波儿奔在祭赛国的地域身份和小妖地位",
+        "culturalBackground": "祭赛国小妖体现了古代中国地方妖怪文化，小妖往往与特定地域相关，在当地造成一定影响但实力有限",
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0116"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "unid": "ca0131",
+    "isAlias": true,
+    "basic": {
+        "name": "黄花观百眼魔君",
+        "pinyin": "huang_hua_guan_bai_yan_mo_jun",
+        "aliases": [
+            "蜈蚣精",
+            "百眼魔君",
+            "多目怪",
+            "黄花观蜈蚣精"
+        ],
+        "type": "character_alias",
+        "category": "alias"
+    },
+    "attributes": {
+        "level": {
+            "id": "yao_guai",
+            "name": "妖怪",
+            "tier": 5,
+            "category": "demon"
+        },
+        "rank": 29,
+        "power": 70,
+        "influence": 68,
+        "morality": "chaotic_evil"
+    },
+    "metadata": {
+        "description": "蜈蚣精的最完整威严称号，结合了地域标识、能力特征和地位等级。'黄花观'指明其盘踞的道观，'百眼'突出其独特能力，'魔君'体现其威严地位。这是对蜈蚣精最全面、最威严的称呼，集地点、能力、地位于一体的完整头衔。",
+        "tags": [
+            "antagonist",
+            "demon",
+            "centipede",
+            "hundred_eyes",
+            "light_attack",
+            "complete_title",
+            "prestigious_name",
+            "威严头衔",
+            "完整称号",
+            "地位象征"
+        ],
+        "sourceChapters": [
+            72,
+            73
+        ],
+        "firstAppearance": 72,
+        "lastUpdated": "2025-01-08T00:00:00Z",
+        "originalCharacter": "c0029"
+    }
+}

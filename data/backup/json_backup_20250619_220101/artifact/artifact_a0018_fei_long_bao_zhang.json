@@ -1,0 +1,58 @@
+{
+    "unid": "a0018",
+    "isAlias": false,
+    "basic": {
+        "name": "飞龙宝杖",
+        "pinyin": "fei_long_bao_zhang",
+        "aliases": [
+            "龙头杖",
+            "灵吉宝杖"
+        ],
+        "type": "artifact",
+        "category": "weapon"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 7,
+            "category": "magical"
+        },
+        "rank": 6,
+        "power": 70,
+        "influence": 55,
+        "element": "wood"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0123",
+            "name": "灵吉菩萨",
+            "relationship": "primary_weapon"
+        },
+        "previousOwners": [],
+        "associatedEvents": [
+            {
+                "unid": "e0019",
+                "name": "黄风岭遇黄风怪"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "灵吉菩萨的随身法器，杖首雕刻着龙头，通体散发灵光。具有降伏妖邪、辅助施法的功能。在黄风岭一战中，灵吉菩萨使用此杖辅助定风丹的力量，帮助孙悟空师徒一行战胜了黄风怪。",
+        "tags": [
+            "weapon",
+            "magical",
+            "staff",
+            "divine",
+            "wood",
+            "dragon_themed",
+            "bodhisattva_weapon",
+            "exorcism_tool",
+            "spell_casting",
+            "power_amplifier"
+        ],
+        "sourceChapters": [20, 21],
+        "firstAppearance": 20,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

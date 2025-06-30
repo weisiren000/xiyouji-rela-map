@@ -1,0 +1,66 @@
+{
+    "unid": "a0035",
+    "isAlias": false,
+    "basic": {
+        "name": "照妖镜",
+        "pinyin": "zhao_yao_jing",
+        "aliases": [
+            "明镜",
+            "辟邪镜"
+        ],
+        "type": "artifact",
+        "category": "tool"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 8,
+        "power": 40,
+        "influence": 60,
+        "element": "light"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0002",
+            "name": "唐僧",
+            "relationship": "user"
+        },
+        "previousOwners": [
+            {
+                "unid": "c0021",
+                "name": "观音菩萨",
+                "relationship": "giver"
+            }
+        ],
+        "associatedEvents": [
+            {
+                "unid": "e0032",
+                "name": "狮驼岭降妖"
+            }
+        ]
+    },
+    "metadata": {
+        "description": "照妖镜是观音菩萨赐给唐僧的法宝，能照出妖魔的真身，无论其如何变化都无所遁形。此镜圆形，背面刻有莲花纹饰，镜面明亮如水，闪烁神光。照妖镜不仅能识破妖怪伪装，还能发出刺眼光芒，使妖魔无法靠近。是西行路上重要的防身法器，多次帮助师徒辨别真伪，识破妖魔诡计。",
+        "tags": [
+            "mirror",
+            "demon_detection",
+            "light",
+            "truth_revealing",
+            "protection",
+            "guanyin",
+            "buddhist",
+            "identification",
+            "tang_monk",
+            "defensive",
+            "magical_tool",
+            "deception_countering"
+        ],
+        "sourceChapters": [13, 27, 49],
+        "firstAppearance": 13,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

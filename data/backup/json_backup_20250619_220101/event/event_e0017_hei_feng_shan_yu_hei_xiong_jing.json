@@ -1,0 +1,78 @@
+{
+    "unid": "e0017",
+    "isAlias": false,
+    "basic": {
+        "name": "黑风山遇黑熊精",
+        "pinyin": "hei_feng_shan_yu_hei_xiong_jing",
+        "aliases": [
+            "黑熊怪",
+            "黑风山",
+            "袈裟风波"
+        ],
+        "type": "event",
+        "category": "battle"
+    },
+    "attributes": {
+        "level": {
+            "id": "medium",
+            "name": "中等事件",
+            "tier": 6,
+            "category": "notable"
+        },
+        "significance": 75,
+        "impact": 70
+    },
+    "participants": [
+        {
+            "unid": "c0001",
+            "name": "孙悟空",
+            "role": "protagonist"
+        },
+        {
+            "unid": "c0002",
+            "name": "唐僧",
+            "role": "victim"
+        },
+        {
+            "unid": "c0030",
+            "name": "黑熊精",
+            "role": "antagonist"
+        },
+        {
+            "unid": "c0007",
+            "name": "观音菩萨",
+            "role": "mediator"
+        }
+    ],
+    "artifacts_involved": [
+        {
+            "unid": "a0015",
+            "name": "锦襕袈裟",
+            "significance": "major"
+        }
+    ],
+    "locations": [
+        {
+            "unid": "l0047",
+            "name": "黑风山黑风洞",
+            "role": "primary"
+        }
+    ],
+    "metadata": {
+        "description": "师徒途经黑风山，遇黑熊精化作道人盗取唐僧袈裟，并抓走唐僧、八戒。悟空多方寻找，后得观音点化，前往黑风洞降服黑熊精，取回袈裟。",
+        "tags": [
+            "battle",
+            "theft",
+            "rescue",
+            "divine_robe",
+            "bear_demon",
+            "kidnapping"
+        ],
+        "sourceChapters": [17],
+        "chronology": {
+            "order": 17,
+            "era": "journey"
+        },
+        "lastUpdated": "2024-07-08T00:00:00Z"
+    }
+} 

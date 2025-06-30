@@ -1,0 +1,53 @@
+{
+    "unid": "a0020",
+    "isAlias": false,
+    "basic": {
+        "name": "捣药杵",
+        "pinyin": "dao_yao_chu",
+        "aliases": [
+            "玉杵",
+            "月宫杵"
+        ],
+        "type": "artifact",
+        "category": "tool"
+    },
+    "attributes": {
+        "level": {
+            "id": "fa_qi",
+            "name": "法器",
+            "tier": 6,
+            "category": "magical"
+        },
+        "rank": 9,
+        "power": 40,
+        "influence": 35,
+        "element": "jade"
+    },
+    "relationships": {
+        "owner": {
+            "unid": "c0119",
+            "name": "嫦娥",
+            "relationship": "personal_tool"
+        },
+        "previousOwners": [],
+        "associatedEvents": []
+    },
+    "metadata": {
+        "description": "嫦娥在月宫中用来捣制仙药的玉制杵，通体晶莹剔透，散发着淡淡的月华。虽非战斗法宝，但由于长期接触仙药，蕴含了一定的灵力，可辅助施法或驱散邪气。在西游记中作为月宫的象征物偶有提及。",
+        "tags": [
+            "tool",
+            "magical",
+            "jade",
+            "moon_palace",
+            "medicine_making",
+            "non_combat",
+            "ceremonial",
+            "alchemy_tool",
+            "chang_e",
+            "moon_goddess"
+        ],
+        "sourceChapters": [10, 35, 67],
+        "firstAppearance": 10,
+        "lastUpdated": "2024-06-18T00:00:00Z"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "unid": "c0147",
+    "basic": {
+        "name": "阿傩伽叶",
+        "aliases": [
+            "大雷音寺尊者",
+            "阿难",
+            "迦叶",
+            "二尊者"
+        ],
+        "category": "deity",
+        "pinyin": "a_nuo_jia_ye",
+        "type": "character"
+    },
+    "attributes": {
+        "level": {
+            "tier": 6,
+            "category": "demon",
+            "id": "yao_wang",
+            "name": "妖王"
+        },
+        "rank": 147,
+        "power": 85,
+        "influence": 80,
+        "morality": "至善"
+    },
+    "metadata": {
+        "description": "大雷音寺的尊者，负责传经的佛门弟子。",
+        "tags": [
+            "尊者",
+            "大雷音寺",
+            "佛经",
+            "传法"
+        ],
+        "culturalBackground": "佛教中的重要尊者，体现了佛法传承",
+        "religiousSignificance": "佛教经典传承的核心人物",
+        "literaryRole": "取经成功的见证者和经典传授者",
+        "sourceChapters": [
+            98
+        ],
+        "firstAppearance": 98,
+        "lastUpdated": "2025-01-08T00:00:00Z"
+    },
+    "isAlias": false
+}
