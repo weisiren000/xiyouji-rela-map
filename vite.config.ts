@@ -26,17 +26,22 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: false, // 生产环境禁用sourcemap
     target: 'esnext', // 支持最新的ES特性，包括top-level await
+    minify: 'esbuild', // 使用esbuild进行压缩
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
           three: ['three', '@react-three/fiber', '@react-three/drei'],
           postprocessing: ['@react-three/postprocessing', 'postprocessing'],
+          utils: ['zustand', 'lil-gui'],
         },
       },
     },
+    // 生产环境优化
+    chunkSizeWarningLimit: 1000,
+    assetsInlineLimit: 4096,
   },
   esbuild: {
     target: 'esnext', // 确保esbuild也使用最新目标

@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react'
+
 import { GalaxyScene } from '@scenes/GalaxyScene'
 import { ControlPanel, InfoDisplay } from '@components/controls/ControlPanel'
 
@@ -12,7 +12,7 @@ import { useCharacterInfoStore } from '@/stores/useCharacterInfoStore'
 import { useGalaxyStore } from '@/stores/useGalaxyStore'
 
 
-import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/useAutoLoader'
+import { useLoadingStatus } from '@/hooks/useAutoLoader'
 
 /**
  * 主应用组件
@@ -21,9 +21,7 @@ import { useAutoLoader, useLoadingStatus, useServerConnection } from '@/hooks/us
  */
 function App() {
   // 自动加载数据
-  const { isInitialized, autoLoadEnabled } = useAutoLoader()
-  const { isLoading, hasData, dataCount } = useLoadingStatus()
-  const { isOnline } = useServerConnection()
+  const { isLoading } = useLoadingStatus()
 
   // 🌐 全局角色信息状态
   const { hoveredCharacter, mousePosition, showInfoCard } = useCharacterInfoStore()
@@ -31,29 +29,7 @@ function App() {
   // 🎯 视图状态管理 - 使用星谱特定的视图状态
   const { mainPageViewMode } = useGalaxyStore()
 
-  // 应用启动日志
-  useEffect(() => {
-    console.log('🚀 西游记银河系可视化应用启动')
-    console.log('📡 自动加载:', autoLoadEnabled ? '启用' : '禁用')
-    console.log('🌐 服务器状态:', isOnline ? '在线' : '离线')
-  }, [autoLoadEnabled, isOnline])
-
-  // 数据加载状态日志
-  useEffect(() => {
-    if (isInitialized) {
-      console.log('✅ 应用初始化完成')
-      console.log('📊 数据状态:', hasData ? `已加载 ${dataCount} 个角色` : '无数据')
-    }
-  }, [isInitialized, hasData, dataCount])
-
-  // 🌐 全局状态变化日志
-  useEffect(() => {
-    if (hoveredCharacter) {
-      console.log('📱 App层接收到角色信息:', hoveredCharacter.name)
-      console.log('📍 鼠标位置:', mousePosition.x, mousePosition.y)
-      console.log('💳 显示信息卡片:', showInfoCard)
-    }
-  }, [hoveredCharacter, mousePosition, showInfoCard])
+  // 生产环境已移除调试日志
 
 
 

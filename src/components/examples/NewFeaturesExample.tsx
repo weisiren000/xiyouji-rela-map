@@ -122,7 +122,7 @@ export const NewFeaturesExample: React.FC = () => {
                 }}>
                   <strong>{character.name}</strong>
                   <span style={{ marginLeft: '10px', color: '#FFD700' }}>
-                    {character.category}
+                    {character.type}
                   </span>
                   <span style={{ marginLeft: '10px', color: '#4CAF50' }}>
                     能力: {character.power}
